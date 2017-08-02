@@ -21,6 +21,7 @@ dependencies {
   compile 'com.sun.xml.bind:jaxb-impl:2.1'
   compile 'com.sun.xml.bind:jaxb-xjc:2.1'
   compile 'log4j:log4j:1.2.14'
+  compile 'technology.integration.amazonservices.mws:amazon-mws-order:1.0'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
