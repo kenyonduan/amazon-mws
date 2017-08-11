@@ -1,63 +1,46 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlEnumValue;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="FulfillReadiness")
+/*    */ @XmlEnum
+/*    */ public enum FulfillReadiness
+/*    */ {
+/* 32 */   DROP_SHIP_READY("drop_ship_ready"), 
+/*    */ 
+/* 34 */   NOT_READY("not_ready"), 
+/*    */ 
+/* 36 */   RECEIVE_READY("receive_ready"), 
+/*    */ 
+/* 38 */   EXCEPTION_RECEIVE_READY("exception_receive_ready"), 
+/*    */ 
+/* 40 */   PO_READY("po_ready"), 
+/*    */ 
+/* 42 */   UNKNOWN("unknown");
+/*    */ 
+/*    */   private final String value;
+/*    */ 
+/*    */   private FulfillReadiness(String v) {
+/* 47 */     this.value = v;
+/*    */   }
+/*    */ 
+/*    */   public String value() {
+/* 51 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public static FulfillReadiness fromValue(String v) {
+/* 55 */     for (FulfillReadiness c : values()) {
+/* 56 */       if (c.value.equals(v)) {
+/* 57 */         return c;
+/*    */       }
+/*    */     }
+/* 60 */     throw new IllegalArgumentException(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>FulfillReadiness的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="FulfillReadiness">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="drop_ship_ready"/>
- *     &lt;enumeration value="not_ready"/>
- *     &lt;enumeration value="receive_ready"/>
- *     &lt;enumeration value="exception_receive_ready"/>
- *     &lt;enumeration value="po_ready"/>
- *     &lt;enumeration value="unknown"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.FulfillReadiness
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "FulfillReadiness")
-@XmlEnum
-public enum FulfillReadiness {
-
-    @XmlEnumValue("drop_ship_ready")
-    DROP_SHIP_READY("drop_ship_ready"),
-    @XmlEnumValue("not_ready")
-    NOT_READY("not_ready"),
-    @XmlEnumValue("receive_ready")
-    RECEIVE_READY("receive_ready"),
-    @XmlEnumValue("exception_receive_ready")
-    EXCEPTION_RECEIVE_READY("exception_receive_ready"),
-    @XmlEnumValue("po_ready")
-    PO_READY("po_ready"),
-    @XmlEnumValue("unknown")
-    UNKNOWN("unknown");
-    private final String value;
-
-    FulfillReadiness(String v) {
-        value = v;
-    }
-
-    public String value() {
-        return value;
-    }
-
-    public static FulfillReadiness fromValue(String v) {
-        for (FulfillReadiness c: FulfillReadiness.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
-
-}

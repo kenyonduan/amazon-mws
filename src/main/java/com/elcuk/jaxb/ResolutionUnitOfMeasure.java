@@ -1,54 +1,40 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlEnumValue;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="ResolutionUnitOfMeasure")
+/*    */ @XmlEnum
+/*    */ public enum ResolutionUnitOfMeasure
+/*    */ {
+/* 29 */   MEGAPIXELS("megapixels"), 
+/*    */ 
+/* 31 */   PIXELS("pixels"), 
+/*    */ 
+/* 33 */   LINES_PER_INCH("lines_per_inch");
+/*    */ 
+/*    */   private final String value;
+/*    */ 
+/*    */   private ResolutionUnitOfMeasure(String v) {
+/* 38 */     this.value = v;
+/*    */   }
+/*    */ 
+/*    */   public String value() {
+/* 42 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public static ResolutionUnitOfMeasure fromValue(String v) {
+/* 46 */     for (ResolutionUnitOfMeasure c : values()) {
+/* 47 */       if (c.value.equals(v)) {
+/* 48 */         return c;
+/*    */       }
+/*    */     }
+/* 51 */     throw new IllegalArgumentException(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>ResolutionUnitOfMeasure的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="ResolutionUnitOfMeasure">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="megapixels"/>
- *     &lt;enumeration value="pixels"/>
- *     &lt;enumeration value="lines_per_inch"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.ResolutionUnitOfMeasure
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "ResolutionUnitOfMeasure")
-@XmlEnum
-public enum ResolutionUnitOfMeasure {
-
-    @XmlEnumValue("megapixels")
-    MEGAPIXELS("megapixels"),
-    @XmlEnumValue("pixels")
-    PIXELS("pixels"),
-    @XmlEnumValue("lines_per_inch")
-    LINES_PER_INCH("lines_per_inch");
-    private final String value;
-
-    ResolutionUnitOfMeasure(String v) {
-        value = v;
-    }
-
-    public String value() {
-        return value;
-    }
-
-    public static ResolutionUnitOfMeasure fromValue(String v) {
-        for (ResolutionUnitOfMeasure c: ResolutionUnitOfMeasure.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
-
-}

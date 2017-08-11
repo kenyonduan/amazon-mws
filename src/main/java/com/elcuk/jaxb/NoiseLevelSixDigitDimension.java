@@ -1,88 +1,45 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import java.math.BigInteger;
+/*    */ import javax.xml.bind.annotation.XmlAccessType;
+/*    */ import javax.xml.bind.annotation.XmlAccessorType;
+/*    */ import javax.xml.bind.annotation.XmlAttribute;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ import javax.xml.bind.annotation.XmlValue;
+/*    */ 
+/*    */ @XmlAccessorType(XmlAccessType.FIELD)
+/*    */ @XmlType(name="NoiseLevelSixDigitDimension", propOrder={"value"})
+/*    */ public class NoiseLevelSixDigitDimension
+/*    */ {
+/*    */ 
+/*    */   @XmlValue
+/*    */   protected BigInteger value;
+/*    */ 
+/*    */   @XmlAttribute(name="unitOfMeasure", required=true)
+/*    */   protected NoiseLevelUnitOfMeasure unitOfMeasure;
+/*    */ 
+/*    */   public BigInteger getValue()
+/*    */   {
+/* 49 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public void setValue(BigInteger value)
+/*    */   {
+/* 61 */     this.value = value;
+/*    */   }
+/*    */ 
+/*    */   public NoiseLevelUnitOfMeasure getUnitOfMeasure()
+/*    */   {
+/* 73 */     return this.unitOfMeasure;
+/*    */   }
+/*    */ 
+/*    */   public void setUnitOfMeasure(NoiseLevelUnitOfMeasure value)
+/*    */   {
+/* 85 */     this.unitOfMeasure = value;
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import java.math.BigInteger;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
-
-
-/**
- * <p>NoiseLevelSixDigitDimension complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="NoiseLevelSixDigitDimension">
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;>SixDigitInteger">
- *       &lt;attribute name="unitOfMeasure" use="required" type="{}NoiseLevelUnitOfMeasure" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.NoiseLevelSixDigitDimension
+ * JD-Core Version:    0.6.2
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NoiseLevelSixDigitDimension", propOrder = {
-    "value"
-})
-public class NoiseLevelSixDigitDimension {
-
-    @XmlValue
-    protected BigInteger value;
-    @XmlAttribute(name = "unitOfMeasure", required = true)
-    protected NoiseLevelUnitOfMeasure unitOfMeasure;
-
-    /**
-     * 获取value属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getValue() {
-        return value;
-    }
-
-    /**
-     * 设置value属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setValue(BigInteger value) {
-        this.value = value;
-    }
-
-    /**
-     * 获取unitOfMeasure属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link NoiseLevelUnitOfMeasure }
-     *     
-     */
-    public NoiseLevelUnitOfMeasure getUnitOfMeasure() {
-        return unitOfMeasure;
-    }
-
-    /**
-     * 设置unitOfMeasure属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NoiseLevelUnitOfMeasure }
-     *     
-     */
-    public void setUnitOfMeasure(NoiseLevelUnitOfMeasure value) {
-        this.unitOfMeasure = value;
-    }
-
-}

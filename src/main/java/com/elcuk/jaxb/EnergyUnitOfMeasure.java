@@ -1,56 +1,41 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlEnumValue;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="EnergyUnitOfMeasure")
+/*    */ @XmlEnum
+/*    */ public enum EnergyUnitOfMeasure
+/*    */ {
+/* 30 */   BTU("BTU"), 
+/* 31 */   WATTS("watts"), 
+/*    */ 
+/* 33 */   JOULES("joules"), 
+/*    */ 
+/* 35 */   KILOJOULES("kilojoules");
+/*    */ 
+/*    */   private final String value;
+/*    */ 
+/*    */   private EnergyUnitOfMeasure(String v) {
+/* 40 */     this.value = v;
+/*    */   }
+/*    */ 
+/*    */   public String value() {
+/* 44 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public static EnergyUnitOfMeasure fromValue(String v) {
+/* 48 */     for (EnergyUnitOfMeasure c : values()) {
+/* 49 */       if (c.value.equals(v)) {
+/* 50 */         return c;
+/*    */       }
+/*    */     }
+/* 53 */     throw new IllegalArgumentException(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>EnergyUnitOfMeasure的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="EnergyUnitOfMeasure">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="BTU"/>
- *     &lt;enumeration value="watts"/>
- *     &lt;enumeration value="joules"/>
- *     &lt;enumeration value="kilojoules"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.EnergyUnitOfMeasure
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "EnergyUnitOfMeasure")
-@XmlEnum
-public enum EnergyUnitOfMeasure {
-
-    BTU("BTU"),
-    @XmlEnumValue("watts")
-    WATTS("watts"),
-    @XmlEnumValue("joules")
-    JOULES("joules"),
-    @XmlEnumValue("kilojoules")
-    KILOJOULES("kilojoules");
-    private final String value;
-
-    EnergyUnitOfMeasure(String v) {
-        value = v;
-    }
-
-    public String value() {
-        return value;
-    }
-
-    public static EnergyUnitOfMeasure fromValue(String v) {
-        for (EnergyUnitOfMeasure c: EnergyUnitOfMeasure.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
-
-}

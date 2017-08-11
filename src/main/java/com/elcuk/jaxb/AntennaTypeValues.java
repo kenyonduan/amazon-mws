@@ -1,54 +1,40 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlEnumValue;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="AntennaTypeValues")
+/*    */ @XmlEnum
+/*    */ public enum AntennaTypeValues
+/*    */ {
+/* 29 */   FIXED("fixed"), 
+/*    */ 
+/* 31 */   INTERNAL("internal"), 
+/*    */ 
+/* 33 */   RETRACTABLE("retractable");
+/*    */ 
+/*    */   private final String value;
+/*    */ 
+/*    */   private AntennaTypeValues(String v) {
+/* 38 */     this.value = v;
+/*    */   }
+/*    */ 
+/*    */   public String value() {
+/* 42 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public static AntennaTypeValues fromValue(String v) {
+/* 46 */     for (AntennaTypeValues c : values()) {
+/* 47 */       if (c.value.equals(v)) {
+/* 48 */         return c;
+/*    */       }
+/*    */     }
+/* 51 */     throw new IllegalArgumentException(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>AntennaTypeValues的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="AntennaTypeValues">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="fixed"/>
- *     &lt;enumeration value="internal"/>
- *     &lt;enumeration value="retractable"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.AntennaTypeValues
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "AntennaTypeValues")
-@XmlEnum
-public enum AntennaTypeValues {
-
-    @XmlEnumValue("fixed")
-    FIXED("fixed"),
-    @XmlEnumValue("internal")
-    INTERNAL("internal"),
-    @XmlEnumValue("retractable")
-    RETRACTABLE("retractable");
-    private final String value;
-
-    AntennaTypeValues(String v) {
-        value = v;
-    }
-
-    public String value() {
-        return value;
-    }
-
-    public static AntennaTypeValues fromValue(String v) {
-        for (AntennaTypeValues c: AntennaTypeValues.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
-
-}

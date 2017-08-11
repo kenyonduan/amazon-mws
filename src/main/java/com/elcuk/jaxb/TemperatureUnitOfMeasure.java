@@ -1,38 +1,25 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="TemperatureUnitOfMeasure")
+/*    */ @XmlEnum
+/*    */ public enum TemperatureUnitOfMeasure
+/*    */ {
+/* 27 */   C, 
+/* 28 */   F;
+/*    */ 
+/*    */   public String value() {
+/* 31 */     return name();
+/*    */   }
+/*    */ 
+/*    */   public static TemperatureUnitOfMeasure fromValue(String v) {
+/* 35 */     return valueOf(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>TemperatureUnitOfMeasure的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="TemperatureUnitOfMeasure">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="C"/>
- *     &lt;enumeration value="F"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.TemperatureUnitOfMeasure
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "TemperatureUnitOfMeasure")
-@XmlEnum
-public enum TemperatureUnitOfMeasure {
-
-    C,
-    F;
-
-    public String value() {
-        return name();
-    }
-
-    public static TemperatureUnitOfMeasure fromValue(String v) {
-        return valueOf(v);
-    }
-
-}

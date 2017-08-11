@@ -1,59 +1,43 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlEnumValue;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="ForceUnitOfMeasure")
+/*    */ @XmlEnum
+/*    */ public enum ForceUnitOfMeasure
+/*    */ {
+/* 31 */   NEWTONS("newtons"), 
+/*    */ 
+/* 33 */   NEWTON("Newton"), 
+/*    */ 
+/* 35 */   POUNDS("pounds"), 
+/*    */ 
+/* 37 */   KILOGRAMS("kilograms"), 
+/*    */ 
+/* 39 */   PSI("PSI");
+/*    */ 
+/*    */   private final String value;
+/*    */ 
+/* 43 */   private ForceUnitOfMeasure(String v) { this.value = v; }
+/*    */ 
+/*    */   public String value()
+/*    */   {
+/* 47 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public static ForceUnitOfMeasure fromValue(String v) {
+/* 51 */     for (ForceUnitOfMeasure c : values()) {
+/* 52 */       if (c.value.equals(v)) {
+/* 53 */         return c;
+/*    */       }
+/*    */     }
+/* 56 */     throw new IllegalArgumentException(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>ForceUnitOfMeasure的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="ForceUnitOfMeasure">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="newtons"/>
- *     &lt;enumeration value="Newton"/>
- *     &lt;enumeration value="pounds"/>
- *     &lt;enumeration value="kilograms"/>
- *     &lt;enumeration value="PSI"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.ForceUnitOfMeasure
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "ForceUnitOfMeasure")
-@XmlEnum
-public enum ForceUnitOfMeasure {
-
-    @XmlEnumValue("newtons")
-    NEWTONS("newtons"),
-    @XmlEnumValue("Newton")
-    NEWTON("Newton"),
-    @XmlEnumValue("pounds")
-    POUNDS("pounds"),
-    @XmlEnumValue("kilograms")
-    KILOGRAMS("kilograms"),
-    PSI("PSI");
-    private final String value;
-
-    ForceUnitOfMeasure(String v) {
-        value = v;
-    }
-
-    public String value() {
-        return value;
-    }
-
-    public static ForceUnitOfMeasure fromValue(String v) {
-        for (ForceUnitOfMeasure c: ForceUnitOfMeasure.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
-
-}

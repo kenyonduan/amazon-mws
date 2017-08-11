@@ -1,54 +1,40 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlEnumValue;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="SoundLevelUnitOfMeasure")
+/*    */ @XmlEnum
+/*    */ public enum SoundLevelUnitOfMeasure
+/*    */ {
+/* 29 */   SONE("Sone"), 
+/*    */ 
+/* 31 */   SONES("Sones"), 
+/*    */ 
+/* 33 */   DECIBEL("decibel");
+/*    */ 
+/*    */   private final String value;
+/*    */ 
+/*    */   private SoundLevelUnitOfMeasure(String v) {
+/* 38 */     this.value = v;
+/*    */   }
+/*    */ 
+/*    */   public String value() {
+/* 42 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public static SoundLevelUnitOfMeasure fromValue(String v) {
+/* 46 */     for (SoundLevelUnitOfMeasure c : values()) {
+/* 47 */       if (c.value.equals(v)) {
+/* 48 */         return c;
+/*    */       }
+/*    */     }
+/* 51 */     throw new IllegalArgumentException(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>SoundLevelUnitOfMeasure的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="SoundLevelUnitOfMeasure">
- *   &lt;restriction base="{}StringNotNull">
- *     &lt;enumeration value="Sone"/>
- *     &lt;enumeration value="Sones"/>
- *     &lt;enumeration value="decibel"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.SoundLevelUnitOfMeasure
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "SoundLevelUnitOfMeasure")
-@XmlEnum
-public enum SoundLevelUnitOfMeasure {
-
-    @XmlEnumValue("Sone")
-    SONE("Sone"),
-    @XmlEnumValue("Sones")
-    SONES("Sones"),
-    @XmlEnumValue("decibel")
-    DECIBEL("decibel");
-    private final String value;
-
-    SoundLevelUnitOfMeasure(String v) {
-        value = v;
-    }
-
-    public String value() {
-        return value;
-    }
-
-    public static SoundLevelUnitOfMeasure fromValue(String v) {
-        for (SoundLevelUnitOfMeasure c: SoundLevelUnitOfMeasure.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
-
-}

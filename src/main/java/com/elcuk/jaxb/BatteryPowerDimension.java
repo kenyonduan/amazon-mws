@@ -1,88 +1,45 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import java.math.BigDecimal;
+/*    */ import javax.xml.bind.annotation.XmlAccessType;
+/*    */ import javax.xml.bind.annotation.XmlAccessorType;
+/*    */ import javax.xml.bind.annotation.XmlAttribute;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ import javax.xml.bind.annotation.XmlValue;
+/*    */ 
+/*    */ @XmlAccessorType(XmlAccessType.FIELD)
+/*    */ @XmlType(name="BatteryPowerDimension", propOrder={"value"})
+/*    */ public class BatteryPowerDimension
+/*    */ {
+/*    */ 
+/*    */   @XmlValue
+/*    */   protected BigDecimal value;
+/*    */ 
+/*    */   @XmlAttribute(name="unitOfMeasure", required=true)
+/*    */   protected BatteryPowerUnitOfMeasure unitOfMeasure;
+/*    */ 
+/*    */   public BigDecimal getValue()
+/*    */   {
+/* 49 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public void setValue(BigDecimal value)
+/*    */   {
+/* 61 */     this.value = value;
+/*    */   }
+/*    */ 
+/*    */   public BatteryPowerUnitOfMeasure getUnitOfMeasure()
+/*    */   {
+/* 73 */     return this.unitOfMeasure;
+/*    */   }
+/*    */ 
+/*    */   public void setUnitOfMeasure(BatteryPowerUnitOfMeasure value)
+/*    */   {
+/* 85 */     this.unitOfMeasure = value;
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import java.math.BigDecimal;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
-
-
-/**
- * <p>BatteryPowerDimension complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="BatteryPowerDimension">
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;>Dimension">
- *       &lt;attribute name="unitOfMeasure" use="required" type="{}BatteryPowerUnitOfMeasure" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.BatteryPowerDimension
+ * JD-Core Version:    0.6.2
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "BatteryPowerDimension", propOrder = {
-    "value"
-})
-public class BatteryPowerDimension {
-
-    @XmlValue
-    protected BigDecimal value;
-    @XmlAttribute(name = "unitOfMeasure", required = true)
-    protected BatteryPowerUnitOfMeasure unitOfMeasure;
-
-    /**
-     * 获取value属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getValue() {
-        return value;
-    }
-
-    /**
-     * 设置value属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setValue(BigDecimal value) {
-        this.value = value;
-    }
-
-    /**
-     * 获取unitOfMeasure属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BatteryPowerUnitOfMeasure }
-     *     
-     */
-    public BatteryPowerUnitOfMeasure getUnitOfMeasure() {
-        return unitOfMeasure;
-    }
-
-    /**
-     * 设置unitOfMeasure属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BatteryPowerUnitOfMeasure }
-     *     
-     */
-    public void setUnitOfMeasure(BatteryPowerUnitOfMeasure value) {
-        this.unitOfMeasure = value;
-    }
-
-}

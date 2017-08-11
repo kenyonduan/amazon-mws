@@ -1,1823 +1,839 @@
+/*      */ package com.elcuk.jaxb;
+/*      */ 
+/*      */ import java.math.BigInteger;
+/*      */ import java.util.ArrayList;
+/*      */ import java.util.List;
+/*      */ import javax.xml.bind.annotation.XmlAccessType;
+/*      */ import javax.xml.bind.annotation.XmlAccessorType;
+/*      */ import javax.xml.bind.annotation.XmlElement;
+/*      */ import javax.xml.bind.annotation.XmlRootElement;
+/*      */ import javax.xml.bind.annotation.XmlSchemaType;
+/*      */ import javax.xml.bind.annotation.XmlType;
+/*      */ import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
+/*      */ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+/*      */ 
+/*      */ @XmlAccessorType(XmlAccessType.FIELD)
+/*      */ @XmlType(name="", propOrder={"analogRGBInput", "batteryCellType", "batteryChargeCycles", "batteryPower", "boxContents", "cameraLens", "coatingDescription", "compatibleMountings", "conductor", "enclosureFinish", "finishType", "grilleRemoveability", "loadCapacity", "maxWeightCapacity", "memorySlotsAvailable", "mountingType", "numberOfRecordingLoops", "operatingSystem", "photoSensorSize", "photoSensorTechnology", "powerConsumption", "powerPlugType", "remoteControlDescription", "removableMemory", "screenSize", "shape", "softwareIncluded", "speakerGrilleMaterial", "speakerMaximumInputPower", "subwooferPowerTechnology", "subwooferSpeakerDiameter", "subwooferSpeakerMaterial", "subwooferWattage", "surgeProtectionRating", "threeDTechnology", "totalCoaxialInputs", "totalComponentInPorts", "totalCompositePorts", "totalDVIPorts", "totalFirewirePorts", "totalMicrophonePorts", "totalPowerOutlets", "totalSubwooferOutputs", "totalSVideoInPorts", "totalSVideoOutPorts", "totalUSBPorts", "totalVgaInPorts", "totalVideoOutPorts", "trafficFeatures", "wattage", "wooferSpeakerDiameter", "wooferSpeakerMaterial", "cableLength", "connectorGender", "connectorTypeUsedOnCable", "mountMotion", "powerSource", "videoResolution", "wirelessTechnology", "efficiency"})
+/*      */ @XmlRootElement(name="MediaPlayerOrEReaderAccessory")
+/*      */ public class MediaPlayerOrEReaderAccessory
+/*      */ {
+/*      */ 
+/*      */   @XmlElement(name="AnalogRGBInput")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected List<String> analogRGBInput;
+/*      */ 
+/*      */   @XmlElement(name="BatteryCellType")
+/*      */   protected BatteryCellTypeValues batteryCellType;
+/*      */ 
+/*      */   @XmlElement(name="BatteryChargeCycles")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger batteryChargeCycles;
+/*      */ 
+/*      */   @XmlElement(name="BatteryPower")
+/*      */   protected BatteryPowerIntegerDimension batteryPower;
+/*      */ 
+/*      */   @XmlElement(name="BoxContents")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String boxContents;
+/*      */ 
+/*      */   @XmlElement(name="CameraLens")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String cameraLens;
+/*      */ 
+/*      */   @XmlElement(name="CoatingDescription")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String coatingDescription;
+/*      */ 
+/*      */   @XmlElement(name="CompatibleMountings")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String compatibleMountings;
+/*      */ 
+/*      */   @XmlElement(name="Conductor")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String conductor;
+/*      */ 
+/*      */   @XmlElement(name="EnclosureFinish")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String enclosureFinish;
+/*      */ 
+/*      */   @XmlElement(name="FinishType")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String finishType;
+/*      */ 
+/*      */   @XmlElement(name="GrilleRemoveability")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String grilleRemoveability;
+/*      */ 
+/*      */   @XmlElement(name="LoadCapacity")
+/*      */   protected WeightDimension loadCapacity;
+/*      */ 
+/*      */   @XmlElement(name="MaxWeightCapacity")
+/*      */   protected WeightDimension maxWeightCapacity;
+/*      */ 
+/*      */   @XmlElement(name="MemorySlotsAvailable")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String memorySlotsAvailable;
+/*      */ 
+/*      */   @XmlElement(name="MountingType")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String mountingType;
+/*      */ 
+/*      */   @XmlElement(name="NumberOfRecordingLoops")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger numberOfRecordingLoops;
+/*      */ 
+/*      */   @XmlElement(name="OperatingSystem")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected List<String> operatingSystem;
+/*      */ 
+/*      */   @XmlElement(name="PhotoSensorSize")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String photoSensorSize;
+/*      */ 
+/*      */   @XmlElement(name="PhotoSensorTechnology")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String photoSensorTechnology;
+/*      */ 
+/*      */   @XmlElement(name="PowerConsumption")
+/*      */   protected PowerDimension powerConsumption;
+/*      */ 
+/*      */   @XmlElement(name="PowerPlugType")
+/*      */   protected PowerPlugType powerPlugType;
+/*      */ 
+/*      */   @XmlElement(name="RemoteControlDescription")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String remoteControlDescription;
+/*      */ 
+/*      */   @XmlElement(name="RemovableMemory")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String removableMemory;
+/*      */ 
+/*      */   @XmlElement(name="ScreenSize")
+/*      */   protected LengthDimension screenSize;
+/*      */ 
+/*      */   @XmlElement(name="Shape")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String shape;
+/*      */ 
+/*      */   @XmlElement(name="SoftwareIncluded")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String softwareIncluded;
+/*      */ 
+/*      */   @XmlElement(name="SpeakerGrilleMaterial")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String speakerGrilleMaterial;
+/*      */ 
+/*      */   @XmlElement(name="SpeakerMaximumInputPower")
+/*      */   protected PowerDimension speakerMaximumInputPower;
+/*      */ 
+/*      */   @XmlElement(name="SubwooferPowerTechnology")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String subwooferPowerTechnology;
+/*      */ 
+/*      */   @XmlElement(name="SubwooferSpeakerDiameter")
+/*      */   protected LengthDimension subwooferSpeakerDiameter;
+/*      */ 
+/*      */   @XmlElement(name="SubwooferSpeakerMaterial")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String subwooferSpeakerMaterial;
+/*      */ 
+/*      */   @XmlElement(name="SubwooferWattage")
+/*      */   protected WattageDimension subwooferWattage;
+/*      */ 
+/*      */   @XmlElement(name="SurgeProtectionRating")
+/*      */   protected EnergyRatingType surgeProtectionRating;
+/*      */ 
+/*      */   @XmlElement(name="ThreeDTechnology")
+/*      */   protected ThreeDTechnologyValues threeDTechnology;
+/*      */ 
+/*      */   @XmlElement(name="TotalCoaxialInputs")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalCoaxialInputs;
+/*      */ 
+/*      */   @XmlElement(name="TotalComponentInPorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalComponentInPorts;
+/*      */ 
+/*      */   @XmlElement(name="TotalCompositePorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalCompositePorts;
+/*      */ 
+/*      */   @XmlElement(name="TotalDVIPorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalDVIPorts;
+/*      */ 
+/*      */   @XmlElement(name="TotalFirewirePorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalFirewirePorts;
+/*      */ 
+/*      */   @XmlElement(name="TotalMicrophonePorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalMicrophonePorts;
+/*      */ 
+/*      */   @XmlElement(name="TotalPowerOutlets")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalPowerOutlets;
+/*      */ 
+/*      */   @XmlElement(name="TotalSubwooferOutputs")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalSubwooferOutputs;
+/*      */ 
+/*      */   @XmlElement(name="TotalSVideoInPorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalSVideoInPorts;
+/*      */ 
+/*      */   @XmlElement(name="TotalSVideoOutPorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalSVideoOutPorts;
+/*      */ 
+/*      */   @XmlElement(name="TotalUSBPorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalUSBPorts;
+/*      */ 
+/*      */   @XmlElement(name="TotalVgaInPorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalVgaInPorts;
+/*      */ 
+/*      */   @XmlElement(name="TotalVideoOutPorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalVideoOutPorts;
+/*      */ 
+/*      */   @XmlElement(name="TrafficFeatures")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected List<String> trafficFeatures;
+/*      */ 
+/*      */   @XmlElement(name="Wattage")
+/*      */   protected WattageIntegerDimension wattage;
+/*      */ 
+/*      */   @XmlElement(name="WooferSpeakerDiameter")
+/*      */   protected LengthDimension wooferSpeakerDiameter;
+/*      */ 
+/*      */   @XmlElement(name="WooferSpeakerMaterial")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String wooferSpeakerMaterial;
+/*      */ 
+/*      */   @XmlElement(name="CableLength")
+/*      */   protected LengthDimension cableLength;
+/*      */ 
+/*      */   @XmlElement(name="ConnectorGender")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected List<String> connectorGender;
+/*      */ 
+/*      */   @XmlElement(name="ConnectorTypeUsedOnCable")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String connectorTypeUsedOnCable;
+/*      */ 
+/*      */   @XmlElement(name="MountMotion")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String mountMotion;
+/*      */ 
+/*      */   @XmlElement(name="PowerSource")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String powerSource;
+/*      */ 
+/*      */   @XmlElement(name="VideoResolution")
+/*      */   protected PixelDimension videoResolution;
+/*      */ 
+/*      */   @XmlElement(name="WirelessTechnology")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected List<String> wirelessTechnology;
+/*      */ 
+/*      */   @XmlElement(name="Efficiency")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String efficiency;
+/*      */ 
+/*      */   public List<String> getAnalogRGBInput()
+/*      */   {
+/*  349 */     if (this.analogRGBInput == null) {
+/*  350 */       this.analogRGBInput = new ArrayList();
+/*      */     }
+/*  352 */     return this.analogRGBInput;
+/*      */   }
+/*      */ 
+/*      */   public BatteryCellTypeValues getBatteryCellType()
+/*      */   {
+/*  364 */     return this.batteryCellType;
+/*      */   }
+/*      */ 
+/*      */   public void setBatteryCellType(BatteryCellTypeValues value)
+/*      */   {
+/*  376 */     this.batteryCellType = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getBatteryChargeCycles()
+/*      */   {
+/*  388 */     return this.batteryChargeCycles;
+/*      */   }
+/*      */ 
+/*      */   public void setBatteryChargeCycles(BigInteger value)
+/*      */   {
+/*  400 */     this.batteryChargeCycles = value;
+/*      */   }
+/*      */ 
+/*      */   public BatteryPowerIntegerDimension getBatteryPower()
+/*      */   {
+/*  412 */     return this.batteryPower;
+/*      */   }
+/*      */ 
+/*      */   public void setBatteryPower(BatteryPowerIntegerDimension value)
+/*      */   {
+/*  424 */     this.batteryPower = value;
+/*      */   }
+/*      */ 
+/*      */   public String getBoxContents()
+/*      */   {
+/*  436 */     return this.boxContents;
+/*      */   }
+/*      */ 
+/*      */   public void setBoxContents(String value)
+/*      */   {
+/*  448 */     this.boxContents = value;
+/*      */   }
+/*      */ 
+/*      */   public String getCameraLens()
+/*      */   {
+/*  460 */     return this.cameraLens;
+/*      */   }
+/*      */ 
+/*      */   public void setCameraLens(String value)
+/*      */   {
+/*  472 */     this.cameraLens = value;
+/*      */   }
+/*      */ 
+/*      */   public String getCoatingDescription()
+/*      */   {
+/*  484 */     return this.coatingDescription;
+/*      */   }
+/*      */ 
+/*      */   public void setCoatingDescription(String value)
+/*      */   {
+/*  496 */     this.coatingDescription = value;
+/*      */   }
+/*      */ 
+/*      */   public String getCompatibleMountings()
+/*      */   {
+/*  508 */     return this.compatibleMountings;
+/*      */   }
+/*      */ 
+/*      */   public void setCompatibleMountings(String value)
+/*      */   {
+/*  520 */     this.compatibleMountings = value;
+/*      */   }
+/*      */ 
+/*      */   public String getConductor()
+/*      */   {
+/*  532 */     return this.conductor;
+/*      */   }
+/*      */ 
+/*      */   public void setConductor(String value)
+/*      */   {
+/*  544 */     this.conductor = value;
+/*      */   }
+/*      */ 
+/*      */   public String getEnclosureFinish()
+/*      */   {
+/*  556 */     return this.enclosureFinish;
+/*      */   }
+/*      */ 
+/*      */   public void setEnclosureFinish(String value)
+/*      */   {
+/*  568 */     this.enclosureFinish = value;
+/*      */   }
+/*      */ 
+/*      */   public String getFinishType()
+/*      */   {
+/*  580 */     return this.finishType;
+/*      */   }
+/*      */ 
+/*      */   public void setFinishType(String value)
+/*      */   {
+/*  592 */     this.finishType = value;
+/*      */   }
+/*      */ 
+/*      */   public String getGrilleRemoveability()
+/*      */   {
+/*  604 */     return this.grilleRemoveability;
+/*      */   }
+/*      */ 
+/*      */   public void setGrilleRemoveability(String value)
+/*      */   {
+/*  616 */     this.grilleRemoveability = value;
+/*      */   }
+/*      */ 
+/*      */   public WeightDimension getLoadCapacity()
+/*      */   {
+/*  628 */     return this.loadCapacity;
+/*      */   }
+/*      */ 
+/*      */   public void setLoadCapacity(WeightDimension value)
+/*      */   {
+/*  640 */     this.loadCapacity = value;
+/*      */   }
+/*      */ 
+/*      */   public WeightDimension getMaxWeightCapacity()
+/*      */   {
+/*  652 */     return this.maxWeightCapacity;
+/*      */   }
+/*      */ 
+/*      */   public void setMaxWeightCapacity(WeightDimension value)
+/*      */   {
+/*  664 */     this.maxWeightCapacity = value;
+/*      */   }
+/*      */ 
+/*      */   public String getMemorySlotsAvailable()
+/*      */   {
+/*  676 */     return this.memorySlotsAvailable;
+/*      */   }
+/*      */ 
+/*      */   public void setMemorySlotsAvailable(String value)
+/*      */   {
+/*  688 */     this.memorySlotsAvailable = value;
+/*      */   }
+/*      */ 
+/*      */   public String getMountingType()
+/*      */   {
+/*  700 */     return this.mountingType;
+/*      */   }
+/*      */ 
+/*      */   public void setMountingType(String value)
+/*      */   {
+/*  712 */     this.mountingType = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getNumberOfRecordingLoops()
+/*      */   {
+/*  724 */     return this.numberOfRecordingLoops;
+/*      */   }
+/*      */ 
+/*      */   public void setNumberOfRecordingLoops(BigInteger value)
+/*      */   {
+/*  736 */     this.numberOfRecordingLoops = value;
+/*      */   }
+/*      */ 
+/*      */   public List<String> getOperatingSystem()
+/*      */   {
+/*  762 */     if (this.operatingSystem == null) {
+/*  763 */       this.operatingSystem = new ArrayList();
+/*      */     }
+/*  765 */     return this.operatingSystem;
+/*      */   }
+/*      */ 
+/*      */   public String getPhotoSensorSize()
+/*      */   {
+/*  777 */     return this.photoSensorSize;
+/*      */   }
+/*      */ 
+/*      */   public void setPhotoSensorSize(String value)
+/*      */   {
+/*  789 */     this.photoSensorSize = value;
+/*      */   }
+/*      */ 
+/*      */   public String getPhotoSensorTechnology()
+/*      */   {
+/*  801 */     return this.photoSensorTechnology;
+/*      */   }
+/*      */ 
+/*      */   public void setPhotoSensorTechnology(String value)
+/*      */   {
+/*  813 */     this.photoSensorTechnology = value;
+/*      */   }
+/*      */ 
+/*      */   public PowerDimension getPowerConsumption()
+/*      */   {
+/*  825 */     return this.powerConsumption;
+/*      */   }
+/*      */ 
+/*      */   public void setPowerConsumption(PowerDimension value)
+/*      */   {
+/*  837 */     this.powerConsumption = value;
+/*      */   }
+/*      */ 
+/*      */   public PowerPlugType getPowerPlugType()
+/*      */   {
+/*  849 */     return this.powerPlugType;
+/*      */   }
+/*      */ 
+/*      */   public void setPowerPlugType(PowerPlugType value)
+/*      */   {
+/*  861 */     this.powerPlugType = value;
+/*      */   }
+/*      */ 
+/*      */   public String getRemoteControlDescription()
+/*      */   {
+/*  873 */     return this.remoteControlDescription;
+/*      */   }
+/*      */ 
+/*      */   public void setRemoteControlDescription(String value)
+/*      */   {
+/*  885 */     this.remoteControlDescription = value;
+/*      */   }
+/*      */ 
+/*      */   public String getRemovableMemory()
+/*      */   {
+/*  897 */     return this.removableMemory;
+/*      */   }
+/*      */ 
+/*      */   public void setRemovableMemory(String value)
+/*      */   {
+/*  909 */     this.removableMemory = value;
+/*      */   }
+/*      */ 
+/*      */   public LengthDimension getScreenSize()
+/*      */   {
+/*  921 */     return this.screenSize;
+/*      */   }
+/*      */ 
+/*      */   public void setScreenSize(LengthDimension value)
+/*      */   {
+/*  933 */     this.screenSize = value;
+/*      */   }
+/*      */ 
+/*      */   public String getShape()
+/*      */   {
+/*  945 */     return this.shape;
+/*      */   }
+/*      */ 
+/*      */   public void setShape(String value)
+/*      */   {
+/*  957 */     this.shape = value;
+/*      */   }
+/*      */ 
+/*      */   public String getSoftwareIncluded()
+/*      */   {
+/*  969 */     return this.softwareIncluded;
+/*      */   }
+/*      */ 
+/*      */   public void setSoftwareIncluded(String value)
+/*      */   {
+/*  981 */     this.softwareIncluded = value;
+/*      */   }
+/*      */ 
+/*      */   public String getSpeakerGrilleMaterial()
+/*      */   {
+/*  993 */     return this.speakerGrilleMaterial;
+/*      */   }
+/*      */ 
+/*      */   public void setSpeakerGrilleMaterial(String value)
+/*      */   {
+/* 1005 */     this.speakerGrilleMaterial = value;
+/*      */   }
+/*      */ 
+/*      */   public PowerDimension getSpeakerMaximumInputPower()
+/*      */   {
+/* 1017 */     return this.speakerMaximumInputPower;
+/*      */   }
+/*      */ 
+/*      */   public void setSpeakerMaximumInputPower(PowerDimension value)
+/*      */   {
+/* 1029 */     this.speakerMaximumInputPower = value;
+/*      */   }
+/*      */ 
+/*      */   public String getSubwooferPowerTechnology()
+/*      */   {
+/* 1041 */     return this.subwooferPowerTechnology;
+/*      */   }
+/*      */ 
+/*      */   public void setSubwooferPowerTechnology(String value)
+/*      */   {
+/* 1053 */     this.subwooferPowerTechnology = value;
+/*      */   }
+/*      */ 
+/*      */   public LengthDimension getSubwooferSpeakerDiameter()
+/*      */   {
+/* 1065 */     return this.subwooferSpeakerDiameter;
+/*      */   }
+/*      */ 
+/*      */   public void setSubwooferSpeakerDiameter(LengthDimension value)
+/*      */   {
+/* 1077 */     this.subwooferSpeakerDiameter = value;
+/*      */   }
+/*      */ 
+/*      */   public String getSubwooferSpeakerMaterial()
+/*      */   {
+/* 1089 */     return this.subwooferSpeakerMaterial;
+/*      */   }
+/*      */ 
+/*      */   public void setSubwooferSpeakerMaterial(String value)
+/*      */   {
+/* 1101 */     this.subwooferSpeakerMaterial = value;
+/*      */   }
+/*      */ 
+/*      */   public WattageDimension getSubwooferWattage()
+/*      */   {
+/* 1113 */     return this.subwooferWattage;
+/*      */   }
+/*      */ 
+/*      */   public void setSubwooferWattage(WattageDimension value)
+/*      */   {
+/* 1125 */     this.subwooferWattage = value;
+/*      */   }
+/*      */ 
+/*      */   public EnergyRatingType getSurgeProtectionRating()
+/*      */   {
+/* 1137 */     return this.surgeProtectionRating;
+/*      */   }
+/*      */ 
+/*      */   public void setSurgeProtectionRating(EnergyRatingType value)
+/*      */   {
+/* 1149 */     this.surgeProtectionRating = value;
+/*      */   }
+/*      */ 
+/*      */   public ThreeDTechnologyValues getThreeDTechnology()
+/*      */   {
+/* 1161 */     return this.threeDTechnology;
+/*      */   }
+/*      */ 
+/*      */   public void setThreeDTechnology(ThreeDTechnologyValues value)
+/*      */   {
+/* 1173 */     this.threeDTechnology = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalCoaxialInputs()
+/*      */   {
+/* 1185 */     return this.totalCoaxialInputs;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalCoaxialInputs(BigInteger value)
+/*      */   {
+/* 1197 */     this.totalCoaxialInputs = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalComponentInPorts()
+/*      */   {
+/* 1209 */     return this.totalComponentInPorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalComponentInPorts(BigInteger value)
+/*      */   {
+/* 1221 */     this.totalComponentInPorts = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalCompositePorts()
+/*      */   {
+/* 1233 */     return this.totalCompositePorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalCompositePorts(BigInteger value)
+/*      */   {
+/* 1245 */     this.totalCompositePorts = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalDVIPorts()
+/*      */   {
+/* 1257 */     return this.totalDVIPorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalDVIPorts(BigInteger value)
+/*      */   {
+/* 1269 */     this.totalDVIPorts = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalFirewirePorts()
+/*      */   {
+/* 1281 */     return this.totalFirewirePorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalFirewirePorts(BigInteger value)
+/*      */   {
+/* 1293 */     this.totalFirewirePorts = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalMicrophonePorts()
+/*      */   {
+/* 1305 */     return this.totalMicrophonePorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalMicrophonePorts(BigInteger value)
+/*      */   {
+/* 1317 */     this.totalMicrophonePorts = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalPowerOutlets()
+/*      */   {
+/* 1329 */     return this.totalPowerOutlets;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalPowerOutlets(BigInteger value)
+/*      */   {
+/* 1341 */     this.totalPowerOutlets = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalSubwooferOutputs()
+/*      */   {
+/* 1353 */     return this.totalSubwooferOutputs;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalSubwooferOutputs(BigInteger value)
+/*      */   {
+/* 1365 */     this.totalSubwooferOutputs = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalSVideoInPorts()
+/*      */   {
+/* 1377 */     return this.totalSVideoInPorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalSVideoInPorts(BigInteger value)
+/*      */   {
+/* 1389 */     this.totalSVideoInPorts = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalSVideoOutPorts()
+/*      */   {
+/* 1401 */     return this.totalSVideoOutPorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalSVideoOutPorts(BigInteger value)
+/*      */   {
+/* 1413 */     this.totalSVideoOutPorts = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalUSBPorts()
+/*      */   {
+/* 1425 */     return this.totalUSBPorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalUSBPorts(BigInteger value)
+/*      */   {
+/* 1437 */     this.totalUSBPorts = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalVgaInPorts()
+/*      */   {
+/* 1449 */     return this.totalVgaInPorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalVgaInPorts(BigInteger value)
+/*      */   {
+/* 1461 */     this.totalVgaInPorts = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalVideoOutPorts()
+/*      */   {
+/* 1473 */     return this.totalVideoOutPorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalVideoOutPorts(BigInteger value)
+/*      */   {
+/* 1485 */     this.totalVideoOutPorts = value;
+/*      */   }
+/*      */ 
+/*      */   public List<String> getTrafficFeatures()
+/*      */   {
+/* 1511 */     if (this.trafficFeatures == null) {
+/* 1512 */       this.trafficFeatures = new ArrayList();
+/*      */     }
+/* 1514 */     return this.trafficFeatures;
+/*      */   }
+/*      */ 
+/*      */   public WattageIntegerDimension getWattage()
+/*      */   {
+/* 1526 */     return this.wattage;
+/*      */   }
+/*      */ 
+/*      */   public void setWattage(WattageIntegerDimension value)
+/*      */   {
+/* 1538 */     this.wattage = value;
+/*      */   }
+/*      */ 
+/*      */   public LengthDimension getWooferSpeakerDiameter()
+/*      */   {
+/* 1550 */     return this.wooferSpeakerDiameter;
+/*      */   }
+/*      */ 
+/*      */   public void setWooferSpeakerDiameter(LengthDimension value)
+/*      */   {
+/* 1562 */     this.wooferSpeakerDiameter = value;
+/*      */   }
+/*      */ 
+/*      */   public String getWooferSpeakerMaterial()
+/*      */   {
+/* 1574 */     return this.wooferSpeakerMaterial;
+/*      */   }
+/*      */ 
+/*      */   public void setWooferSpeakerMaterial(String value)
+/*      */   {
+/* 1586 */     this.wooferSpeakerMaterial = value;
+/*      */   }
+/*      */ 
+/*      */   public LengthDimension getCableLength()
+/*      */   {
+/* 1598 */     return this.cableLength;
+/*      */   }
+/*      */ 
+/*      */   public void setCableLength(LengthDimension value)
+/*      */   {
+/* 1610 */     this.cableLength = value;
+/*      */   }
+/*      */ 
+/*      */   public List<String> getConnectorGender()
+/*      */   {
+/* 1636 */     if (this.connectorGender == null) {
+/* 1637 */       this.connectorGender = new ArrayList();
+/*      */     }
+/* 1639 */     return this.connectorGender;
+/*      */   }
+/*      */ 
+/*      */   public String getConnectorTypeUsedOnCable()
+/*      */   {
+/* 1651 */     return this.connectorTypeUsedOnCable;
+/*      */   }
+/*      */ 
+/*      */   public void setConnectorTypeUsedOnCable(String value)
+/*      */   {
+/* 1663 */     this.connectorTypeUsedOnCable = value;
+/*      */   }
+/*      */ 
+/*      */   public String getMountMotion()
+/*      */   {
+/* 1675 */     return this.mountMotion;
+/*      */   }
+/*      */ 
+/*      */   public void setMountMotion(String value)
+/*      */   {
+/* 1687 */     this.mountMotion = value;
+/*      */   }
+/*      */ 
+/*      */   public String getPowerSource()
+/*      */   {
+/* 1699 */     return this.powerSource;
+/*      */   }
+/*      */ 
+/*      */   public void setPowerSource(String value)
+/*      */   {
+/* 1711 */     this.powerSource = value;
+/*      */   }
+/*      */ 
+/*      */   public PixelDimension getVideoResolution()
+/*      */   {
+/* 1723 */     return this.videoResolution;
+/*      */   }
+/*      */ 
+/*      */   public void setVideoResolution(PixelDimension value)
+/*      */   {
+/* 1735 */     this.videoResolution = value;
+/*      */   }
+/*      */ 
+/*      */   public List<String> getWirelessTechnology()
+/*      */   {
+/* 1761 */     if (this.wirelessTechnology == null) {
+/* 1762 */       this.wirelessTechnology = new ArrayList();
+/*      */     }
+/* 1764 */     return this.wirelessTechnology;
+/*      */   }
+/*      */ 
+/*      */   public String getEfficiency()
+/*      */   {
+/* 1776 */     return this.efficiency;
+/*      */   }
+/*      */ 
+/*      */   public void setEfficiency(String value)
+/*      */   {
+/* 1788 */     this.efficiency = value;
+/*      */   }
+/*      */ }
 
-package com.elcuk.jaxb;
-
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-
-/**
- * <p>anonymous complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}AnalogRGBInput" maxOccurs="5" minOccurs="0"/>
- *         &lt;element ref="{}BatteryCellType" minOccurs="0"/>
- *         &lt;element name="BatteryChargeCycles" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element ref="{}BatteryPower" minOccurs="0"/>
- *         &lt;element ref="{}BoxContents" minOccurs="0"/>
- *         &lt;element name="CameraLens" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element ref="{}CoatingDescription" minOccurs="0"/>
- *         &lt;element ref="{}CompatibleMountings" minOccurs="0"/>
- *         &lt;element name="Conductor" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element ref="{}EnclosureFinish" minOccurs="0"/>
- *         &lt;element ref="{}FinishType" minOccurs="0"/>
- *         &lt;element ref="{}GrilleRemoveability" minOccurs="0"/>
- *         &lt;element name="LoadCapacity" type="{}WeightDimension" minOccurs="0"/>
- *         &lt;element ref="{}MaxWeightCapacity" minOccurs="0"/>
- *         &lt;element name="MemorySlotsAvailable" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element ref="{}MountingType" minOccurs="0"/>
- *         &lt;element ref="{}NumberOfRecordingLoops" minOccurs="0"/>
- *         &lt;element name="OperatingSystem" type="{}MediumStringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="PhotoSensorSize" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="PhotoSensorTechnology" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element ref="{}PowerConsumption" minOccurs="0"/>
- *         &lt;element ref="{}PowerPlugType" minOccurs="0"/>
- *         &lt;element name="RemoteControlDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="RemovableMemory" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ScreenSize" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element ref="{}Shape" minOccurs="0"/>
- *         &lt;element name="SoftwareIncluded" type="{}LongStringNotNull" minOccurs="0"/>
- *         &lt;element ref="{}SpeakerGrilleMaterial" minOccurs="0"/>
- *         &lt;element ref="{}SpeakerMaximumInputPower" minOccurs="0"/>
- *         &lt;element ref="{}SubwooferPowerTechnology" minOccurs="0"/>
- *         &lt;element ref="{}SubwooferSpeakerDiameter" minOccurs="0"/>
- *         &lt;element ref="{}SubwooferSpeakerMaterial" minOccurs="0"/>
- *         &lt;element ref="{}SubwooferWattage" minOccurs="0"/>
- *         &lt;element ref="{}SurgeProtectionRating" minOccurs="0"/>
- *         &lt;element ref="{}ThreeDTechnology" minOccurs="0"/>
- *         &lt;element ref="{}TotalCoaxialInputs" minOccurs="0"/>
- *         &lt;element ref="{}TotalComponentInPorts" minOccurs="0"/>
- *         &lt;element name="TotalCompositePorts" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="TotalDVIPorts" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element ref="{}TotalFirewirePorts" minOccurs="0"/>
- *         &lt;element ref="{}TotalMicrophonePorts" minOccurs="0"/>
- *         &lt;element ref="{}TotalPowerOutlets" minOccurs="0"/>
- *         &lt;element ref="{}TotalSubwooferOutputs" minOccurs="0"/>
- *         &lt;element ref="{}TotalSVideoInPorts" minOccurs="0"/>
- *         &lt;element name="TotalSVideoOutPorts" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element ref="{}TotalUSBPorts" minOccurs="0"/>
- *         &lt;element ref="{}TotalVgaInPorts" minOccurs="0"/>
- *         &lt;element ref="{}TotalVideoOutPorts" minOccurs="0"/>
- *         &lt;element ref="{}TrafficFeatures" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="Wattage" type="{}WattageIntegerDimension" minOccurs="0"/>
- *         &lt;element ref="{}WooferSpeakerDiameter" minOccurs="0"/>
- *         &lt;element ref="{}WooferSpeakerMaterial" minOccurs="0"/>
- *         &lt;element name="CableLength" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element ref="{}ConnectorGender" maxOccurs="5" minOccurs="0"/>
- *         &lt;element ref="{}ConnectorTypeUsedOnCable" minOccurs="0"/>
- *         &lt;element ref="{}MountMotion" minOccurs="0"/>
- *         &lt;element name="PowerSource" type="{}FortyStringNotNull" minOccurs="0"/>
- *         &lt;element name="VideoResolution" type="{}PixelDimension" minOccurs="0"/>
- *         &lt;element name="WirelessTechnology" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element ref="{}Efficiency" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.MediaPlayerOrEReaderAccessory
+ * JD-Core Version:    0.6.2
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "analogRGBInput",
-    "batteryCellType",
-    "batteryChargeCycles",
-    "batteryPower",
-    "boxContents",
-    "cameraLens",
-    "coatingDescription",
-    "compatibleMountings",
-    "conductor",
-    "enclosureFinish",
-    "finishType",
-    "grilleRemoveability",
-    "loadCapacity",
-    "maxWeightCapacity",
-    "memorySlotsAvailable",
-    "mountingType",
-    "numberOfRecordingLoops",
-    "operatingSystem",
-    "photoSensorSize",
-    "photoSensorTechnology",
-    "powerConsumption",
-    "powerPlugType",
-    "remoteControlDescription",
-    "removableMemory",
-    "screenSize",
-    "shape",
-    "softwareIncluded",
-    "speakerGrilleMaterial",
-    "speakerMaximumInputPower",
-    "subwooferPowerTechnology",
-    "subwooferSpeakerDiameter",
-    "subwooferSpeakerMaterial",
-    "subwooferWattage",
-    "surgeProtectionRating",
-    "threeDTechnology",
-    "totalCoaxialInputs",
-    "totalComponentInPorts",
-    "totalCompositePorts",
-    "totalDVIPorts",
-    "totalFirewirePorts",
-    "totalMicrophonePorts",
-    "totalPowerOutlets",
-    "totalSubwooferOutputs",
-    "totalSVideoInPorts",
-    "totalSVideoOutPorts",
-    "totalUSBPorts",
-    "totalVgaInPorts",
-    "totalVideoOutPorts",
-    "trafficFeatures",
-    "wattage",
-    "wooferSpeakerDiameter",
-    "wooferSpeakerMaterial",
-    "cableLength",
-    "connectorGender",
-    "connectorTypeUsedOnCable",
-    "mountMotion",
-    "powerSource",
-    "videoResolution",
-    "wirelessTechnology",
-    "efficiency"
-})
-@XmlRootElement(name = "MediaPlayerOrEReaderAccessory")
-public class MediaPlayerOrEReaderAccessory {
-
-    @XmlElement(name = "AnalogRGBInput")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> analogRGBInput;
-    @XmlElement(name = "BatteryCellType")
-    @XmlSchemaType(name = "string")
-    protected BatteryCellTypeValues batteryCellType;
-    @XmlElement(name = "BatteryChargeCycles")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger batteryChargeCycles;
-    @XmlElement(name = "BatteryPower")
-    protected BatteryPowerIntegerDimension batteryPower;
-    @XmlElement(name = "BoxContents")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String boxContents;
-    @XmlElement(name = "CameraLens")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String cameraLens;
-    @XmlElement(name = "CoatingDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String coatingDescription;
-    @XmlElement(name = "CompatibleMountings")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String compatibleMountings;
-    @XmlElement(name = "Conductor")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String conductor;
-    @XmlElement(name = "EnclosureFinish")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String enclosureFinish;
-    @XmlElement(name = "FinishType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String finishType;
-    @XmlElement(name = "GrilleRemoveability")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String grilleRemoveability;
-    @XmlElement(name = "LoadCapacity")
-    protected WeightDimension loadCapacity;
-    @XmlElement(name = "MaxWeightCapacity")
-    protected WeightDimension maxWeightCapacity;
-    @XmlElement(name = "MemorySlotsAvailable")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String memorySlotsAvailable;
-    @XmlElement(name = "MountingType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String mountingType;
-    @XmlElement(name = "NumberOfRecordingLoops")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger numberOfRecordingLoops;
-    @XmlElement(name = "OperatingSystem")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> operatingSystem;
-    @XmlElement(name = "PhotoSensorSize")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String photoSensorSize;
-    @XmlElement(name = "PhotoSensorTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String photoSensorTechnology;
-    @XmlElement(name = "PowerConsumption")
-    protected PowerDimension powerConsumption;
-    @XmlElement(name = "PowerPlugType")
-    @XmlSchemaType(name = "normalizedString")
-    protected PowerPlugType powerPlugType;
-    @XmlElement(name = "RemoteControlDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String remoteControlDescription;
-    @XmlElement(name = "RemovableMemory")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String removableMemory;
-    @XmlElement(name = "ScreenSize")
-    protected LengthDimension screenSize;
-    @XmlElement(name = "Shape")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String shape;
-    @XmlElement(name = "SoftwareIncluded")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String softwareIncluded;
-    @XmlElement(name = "SpeakerGrilleMaterial")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String speakerGrilleMaterial;
-    @XmlElement(name = "SpeakerMaximumInputPower")
-    protected PowerDimension speakerMaximumInputPower;
-    @XmlElement(name = "SubwooferPowerTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String subwooferPowerTechnology;
-    @XmlElement(name = "SubwooferSpeakerDiameter")
-    protected LengthDimension subwooferSpeakerDiameter;
-    @XmlElement(name = "SubwooferSpeakerMaterial")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String subwooferSpeakerMaterial;
-    @XmlElement(name = "SubwooferWattage")
-    protected WattageDimension subwooferWattage;
-    @XmlElement(name = "SurgeProtectionRating")
-    protected EnergyRatingType surgeProtectionRating;
-    @XmlElement(name = "ThreeDTechnology")
-    @XmlSchemaType(name = "string")
-    protected ThreeDTechnologyValues threeDTechnology;
-    @XmlElement(name = "TotalCoaxialInputs")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalCoaxialInputs;
-    @XmlElement(name = "TotalComponentInPorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalComponentInPorts;
-    @XmlElement(name = "TotalCompositePorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalCompositePorts;
-    @XmlElement(name = "TotalDVIPorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalDVIPorts;
-    @XmlElement(name = "TotalFirewirePorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalFirewirePorts;
-    @XmlElement(name = "TotalMicrophonePorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalMicrophonePorts;
-    @XmlElement(name = "TotalPowerOutlets")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalPowerOutlets;
-    @XmlElement(name = "TotalSubwooferOutputs")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalSubwooferOutputs;
-    @XmlElement(name = "TotalSVideoInPorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalSVideoInPorts;
-    @XmlElement(name = "TotalSVideoOutPorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalSVideoOutPorts;
-    @XmlElement(name = "TotalUSBPorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalUSBPorts;
-    @XmlElement(name = "TotalVgaInPorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalVgaInPorts;
-    @XmlElement(name = "TotalVideoOutPorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalVideoOutPorts;
-    @XmlElement(name = "TrafficFeatures")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> trafficFeatures;
-    @XmlElement(name = "Wattage")
-    protected WattageIntegerDimension wattage;
-    @XmlElement(name = "WooferSpeakerDiameter")
-    protected LengthDimension wooferSpeakerDiameter;
-    @XmlElement(name = "WooferSpeakerMaterial")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String wooferSpeakerMaterial;
-    @XmlElement(name = "CableLength")
-    protected LengthDimension cableLength;
-    @XmlElement(name = "ConnectorGender")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> connectorGender;
-    @XmlElement(name = "ConnectorTypeUsedOnCable")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String connectorTypeUsedOnCable;
-    @XmlElement(name = "MountMotion")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String mountMotion;
-    @XmlElement(name = "PowerSource")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String powerSource;
-    @XmlElement(name = "VideoResolution")
-    protected PixelDimension videoResolution;
-    @XmlElement(name = "WirelessTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> wirelessTechnology;
-    @XmlElement(name = "Efficiency")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String efficiency;
-
-    /**
-     * Gets the value of the analogRGBInput property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the analogRGBInput property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAnalogRGBInput().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getAnalogRGBInput() {
-        if (analogRGBInput == null) {
-            analogRGBInput = new ArrayList<String>();
-        }
-        return this.analogRGBInput;
-    }
-
-    /**
-     * 获取batteryCellType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BatteryCellTypeValues }
-     *     
-     */
-    public BatteryCellTypeValues getBatteryCellType() {
-        return batteryCellType;
-    }
-
-    /**
-     * 设置batteryCellType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BatteryCellTypeValues }
-     *     
-     */
-    public void setBatteryCellType(BatteryCellTypeValues value) {
-        this.batteryCellType = value;
-    }
-
-    /**
-     * 获取batteryChargeCycles属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getBatteryChargeCycles() {
-        return batteryChargeCycles;
-    }
-
-    /**
-     * 设置batteryChargeCycles属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setBatteryChargeCycles(BigInteger value) {
-        this.batteryChargeCycles = value;
-    }
-
-    /**
-     * 获取batteryPower属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BatteryPowerIntegerDimension }
-     *     
-     */
-    public BatteryPowerIntegerDimension getBatteryPower() {
-        return batteryPower;
-    }
-
-    /**
-     * 设置batteryPower属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BatteryPowerIntegerDimension }
-     *     
-     */
-    public void setBatteryPower(BatteryPowerIntegerDimension value) {
-        this.batteryPower = value;
-    }
-
-    /**
-     * 获取boxContents属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getBoxContents() {
-        return boxContents;
-    }
-
-    /**
-     * 设置boxContents属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBoxContents(String value) {
-        this.boxContents = value;
-    }
-
-    /**
-     * 获取cameraLens属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCameraLens() {
-        return cameraLens;
-    }
-
-    /**
-     * 设置cameraLens属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCameraLens(String value) {
-        this.cameraLens = value;
-    }
-
-    /**
-     * 获取coatingDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCoatingDescription() {
-        return coatingDescription;
-    }
-
-    /**
-     * 设置coatingDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCoatingDescription(String value) {
-        this.coatingDescription = value;
-    }
-
-    /**
-     * 获取compatibleMountings属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCompatibleMountings() {
-        return compatibleMountings;
-    }
-
-    /**
-     * 设置compatibleMountings属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCompatibleMountings(String value) {
-        this.compatibleMountings = value;
-    }
-
-    /**
-     * 获取conductor属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getConductor() {
-        return conductor;
-    }
-
-    /**
-     * 设置conductor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setConductor(String value) {
-        this.conductor = value;
-    }
-
-    /**
-     * 获取enclosureFinish属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEnclosureFinish() {
-        return enclosureFinish;
-    }
-
-    /**
-     * 设置enclosureFinish属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEnclosureFinish(String value) {
-        this.enclosureFinish = value;
-    }
-
-    /**
-     * 获取finishType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFinishType() {
-        return finishType;
-    }
-
-    /**
-     * 设置finishType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFinishType(String value) {
-        this.finishType = value;
-    }
-
-    /**
-     * 获取grilleRemoveability属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getGrilleRemoveability() {
-        return grilleRemoveability;
-    }
-
-    /**
-     * 设置grilleRemoveability属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setGrilleRemoveability(String value) {
-        this.grilleRemoveability = value;
-    }
-
-    /**
-     * 获取loadCapacity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link WeightDimension }
-     *     
-     */
-    public WeightDimension getLoadCapacity() {
-        return loadCapacity;
-    }
-
-    /**
-     * 设置loadCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WeightDimension }
-     *     
-     */
-    public void setLoadCapacity(WeightDimension value) {
-        this.loadCapacity = value;
-    }
-
-    /**
-     * 获取maxWeightCapacity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link WeightDimension }
-     *     
-     */
-    public WeightDimension getMaxWeightCapacity() {
-        return maxWeightCapacity;
-    }
-
-    /**
-     * 设置maxWeightCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WeightDimension }
-     *     
-     */
-    public void setMaxWeightCapacity(WeightDimension value) {
-        this.maxWeightCapacity = value;
-    }
-
-    /**
-     * 获取memorySlotsAvailable属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMemorySlotsAvailable() {
-        return memorySlotsAvailable;
-    }
-
-    /**
-     * 设置memorySlotsAvailable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemorySlotsAvailable(String value) {
-        this.memorySlotsAvailable = value;
-    }
-
-    /**
-     * 获取mountingType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMountingType() {
-        return mountingType;
-    }
-
-    /**
-     * 设置mountingType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMountingType(String value) {
-        this.mountingType = value;
-    }
-
-    /**
-     * 获取numberOfRecordingLoops属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getNumberOfRecordingLoops() {
-        return numberOfRecordingLoops;
-    }
-
-    /**
-     * 设置numberOfRecordingLoops属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setNumberOfRecordingLoops(BigInteger value) {
-        this.numberOfRecordingLoops = value;
-    }
-
-    /**
-     * Gets the value of the operatingSystem property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the operatingSystem property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getOperatingSystem().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getOperatingSystem() {
-        if (operatingSystem == null) {
-            operatingSystem = new ArrayList<String>();
-        }
-        return this.operatingSystem;
-    }
-
-    /**
-     * 获取photoSensorSize属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPhotoSensorSize() {
-        return photoSensorSize;
-    }
-
-    /**
-     * 设置photoSensorSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPhotoSensorSize(String value) {
-        this.photoSensorSize = value;
-    }
-
-    /**
-     * 获取photoSensorTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPhotoSensorTechnology() {
-        return photoSensorTechnology;
-    }
-
-    /**
-     * 设置photoSensorTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPhotoSensorTechnology(String value) {
-        this.photoSensorTechnology = value;
-    }
-
-    /**
-     * 获取powerConsumption属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PowerDimension }
-     *     
-     */
-    public PowerDimension getPowerConsumption() {
-        return powerConsumption;
-    }
-
-    /**
-     * 设置powerConsumption属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PowerDimension }
-     *     
-     */
-    public void setPowerConsumption(PowerDimension value) {
-        this.powerConsumption = value;
-    }
-
-    /**
-     * 获取powerPlugType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PowerPlugType }
-     *     
-     */
-    public PowerPlugType getPowerPlugType() {
-        return powerPlugType;
-    }
-
-    /**
-     * 设置powerPlugType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PowerPlugType }
-     *     
-     */
-    public void setPowerPlugType(PowerPlugType value) {
-        this.powerPlugType = value;
-    }
-
-    /**
-     * 获取remoteControlDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRemoteControlDescription() {
-        return remoteControlDescription;
-    }
-
-    /**
-     * 设置remoteControlDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRemoteControlDescription(String value) {
-        this.remoteControlDescription = value;
-    }
-
-    /**
-     * 获取removableMemory属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRemovableMemory() {
-        return removableMemory;
-    }
-
-    /**
-     * 设置removableMemory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRemovableMemory(String value) {
-        this.removableMemory = value;
-    }
-
-    /**
-     * 获取screenSize属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getScreenSize() {
-        return screenSize;
-    }
-
-    /**
-     * 设置screenSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setScreenSize(LengthDimension value) {
-        this.screenSize = value;
-    }
-
-    /**
-     * 获取shape属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getShape() {
-        return shape;
-    }
-
-    /**
-     * 设置shape属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setShape(String value) {
-        this.shape = value;
-    }
-
-    /**
-     * 获取softwareIncluded属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSoftwareIncluded() {
-        return softwareIncluded;
-    }
-
-    /**
-     * 设置softwareIncluded属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSoftwareIncluded(String value) {
-        this.softwareIncluded = value;
-    }
-
-    /**
-     * 获取speakerGrilleMaterial属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSpeakerGrilleMaterial() {
-        return speakerGrilleMaterial;
-    }
-
-    /**
-     * 设置speakerGrilleMaterial属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSpeakerGrilleMaterial(String value) {
-        this.speakerGrilleMaterial = value;
-    }
-
-    /**
-     * 获取speakerMaximumInputPower属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PowerDimension }
-     *     
-     */
-    public PowerDimension getSpeakerMaximumInputPower() {
-        return speakerMaximumInputPower;
-    }
-
-    /**
-     * 设置speakerMaximumInputPower属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PowerDimension }
-     *     
-     */
-    public void setSpeakerMaximumInputPower(PowerDimension value) {
-        this.speakerMaximumInputPower = value;
-    }
-
-    /**
-     * 获取subwooferPowerTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSubwooferPowerTechnology() {
-        return subwooferPowerTechnology;
-    }
-
-    /**
-     * 设置subwooferPowerTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSubwooferPowerTechnology(String value) {
-        this.subwooferPowerTechnology = value;
-    }
-
-    /**
-     * 获取subwooferSpeakerDiameter属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getSubwooferSpeakerDiameter() {
-        return subwooferSpeakerDiameter;
-    }
-
-    /**
-     * 设置subwooferSpeakerDiameter属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setSubwooferSpeakerDiameter(LengthDimension value) {
-        this.subwooferSpeakerDiameter = value;
-    }
-
-    /**
-     * 获取subwooferSpeakerMaterial属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSubwooferSpeakerMaterial() {
-        return subwooferSpeakerMaterial;
-    }
-
-    /**
-     * 设置subwooferSpeakerMaterial属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSubwooferSpeakerMaterial(String value) {
-        this.subwooferSpeakerMaterial = value;
-    }
-
-    /**
-     * 获取subwooferWattage属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link WattageDimension }
-     *     
-     */
-    public WattageDimension getSubwooferWattage() {
-        return subwooferWattage;
-    }
-
-    /**
-     * 设置subwooferWattage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WattageDimension }
-     *     
-     */
-    public void setSubwooferWattage(WattageDimension value) {
-        this.subwooferWattage = value;
-    }
-
-    /**
-     * 获取surgeProtectionRating属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link EnergyRatingType }
-     *     
-     */
-    public EnergyRatingType getSurgeProtectionRating() {
-        return surgeProtectionRating;
-    }
-
-    /**
-     * 设置surgeProtectionRating属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EnergyRatingType }
-     *     
-     */
-    public void setSurgeProtectionRating(EnergyRatingType value) {
-        this.surgeProtectionRating = value;
-    }
-
-    /**
-     * 获取threeDTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ThreeDTechnologyValues }
-     *     
-     */
-    public ThreeDTechnologyValues getThreeDTechnology() {
-        return threeDTechnology;
-    }
-
-    /**
-     * 设置threeDTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ThreeDTechnologyValues }
-     *     
-     */
-    public void setThreeDTechnology(ThreeDTechnologyValues value) {
-        this.threeDTechnology = value;
-    }
-
-    /**
-     * 获取totalCoaxialInputs属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalCoaxialInputs() {
-        return totalCoaxialInputs;
-    }
-
-    /**
-     * 设置totalCoaxialInputs属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalCoaxialInputs(BigInteger value) {
-        this.totalCoaxialInputs = value;
-    }
-
-    /**
-     * 获取totalComponentInPorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalComponentInPorts() {
-        return totalComponentInPorts;
-    }
-
-    /**
-     * 设置totalComponentInPorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalComponentInPorts(BigInteger value) {
-        this.totalComponentInPorts = value;
-    }
-
-    /**
-     * 获取totalCompositePorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalCompositePorts() {
-        return totalCompositePorts;
-    }
-
-    /**
-     * 设置totalCompositePorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalCompositePorts(BigInteger value) {
-        this.totalCompositePorts = value;
-    }
-
-    /**
-     * 获取totalDVIPorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalDVIPorts() {
-        return totalDVIPorts;
-    }
-
-    /**
-     * 设置totalDVIPorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalDVIPorts(BigInteger value) {
-        this.totalDVIPorts = value;
-    }
-
-    /**
-     * 获取totalFirewirePorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalFirewirePorts() {
-        return totalFirewirePorts;
-    }
-
-    /**
-     * 设置totalFirewirePorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalFirewirePorts(BigInteger value) {
-        this.totalFirewirePorts = value;
-    }
-
-    /**
-     * 获取totalMicrophonePorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalMicrophonePorts() {
-        return totalMicrophonePorts;
-    }
-
-    /**
-     * 设置totalMicrophonePorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalMicrophonePorts(BigInteger value) {
-        this.totalMicrophonePorts = value;
-    }
-
-    /**
-     * 获取totalPowerOutlets属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalPowerOutlets() {
-        return totalPowerOutlets;
-    }
-
-    /**
-     * 设置totalPowerOutlets属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalPowerOutlets(BigInteger value) {
-        this.totalPowerOutlets = value;
-    }
-
-    /**
-     * 获取totalSubwooferOutputs属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalSubwooferOutputs() {
-        return totalSubwooferOutputs;
-    }
-
-    /**
-     * 设置totalSubwooferOutputs属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalSubwooferOutputs(BigInteger value) {
-        this.totalSubwooferOutputs = value;
-    }
-
-    /**
-     * 获取totalSVideoInPorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalSVideoInPorts() {
-        return totalSVideoInPorts;
-    }
-
-    /**
-     * 设置totalSVideoInPorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalSVideoInPorts(BigInteger value) {
-        this.totalSVideoInPorts = value;
-    }
-
-    /**
-     * 获取totalSVideoOutPorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalSVideoOutPorts() {
-        return totalSVideoOutPorts;
-    }
-
-    /**
-     * 设置totalSVideoOutPorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalSVideoOutPorts(BigInteger value) {
-        this.totalSVideoOutPorts = value;
-    }
-
-    /**
-     * 获取totalUSBPorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalUSBPorts() {
-        return totalUSBPorts;
-    }
-
-    /**
-     * 设置totalUSBPorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalUSBPorts(BigInteger value) {
-        this.totalUSBPorts = value;
-    }
-
-    /**
-     * 获取totalVgaInPorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalVgaInPorts() {
-        return totalVgaInPorts;
-    }
-
-    /**
-     * 设置totalVgaInPorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalVgaInPorts(BigInteger value) {
-        this.totalVgaInPorts = value;
-    }
-
-    /**
-     * 获取totalVideoOutPorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalVideoOutPorts() {
-        return totalVideoOutPorts;
-    }
-
-    /**
-     * 设置totalVideoOutPorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalVideoOutPorts(BigInteger value) {
-        this.totalVideoOutPorts = value;
-    }
-
-    /**
-     * Gets the value of the trafficFeatures property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trafficFeatures property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTrafficFeatures().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getTrafficFeatures() {
-        if (trafficFeatures == null) {
-            trafficFeatures = new ArrayList<String>();
-        }
-        return this.trafficFeatures;
-    }
-
-    /**
-     * 获取wattage属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link WattageIntegerDimension }
-     *     
-     */
-    public WattageIntegerDimension getWattage() {
-        return wattage;
-    }
-
-    /**
-     * 设置wattage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WattageIntegerDimension }
-     *     
-     */
-    public void setWattage(WattageIntegerDimension value) {
-        this.wattage = value;
-    }
-
-    /**
-     * 获取wooferSpeakerDiameter属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getWooferSpeakerDiameter() {
-        return wooferSpeakerDiameter;
-    }
-
-    /**
-     * 设置wooferSpeakerDiameter属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setWooferSpeakerDiameter(LengthDimension value) {
-        this.wooferSpeakerDiameter = value;
-    }
-
-    /**
-     * 获取wooferSpeakerMaterial属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getWooferSpeakerMaterial() {
-        return wooferSpeakerMaterial;
-    }
-
-    /**
-     * 设置wooferSpeakerMaterial属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setWooferSpeakerMaterial(String value) {
-        this.wooferSpeakerMaterial = value;
-    }
-
-    /**
-     * 获取cableLength属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getCableLength() {
-        return cableLength;
-    }
-
-    /**
-     * 设置cableLength属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setCableLength(LengthDimension value) {
-        this.cableLength = value;
-    }
-
-    /**
-     * Gets the value of the connectorGender property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the connectorGender property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getConnectorGender().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getConnectorGender() {
-        if (connectorGender == null) {
-            connectorGender = new ArrayList<String>();
-        }
-        return this.connectorGender;
-    }
-
-    /**
-     * 获取connectorTypeUsedOnCable属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getConnectorTypeUsedOnCable() {
-        return connectorTypeUsedOnCable;
-    }
-
-    /**
-     * 设置connectorTypeUsedOnCable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setConnectorTypeUsedOnCable(String value) {
-        this.connectorTypeUsedOnCable = value;
-    }
-
-    /**
-     * 获取mountMotion属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMountMotion() {
-        return mountMotion;
-    }
-
-    /**
-     * 设置mountMotion属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMountMotion(String value) {
-        this.mountMotion = value;
-    }
-
-    /**
-     * 获取powerSource属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPowerSource() {
-        return powerSource;
-    }
-
-    /**
-     * 设置powerSource属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPowerSource(String value) {
-        this.powerSource = value;
-    }
-
-    /**
-     * 获取videoResolution属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public PixelDimension getVideoResolution() {
-        return videoResolution;
-    }
-
-    /**
-     * 设置videoResolution属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public void setVideoResolution(PixelDimension value) {
-        this.videoResolution = value;
-    }
-
-    /**
-     * Gets the value of the wirelessTechnology property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the wirelessTechnology property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getWirelessTechnology().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getWirelessTechnology() {
-        if (wirelessTechnology == null) {
-            wirelessTechnology = new ArrayList<String>();
-        }
-        return this.wirelessTechnology;
-    }
-
-    /**
-     * 获取efficiency属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEfficiency() {
-        return efficiency;
-    }
-
-    /**
-     * 设置efficiency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEfficiency(String value) {
-        this.efficiency = value;
-    }
-
-}

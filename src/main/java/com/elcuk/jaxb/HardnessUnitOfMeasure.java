@@ -1,96 +1,68 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlEnumValue;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="HardnessUnitOfMeasure")
+/*    */ @XmlEnum
+/*    */ public enum HardnessUnitOfMeasure
+/*    */ {
+/* 43 */   BRINNELL("brinnell"), 
+/*    */ 
+/* 45 */   VICKERS("vickers"), 
+/*    */ 
+/* 47 */   ROCKWELL_A("rockwell_a"), 
+/*    */ 
+/* 49 */   ROCKWELL_B("rockwell_b"), 
+/*    */ 
+/* 51 */   ROCKWELL_C("rockwell_c"), 
+/*    */ 
+/* 53 */   ROCKWELL_D("rockwell_d"), 
+/*    */ 
+/* 55 */   SHORE_A("shore_a"), 
+/*    */ 
+/* 57 */   SHORE_B("shore_b"), 
+/*    */ 
+/* 59 */   SHORE_C("shore_c"), 
+/*    */ 
+/* 61 */   SHORE_D("shore_d"), 
+/*    */ 
+/* 63 */   SHORE_DO("shore_do"), 
+/*    */ 
+/* 65 */   SHORE_E("shore_e"), 
+/*    */ 
+/* 67 */   SHORE_M("shore_m"), 
+/*    */ 
+/* 69 */   SHORE_O("shore_o"), 
+/*    */ 
+/* 71 */   SHORE_OO("shore_oo"), 
+/*    */ 
+/* 73 */   SHORE_OOO("shore_ooo"), 
+/*    */ 
+/* 75 */   SHORE_OOO_S("shore_ooo_s");
+/*    */ 
+/*    */   private final String value;
+/*    */ 
+/*    */   private HardnessUnitOfMeasure(String v) {
+/* 80 */     this.value = v;
+/*    */   }
+/*    */ 
+/*    */   public String value() {
+/* 84 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public static HardnessUnitOfMeasure fromValue(String v) {
+/* 88 */     for (HardnessUnitOfMeasure c : values()) {
+/* 89 */       if (c.value.equals(v)) {
+/* 90 */         return c;
+/*    */       }
+/*    */     }
+/* 93 */     throw new IllegalArgumentException(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>HardnessUnitOfMeasure的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="HardnessUnitOfMeasure">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="brinnell"/>
- *     &lt;enumeration value="vickers"/>
- *     &lt;enumeration value="rockwell_a"/>
- *     &lt;enumeration value="rockwell_b"/>
- *     &lt;enumeration value="rockwell_c"/>
- *     &lt;enumeration value="rockwell_d"/>
- *     &lt;enumeration value="shore_a"/>
- *     &lt;enumeration value="shore_b"/>
- *     &lt;enumeration value="shore_c"/>
- *     &lt;enumeration value="shore_d"/>
- *     &lt;enumeration value="shore_do"/>
- *     &lt;enumeration value="shore_e"/>
- *     &lt;enumeration value="shore_m"/>
- *     &lt;enumeration value="shore_o"/>
- *     &lt;enumeration value="shore_oo"/>
- *     &lt;enumeration value="shore_ooo"/>
- *     &lt;enumeration value="shore_ooo_s"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.HardnessUnitOfMeasure
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "HardnessUnitOfMeasure")
-@XmlEnum
-public enum HardnessUnitOfMeasure {
-
-    @XmlEnumValue("brinnell")
-    BRINNELL("brinnell"),
-    @XmlEnumValue("vickers")
-    VICKERS("vickers"),
-    @XmlEnumValue("rockwell_a")
-    ROCKWELL_A("rockwell_a"),
-    @XmlEnumValue("rockwell_b")
-    ROCKWELL_B("rockwell_b"),
-    @XmlEnumValue("rockwell_c")
-    ROCKWELL_C("rockwell_c"),
-    @XmlEnumValue("rockwell_d")
-    ROCKWELL_D("rockwell_d"),
-    @XmlEnumValue("shore_a")
-    SHORE_A("shore_a"),
-    @XmlEnumValue("shore_b")
-    SHORE_B("shore_b"),
-    @XmlEnumValue("shore_c")
-    SHORE_C("shore_c"),
-    @XmlEnumValue("shore_d")
-    SHORE_D("shore_d"),
-    @XmlEnumValue("shore_do")
-    SHORE_DO("shore_do"),
-    @XmlEnumValue("shore_e")
-    SHORE_E("shore_e"),
-    @XmlEnumValue("shore_m")
-    SHORE_M("shore_m"),
-    @XmlEnumValue("shore_o")
-    SHORE_O("shore_o"),
-    @XmlEnumValue("shore_oo")
-    SHORE_OO("shore_oo"),
-    @XmlEnumValue("shore_ooo")
-    SHORE_OOO("shore_ooo"),
-    @XmlEnumValue("shore_ooo_s")
-    SHORE_OOO_S("shore_ooo_s");
-    private final String value;
-
-    HardnessUnitOfMeasure(String v) {
-        value = v;
-    }
-
-    public String value() {
-        return value;
-    }
-
-    public static HardnessUnitOfMeasure fromValue(String v) {
-        for (HardnessUnitOfMeasure c: HardnessUnitOfMeasure.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
-
-}

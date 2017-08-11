@@ -1,88 +1,45 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import java.math.BigInteger;
+/*    */ import javax.xml.bind.annotation.XmlAccessType;
+/*    */ import javax.xml.bind.annotation.XmlAccessorType;
+/*    */ import javax.xml.bind.annotation.XmlAttribute;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ import javax.xml.bind.annotation.XmlValue;
+/*    */ 
+/*    */ @XmlAccessorType(XmlAccessType.FIELD)
+/*    */ @XmlType(name="MemorySizeTenDigitIntegerDimension", propOrder={"value"})
+/*    */ public class MemorySizeTenDigitIntegerDimension
+/*    */ {
+/*    */ 
+/*    */   @XmlValue
+/*    */   protected BigInteger value;
+/*    */ 
+/*    */   @XmlAttribute(name="unitOfMeasure", required=true)
+/*    */   protected MemorySizeUnitOfMeasure unitOfMeasure;
+/*    */ 
+/*    */   public BigInteger getValue()
+/*    */   {
+/* 49 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public void setValue(BigInteger value)
+/*    */   {
+/* 61 */     this.value = value;
+/*    */   }
+/*    */ 
+/*    */   public MemorySizeUnitOfMeasure getUnitOfMeasure()
+/*    */   {
+/* 73 */     return this.unitOfMeasure;
+/*    */   }
+/*    */ 
+/*    */   public void setUnitOfMeasure(MemorySizeUnitOfMeasure value)
+/*    */   {
+/* 85 */     this.unitOfMeasure = value;
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import java.math.BigInteger;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
-
-
-/**
- * <p>MemorySizeTenDigitIntegerDimension complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="MemorySizeTenDigitIntegerDimension">
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;>TenDigitInteger">
- *       &lt;attribute name="unitOfMeasure" use="required" type="{}MemorySizeUnitOfMeasure" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.MemorySizeTenDigitIntegerDimension
+ * JD-Core Version:    0.6.2
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "MemorySizeTenDigitIntegerDimension", propOrder = {
-    "value"
-})
-public class MemorySizeTenDigitIntegerDimension {
-
-    @XmlValue
-    protected BigInteger value;
-    @XmlAttribute(name = "unitOfMeasure", required = true)
-    protected MemorySizeUnitOfMeasure unitOfMeasure;
-
-    /**
-     * 获取value属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getValue() {
-        return value;
-    }
-
-    /**
-     * 设置value属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setValue(BigInteger value) {
-        this.value = value;
-    }
-
-    /**
-     * 获取unitOfMeasure属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemorySizeUnitOfMeasure }
-     *     
-     */
-    public MemorySizeUnitOfMeasure getUnitOfMeasure() {
-        return unitOfMeasure;
-    }
-
-    /**
-     * 设置unitOfMeasure属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemorySizeUnitOfMeasure }
-     *     
-     */
-    public void setUnitOfMeasure(MemorySizeUnitOfMeasure value) {
-        this.unitOfMeasure = value;
-    }
-
-}

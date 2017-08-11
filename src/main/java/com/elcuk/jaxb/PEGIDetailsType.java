@@ -1,202 +1,95 @@
+/*     */ package com.elcuk.jaxb;
+/*     */ 
+/*     */ import javax.xml.bind.annotation.XmlAccessType;
+/*     */ import javax.xml.bind.annotation.XmlAccessorType;
+/*     */ import javax.xml.bind.annotation.XmlElement;
+/*     */ import javax.xml.bind.annotation.XmlType;
+/*     */ 
+/*     */ @XmlAccessorType(XmlAccessType.FIELD)
+/*     */ @XmlType(name="PEGIDetailsType", propOrder={"badLanguage", "fear", "violence", "discrimination", "drugs", "sexualContent"})
+/*     */ public class PEGIDetailsType
+/*     */ {
+/*     */ 
+/*     */   @XmlElement(name="BadLanguage")
+/*     */   protected Boolean badLanguage;
+/*     */ 
+/*     */   @XmlElement(name="Fear")
+/*     */   protected Boolean fear;
+/*     */ 
+/*     */   @XmlElement(name="Violence")
+/*     */   protected Boolean violence;
+/*     */ 
+/*     */   @XmlElement(name="Discrimination")
+/*     */   protected Boolean discrimination;
+/*     */ 
+/*     */   @XmlElement(name="Drugs")
+/*     */   protected Boolean drugs;
+/*     */ 
+/*     */   @XmlElement(name="SexualContent")
+/*     */   protected Boolean sexualContent;
+/*     */ 
+/*     */   public Boolean isBadLanguage()
+/*     */   {
+/*  67 */     return this.badLanguage;
+/*     */   }
+/*     */ 
+/*     */   public void setBadLanguage(Boolean value)
+/*     */   {
+/*  79 */     this.badLanguage = value;
+/*     */   }
+/*     */ 
+/*     */   public Boolean isFear()
+/*     */   {
+/*  91 */     return this.fear;
+/*     */   }
+/*     */ 
+/*     */   public void setFear(Boolean value)
+/*     */   {
+/* 103 */     this.fear = value;
+/*     */   }
+/*     */ 
+/*     */   public Boolean isViolence()
+/*     */   {
+/* 115 */     return this.violence;
+/*     */   }
+/*     */ 
+/*     */   public void setViolence(Boolean value)
+/*     */   {
+/* 127 */     this.violence = value;
+/*     */   }
+/*     */ 
+/*     */   public Boolean isDiscrimination()
+/*     */   {
+/* 139 */     return this.discrimination;
+/*     */   }
+/*     */ 
+/*     */   public void setDiscrimination(Boolean value)
+/*     */   {
+/* 151 */     this.discrimination = value;
+/*     */   }
+/*     */ 
+/*     */   public Boolean isDrugs()
+/*     */   {
+/* 163 */     return this.drugs;
+/*     */   }
+/*     */ 
+/*     */   public void setDrugs(Boolean value)
+/*     */   {
+/* 175 */     this.drugs = value;
+/*     */   }
+/*     */ 
+/*     */   public Boolean isSexualContent()
+/*     */   {
+/* 187 */     return this.sexualContent;
+/*     */   }
+/*     */ 
+/*     */   public void setSexualContent(Boolean value)
+/*     */   {
+/* 199 */     this.sexualContent = value;
+/*     */   }
+/*     */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>PEGIDetailsType complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType name="PEGIDetailsType">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="BadLanguage" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="Fear" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="Violence" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="Discrimination" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="Drugs" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="SexualContent" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.PEGIDetailsType
+ * JD-Core Version:    0.6.2
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "PEGIDetailsType", propOrder = {
-    "badLanguage",
-    "fear",
-    "violence",
-    "discrimination",
-    "drugs",
-    "sexualContent"
-})
-public class PEGIDetailsType {
-
-    @XmlElement(name = "BadLanguage")
-    protected Boolean badLanguage;
-    @XmlElement(name = "Fear")
-    protected Boolean fear;
-    @XmlElement(name = "Violence")
-    protected Boolean violence;
-    @XmlElement(name = "Discrimination")
-    protected Boolean discrimination;
-    @XmlElement(name = "Drugs")
-    protected Boolean drugs;
-    @XmlElement(name = "SexualContent")
-    protected Boolean sexualContent;
-
-    /**
-     * 获取badLanguage属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isBadLanguage() {
-        return badLanguage;
-    }
-
-    /**
-     * 设置badLanguage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setBadLanguage(Boolean value) {
-        this.badLanguage = value;
-    }
-
-    /**
-     * 获取fear属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isFear() {
-        return fear;
-    }
-
-    /**
-     * 设置fear属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setFear(Boolean value) {
-        this.fear = value;
-    }
-
-    /**
-     * 获取violence属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isViolence() {
-        return violence;
-    }
-
-    /**
-     * 设置violence属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setViolence(Boolean value) {
-        this.violence = value;
-    }
-
-    /**
-     * 获取discrimination属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isDiscrimination() {
-        return discrimination;
-    }
-
-    /**
-     * 设置discrimination属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setDiscrimination(Boolean value) {
-        this.discrimination = value;
-    }
-
-    /**
-     * 获取drugs属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isDrugs() {
-        return drugs;
-    }
-
-    /**
-     * 设置drugs属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setDrugs(Boolean value) {
-        this.drugs = value;
-    }
-
-    /**
-     * 获取sexualContent属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isSexualContent() {
-        return sexualContent;
-    }
-
-    /**
-     * 设置sexualContent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setSexualContent(Boolean value) {
-        this.sexualContent = value;
-    }
-
-}
