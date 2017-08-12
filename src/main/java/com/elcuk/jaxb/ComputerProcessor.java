@@ -1,330 +1,156 @@
+/*     */ package com.elcuk.jaxb;
+/*     */ 
+/*     */ import java.math.BigInteger;
+/*     */ import javax.xml.bind.annotation.XmlAccessType;
+/*     */ import javax.xml.bind.annotation.XmlAccessorType;
+/*     */ import javax.xml.bind.annotation.XmlElement;
+/*     */ import javax.xml.bind.annotation.XmlRootElement;
+/*     */ import javax.xml.bind.annotation.XmlType;
+/*     */ import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
+/*     */ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+/*     */ 
+/*     */ @XmlAccessorType(XmlAccessType.FIELD)
+/*     */ @XmlType(name="", propOrder={"variationData", "additionalFeatures", "cacheMemory", "modelNumber", "processorBrand", "processorCoolingDevice", "processorCount", "processorSeries", "processorSocket", "processorSpeed"})
+/*     */ @XmlRootElement(name="ComputerProcessor")
+/*     */ public class ComputerProcessor
+/*     */ {
+/*     */ 
+/*     */   @XmlElement(name="VariationData")
+/*     */   protected VariationData variationData;
+/*     */ 
+/*     */   @XmlElement(name="AdditionalFeatures")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String additionalFeatures;
+/*     */ 
+/*     */   @XmlElement(name="CacheMemory")
+/*     */   protected MemorySizeIntegerDimension cacheMemory;
+/*     */ 
+/*     */   @XmlElement(name="ModelNumber")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String modelNumber;
+/*     */ 
+/*     */   @XmlElement(name="ProcessorBrand")
+/*     */   protected String processorBrand;
+/*     */ 
+/*     */   @XmlElement(name="ProcessorCoolingDevice")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String processorCoolingDevice;
+/*     */ 
+/*     */   @XmlElement(name="ProcessorCount")
+/*     */   protected BigInteger processorCount;
+/*     */ 
+/*     */   @XmlElement(name="ProcessorSeries")
+/*     */   protected ProcessorSeriesTypeValues processorSeries;
+/*     */ 
+/*     */   @XmlElement(name="ProcessorSocket")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String processorSocket;
+/*     */ 
+/*     */   @XmlElement(name="ProcessorSpeed")
+/*     */   protected FrequencyDimension processorSpeed;
+/*     */ 
+/*     */   public VariationData getVariationData()
+/*     */   {
+/*  92 */     return this.variationData;
+/*     */   }
+/*     */ 
+/*     */   public void setVariationData(VariationData value)
+/*     */   {
+/* 104 */     this.variationData = value;
+/*     */   }
+/*     */ 
+/*     */   public String getAdditionalFeatures()
+/*     */   {
+/* 116 */     return this.additionalFeatures;
+/*     */   }
+/*     */ 
+/*     */   public void setAdditionalFeatures(String value)
+/*     */   {
+/* 128 */     this.additionalFeatures = value;
+/*     */   }
+/*     */ 
+/*     */   public MemorySizeIntegerDimension getCacheMemory()
+/*     */   {
+/* 140 */     return this.cacheMemory;
+/*     */   }
+/*     */ 
+/*     */   public void setCacheMemory(MemorySizeIntegerDimension value)
+/*     */   {
+/* 152 */     this.cacheMemory = value;
+/*     */   }
+/*     */ 
+/*     */   public String getModelNumber()
+/*     */   {
+/* 164 */     return this.modelNumber;
+/*     */   }
+/*     */ 
+/*     */   public void setModelNumber(String value)
+/*     */   {
+/* 176 */     this.modelNumber = value;
+/*     */   }
+/*     */ 
+/*     */   public String getProcessorBrand()
+/*     */   {
+/* 188 */     return this.processorBrand;
+/*     */   }
+/*     */ 
+/*     */   public void setProcessorBrand(String value)
+/*     */   {
+/* 200 */     this.processorBrand = value;
+/*     */   }
+/*     */ 
+/*     */   public String getProcessorCoolingDevice()
+/*     */   {
+/* 212 */     return this.processorCoolingDevice;
+/*     */   }
+/*     */ 
+/*     */   public void setProcessorCoolingDevice(String value)
+/*     */   {
+/* 224 */     this.processorCoolingDevice = value;
+/*     */   }
+/*     */ 
+/*     */   public BigInteger getProcessorCount()
+/*     */   {
+/* 236 */     return this.processorCount;
+/*     */   }
+/*     */ 
+/*     */   public void setProcessorCount(BigInteger value)
+/*     */   {
+/* 248 */     this.processorCount = value;
+/*     */   }
+/*     */ 
+/*     */   public ProcessorSeriesTypeValues getProcessorSeries()
+/*     */   {
+/* 260 */     return this.processorSeries;
+/*     */   }
+/*     */ 
+/*     */   public void setProcessorSeries(ProcessorSeriesTypeValues value)
+/*     */   {
+/* 272 */     this.processorSeries = value;
+/*     */   }
+/*     */ 
+/*     */   public String getProcessorSocket()
+/*     */   {
+/* 284 */     return this.processorSocket;
+/*     */   }
+/*     */ 
+/*     */   public void setProcessorSocket(String value)
+/*     */   {
+/* 296 */     this.processorSocket = value;
+/*     */   }
+/*     */ 
+/*     */   public FrequencyDimension getProcessorSpeed()
+/*     */   {
+/* 308 */     return this.processorSpeed;
+/*     */   }
+/*     */ 
+/*     */   public void setProcessorSpeed(FrequencyDimension value)
+/*     */   {
+/* 320 */     this.processorSpeed = value;
+/*     */   }
+/*     */ }
 
-package com.elcuk.jaxb;
-
-import java.math.BigInteger;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-
-/**
- * <p>anonymous complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}VariationData" minOccurs="0"/>
- *         &lt;element ref="{}AdditionalFeatures" minOccurs="0"/>
- *         &lt;element ref="{}CacheMemory" minOccurs="0"/>
- *         &lt;element ref="{}ModelNumber" minOccurs="0"/>
- *         &lt;element ref="{}ProcessorBrand" minOccurs="0"/>
- *         &lt;element ref="{}ProcessorCoolingDevice" minOccurs="0"/>
- *         &lt;element ref="{}ProcessorCount" minOccurs="0"/>
- *         &lt;element ref="{}ProcessorSeries" minOccurs="0"/>
- *         &lt;element ref="{}ProcessorSocket" minOccurs="0"/>
- *         &lt;element ref="{}ProcessorSpeed" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.ComputerProcessor
+ * JD-Core Version:    0.6.2
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "variationData",
-    "additionalFeatures",
-    "cacheMemory",
-    "modelNumber",
-    "processorBrand",
-    "processorCoolingDevice",
-    "processorCount",
-    "processorSeries",
-    "processorSocket",
-    "processorSpeed"
-})
-@XmlRootElement(name = "ComputerProcessor")
-public class ComputerProcessor {
-
-    @XmlElement(name = "VariationData")
-    protected VariationData variationData;
-    @XmlElement(name = "AdditionalFeatures")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String additionalFeatures;
-    @XmlElement(name = "CacheMemory")
-    protected MemorySizeIntegerDimension cacheMemory;
-    @XmlElement(name = "ModelNumber")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String modelNumber;
-    @XmlElement(name = "ProcessorBrand")
-    protected String processorBrand;
-    @XmlElement(name = "ProcessorCoolingDevice")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String processorCoolingDevice;
-    @XmlElement(name = "ProcessorCount")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger processorCount;
-    @XmlElement(name = "ProcessorSeries")
-    @XmlSchemaType(name = "string")
-    protected ProcessorSeriesTypeValues processorSeries;
-    @XmlElement(name = "ProcessorSocket")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String processorSocket;
-    @XmlElement(name = "ProcessorSpeed")
-    protected FrequencyDimension processorSpeed;
-
-    /**
-     * 获取variationData属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link VariationData }
-     *     
-     */
-    public VariationData getVariationData() {
-        return variationData;
-    }
-
-    /**
-     * 设置variationData属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VariationData }
-     *     
-     */
-    public void setVariationData(VariationData value) {
-        this.variationData = value;
-    }
-
-    /**
-     * 获取additionalFeatures属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAdditionalFeatures() {
-        return additionalFeatures;
-    }
-
-    /**
-     * 设置additionalFeatures属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAdditionalFeatures(String value) {
-        this.additionalFeatures = value;
-    }
-
-    /**
-     * 获取cacheMemory属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemorySizeIntegerDimension }
-     *     
-     */
-    public MemorySizeIntegerDimension getCacheMemory() {
-        return cacheMemory;
-    }
-
-    /**
-     * 设置cacheMemory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemorySizeIntegerDimension }
-     *     
-     */
-    public void setCacheMemory(MemorySizeIntegerDimension value) {
-        this.cacheMemory = value;
-    }
-
-    /**
-     * 获取modelNumber属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getModelNumber() {
-        return modelNumber;
-    }
-
-    /**
-     * 设置modelNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setModelNumber(String value) {
-        this.modelNumber = value;
-    }
-
-    /**
-     * 获取processorBrand属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getProcessorBrand() {
-        return processorBrand;
-    }
-
-    /**
-     * 设置processorBrand属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setProcessorBrand(String value) {
-        this.processorBrand = value;
-    }
-
-    /**
-     * 获取processorCoolingDevice属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getProcessorCoolingDevice() {
-        return processorCoolingDevice;
-    }
-
-    /**
-     * 设置processorCoolingDevice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setProcessorCoolingDevice(String value) {
-        this.processorCoolingDevice = value;
-    }
-
-    /**
-     * 获取processorCount属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getProcessorCount() {
-        return processorCount;
-    }
-
-    /**
-     * 设置processorCount属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setProcessorCount(BigInteger value) {
-        this.processorCount = value;
-    }
-
-    /**
-     * 获取processorSeries属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ProcessorSeriesTypeValues }
-     *     
-     */
-    public ProcessorSeriesTypeValues getProcessorSeries() {
-        return processorSeries;
-    }
-
-    /**
-     * 设置processorSeries属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProcessorSeriesTypeValues }
-     *     
-     */
-    public void setProcessorSeries(ProcessorSeriesTypeValues value) {
-        this.processorSeries = value;
-    }
-
-    /**
-     * 获取processorSocket属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getProcessorSocket() {
-        return processorSocket;
-    }
-
-    /**
-     * 设置processorSocket属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setProcessorSocket(String value) {
-        this.processorSocket = value;
-    }
-
-    /**
-     * 获取processorSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link FrequencyDimension }
-     *     
-     */
-    public FrequencyDimension getProcessorSpeed() {
-        return processorSpeed;
-    }
-
-    /**
-     * 设置processorSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link FrequencyDimension }
-     *     
-     */
-    public void setProcessorSpeed(FrequencyDimension value) {
-        this.processorSpeed = value;
-    }
-
-}

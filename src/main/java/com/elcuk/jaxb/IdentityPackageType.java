@@ -1,54 +1,40 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlEnumValue;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="IdentityPackageType")
+/*    */ @XmlEnum
+/*    */ public enum IdentityPackageType
+/*    */ {
+/* 29 */   BULK("bulk"), 
+/*    */ 
+/* 31 */   FRUSTRATION_FREE("frustration_free"), 
+/*    */ 
+/* 33 */   TRADITIONAL("traditional");
+/*    */ 
+/*    */   private final String value;
+/*    */ 
+/*    */   private IdentityPackageType(String v) {
+/* 38 */     this.value = v;
+/*    */   }
+/*    */ 
+/*    */   public String value() {
+/* 42 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public static IdentityPackageType fromValue(String v) {
+/* 46 */     for (IdentityPackageType c : values()) {
+/* 47 */       if (c.value.equals(v)) {
+/* 48 */         return c;
+/*    */       }
+/*    */     }
+/* 51 */     throw new IllegalArgumentException(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>IdentityPackageType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="IdentityPackageType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="bulk"/>
- *     &lt;enumeration value="frustration_free"/>
- *     &lt;enumeration value="traditional"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.IdentityPackageType
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "IdentityPackageType")
-@XmlEnum
-public enum IdentityPackageType {
-
-    @XmlEnumValue("bulk")
-    BULK("bulk"),
-    @XmlEnumValue("frustration_free")
-    FRUSTRATION_FREE("frustration_free"),
-    @XmlEnumValue("traditional")
-    TRADITIONAL("traditional");
-    private final String value;
-
-    IdentityPackageType(String v) {
-        value = v;
-    }
-
-    public String value() {
-        return value;
-    }
-
-    public static IdentityPackageType fromValue(String v) {
-        for (IdentityPackageType c: IdentityPackageType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
-
-}

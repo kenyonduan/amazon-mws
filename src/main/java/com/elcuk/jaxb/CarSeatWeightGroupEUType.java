@@ -1,60 +1,44 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlEnumValue;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="CarSeatWeightGroupEUType")
+/*    */ @XmlEnum
+/*    */ public enum CarSeatWeightGroupEUType
+/*    */ {
+/* 31 */   GROUP_ZERO("group_zero"), 
+/*    */ 
+/* 33 */   GROUP_ZERO_PLUS("group_zero_plus"), 
+/*    */ 
+/* 35 */   GROUP_ONE("group_one"), 
+/*    */ 
+/* 37 */   GROUP_TWO("group_two"), 
+/*    */ 
+/* 39 */   GROUP_THREE("group_three");
+/*    */ 
+/*    */   private final String value;
+/*    */ 
+/*    */   private CarSeatWeightGroupEUType(String v) {
+/* 44 */     this.value = v;
+/*    */   }
+/*    */ 
+/*    */   public String value() {
+/* 48 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public static CarSeatWeightGroupEUType fromValue(String v) {
+/* 52 */     for (CarSeatWeightGroupEUType c : values()) {
+/* 53 */       if (c.value.equals(v)) {
+/* 54 */         return c;
+/*    */       }
+/*    */     }
+/* 57 */     throw new IllegalArgumentException(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>CarSeatWeightGroupEUType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="CarSeatWeightGroupEUType">
- *   &lt;restriction base="{}MediumStringNotNull">
- *     &lt;enumeration value="group_zero"/>
- *     &lt;enumeration value="group_zero_plus"/>
- *     &lt;enumeration value="group_one"/>
- *     &lt;enumeration value="group_two"/>
- *     &lt;enumeration value="group_three"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.CarSeatWeightGroupEUType
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "CarSeatWeightGroupEUType")
-@XmlEnum
-public enum CarSeatWeightGroupEUType {
-
-    @XmlEnumValue("group_zero")
-    GROUP_ZERO("group_zero"),
-    @XmlEnumValue("group_zero_plus")
-    GROUP_ZERO_PLUS("group_zero_plus"),
-    @XmlEnumValue("group_one")
-    GROUP_ONE("group_one"),
-    @XmlEnumValue("group_two")
-    GROUP_TWO("group_two"),
-    @XmlEnumValue("group_three")
-    GROUP_THREE("group_three");
-    private final String value;
-
-    CarSeatWeightGroupEUType(String v) {
-        value = v;
-    }
-
-    public String value() {
-        return value;
-    }
-
-    public static CarSeatWeightGroupEUType fromValue(String v) {
-        for (CarSeatWeightGroupEUType c: CarSeatWeightGroupEUType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
-
-}

@@ -1,836 +1,392 @@
+/*     */ package com.elcuk.jaxb;
+/*     */ 
+/*     */ import java.math.BigInteger;
+/*     */ import java.util.ArrayList;
+/*     */ import java.util.List;
+/*     */ import javax.xml.bind.annotation.XmlAccessType;
+/*     */ import javax.xml.bind.annotation.XmlAccessorType;
+/*     */ import javax.xml.bind.annotation.XmlElement;
+/*     */ import javax.xml.bind.annotation.XmlRootElement;
+/*     */ import javax.xml.bind.annotation.XmlSchemaType;
+/*     */ import javax.xml.bind.annotation.XmlType;
+/*     */ import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
+/*     */ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+/*     */ 
+/*     */ @XmlAccessorType(XmlAccessType.FIELD)
+/*     */ @XmlType(name="", propOrder={"batteryChargeCycles", "batteryCellType", "batteryPower", "boxContents", "cableLength", "coatingDescription", "compatibleMountings", "conductor", "connectorGender", "digitalZoom", "finishType", "fixedFocalLength", "focusType", "imageStabilization", "maxAperture", "maxFocalLength", "memorySlotsAvailable", "minAperture", "opticalZoom", "powerSource", "remoteControlDescription", "softwareIncluded", "totalFirewirePorts", "totalSVideoOutPorts", "totalUSBPorts", "viewFinderType", "efficiency"})
+/*     */ @XmlRootElement(name="CETelescope")
+/*     */ public class CETelescope
+/*     */ {
+/*     */ 
+/*     */   @XmlElement(name="BatteryChargeCycles")
+/*     */   @XmlSchemaType(name="positiveInteger")
+/*     */   protected BigInteger batteryChargeCycles;
+/*     */ 
+/*     */   @XmlElement(name="BatteryCellType")
+/*     */   protected BatteryCellTypeValues batteryCellType;
+/*     */ 
+/*     */   @XmlElement(name="BatteryPower")
+/*     */   protected BatteryPowerIntegerDimension batteryPower;
+/*     */ 
+/*     */   @XmlElement(name="BoxContents")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String boxContents;
+/*     */ 
+/*     */   @XmlElement(name="CableLength")
+/*     */   protected LengthDimension cableLength;
+/*     */ 
+/*     */   @XmlElement(name="CoatingDescription")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String coatingDescription;
+/*     */ 
+/*     */   @XmlElement(name="CompatibleMountings")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String compatibleMountings;
+/*     */ 
+/*     */   @XmlElement(name="Conductor")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String conductor;
+/*     */ 
+/*     */   @XmlElement(name="ConnectorGender")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected List<String> connectorGender;
+/*     */ 
+/*     */   @XmlElement(name="DigitalZoom")
+/*     */   protected ZoomDimension digitalZoom;
+/*     */ 
+/*     */   @XmlElement(name="FinishType")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String finishType;
+/*     */ 
+/*     */   @XmlElement(name="FixedFocalLength")
+/*     */   protected LengthDimension fixedFocalLength;
+/*     */ 
+/*     */   @XmlElement(name="FocusType")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String focusType;
+/*     */ 
+/*     */   @XmlElement(name="ImageStabilization")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String imageStabilization;
+/*     */ 
+/*     */   @XmlElement(name="MaxAperture")
+/*     */   protected ApertureDimension maxAperture;
+/*     */ 
+/*     */   @XmlElement(name="MaxFocalLength")
+/*     */   protected LengthDimension maxFocalLength;
+/*     */ 
+/*     */   @XmlElement(name="MemorySlotsAvailable")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String memorySlotsAvailable;
+/*     */ 
+/*     */   @XmlElement(name="MinAperture")
+/*     */   protected ApertureDimension minAperture;
+/*     */ 
+/*     */   @XmlElement(name="OpticalZoom")
+/*     */   protected ZoomDimension opticalZoom;
+/*     */ 
+/*     */   @XmlElement(name="PowerSource")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String powerSource;
+/*     */ 
+/*     */   @XmlElement(name="RemoteControlDescription")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String remoteControlDescription;
+/*     */ 
+/*     */   @XmlElement(name="SoftwareIncluded")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String softwareIncluded;
+/*     */ 
+/*     */   @XmlElement(name="TotalFirewirePorts")
+/*     */   @XmlSchemaType(name="positiveInteger")
+/*     */   protected BigInteger totalFirewirePorts;
+/*     */ 
+/*     */   @XmlElement(name="TotalSVideoOutPorts")
+/*     */   @XmlSchemaType(name="positiveInteger")
+/*     */   protected BigInteger totalSVideoOutPorts;
+/*     */ 
+/*     */   @XmlElement(name="TotalUSBPorts")
+/*     */   @XmlSchemaType(name="positiveInteger")
+/*     */   protected BigInteger totalUSBPorts;
+/*     */ 
+/*     */   @XmlElement(name="ViewFinderType")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String viewFinderType;
+/*     */ 
+/*     */   @XmlElement(name="Efficiency")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String efficiency;
+/*     */ 
+/*     */   public BigInteger getBatteryChargeCycles()
+/*     */   {
+/* 177 */     return this.batteryChargeCycles;
+/*     */   }
+/*     */ 
+/*     */   public void setBatteryChargeCycles(BigInteger value)
+/*     */   {
+/* 189 */     this.batteryChargeCycles = value;
+/*     */   }
+/*     */ 
+/*     */   public BatteryCellTypeValues getBatteryCellType()
+/*     */   {
+/* 201 */     return this.batteryCellType;
+/*     */   }
+/*     */ 
+/*     */   public void setBatteryCellType(BatteryCellTypeValues value)
+/*     */   {
+/* 213 */     this.batteryCellType = value;
+/*     */   }
+/*     */ 
+/*     */   public BatteryPowerIntegerDimension getBatteryPower()
+/*     */   {
+/* 225 */     return this.batteryPower;
+/*     */   }
+/*     */ 
+/*     */   public void setBatteryPower(BatteryPowerIntegerDimension value)
+/*     */   {
+/* 237 */     this.batteryPower = value;
+/*     */   }
+/*     */ 
+/*     */   public String getBoxContents()
+/*     */   {
+/* 249 */     return this.boxContents;
+/*     */   }
+/*     */ 
+/*     */   public void setBoxContents(String value)
+/*     */   {
+/* 261 */     this.boxContents = value;
+/*     */   }
+/*     */ 
+/*     */   public LengthDimension getCableLength()
+/*     */   {
+/* 273 */     return this.cableLength;
+/*     */   }
+/*     */ 
+/*     */   public void setCableLength(LengthDimension value)
+/*     */   {
+/* 285 */     this.cableLength = value;
+/*     */   }
+/*     */ 
+/*     */   public String getCoatingDescription()
+/*     */   {
+/* 297 */     return this.coatingDescription;
+/*     */   }
+/*     */ 
+/*     */   public void setCoatingDescription(String value)
+/*     */   {
+/* 309 */     this.coatingDescription = value;
+/*     */   }
+/*     */ 
+/*     */   public String getCompatibleMountings()
+/*     */   {
+/* 321 */     return this.compatibleMountings;
+/*     */   }
+/*     */ 
+/*     */   public void setCompatibleMountings(String value)
+/*     */   {
+/* 333 */     this.compatibleMountings = value;
+/*     */   }
+/*     */ 
+/*     */   public String getConductor()
+/*     */   {
+/* 345 */     return this.conductor;
+/*     */   }
+/*     */ 
+/*     */   public void setConductor(String value)
+/*     */   {
+/* 357 */     this.conductor = value;
+/*     */   }
+/*     */ 
+/*     */   public List<String> getConnectorGender()
+/*     */   {
+/* 383 */     if (this.connectorGender == null) {
+/* 384 */       this.connectorGender = new ArrayList();
+/*     */     }
+/* 386 */     return this.connectorGender;
+/*     */   }
+/*     */ 
+/*     */   public ZoomDimension getDigitalZoom()
+/*     */   {
+/* 398 */     return this.digitalZoom;
+/*     */   }
+/*     */ 
+/*     */   public void setDigitalZoom(ZoomDimension value)
+/*     */   {
+/* 410 */     this.digitalZoom = value;
+/*     */   }
+/*     */ 
+/*     */   public String getFinishType()
+/*     */   {
+/* 422 */     return this.finishType;
+/*     */   }
+/*     */ 
+/*     */   public void setFinishType(String value)
+/*     */   {
+/* 434 */     this.finishType = value;
+/*     */   }
+/*     */ 
+/*     */   public LengthDimension getFixedFocalLength()
+/*     */   {
+/* 446 */     return this.fixedFocalLength;
+/*     */   }
+/*     */ 
+/*     */   public void setFixedFocalLength(LengthDimension value)
+/*     */   {
+/* 458 */     this.fixedFocalLength = value;
+/*     */   }
+/*     */ 
+/*     */   public String getFocusType()
+/*     */   {
+/* 470 */     return this.focusType;
+/*     */   }
+/*     */ 
+/*     */   public void setFocusType(String value)
+/*     */   {
+/* 482 */     this.focusType = value;
+/*     */   }
+/*     */ 
+/*     */   public String getImageStabilization()
+/*     */   {
+/* 494 */     return this.imageStabilization;
+/*     */   }
+/*     */ 
+/*     */   public void setImageStabilization(String value)
+/*     */   {
+/* 506 */     this.imageStabilization = value;
+/*     */   }
+/*     */ 
+/*     */   public ApertureDimension getMaxAperture()
+/*     */   {
+/* 518 */     return this.maxAperture;
+/*     */   }
+/*     */ 
+/*     */   public void setMaxAperture(ApertureDimension value)
+/*     */   {
+/* 530 */     this.maxAperture = value;
+/*     */   }
+/*     */ 
+/*     */   public LengthDimension getMaxFocalLength()
+/*     */   {
+/* 542 */     return this.maxFocalLength;
+/*     */   }
+/*     */ 
+/*     */   public void setMaxFocalLength(LengthDimension value)
+/*     */   {
+/* 554 */     this.maxFocalLength = value;
+/*     */   }
+/*     */ 
+/*     */   public String getMemorySlotsAvailable()
+/*     */   {
+/* 566 */     return this.memorySlotsAvailable;
+/*     */   }
+/*     */ 
+/*     */   public void setMemorySlotsAvailable(String value)
+/*     */   {
+/* 578 */     this.memorySlotsAvailable = value;
+/*     */   }
+/*     */ 
+/*     */   public ApertureDimension getMinAperture()
+/*     */   {
+/* 590 */     return this.minAperture;
+/*     */   }
+/*     */ 
+/*     */   public void setMinAperture(ApertureDimension value)
+/*     */   {
+/* 602 */     this.minAperture = value;
+/*     */   }
+/*     */ 
+/*     */   public ZoomDimension getOpticalZoom()
+/*     */   {
+/* 614 */     return this.opticalZoom;
+/*     */   }
+/*     */ 
+/*     */   public void setOpticalZoom(ZoomDimension value)
+/*     */   {
+/* 626 */     this.opticalZoom = value;
+/*     */   }
+/*     */ 
+/*     */   public String getPowerSource()
+/*     */   {
+/* 638 */     return this.powerSource;
+/*     */   }
+/*     */ 
+/*     */   public void setPowerSource(String value)
+/*     */   {
+/* 650 */     this.powerSource = value;
+/*     */   }
+/*     */ 
+/*     */   public String getRemoteControlDescription()
+/*     */   {
+/* 662 */     return this.remoteControlDescription;
+/*     */   }
+/*     */ 
+/*     */   public void setRemoteControlDescription(String value)
+/*     */   {
+/* 674 */     this.remoteControlDescription = value;
+/*     */   }
+/*     */ 
+/*     */   public String getSoftwareIncluded()
+/*     */   {
+/* 686 */     return this.softwareIncluded;
+/*     */   }
+/*     */ 
+/*     */   public void setSoftwareIncluded(String value)
+/*     */   {
+/* 698 */     this.softwareIncluded = value;
+/*     */   }
+/*     */ 
+/*     */   public BigInteger getTotalFirewirePorts()
+/*     */   {
+/* 710 */     return this.totalFirewirePorts;
+/*     */   }
+/*     */ 
+/*     */   public void setTotalFirewirePorts(BigInteger value)
+/*     */   {
+/* 722 */     this.totalFirewirePorts = value;
+/*     */   }
+/*     */ 
+/*     */   public BigInteger getTotalSVideoOutPorts()
+/*     */   {
+/* 734 */     return this.totalSVideoOutPorts;
+/*     */   }
+/*     */ 
+/*     */   public void setTotalSVideoOutPorts(BigInteger value)
+/*     */   {
+/* 746 */     this.totalSVideoOutPorts = value;
+/*     */   }
+/*     */ 
+/*     */   public BigInteger getTotalUSBPorts()
+/*     */   {
+/* 758 */     return this.totalUSBPorts;
+/*     */   }
+/*     */ 
+/*     */   public void setTotalUSBPorts(BigInteger value)
+/*     */   {
+/* 770 */     this.totalUSBPorts = value;
+/*     */   }
+/*     */ 
+/*     */   public String getViewFinderType()
+/*     */   {
+/* 782 */     return this.viewFinderType;
+/*     */   }
+/*     */ 
+/*     */   public void setViewFinderType(String value)
+/*     */   {
+/* 794 */     this.viewFinderType = value;
+/*     */   }
+/*     */ 
+/*     */   public String getEfficiency()
+/*     */   {
+/* 806 */     return this.efficiency;
+/*     */   }
+/*     */ 
+/*     */   public void setEfficiency(String value)
+/*     */   {
+/* 818 */     this.efficiency = value;
+/*     */   }
+/*     */ }
 
-package com.elcuk.jaxb;
-
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-
-/**
- * <p>anonymous complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="BatteryChargeCycles" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element ref="{}BatteryCellType" minOccurs="0"/>
- *         &lt;element ref="{}BatteryPower" minOccurs="0"/>
- *         &lt;element ref="{}BoxContents" minOccurs="0"/>
- *         &lt;element name="CableLength" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element ref="{}CoatingDescription" minOccurs="0"/>
- *         &lt;element ref="{}CompatibleMountings" minOccurs="0"/>
- *         &lt;element name="Conductor" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element ref="{}ConnectorGender" maxOccurs="5" minOccurs="0"/>
- *         &lt;element ref="{}DigitalZoom" minOccurs="0"/>
- *         &lt;element ref="{}FinishType" minOccurs="0"/>
- *         &lt;element ref="{}FixedFocalLength" minOccurs="0"/>
- *         &lt;element ref="{}FocusType" minOccurs="0"/>
- *         &lt;element ref="{}ImageStabilization" minOccurs="0"/>
- *         &lt;element ref="{}MaxAperture" minOccurs="0"/>
- *         &lt;element ref="{}MaxFocalLength" minOccurs="0"/>
- *         &lt;element name="MemorySlotsAvailable" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element ref="{}MinAperture" minOccurs="0"/>
- *         &lt;element ref="{}OpticalZoom" minOccurs="0"/>
- *         &lt;element name="PowerSource" type="{}FortyStringNotNull" minOccurs="0"/>
- *         &lt;element name="RemoteControlDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SoftwareIncluded" type="{}LongStringNotNull" minOccurs="0"/>
- *         &lt;element ref="{}TotalFirewirePorts" minOccurs="0"/>
- *         &lt;element name="TotalSVideoOutPorts" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element ref="{}TotalUSBPorts" minOccurs="0"/>
- *         &lt;element ref="{}ViewFinderType" minOccurs="0"/>
- *         &lt;element ref="{}Efficiency" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.CETelescope
+ * JD-Core Version:    0.6.2
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "batteryChargeCycles",
-    "batteryCellType",
-    "batteryPower",
-    "boxContents",
-    "cableLength",
-    "coatingDescription",
-    "compatibleMountings",
-    "conductor",
-    "connectorGender",
-    "digitalZoom",
-    "finishType",
-    "fixedFocalLength",
-    "focusType",
-    "imageStabilization",
-    "maxAperture",
-    "maxFocalLength",
-    "memorySlotsAvailable",
-    "minAperture",
-    "opticalZoom",
-    "powerSource",
-    "remoteControlDescription",
-    "softwareIncluded",
-    "totalFirewirePorts",
-    "totalSVideoOutPorts",
-    "totalUSBPorts",
-    "viewFinderType",
-    "efficiency"
-})
-@XmlRootElement(name = "CETelescope")
-public class CETelescope {
-
-    @XmlElement(name = "BatteryChargeCycles")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger batteryChargeCycles;
-    @XmlElement(name = "BatteryCellType")
-    @XmlSchemaType(name = "string")
-    protected BatteryCellTypeValues batteryCellType;
-    @XmlElement(name = "BatteryPower")
-    protected BatteryPowerIntegerDimension batteryPower;
-    @XmlElement(name = "BoxContents")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String boxContents;
-    @XmlElement(name = "CableLength")
-    protected LengthDimension cableLength;
-    @XmlElement(name = "CoatingDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String coatingDescription;
-    @XmlElement(name = "CompatibleMountings")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String compatibleMountings;
-    @XmlElement(name = "Conductor")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String conductor;
-    @XmlElement(name = "ConnectorGender")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> connectorGender;
-    @XmlElement(name = "DigitalZoom")
-    protected ZoomDimension digitalZoom;
-    @XmlElement(name = "FinishType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String finishType;
-    @XmlElement(name = "FixedFocalLength")
-    protected LengthDimension fixedFocalLength;
-    @XmlElement(name = "FocusType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String focusType;
-    @XmlElement(name = "ImageStabilization")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String imageStabilization;
-    @XmlElement(name = "MaxAperture")
-    protected ApertureDimension maxAperture;
-    @XmlElement(name = "MaxFocalLength")
-    protected LengthDimension maxFocalLength;
-    @XmlElement(name = "MemorySlotsAvailable")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String memorySlotsAvailable;
-    @XmlElement(name = "MinAperture")
-    protected ApertureDimension minAperture;
-    @XmlElement(name = "OpticalZoom")
-    protected ZoomDimension opticalZoom;
-    @XmlElement(name = "PowerSource")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String powerSource;
-    @XmlElement(name = "RemoteControlDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String remoteControlDescription;
-    @XmlElement(name = "SoftwareIncluded")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String softwareIncluded;
-    @XmlElement(name = "TotalFirewirePorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalFirewirePorts;
-    @XmlElement(name = "TotalSVideoOutPorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalSVideoOutPorts;
-    @XmlElement(name = "TotalUSBPorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalUSBPorts;
-    @XmlElement(name = "ViewFinderType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String viewFinderType;
-    @XmlElement(name = "Efficiency")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String efficiency;
-
-    /**
-     * 获取batteryChargeCycles属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getBatteryChargeCycles() {
-        return batteryChargeCycles;
-    }
-
-    /**
-     * 设置batteryChargeCycles属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setBatteryChargeCycles(BigInteger value) {
-        this.batteryChargeCycles = value;
-    }
-
-    /**
-     * 获取batteryCellType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BatteryCellTypeValues }
-     *     
-     */
-    public BatteryCellTypeValues getBatteryCellType() {
-        return batteryCellType;
-    }
-
-    /**
-     * 设置batteryCellType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BatteryCellTypeValues }
-     *     
-     */
-    public void setBatteryCellType(BatteryCellTypeValues value) {
-        this.batteryCellType = value;
-    }
-
-    /**
-     * 获取batteryPower属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BatteryPowerIntegerDimension }
-     *     
-     */
-    public BatteryPowerIntegerDimension getBatteryPower() {
-        return batteryPower;
-    }
-
-    /**
-     * 设置batteryPower属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BatteryPowerIntegerDimension }
-     *     
-     */
-    public void setBatteryPower(BatteryPowerIntegerDimension value) {
-        this.batteryPower = value;
-    }
-
-    /**
-     * 获取boxContents属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getBoxContents() {
-        return boxContents;
-    }
-
-    /**
-     * 设置boxContents属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBoxContents(String value) {
-        this.boxContents = value;
-    }
-
-    /**
-     * 获取cableLength属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getCableLength() {
-        return cableLength;
-    }
-
-    /**
-     * 设置cableLength属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setCableLength(LengthDimension value) {
-        this.cableLength = value;
-    }
-
-    /**
-     * 获取coatingDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCoatingDescription() {
-        return coatingDescription;
-    }
-
-    /**
-     * 设置coatingDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCoatingDescription(String value) {
-        this.coatingDescription = value;
-    }
-
-    /**
-     * 获取compatibleMountings属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCompatibleMountings() {
-        return compatibleMountings;
-    }
-
-    /**
-     * 设置compatibleMountings属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCompatibleMountings(String value) {
-        this.compatibleMountings = value;
-    }
-
-    /**
-     * 获取conductor属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getConductor() {
-        return conductor;
-    }
-
-    /**
-     * 设置conductor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setConductor(String value) {
-        this.conductor = value;
-    }
-
-    /**
-     * Gets the value of the connectorGender property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the connectorGender property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getConnectorGender().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getConnectorGender() {
-        if (connectorGender == null) {
-            connectorGender = new ArrayList<String>();
-        }
-        return this.connectorGender;
-    }
-
-    /**
-     * 获取digitalZoom属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ZoomDimension }
-     *     
-     */
-    public ZoomDimension getDigitalZoom() {
-        return digitalZoom;
-    }
-
-    /**
-     * 设置digitalZoom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ZoomDimension }
-     *     
-     */
-    public void setDigitalZoom(ZoomDimension value) {
-        this.digitalZoom = value;
-    }
-
-    /**
-     * 获取finishType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFinishType() {
-        return finishType;
-    }
-
-    /**
-     * 设置finishType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFinishType(String value) {
-        this.finishType = value;
-    }
-
-    /**
-     * 获取fixedFocalLength属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getFixedFocalLength() {
-        return fixedFocalLength;
-    }
-
-    /**
-     * 设置fixedFocalLength属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setFixedFocalLength(LengthDimension value) {
-        this.fixedFocalLength = value;
-    }
-
-    /**
-     * 获取focusType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFocusType() {
-        return focusType;
-    }
-
-    /**
-     * 设置focusType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFocusType(String value) {
-        this.focusType = value;
-    }
-
-    /**
-     * 获取imageStabilization属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getImageStabilization() {
-        return imageStabilization;
-    }
-
-    /**
-     * 设置imageStabilization属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setImageStabilization(String value) {
-        this.imageStabilization = value;
-    }
-
-    /**
-     * 获取maxAperture属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ApertureDimension }
-     *     
-     */
-    public ApertureDimension getMaxAperture() {
-        return maxAperture;
-    }
-
-    /**
-     * 设置maxAperture属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ApertureDimension }
-     *     
-     */
-    public void setMaxAperture(ApertureDimension value) {
-        this.maxAperture = value;
-    }
-
-    /**
-     * 获取maxFocalLength属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getMaxFocalLength() {
-        return maxFocalLength;
-    }
-
-    /**
-     * 设置maxFocalLength属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setMaxFocalLength(LengthDimension value) {
-        this.maxFocalLength = value;
-    }
-
-    /**
-     * 获取memorySlotsAvailable属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMemorySlotsAvailable() {
-        return memorySlotsAvailable;
-    }
-
-    /**
-     * 设置memorySlotsAvailable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemorySlotsAvailable(String value) {
-        this.memorySlotsAvailable = value;
-    }
-
-    /**
-     * 获取minAperture属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ApertureDimension }
-     *     
-     */
-    public ApertureDimension getMinAperture() {
-        return minAperture;
-    }
-
-    /**
-     * 设置minAperture属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ApertureDimension }
-     *     
-     */
-    public void setMinAperture(ApertureDimension value) {
-        this.minAperture = value;
-    }
-
-    /**
-     * 获取opticalZoom属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ZoomDimension }
-     *     
-     */
-    public ZoomDimension getOpticalZoom() {
-        return opticalZoom;
-    }
-
-    /**
-     * 设置opticalZoom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ZoomDimension }
-     *     
-     */
-    public void setOpticalZoom(ZoomDimension value) {
-        this.opticalZoom = value;
-    }
-
-    /**
-     * 获取powerSource属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPowerSource() {
-        return powerSource;
-    }
-
-    /**
-     * 设置powerSource属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPowerSource(String value) {
-        this.powerSource = value;
-    }
-
-    /**
-     * 获取remoteControlDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRemoteControlDescription() {
-        return remoteControlDescription;
-    }
-
-    /**
-     * 设置remoteControlDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRemoteControlDescription(String value) {
-        this.remoteControlDescription = value;
-    }
-
-    /**
-     * 获取softwareIncluded属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSoftwareIncluded() {
-        return softwareIncluded;
-    }
-
-    /**
-     * 设置softwareIncluded属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSoftwareIncluded(String value) {
-        this.softwareIncluded = value;
-    }
-
-    /**
-     * 获取totalFirewirePorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalFirewirePorts() {
-        return totalFirewirePorts;
-    }
-
-    /**
-     * 设置totalFirewirePorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalFirewirePorts(BigInteger value) {
-        this.totalFirewirePorts = value;
-    }
-
-    /**
-     * 获取totalSVideoOutPorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalSVideoOutPorts() {
-        return totalSVideoOutPorts;
-    }
-
-    /**
-     * 设置totalSVideoOutPorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalSVideoOutPorts(BigInteger value) {
-        this.totalSVideoOutPorts = value;
-    }
-
-    /**
-     * 获取totalUSBPorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalUSBPorts() {
-        return totalUSBPorts;
-    }
-
-    /**
-     * 设置totalUSBPorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalUSBPorts(BigInteger value) {
-        this.totalUSBPorts = value;
-    }
-
-    /**
-     * 获取viewFinderType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getViewFinderType() {
-        return viewFinderType;
-    }
-
-    /**
-     * 设置viewFinderType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setViewFinderType(String value) {
-        this.viewFinderType = value;
-    }
-
-    /**
-     * 获取efficiency属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEfficiency() {
-        return efficiency;
-    }
-
-    /**
-     * 设置efficiency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEfficiency(String value) {
-        this.efficiency = value;
-    }
-
-}

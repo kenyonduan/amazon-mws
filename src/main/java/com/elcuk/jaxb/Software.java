@@ -1,573 +1,246 @@
+/*     */ package com.elcuk.jaxb;
+/*     */ 
+/*     */ import java.math.BigInteger;
+/*     */ import java.util.ArrayList;
+/*     */ import java.util.List;
+/*     */ import javax.xml.bind.annotation.XmlAccessType;
+/*     */ import javax.xml.bind.annotation.XmlAccessorType;
+/*     */ import javax.xml.bind.annotation.XmlElement;
+/*     */ import javax.xml.bind.annotation.XmlRootElement;
+/*     */ import javax.xml.bind.annotation.XmlSchemaType;
+/*     */ import javax.xml.bind.annotation.XmlType;
+/*     */ import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
+/*     */ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+/*     */ 
+/*     */ @XmlAccessorType(XmlAccessType.FIELD)
+/*     */ @XmlType(name="", propOrder={"mediaFormat", "operatingSystem", "bundles", "childrensSoftwareGenre", "esrbRating", "bbfcRating", "pegiRating", "uskRating", "esrbDescriptors", "hardwarePlatform", "pegiDetails", "maxNumberOfPlayers", "mfgSuggestedAgeMin", "mfgSuggestedAgeMax", "softwarePlatform", "applicationVersion", "numberOfLicenses"})
+/*     */ @XmlRootElement(name="Software")
+/*     */ public class Software
+/*     */ {
+/*     */ 
+/*     */   @XmlElement(name="MediaFormat", required=true)
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected List<String> mediaFormat;
+/*     */ 
+/*     */   @XmlElement(name="OperatingSystem", required=true)
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected List<String> operatingSystem;
+/*     */ 
+/*     */   @XmlElement(name="Bundles")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String bundles;
+/*     */ 
+/*     */   @XmlElement(name="ChildrensSoftwareGenre")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected List<String> childrensSoftwareGenre;
+/*     */ 
+/*     */   @XmlElement(name="ESRBRating")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String esrbRating;
+/*     */ 
+/*     */   @XmlElement(name="BBFCRating")
+/*     */   protected BBFCRatingType bbfcRating;
+/*     */ 
+/*     */   @XmlElement(name="PEGIRating")
+/*     */   protected PEGIRatingType pegiRating;
+/*     */ 
+/*     */   @XmlElement(name="USKRating")
+/*     */   protected USKRatingType uskRating;
+/*     */ 
+/*     */   @XmlElement(name="ESRBDescriptors")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected List<String> esrbDescriptors;
+/*     */ 
+/*     */   @XmlElement(name="HardwarePlatform")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected List<String> hardwarePlatform;
+/*     */ 
+/*     */   @XmlElement(name="PEGIDetails")
+/*     */   protected PEGIDetailsType pegiDetails;
+/*     */ 
+/*     */   @XmlElement(name="MaxNumberOfPlayers")
+/*     */   @XmlSchemaType(name="positiveInteger")
+/*     */   protected BigInteger maxNumberOfPlayers;
+/*     */ 
+/*     */   @XmlElement(name="MFGSuggestedAgeMin")
+/*     */   @XmlSchemaType(name="positiveInteger")
+/*     */   protected BigInteger mfgSuggestedAgeMin;
+/*     */ 
+/*     */   @XmlElement(name="MFGSuggestedAgeMax")
+/*     */   @XmlSchemaType(name="positiveInteger")
+/*     */   protected BigInteger mfgSuggestedAgeMax;
+/*     */ 
+/*     */   @XmlElement(name="SoftwarePlatform")
+/*     */   protected List<SoftwarePlatform> softwarePlatform;
+/*     */ 
+/*     */   @XmlElement(name="ApplicationVersion")
+/*     */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*     */   protected String applicationVersion;
+/*     */ 
+/*     */   @XmlElement(name="NumberOfLicenses")
+/*     */   @XmlSchemaType(name="positiveInteger")
+/*     */   protected BigInteger numberOfLicenses;
+/*     */ 
+/*     */   public List<String> getMediaFormat()
+/*     */   {
+/* 147 */     if (this.mediaFormat == null) {
+/* 148 */       this.mediaFormat = new ArrayList();
+/*     */     }
+/* 150 */     return this.mediaFormat;
+/*     */   }
+/*     */ 
+/*     */   public List<String> getOperatingSystem()
+/*     */   {
+/* 176 */     if (this.operatingSystem == null) {
+/* 177 */       this.operatingSystem = new ArrayList();
+/*     */     }
+/* 179 */     return this.operatingSystem;
+/*     */   }
+/*     */ 
+/*     */   public String getBundles()
+/*     */   {
+/* 191 */     return this.bundles;
+/*     */   }
+/*     */ 
+/*     */   public void setBundles(String value)
+/*     */   {
+/* 203 */     this.bundles = value;
+/*     */   }
+/*     */ 
+/*     */   public List<String> getChildrensSoftwareGenre()
+/*     */   {
+/* 229 */     if (this.childrensSoftwareGenre == null) {
+/* 230 */       this.childrensSoftwareGenre = new ArrayList();
+/*     */     }
+/* 232 */     return this.childrensSoftwareGenre;
+/*     */   }
+/*     */ 
+/*     */   public String getESRBRating()
+/*     */   {
+/* 244 */     return this.esrbRating;
+/*     */   }
+/*     */ 
+/*     */   public void setESRBRating(String value)
+/*     */   {
+/* 256 */     this.esrbRating = value;
+/*     */   }
+/*     */ 
+/*     */   public BBFCRatingType getBBFCRating()
+/*     */   {
+/* 268 */     return this.bbfcRating;
+/*     */   }
+/*     */ 
+/*     */   public void setBBFCRating(BBFCRatingType value)
+/*     */   {
+/* 280 */     this.bbfcRating = value;
+/*     */   }
+/*     */ 
+/*     */   public PEGIRatingType getPEGIRating()
+/*     */   {
+/* 292 */     return this.pegiRating;
+/*     */   }
+/*     */ 
+/*     */   public void setPEGIRating(PEGIRatingType value)
+/*     */   {
+/* 304 */     this.pegiRating = value;
+/*     */   }
+/*     */ 
+/*     */   public USKRatingType getUSKRating()
+/*     */   {
+/* 316 */     return this.uskRating;
+/*     */   }
+/*     */ 
+/*     */   public void setUSKRating(USKRatingType value)
+/*     */   {
+/* 328 */     this.uskRating = value;
+/*     */   }
+/*     */ 
+/*     */   public List<String> getESRBDescriptors()
+/*     */   {
+/* 354 */     if (this.esrbDescriptors == null) {
+/* 355 */       this.esrbDescriptors = new ArrayList();
+/*     */     }
+/* 357 */     return this.esrbDescriptors;
+/*     */   }
+/*     */ 
+/*     */   public List<String> getHardwarePlatform()
+/*     */   {
+/* 383 */     if (this.hardwarePlatform == null) {
+/* 384 */       this.hardwarePlatform = new ArrayList();
+/*     */     }
+/* 386 */     return this.hardwarePlatform;
+/*     */   }
+/*     */ 
+/*     */   public PEGIDetailsType getPEGIDetails()
+/*     */   {
+/* 398 */     return this.pegiDetails;
+/*     */   }
+/*     */ 
+/*     */   public void setPEGIDetails(PEGIDetailsType value)
+/*     */   {
+/* 410 */     this.pegiDetails = value;
+/*     */   }
+/*     */ 
+/*     */   public BigInteger getMaxNumberOfPlayers()
+/*     */   {
+/* 422 */     return this.maxNumberOfPlayers;
+/*     */   }
+/*     */ 
+/*     */   public void setMaxNumberOfPlayers(BigInteger value)
+/*     */   {
+/* 434 */     this.maxNumberOfPlayers = value;
+/*     */   }
+/*     */ 
+/*     */   public BigInteger getMFGSuggestedAgeMin()
+/*     */   {
+/* 446 */     return this.mfgSuggestedAgeMin;
+/*     */   }
+/*     */ 
+/*     */   public void setMFGSuggestedAgeMin(BigInteger value)
+/*     */   {
+/* 458 */     this.mfgSuggestedAgeMin = value;
+/*     */   }
+/*     */ 
+/*     */   public BigInteger getMFGSuggestedAgeMax()
+/*     */   {
+/* 470 */     return this.mfgSuggestedAgeMax;
+/*     */   }
+/*     */ 
+/*     */   public void setMFGSuggestedAgeMax(BigInteger value)
+/*     */   {
+/* 482 */     this.mfgSuggestedAgeMax = value;
+/*     */   }
+/*     */ 
+/*     */   public List<SoftwarePlatform> getSoftwarePlatform()
+/*     */   {
+/* 508 */     if (this.softwarePlatform == null) {
+/* 509 */       this.softwarePlatform = new ArrayList();
+/*     */     }
+/* 511 */     return this.softwarePlatform;
+/*     */   }
+/*     */ 
+/*     */   public String getApplicationVersion()
+/*     */   {
+/* 523 */     return this.applicationVersion;
+/*     */   }
+/*     */ 
+/*     */   public void setApplicationVersion(String value)
+/*     */   {
+/* 535 */     this.applicationVersion = value;
+/*     */   }
+/*     */ 
+/*     */   public BigInteger getNumberOfLicenses()
+/*     */   {
+/* 547 */     return this.numberOfLicenses;
+/*     */   }
+/*     */ 
+/*     */   public void setNumberOfLicenses(BigInteger value)
+/*     */   {
+/* 559 */     this.numberOfLicenses = value;
+/*     */   }
+/*     */ }
 
-package com.elcuk.jaxb;
-
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-
-/**
- * <p>anonymous complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="MediaFormat" type="{}MediumStringNotNull" maxOccurs="5"/>
- *         &lt;element name="OperatingSystem" type="{}MediumStringNotNull" maxOccurs="7"/>
- *         &lt;element name="Bundles" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ChildrensSoftwareGenre" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;choice minOccurs="0">
- *           &lt;element name="ESRBRating" type="{}FortyStringNotNull"/>
- *           &lt;element name="BBFCRating" type="{}BBFCRatingType"/>
- *           &lt;element name="PEGIRating" type="{}PEGIRatingType"/>
- *           &lt;element name="USKRating" type="{}USKRatingType"/>
- *         &lt;/choice>
- *         &lt;element name="ESRBDescriptors" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="HardwarePlatform" type="{}MediumStringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="PEGIDetails" type="{}PEGIDetailsType" minOccurs="0"/>
- *         &lt;element name="MaxNumberOfPlayers" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="MFGSuggestedAgeMin" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="MFGSuggestedAgeMax" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element ref="{}SoftwarePlatform" maxOccurs="4" minOccurs="0"/>
- *         &lt;element name="ApplicationVersion" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="NumberOfLicenses" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.Software
+ * JD-Core Version:    0.6.2
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "mediaFormat",
-    "operatingSystem",
-    "bundles",
-    "childrensSoftwareGenre",
-    "esrbRating",
-    "bbfcRating",
-    "pegiRating",
-    "uskRating",
-    "esrbDescriptors",
-    "hardwarePlatform",
-    "pegiDetails",
-    "maxNumberOfPlayers",
-    "mfgSuggestedAgeMin",
-    "mfgSuggestedAgeMax",
-    "softwarePlatform",
-    "applicationVersion",
-    "numberOfLicenses"
-})
-@XmlRootElement(name = "Software")
-public class Software {
-
-    @XmlElement(name = "MediaFormat", required = true)
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> mediaFormat;
-    @XmlElement(name = "OperatingSystem", required = true)
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> operatingSystem;
-    @XmlElement(name = "Bundles")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String bundles;
-    @XmlElement(name = "ChildrensSoftwareGenre")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> childrensSoftwareGenre;
-    @XmlElement(name = "ESRBRating")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String esrbRating;
-    @XmlElement(name = "BBFCRating")
-    @XmlSchemaType(name = "string")
-    protected BBFCRatingType bbfcRating;
-    @XmlElement(name = "PEGIRating")
-    @XmlSchemaType(name = "string")
-    protected PEGIRatingType pegiRating;
-    @XmlElement(name = "USKRating")
-    @XmlSchemaType(name = "string")
-    protected USKRatingType uskRating;
-    @XmlElement(name = "ESRBDescriptors")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> esrbDescriptors;
-    @XmlElement(name = "HardwarePlatform")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> hardwarePlatform;
-    @XmlElement(name = "PEGIDetails")
-    protected PEGIDetailsType pegiDetails;
-    @XmlElement(name = "MaxNumberOfPlayers")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger maxNumberOfPlayers;
-    @XmlElement(name = "MFGSuggestedAgeMin")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger mfgSuggestedAgeMin;
-    @XmlElement(name = "MFGSuggestedAgeMax")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger mfgSuggestedAgeMax;
-    @XmlElement(name = "SoftwarePlatform")
-    protected List<SoftwarePlatform> softwarePlatform;
-    @XmlElement(name = "ApplicationVersion")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String applicationVersion;
-    @XmlElement(name = "NumberOfLicenses")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger numberOfLicenses;
-
-    /**
-     * Gets the value of the mediaFormat property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mediaFormat property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMediaFormat().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getMediaFormat() {
-        if (mediaFormat == null) {
-            mediaFormat = new ArrayList<String>();
-        }
-        return this.mediaFormat;
-    }
-
-    /**
-     * Gets the value of the operatingSystem property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the operatingSystem property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getOperatingSystem().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getOperatingSystem() {
-        if (operatingSystem == null) {
-            operatingSystem = new ArrayList<String>();
-        }
-        return this.operatingSystem;
-    }
-
-    /**
-     * 获取bundles属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getBundles() {
-        return bundles;
-    }
-
-    /**
-     * 设置bundles属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBundles(String value) {
-        this.bundles = value;
-    }
-
-    /**
-     * Gets the value of the childrensSoftwareGenre property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the childrensSoftwareGenre property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getChildrensSoftwareGenre().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getChildrensSoftwareGenre() {
-        if (childrensSoftwareGenre == null) {
-            childrensSoftwareGenre = new ArrayList<String>();
-        }
-        return this.childrensSoftwareGenre;
-    }
-
-    /**
-     * 获取esrbRating属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getESRBRating() {
-        return esrbRating;
-    }
-
-    /**
-     * 设置esrbRating属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setESRBRating(String value) {
-        this.esrbRating = value;
-    }
-
-    /**
-     * 获取bbfcRating属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BBFCRatingType }
-     *     
-     */
-    public BBFCRatingType getBBFCRating() {
-        return bbfcRating;
-    }
-
-    /**
-     * 设置bbfcRating属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BBFCRatingType }
-     *     
-     */
-    public void setBBFCRating(BBFCRatingType value) {
-        this.bbfcRating = value;
-    }
-
-    /**
-     * 获取pegiRating属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PEGIRatingType }
-     *     
-     */
-    public PEGIRatingType getPEGIRating() {
-        return pegiRating;
-    }
-
-    /**
-     * 设置pegiRating属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PEGIRatingType }
-     *     
-     */
-    public void setPEGIRating(PEGIRatingType value) {
-        this.pegiRating = value;
-    }
-
-    /**
-     * 获取uskRating属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link USKRatingType }
-     *     
-     */
-    public USKRatingType getUSKRating() {
-        return uskRating;
-    }
-
-    /**
-     * 设置uskRating属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link USKRatingType }
-     *     
-     */
-    public void setUSKRating(USKRatingType value) {
-        this.uskRating = value;
-    }
-
-    /**
-     * Gets the value of the esrbDescriptors property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the esrbDescriptors property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getESRBDescriptors().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getESRBDescriptors() {
-        if (esrbDescriptors == null) {
-            esrbDescriptors = new ArrayList<String>();
-        }
-        return this.esrbDescriptors;
-    }
-
-    /**
-     * Gets the value of the hardwarePlatform property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hardwarePlatform property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getHardwarePlatform().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getHardwarePlatform() {
-        if (hardwarePlatform == null) {
-            hardwarePlatform = new ArrayList<String>();
-        }
-        return this.hardwarePlatform;
-    }
-
-    /**
-     * 获取pegiDetails属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PEGIDetailsType }
-     *     
-     */
-    public PEGIDetailsType getPEGIDetails() {
-        return pegiDetails;
-    }
-
-    /**
-     * 设置pegiDetails属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PEGIDetailsType }
-     *     
-     */
-    public void setPEGIDetails(PEGIDetailsType value) {
-        this.pegiDetails = value;
-    }
-
-    /**
-     * 获取maxNumberOfPlayers属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getMaxNumberOfPlayers() {
-        return maxNumberOfPlayers;
-    }
-
-    /**
-     * 设置maxNumberOfPlayers属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setMaxNumberOfPlayers(BigInteger value) {
-        this.maxNumberOfPlayers = value;
-    }
-
-    /**
-     * 获取mfgSuggestedAgeMin属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getMFGSuggestedAgeMin() {
-        return mfgSuggestedAgeMin;
-    }
-
-    /**
-     * 设置mfgSuggestedAgeMin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setMFGSuggestedAgeMin(BigInteger value) {
-        this.mfgSuggestedAgeMin = value;
-    }
-
-    /**
-     * 获取mfgSuggestedAgeMax属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getMFGSuggestedAgeMax() {
-        return mfgSuggestedAgeMax;
-    }
-
-    /**
-     * 设置mfgSuggestedAgeMax属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setMFGSuggestedAgeMax(BigInteger value) {
-        this.mfgSuggestedAgeMax = value;
-    }
-
-    /**
-     * Gets the value of the softwarePlatform property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the softwarePlatform property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSoftwarePlatform().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link SoftwarePlatform }
-     * 
-     * 
-     */
-    public List<SoftwarePlatform> getSoftwarePlatform() {
-        if (softwarePlatform == null) {
-            softwarePlatform = new ArrayList<SoftwarePlatform>();
-        }
-        return this.softwarePlatform;
-    }
-
-    /**
-     * 获取applicationVersion属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getApplicationVersion() {
-        return applicationVersion;
-    }
-
-    /**
-     * 设置applicationVersion属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setApplicationVersion(String value) {
-        this.applicationVersion = value;
-    }
-
-    /**
-     * 获取numberOfLicenses属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getNumberOfLicenses() {
-        return numberOfLicenses;
-    }
-
-    /**
-     * 设置numberOfLicenses属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setNumberOfLicenses(BigInteger value) {
-        this.numberOfLicenses = value;
-    }
-
-}

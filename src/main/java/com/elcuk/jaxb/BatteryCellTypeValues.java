@@ -1,90 +1,64 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlEnumValue;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="BatteryCellTypeValues")
+/*    */ @XmlEnum
+/*    */ public enum BatteryCellTypeValues
+/*    */ {
+/* 41 */   NI_CAD("NiCAD"), 
+/*    */ 
+/* 43 */   NI_MH("NiMh"), 
+/*    */ 
+/* 45 */   ALKALINE("alkaline"), 
+/*    */ 
+/* 47 */   ALUMINUM_OXYGEN("aluminum_oxygen"), 
+/*    */ 
+/* 49 */   LEAD_ACID("lead_acid"), 
+/*    */ 
+/* 51 */   LEAD_CALCIUM("lead_calcium"), 
+/*    */ 
+/* 53 */   LITHIUM("lithium"), 
+/*    */ 
+/* 55 */   LITHIUM_ION("lithium_ion"), 
+/*    */ 
+/* 57 */   LITHIUM_MANGANESE_DIOXIDE("lithium_manganese_dioxide"), 
+/*    */ 
+/* 59 */   LITHIUM_METAL("lithium_metal"), 
+/*    */ 
+/* 61 */   LITHIUM_POLYMER("lithium_polymer"), 
+/*    */ 
+/* 63 */   MANGANESE("manganese"), 
+/*    */ 
+/* 65 */   POLYMER("polymer"), 
+/*    */ 
+/* 67 */   SILVER_OXIDE("silver_oxide"), 
+/*    */ 
+/* 69 */   ZINC("zinc");
+/*    */ 
+/*    */   private final String value;
+/*    */ 
+/*    */   private BatteryCellTypeValues(String v) {
+/* 74 */     this.value = v;
+/*    */   }
+/*    */ 
+/*    */   public String value() {
+/* 78 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public static BatteryCellTypeValues fromValue(String v) {
+/* 82 */     for (BatteryCellTypeValues c : values()) {
+/* 83 */       if (c.value.equals(v)) {
+/* 84 */         return c;
+/*    */       }
+/*    */     }
+/* 87 */     throw new IllegalArgumentException(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>BatteryCellTypeValues的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="BatteryCellTypeValues">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="NiCAD"/>
- *     &lt;enumeration value="NiMh"/>
- *     &lt;enumeration value="alkaline"/>
- *     &lt;enumeration value="aluminum_oxygen"/>
- *     &lt;enumeration value="lead_acid"/>
- *     &lt;enumeration value="lead_calcium"/>
- *     &lt;enumeration value="lithium"/>
- *     &lt;enumeration value="lithium_ion"/>
- *     &lt;enumeration value="lithium_manganese_dioxide"/>
- *     &lt;enumeration value="lithium_metal"/>
- *     &lt;enumeration value="lithium_polymer"/>
- *     &lt;enumeration value="manganese"/>
- *     &lt;enumeration value="polymer"/>
- *     &lt;enumeration value="silver_oxide"/>
- *     &lt;enumeration value="zinc"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.BatteryCellTypeValues
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "BatteryCellTypeValues")
-@XmlEnum
-public enum BatteryCellTypeValues {
-
-    @XmlEnumValue("NiCAD")
-    NI_CAD("NiCAD"),
-    @XmlEnumValue("NiMh")
-    NI_MH("NiMh"),
-    @XmlEnumValue("alkaline")
-    ALKALINE("alkaline"),
-    @XmlEnumValue("aluminum_oxygen")
-    ALUMINUM_OXYGEN("aluminum_oxygen"),
-    @XmlEnumValue("lead_acid")
-    LEAD_ACID("lead_acid"),
-    @XmlEnumValue("lead_calcium")
-    LEAD_CALCIUM("lead_calcium"),
-    @XmlEnumValue("lithium")
-    LITHIUM("lithium"),
-    @XmlEnumValue("lithium_ion")
-    LITHIUM_ION("lithium_ion"),
-    @XmlEnumValue("lithium_manganese_dioxide")
-    LITHIUM_MANGANESE_DIOXIDE("lithium_manganese_dioxide"),
-    @XmlEnumValue("lithium_metal")
-    LITHIUM_METAL("lithium_metal"),
-    @XmlEnumValue("lithium_polymer")
-    LITHIUM_POLYMER("lithium_polymer"),
-    @XmlEnumValue("manganese")
-    MANGANESE("manganese"),
-    @XmlEnumValue("polymer")
-    POLYMER("polymer"),
-    @XmlEnumValue("silver_oxide")
-    SILVER_OXIDE("silver_oxide"),
-    @XmlEnumValue("zinc")
-    ZINC("zinc");
-    private final String value;
-
-    BatteryCellTypeValues(String v) {
-        value = v;
-    }
-
-    public String value() {
-        return value;
-    }
-
-    public static BatteryCellTypeValues fromValue(String v) {
-        for (BatteryCellTypeValues c: BatteryCellTypeValues.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
-
-}

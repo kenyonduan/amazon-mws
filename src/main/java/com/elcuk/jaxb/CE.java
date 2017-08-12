@@ -1,13415 +1,5794 @@
+/*       */ package com.elcuk.jaxb;
+/*       */ 
+/*       */ import java.math.BigDecimal;
+/*       */ import java.math.BigInteger;
+/*       */ import java.util.ArrayList;
+/*       */ import java.util.List;
+/*       */ import javax.xml.bind.annotation.XmlAccessType;
+/*       */ import javax.xml.bind.annotation.XmlAccessorType;
+/*       */ import javax.xml.bind.annotation.XmlAttribute;
+/*       */ import javax.xml.bind.annotation.XmlElement;
+/*       */ import javax.xml.bind.annotation.XmlRootElement;
+/*       */ import javax.xml.bind.annotation.XmlSchemaType;
+/*       */ import javax.xml.bind.annotation.XmlType;
+/*       */ import javax.xml.bind.annotation.XmlValue;
+/*       */ import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
+/*       */ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+/*       */ 
+/*       */ @XmlAccessorType(XmlAccessType.FIELD)
+/*       */ @XmlType(name="", propOrder={"rebate", "productType", "productSubtype", "analogVideoFormat", "annualEnergyConsumption", "answeringSystemType", "antennaLength", "antennaType", "aspectRatio", "audioFeaturesDescription", "audioInput", "audioOutputEffects", "audioOutputMode", "audioOutputResponseBandwidth", "audioOutputType", "audioSensitivity", "autoRedial", "battery", "batteryAverageLife", "batteryAverageLifeTalkTime", "bufferSize", "batteryTypeLithiumIon", "batteryTypeLithiumMetal", "biometricSecurityFeatures", "builtInDecoders", "buttonQuantity", "cabinetMaterial", "cableFeature", "cableTechnology", "cableType", "cacheMemoryInstalledSize", "callAlerts", "callerIdentification", "carryingStrap", "cassetteSystemType", "cdChangerType", "cdDiskCapacity", "cdLoadType", "cdPlaybackMode", "cdSystemType", "cellularEnhancementProtocol", "coaxialDigitalInput", "coaxialDigitalOutput", "color", "colorDepth", "colorMap", "colorSupport", "compatibleCartridge", "compatibleDevices", "componentType", "compressedCapacity", "computerPeripheralConnector", "conferenceCallCapability", "connectivityProtocol", "connectivityTechnology", "copierType", "copySizeMaximum", "countryOfOrigin", "crossoverFrequency", "dacDataWidth", "dataCompressionProtocol", "dataLinkProtocol", "dataService", "dataStorageCapability", "dataTransferRate", "deviceType", "dgps", "dialerType", "digitalPlayerType", "digitalRecordingTime", "digitalSignalingProtocol", "digitalStorageCapacity", "digitalZoom", "displayColorSupport", "displayLanguageOptions", "displayLineQuantity", "displayResolutionMaximum", "displayTechnology", "displayType", "dockingStationExternalInterface", "driveUnits", "duplex", "dvdDiskCapacity", "dvdDiskChangerType", "dvdMediaLoadType", "dvdPictureZoomPower", "dvdPlaybackMode", "dvdType", "dvrCompressionRate", "dvrMaxRecordingTime", "dvrServiceDescription", "enclosure", "equalizer", "equalizerBandChannels", "errorCorrectionProtocol", "eyeRelief", "faceplateType", "faxMachineCompatibility", "faxType", "flashMemoryInstalledSize", "floppyDiskDrive", "formFactor", "freeAirResonantFrequency", "frequencyRange", "frequencyRequired", "frequencyResponseCurve", "frontAccessibleBaysQuantity", "fuseDescription", "gpsNavigation", "graphicsCoprocessor", "graphicsCoprocessorQuantity", "graphicsRam", "greyscaleDepth", "handsetDepth", "handsetHeight", "handsetLocator", "handsetWeight", "handsetWidth", "hardDiskDescription", "hardDiskInstalledQuantity", "hardDiskRotationalSpeed", "hardwareInterface", "hasCommercialSkip", "hasDVDPictureZoom", "hasParentalChannelLock", "headphonesFormFactor", "headphonesJack", "headphonesTechnology", "horizontalResolution", "hotSwapBaysQuantity", "humanInterfaceInput", "humanInterfaceOutput", "imageAspectRatio", "imageBrightness", "imageContrastRatio", "impedance", "includesMP3Player", "includesRechargableBattery", "includesRemote", "includesSpeakerphone", "inputAdapter", "inputChannelQuantity", "inputConnection", "inputConnectorType", "inputDevice", "inputDeviceInterface", "intercom", "internalBaysQuantity", "isdnTerminalAdapterInterface", "isHDTVCompatible", "isWaterproof", "itemDisplayDepth", "itemDisplayHeight", "itemDisplayLength", "itemDisplayLengthMaximum", "itemDisplayWeight", "itemDisplayWidth", "lithiumBatteryEnergyContent", "lithiumBatteryPackaging", "lithiumBatteryVoltage", "lithiumBatteryWeight", "keyboardDescription", "lampType", "leftConnectorGender", "leftConnectorType", "manufacturerWarrantyType", "mapType", "materialComposition", "materialType", "maxCopyResolutionBlackWhite", "maxCopyResolutionColor", "maximumBridgedOutputPower", "maximumExternalResolution", "maximumImageSize", "maximumLinearPeakExcursion", "maximumOutputPower", "maximumRange", "maximumRangeIndoors", "maximumSampleRate", "maximumScreenDistance", "maxInputSheetCapacity", "maxPrintResolutionBlackWhite", "maxPrintResolutionColor", "mediaFormat", "mediaLoadType", "mediaSizeMaximum", "mediaType", "memoryStorageCapacity", "memoryTechnology", "mfgWarrantyDescriptionLabor", "mfgWarrantyDescriptionParts", "microphoneFormFactor", "microphoneOperationMode", "microphoneTechnology", "miniDiscSystem", "minimumImageSize", "minimumScreenDistance", "minimumSystemRequirementDescription", "model", "modelName", "modemDescription", "modemInterface", "modemType", "monthlyDutyCycle", "mountingHoleDiameter", "movementDetectionTechnology", "multilineOperation", "multimediaFunctionality", "navigationRoutes", "networkingFeature", "networkInterfaceDescription", "numberOfLithiumIonCells", "numberOfLithiumMetalCells", "numberOfPorts", "numberOfSupportedZones", "objectiveLensDiameter", "operatingHumidity", "opticalDigitalInput", "opticalDigitalOutput", "opticalSensorInterpolatedResolution", "opticalSensorResolution", "opticalStorageDevice", "opticalStorageInstalledQuantity", "opticalStorageReadSpeed", "opticalStorageRewriteSpeed", "opticalStorageSecondaryReadSpeed", "opticalStorageSecondaryRewriteSpeed", "opticalStorageSecondaryType", "opticalStorageSecondaryWriteSpeed", "opticalStorageWriteSpeed", "outputChannelQuantity", "outputConnection", "outputConnectorQuantity", "outputConnectorType", "outputPower", "outputWattage", "packageContentType", "packageTypeName", "pcConnectionAvailable", "phoneBaseDepth", "phoneBaseHeight", "phoneBaseWeight", "phoneBaseWidth", "portedBoxVolume", "powerAmplifierClass", "powerDevice", "powerGain", "powerLoadRating", "preampOutputChannels", "presetChannelQuantity", "printerInterface", "printerOutput", "printerResolutionBWHorizontalMax", "printerResolutionBWVerticalMax", "printerResolutionColorHorizontalMax", "printerResolutionColorVerticalMax", "printerTechnology", "processorDescription", "processorMaximum", "processorModelNumber", "processorUpgrade", "programmability", "qtsTotalQFactor", "radioBandsSupported", "radioChannels", "raidLevel", "ramMemoryInstalledSize", "ramMemoryMaximumSize", "ramMemoryTechnology", "rangefinderType", "receiverDescription", "recordingCapacity", "remoteControlAudioControls", "remoteControlDescription", "remoteControlTechnology", "remoteManagementProtocol", "removableMediaCapacity", "removableMemory", "removableStorage", "removableStorageInterface", "removableStorageNativeCapacity", "responseTime", "rightConnectorGender", "rightConnectorType", "routingProtocol", "satelliteServiceDescription", "sbas", "scanElementType", "scannerInterface", "scannerType", "scsiSignalingType", "sealedBoxVolume", "searchSpeed", "secondaryCache", "sellerWarrantyDescription", "signalToNoiseRatio", "size", "speakerAmplificationType", "speakerConnectivity", "speakerDriverMaterial", "speakersCrossoverChannelQuantity", "speakersIncludedDescription", "speakersMaximumOutputPower", "speakersNominalOutputPower", "speakersResponseBandwidth", "speakerSystemClass", "speakerType", "specialFeatures", "specificationMet", "specificUses", "ssdDriveArchitechture", "standardInputSheetCapacity", "storageController", "storageControllerInterface", "storageHumidity", "storageInterface", "styleName", "supportedAudioFormat", "supportedDevices", "supportedDevicesQuantity", "supportedImageFormat", "supportedImageType", "supportedMediaSize", "supportedMotherboard", "supportedStandards", "surgeSuppression", "surroundSoundChannels", "surroundSoundEffects", "switchingProtocol", "systemBusSpeed", "talkRangeMaximum", "tapeLength", "televisionInterface", "televisionPCInterfaceType", "temperatureRating", "totalHarmonicDistortion", "tracklogPoints", "tracks", "transportProtocol", "tuner", "tunerTechnology", "tvTunerSecondaryAudioProgram", "upsTechnology", "vcrType", "verticalResolution", "videoCaptureFormat", "videoCaptureResolution", "videoHeadQuantity", "videoInput", "videoInputDigitalStandard", "videoInputFormat", "videoOutputFormat", "videoOutput", "videoOutputInterface", "videoOutputMode", "videoPlaybackFormat", "videotapePlaybackSpeed", "videotapeRecordingSpeed", "voiceCommunicationSupport", "voiceCoilDescription", "voicemailCapability", "voiceOperatedTransmission", "voipProtocols", "volumeAcousticSuspension", "warnings", "warrantyDescription", "waterproofRating", "waypoints", "waypointsPerRoute", "weatherproof", "writeSpeed"})
+/*       */ @XmlRootElement(name="CE")
+/*       */ public class CE
+/*       */ {
+/*       */ 
+/*       */   @XmlElement(name="Rebate")
+/*       */   protected List<RebateType> rebate;
+/*       */ 
+/*       */   @XmlElement(name="ProductType", required=true)
+/*       */   protected ProductType productType;
+/*       */ 
+/*       */   @XmlElement(name="ProductSubtype")
+/*       */   protected String productSubtype;
+/*       */ 
+/*       */   @XmlElement(name="AnalogVideoFormat")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> analogVideoFormat;
+/*       */ 
+/*       */   @XmlElement(name="AnnualEnergyConsumption")
+/*       */   protected EnergyConsumptionDimension annualEnergyConsumption;
+/*       */ 
+/*       */   @XmlElement(name="AnsweringSystemType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String answeringSystemType;
+/*       */ 
+/*       */   @XmlElement(name="AntennaLength")
+/*       */   protected LengthDimension antennaLength;
+/*       */ 
+/*       */   @XmlElement(name="AntennaType")
+/*       */   protected AntennaTypeValues antennaType;
+/*       */ 
+/*       */   @XmlElement(name="AspectRatio")
+/*       */   protected String aspectRatio;
+/*       */ 
+/*       */   @XmlElement(name="AudioFeaturesDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String audioFeaturesDescription;
+/*       */ 
+/*       */   @XmlElement(name="AudioInput")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> audioInput;
+/*       */ 
+/*       */   @XmlElement(name="AudioOutputEffects")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> audioOutputEffects;
+/*       */ 
+/*       */   @XmlElement(name="AudioOutputMode")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> audioOutputMode;
+/*       */ 
+/*       */   @XmlElement(name="AudioOutputResponseBandwidth")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String audioOutputResponseBandwidth;
+/*       */ 
+/*       */   @XmlElement(name="AudioOutputType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String audioOutputType;
+/*       */ 
+/*       */   @XmlElement(name="AudioSensitivity")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger audioSensitivity;
+/*       */ 
+/*       */   @XmlElement(name="AutoRedial")
+/*       */   protected Boolean autoRedial;
+/*       */ 
+/*       */   @XmlElement(name="Battery")
+/*       */   protected Battery battery;
+/*       */ 
+/*       */   @XmlElement(name="BatteryAverageLife")
+/*       */   protected TimeDimension batteryAverageLife;
+/*       */ 
+/*       */   @XmlElement(name="BatteryAverageLifeTalkTime")
+/*       */   protected TimeDimension batteryAverageLifeTalkTime;
+/*       */ 
+/*       */   @XmlElement(name="BufferSize")
+/*       */   protected MemorySizeDimension bufferSize;
+/*       */ 
+/*       */   @XmlElement(name="BatteryTypeLithiumIon")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger batteryTypeLithiumIon;
+/*       */ 
+/*       */   @XmlElement(name="BatteryTypeLithiumMetal")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger batteryTypeLithiumMetal;
+/*       */ 
+/*       */   @XmlElement(name="BiometricSecurityFeatures")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String biometricSecurityFeatures;
+/*       */ 
+/*       */   @XmlElement(name="BuiltInDecoders")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> builtInDecoders;
+/*       */ 
+/*       */   @XmlElement(name="ButtonQuantity")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger buttonQuantity;
+/*       */ 
+/*       */   @XmlElement(name="CabinetMaterial")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String cabinetMaterial;
+/*       */ 
+/*       */   @XmlElement(name="CableFeature")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> cableFeature;
+/*       */ 
+/*       */   @XmlElement(name="CableTechnology")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> cableTechnology;
+/*       */ 
+/*       */   @XmlElement(name="CableType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String cableType;
+/*       */ 
+/*       */   @XmlElement(name="CacheMemoryInstalledSize")
+/*       */   protected MemorySizeDimension cacheMemoryInstalledSize;
+/*       */ 
+/*       */   @XmlElement(name="CallAlerts")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String callAlerts;
+/*       */ 
+/*       */   @XmlElement(name="CallerIdentification")
+/*       */   protected Boolean callerIdentification;
+/*       */ 
+/*       */   @XmlElement(name="CarryingStrap")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> carryingStrap;
+/*       */ 
+/*       */   @XmlElement(name="CassetteSystemType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String cassetteSystemType;
+/*       */ 
+/*       */   @XmlElement(name="CDChangerType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String cdChangerType;
+/*       */ 
+/*       */   @XmlElement(name="CDDiskCapacity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger cdDiskCapacity;
+/*       */ 
+/*       */   @XmlElement(name="CDLoadType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String cdLoadType;
+/*       */ 
+/*       */   @XmlElement(name="CDPlaybackMode")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> cdPlaybackMode;
+/*       */ 
+/*       */   @XmlElement(name="CDSystemType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String cdSystemType;
+/*       */ 
+/*       */   @XmlElement(name="CellularEnhancementProtocol")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> cellularEnhancementProtocol;
+/*       */ 
+/*       */   @XmlElement(name="CoaxialDigitalInput")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String coaxialDigitalInput;
+/*       */ 
+/*       */   @XmlElement(name="CoaxialDigitalOutput")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String coaxialDigitalOutput;
+/*       */ 
+/*       */   @XmlElement(name="Color")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String color;
+/*       */ 
+/*       */   @XmlElement(name="ColorDepth")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> colorDepth;
+/*       */ 
+/*       */   @XmlElement(name="ColorMap")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String colorMap;
+/*       */ 
+/*       */   @XmlElement(name="ColorSupport")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> colorSupport;
+/*       */ 
+/*       */   @XmlElement(name="CompatibleCartridge")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> compatibleCartridge;
+/*       */ 
+/*       */   @XmlElement(name="CompatibleDevices")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> compatibleDevices;
+/*       */ 
+/*       */   @XmlElement(name="ComponentType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> componentType;
+/*       */ 
+/*       */   @XmlElement(name="CompressedCapacity")
+/*       */   protected MemorySizeDimension compressedCapacity;
+/*       */ 
+/*       */   @XmlElement(name="ComputerPeripheralConnector")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> computerPeripheralConnector;
+/*       */ 
+/*       */   @XmlElement(name="ConferenceCallCapability")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String conferenceCallCapability;
+/*       */ 
+/*       */   @XmlElement(name="ConnectivityProtocol")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> connectivityProtocol;
+/*       */ 
+/*       */   @XmlElement(name="ConnectivityTechnology")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String connectivityTechnology;
+/*       */ 
+/*       */   @XmlElement(name="CopierType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String copierType;
+/*       */ 
+/*       */   @XmlElement(name="CopySizeMaximum")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String copySizeMaximum;
+/*       */ 
+/*       */   @XmlElement(name="CountryOfOrigin")
+/*       */   protected String countryOfOrigin;
+/*       */ 
+/*       */   @XmlElement(name="CrossoverFrequency")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String crossoverFrequency;
+/*       */ 
+/*       */   @XmlElement(name="DACDataWidth")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String dacDataWidth;
+/*       */ 
+/*       */   @XmlElement(name="DataCompressionProtocol")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> dataCompressionProtocol;
+/*       */ 
+/*       */   @XmlElement(name="DataLinkProtocol")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> dataLinkProtocol;
+/*       */ 
+/*       */   @XmlElement(name="DataService")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String dataService;
+/*       */ 
+/*       */   @XmlElement(name="DataStorageCapability")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String dataStorageCapability;
+/*       */ 
+/*       */   @XmlElement(name="DataTransferRate")
+/*       */   protected DataTransferRate dataTransferRate;
+/*       */ 
+/*       */   @XmlElement(name="DeviceType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String deviceType;
+/*       */ 
+/*       */   @XmlElement(name="DGPS")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String dgps;
+/*       */ 
+/*       */   @XmlElement(name="DialerType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String dialerType;
+/*       */ 
+/*       */   @XmlElement(name="DigitalPlayerType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String digitalPlayerType;
+/*       */ 
+/*       */   @XmlElement(name="DigitalRecordingTime")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> digitalRecordingTime;
+/*       */ 
+/*       */   @XmlElement(name="DigitalSignalingProtocol")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> digitalSignalingProtocol;
+/*       */ 
+/*       */   @XmlElement(name="DigitalStorageCapacity")
+/*       */   protected MemorySizeDimension digitalStorageCapacity;
+/*       */ 
+/*       */   @XmlElement(name="DigitalZoom")
+/*       */   protected ZoomDimension digitalZoom;
+/*       */ 
+/*       */   @XmlElement(name="DisplayColorSupport")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> displayColorSupport;
+/*       */ 
+/*       */   @XmlElement(name="DisplayLanguageOptions")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String displayLanguageOptions;
+/*       */ 
+/*       */   @XmlElement(name="DisplayLineQuantity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger displayLineQuantity;
+/*       */ 
+/*       */   @XmlElement(name="DisplayResolutionMaximum")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String displayResolutionMaximum;
+/*       */ 
+/*       */   @XmlElement(name="DisplayTechnology")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String displayTechnology;
+/*       */ 
+/*       */   @XmlElement(name="DisplayType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String displayType;
+/*       */ 
+/*       */   @XmlElement(name="DockingStationExternalInterface")
+/*       */   protected DockingStationExternalInterfaceTypeValues dockingStationExternalInterface;
+/*       */ 
+/*       */   @XmlElement(name="DriveUnits")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String driveUnits;
+/*       */ 
+/*       */   @XmlElement(name="Duplex")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String duplex;
+/*       */ 
+/*       */   @XmlElement(name="DVDDiskCapacity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger dvdDiskCapacity;
+/*       */ 
+/*       */   @XmlElement(name="DVDDiskChangerType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String dvdDiskChangerType;
+/*       */ 
+/*       */   @XmlElement(name="DVDMediaLoadType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String dvdMediaLoadType;
+/*       */ 
+/*       */   @XmlElement(name="DVDPictureZoomPower")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> dvdPictureZoomPower;
+/*       */ 
+/*       */   @XmlElement(name="DVDPlaybackMode")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> dvdPlaybackMode;
+/*       */ 
+/*       */   @XmlElement(name="DVDType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String dvdType;
+/*       */ 
+/*       */   @XmlElement(name="DVRCompressionRate")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String dvrCompressionRate;
+/*       */ 
+/*       */   @XmlElement(name="DVRMaxRecordingTime")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger dvrMaxRecordingTime;
+/*       */ 
+/*       */   @XmlElement(name="DVRServiceDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String dvrServiceDescription;
+/*       */ 
+/*       */   @XmlElement(name="Enclosure")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String enclosure;
+/*       */ 
+/*       */   @XmlElement(name="Equalizer")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String equalizer;
+/*       */ 
+/*       */   @XmlElement(name="EqualizerBandChannels")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String equalizerBandChannels;
+/*       */ 
+/*       */   @XmlElement(name="ErrorCorrectionProtocol")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> errorCorrectionProtocol;
+/*       */ 
+/*       */   @XmlElement(name="EyeRelief")
+/*       */   protected LengthDimension eyeRelief;
+/*       */ 
+/*       */   @XmlElement(name="FaceplateType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String faceplateType;
+/*       */ 
+/*       */   @XmlElement(name="FaxMachineCompatibility")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String faxMachineCompatibility;
+/*       */ 
+/*       */   @XmlElement(name="FaxType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String faxType;
+/*       */ 
+/*       */   @XmlElement(name="FlashMemoryInstalledSize")
+/*       */   protected MemorySizeDimension flashMemoryInstalledSize;
+/*       */ 
+/*       */   @XmlElement(name="FloppyDiskDrive")
+/*       */   protected String floppyDiskDrive;
+/*       */ 
+/*       */   @XmlElement(name="FormFactor")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> formFactor;
+/*       */ 
+/*       */   @XmlElement(name="FreeAirResonantFrequency")
+/*       */   protected FrequencyDimension freeAirResonantFrequency;
+/*       */ 
+/*       */   @XmlElement(name="FrequencyRange")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> frequencyRange;
+/*       */ 
+/*       */   @XmlElement(name="FrequencyRequired")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String frequencyRequired;
+/*       */ 
+/*       */   @XmlElement(name="FrequencyResponseCurve")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String frequencyResponseCurve;
+/*       */ 
+/*       */   @XmlElement(name="FrontAccessibleBaysQuantity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger frontAccessibleBaysQuantity;
+/*       */ 
+/*       */   @XmlElement(name="FuseDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String fuseDescription;
+/*       */ 
+/*       */   @XmlElement(name="GPSNavigation")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String gpsNavigation;
+/*       */ 
+/*       */   @XmlElement(name="GraphicsCoprocessor")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String graphicsCoprocessor;
+/*       */ 
+/*       */   @XmlElement(name="GraphicsCoprocessorQuantity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger graphicsCoprocessorQuantity;
+/*       */ 
+/*       */   @XmlElement(name="GraphicsRam")
+/*       */   protected BigDecimal graphicsRam;
+/*       */ 
+/*       */   @XmlElement(name="GreyscaleDepth")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> greyscaleDepth;
+/*       */ 
+/*       */   @XmlElement(name="HandsetDepth")
+/*       */   protected LengthDimension handsetDepth;
+/*       */ 
+/*       */   @XmlElement(name="HandsetHeight")
+/*       */   protected LengthDimension handsetHeight;
+/*       */ 
+/*       */   @XmlElement(name="HandsetLocator")
+/*       */   protected Boolean handsetLocator;
+/*       */ 
+/*       */   @XmlElement(name="HandsetWeight")
+/*       */   protected WeightDimension handsetWeight;
+/*       */ 
+/*       */   @XmlElement(name="HandsetWidth")
+/*       */   protected LengthDimension handsetWidth;
+/*       */ 
+/*       */   @XmlElement(name="HardDiskDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String hardDiskDescription;
+/*       */ 
+/*       */   @XmlElement(name="HardDiskInstalledQuantity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger hardDiskInstalledQuantity;
+/*       */ 
+/*       */   @XmlElement(name="HardDiskRotationalSpeed")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger hardDiskRotationalSpeed;
+/*       */ 
+/*       */   @XmlElement(name="HardwareInterface")
+/*       */   protected List<String> hardwareInterface;
+/*       */ 
+/*       */   @XmlElement(name="HasCommercialSkip")
+/*       */   protected Boolean hasCommercialSkip;
+/*       */ 
+/*       */   @XmlElement(name="HasDVDPictureZoom")
+/*       */   protected Boolean hasDVDPictureZoom;
+/*       */ 
+/*       */   @XmlElement(name="HasParentalChannelLock")
+/*       */   protected Boolean hasParentalChannelLock;
+/*       */ 
+/*       */   @XmlElement(name="HeadphonesFormFactor")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String headphonesFormFactor;
+/*       */ 
+/*       */   @XmlElement(name="HeadphonesJack")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String headphonesJack;
+/*       */ 
+/*       */   @XmlElement(name="HeadphonesTechnology")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String headphonesTechnology;
+/*       */ 
+/*       */   @XmlElement(name="HorizontalResolution")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger horizontalResolution;
+/*       */ 
+/*       */   @XmlElement(name="HotSwapBaysQuantity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger hotSwapBaysQuantity;
+/*       */ 
+/*       */   @XmlElement(name="HumanInterfaceInput")
+/*       */   protected List<HumanInterfaceInputType> humanInterfaceInput;
+/*       */ 
+/*       */   @XmlElement(name="HumanInterfaceOutput")
+/*       */   protected HumanInterfaceOutputType humanInterfaceOutput;
+/*       */ 
+/*       */   @XmlElement(name="ImageAspectRatio")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> imageAspectRatio;
+/*       */ 
+/*       */   @XmlElement(name="ImageBrightness")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String imageBrightness;
+/*       */ 
+/*       */   @XmlElement(name="ImageContrastRatio")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String imageContrastRatio;
+/*       */ 
+/*       */   @XmlElement(name="Impedance")
+/*       */   protected ResistanceDimension impedance;
+/*       */ 
+/*       */   @XmlElement(name="IncludesMP3Player")
+/*       */   protected Boolean includesMP3Player;
+/*       */ 
+/*       */   @XmlElement(name="IncludesRechargableBattery")
+/*       */   protected Boolean includesRechargableBattery;
+/*       */ 
+/*       */   @XmlElement(name="IncludesRemote")
+/*       */   protected Boolean includesRemote;
+/*       */ 
+/*       */   @XmlElement(name="IncludesSpeakerphone")
+/*       */   protected Boolean includesSpeakerphone;
+/*       */ 
+/*       */   @XmlElement(name="InputAdapter")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> inputAdapter;
+/*       */ 
+/*       */   @XmlElement(name="InputChannelQuantity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger inputChannelQuantity;
+/*       */ 
+/*       */   @XmlElement(name="InputConnection")
+/*       */   protected List<Connection> inputConnection;
+/*       */ 
+/*       */   @XmlElement(name="InputConnectorType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> inputConnectorType;
+/*       */ 
+/*       */   @XmlElement(name="InputDevice")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> inputDevice;
+/*       */ 
+/*       */   @XmlElement(name="InputDeviceInterface")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> inputDeviceInterface;
+/*       */ 
+/*       */   @XmlElement(name="Intercom")
+/*       */   protected Boolean intercom;
+/*       */ 
+/*       */   @XmlElement(name="InternalBaysQuantity")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger internalBaysQuantity;
+/*       */ 
+/*       */   @XmlElement(name="ISDNTerminalAdapterInterface")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String isdnTerminalAdapterInterface;
+/*       */ 
+/*       */   @XmlElement(name="IsHDTVCompatible")
+/*       */   protected Boolean isHDTVCompatible;
+/*       */ 
+/*       */   @XmlElement(name="IsWaterproof")
+/*       */   protected Boolean isWaterproof;
+/*       */ 
+/*       */   @XmlElement(name="ItemDisplayDepth")
+/*       */   protected LengthDimension itemDisplayDepth;
+/*       */ 
+/*       */   @XmlElement(name="ItemDisplayHeight")
+/*       */   protected LengthDimension itemDisplayHeight;
+/*       */ 
+/*       */   @XmlElement(name="ItemDisplayLength")
+/*       */   protected LengthDimension itemDisplayLength;
+/*       */ 
+/*       */   @XmlElement(name="ItemDisplayLengthMaximum")
+/*       */   protected LengthDimension itemDisplayLengthMaximum;
+/*       */ 
+/*       */   @XmlElement(name="ItemDisplayWeight")
+/*       */   protected WeightDimension itemDisplayWeight;
+/*       */ 
+/*       */   @XmlElement(name="ItemDisplayWidth")
+/*       */   protected LengthDimension itemDisplayWidth;
+/*       */ 
+/*       */   @XmlElement(name="LithiumBatteryEnergyContent")
+/*       */   protected BigDecimal lithiumBatteryEnergyContent;
+/*       */ 
+/*       */   @XmlElement(name="LithiumBatteryPackaging")
+/*       */   protected String lithiumBatteryPackaging;
+/*       */ 
+/*       */   @XmlElement(name="LithiumBatteryVoltage")
+/*       */   protected BigDecimal lithiumBatteryVoltage;
+/*       */ 
+/*       */   @XmlElement(name="LithiumBatteryWeight")
+/*       */   protected BigDecimal lithiumBatteryWeight;
+/*       */ 
+/*       */   @XmlElement(name="KeyboardDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String keyboardDescription;
+/*       */ 
+/*       */   @XmlElement(name="LampType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String lampType;
+/*       */ 
+/*       */   @XmlElement(name="LeftConnectorGender")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String leftConnectorGender;
+/*       */ 
+/*       */   @XmlElement(name="LeftConnectorType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> leftConnectorType;
+/*       */ 
+/*       */   @XmlElement(name="ManufacturerWarrantyType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String manufacturerWarrantyType;
+/*       */ 
+/*       */   @XmlElement(name="MapType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> mapType;
+/*       */ 
+/*       */   @XmlElement(name="MaterialComposition")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> materialComposition;
+/*       */ 
+/*       */   @XmlElement(name="MaterialType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> materialType;
+/*       */ 
+/*       */   @XmlElement(name="MaxCopyResolutionBlackWhite")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String maxCopyResolutionBlackWhite;
+/*       */ 
+/*       */   @XmlElement(name="MaxCopyResolutionColor")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String maxCopyResolutionColor;
+/*       */ 
+/*       */   @XmlElement(name="MaximumBridgedOutputPower")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger maximumBridgedOutputPower;
+/*       */ 
+/*       */   @XmlElement(name="MaximumExternalResolution")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String maximumExternalResolution;
+/*       */ 
+/*       */   @XmlElement(name="MaximumImageSize")
+/*       */   protected LengthDimension maximumImageSize;
+/*       */ 
+/*       */   @XmlElement(name="MaximumLinearPeakExcursion")
+/*       */   protected LengthDimension maximumLinearPeakExcursion;
+/*       */ 
+/*       */   @XmlElement(name="MaximumOutputPower")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String maximumOutputPower;
+/*       */ 
+/*       */   @XmlElement(name="MaximumRange")
+/*       */   protected LengthDimension maximumRange;
+/*       */ 
+/*       */   @XmlElement(name="MaximumRangeIndoors")
+/*       */   protected LengthDimension maximumRangeIndoors;
+/*       */ 
+/*       */   @XmlElement(name="MaximumSampleRate")
+/*       */   protected FrequencyDimension maximumSampleRate;
+/*       */ 
+/*       */   @XmlElement(name="MaximumScreenDistance")
+/*       */   protected LengthDimension maximumScreenDistance;
+/*       */ 
+/*       */   @XmlElement(name="MaxInputSheetCapacity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger maxInputSheetCapacity;
+/*       */ 
+/*       */   @XmlElement(name="MaxPrintResolutionBlackWhite")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> maxPrintResolutionBlackWhite;
+/*       */ 
+/*       */   @XmlElement(name="MaxPrintResolutionColor")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> maxPrintResolutionColor;
+/*       */ 
+/*       */   @XmlElement(name="MediaFormat")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String mediaFormat;
+/*       */ 
+/*       */   @XmlElement(name="MediaLoadType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String mediaLoadType;
+/*       */ 
+/*       */   @XmlElement(name="MediaSizeMaximum")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> mediaSizeMaximum;
+/*       */ 
+/*       */   @XmlElement(name="MediaType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> mediaType;
+/*       */ 
+/*       */   @XmlElement(name="MemoryStorageCapacity")
+/*       */   protected MemorySizeDimension memoryStorageCapacity;
+/*       */ 
+/*       */   @XmlElement(name="MemoryTechnology")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String memoryTechnology;
+/*       */ 
+/*       */   @XmlElement(name="MfgWarrantyDescriptionLabor")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String mfgWarrantyDescriptionLabor;
+/*       */ 
+/*       */   @XmlElement(name="MfgWarrantyDescriptionParts")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String mfgWarrantyDescriptionParts;
+/*       */ 
+/*       */   @XmlElement(name="MicrophoneFormFactor")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String microphoneFormFactor;
+/*       */ 
+/*       */   @XmlElement(name="MicrophoneOperationMode")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> microphoneOperationMode;
+/*       */ 
+/*       */   @XmlElement(name="MicrophoneTechnology")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String microphoneTechnology;
+/*       */ 
+/*       */   @XmlElement(name="MiniDiscSystem")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String miniDiscSystem;
+/*       */ 
+/*       */   @XmlElement(name="MinimumImageSize")
+/*       */   protected LengthDimension minimumImageSize;
+/*       */ 
+/*       */   @XmlElement(name="MinimumScreenDistance")
+/*       */   protected LengthDimension minimumScreenDistance;
+/*       */ 
+/*       */   @XmlElement(name="MinimumSystemRequirementDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String minimumSystemRequirementDescription;
+/*       */ 
+/*       */   @XmlElement(name="Model")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String model;
+/*       */ 
+/*       */   @XmlElement(name="ModelName")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String modelName;
+/*       */ 
+/*       */   @XmlElement(name="ModemDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String modemDescription;
+/*       */ 
+/*       */   @XmlElement(name="ModemInterface")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String modemInterface;
+/*       */ 
+/*       */   @XmlElement(name="ModemType")
+/*       */   protected ModemTypeValues modemType;
+/*       */ 
+/*       */   @XmlElement(name="MonthlyDutyCycle")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String monthlyDutyCycle;
+/*       */ 
+/*       */   @XmlElement(name="MountingHoleDiameter")
+/*       */   protected LengthDimension mountingHoleDiameter;
+/*       */ 
+/*       */   @XmlElement(name="MovementDetectionTechnology")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String movementDetectionTechnology;
+/*       */ 
+/*       */   @XmlElement(name="MultilineOperation")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> multilineOperation;
+/*       */ 
+/*       */   @XmlElement(name="MultimediaFunctionality")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> multimediaFunctionality;
+/*       */ 
+/*       */   @XmlElement(name="NavigationRoutes")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger navigationRoutes;
+/*       */ 
+/*       */   @XmlElement(name="NetworkingFeature")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> networkingFeature;
+/*       */ 
+/*       */   @XmlElement(name="NetworkInterfaceDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String networkInterfaceDescription;
+/*       */ 
+/*       */   @XmlElement(name="NumberOfLithiumIonCells")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger numberOfLithiumIonCells;
+/*       */ 
+/*       */   @XmlElement(name="NumberOfLithiumMetalCells")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger numberOfLithiumMetalCells;
+/*       */ 
+/*       */   @XmlElement(name="NumberOfPorts")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger numberOfPorts;
+/*       */ 
+/*       */   @XmlElement(name="NumberOfSupportedZones")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger numberOfSupportedZones;
+/*       */ 
+/*       */   @XmlElement(name="ObjectiveLensDiameter")
+/*       */   protected LengthDimension objectiveLensDiameter;
+/*       */ 
+/*       */   @XmlElement(name="OperatingHumidity")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String operatingHumidity;
+/*       */ 
+/*       */   @XmlElement(name="OpticalDigitalInput")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String opticalDigitalInput;
+/*       */ 
+/*       */   @XmlElement(name="OpticalDigitalOutput")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String opticalDigitalOutput;
+/*       */ 
+/*       */   @XmlElement(name="OpticalSensorInterpolatedResolution")
+/*       */   protected PixelDimension opticalSensorInterpolatedResolution;
+/*       */ 
+/*       */   @XmlElement(name="OpticalSensorResolution")
+/*       */   protected PixelDimension opticalSensorResolution;
+/*       */ 
+/*       */   @XmlElement(name="OpticalStorageDevice")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> opticalStorageDevice;
+/*       */ 
+/*       */   @XmlElement(name="OpticalStorageInstalledQuantity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger opticalStorageInstalledQuantity;
+/*       */ 
+/*       */   @XmlElement(name="OpticalStorageReadSpeed")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String opticalStorageReadSpeed;
+/*       */ 
+/*       */   @XmlElement(name="OpticalStorageRewriteSpeed")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String opticalStorageRewriteSpeed;
+/*       */ 
+/*       */   @XmlElement(name="OpticalStorageSecondaryReadSpeed")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String opticalStorageSecondaryReadSpeed;
+/*       */ 
+/*       */   @XmlElement(name="OpticalStorageSecondaryRewriteSpeed")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String opticalStorageSecondaryRewriteSpeed;
+/*       */ 
+/*       */   @XmlElement(name="OpticalStorageSecondaryType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> opticalStorageSecondaryType;
+/*       */ 
+/*       */   @XmlElement(name="OpticalStorageSecondaryWriteSpeed")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String opticalStorageSecondaryWriteSpeed;
+/*       */ 
+/*       */   @XmlElement(name="OpticalStorageWriteSpeed")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String opticalStorageWriteSpeed;
+/*       */ 
+/*       */   @XmlElement(name="OutputChannelQuantity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger outputChannelQuantity;
+/*       */ 
+/*       */   @XmlElement(name="OutputConnection")
+/*       */   protected List<Connection> outputConnection;
+/*       */ 
+/*       */   @XmlElement(name="OutputConnectorQuantity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger outputConnectorQuantity;
+/*       */ 
+/*       */   @XmlElement(name="OutputConnectorType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> outputConnectorType;
+/*       */ 
+/*       */   @XmlElement(name="OutputPower")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger outputPower;
+/*       */ 
+/*       */   @XmlElement(name="OutputWattage")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger outputWattage;
+/*       */ 
+/*       */   @XmlElement(name="PackageContentType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String packageContentType;
+/*       */ 
+/*       */   @XmlElement(name="PackageTypeName")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String packageTypeName;
+/*       */ 
+/*       */   @XmlElement(name="PCConnectionAvailable")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String pcConnectionAvailable;
+/*       */ 
+/*       */   @XmlElement(name="PhoneBaseDepth")
+/*       */   protected LengthDimension phoneBaseDepth;
+/*       */ 
+/*       */   @XmlElement(name="PhoneBaseHeight")
+/*       */   protected LengthDimension phoneBaseHeight;
+/*       */ 
+/*       */   @XmlElement(name="PhoneBaseWeight")
+/*       */   protected WeightDimension phoneBaseWeight;
+/*       */ 
+/*       */   @XmlElement(name="PhoneBaseWidth")
+/*       */   protected LengthDimension phoneBaseWidth;
+/*       */ 
+/*       */   @XmlElement(name="PortedBoxVolume")
+/*       */   protected PortedBoxVolume portedBoxVolume;
+/*       */ 
+/*       */   @XmlElement(name="PowerAmplifierClass")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String powerAmplifierClass;
+/*       */ 
+/*       */   @XmlElement(name="PowerDevice")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String powerDevice;
+/*       */ 
+/*       */   @XmlElement(name="PowerGain")
+/*       */   protected VoltageIntegerDimension powerGain;
+/*       */ 
+/*       */   @XmlElement(name="PowerLoadRating")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String powerLoadRating;
+/*       */ 
+/*       */   @XmlElement(name="PreampOutputChannels")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger preampOutputChannels;
+/*       */ 
+/*       */   @XmlElement(name="PresetChannelQuantity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger presetChannelQuantity;
+/*       */ 
+/*       */   @XmlElement(name="PrinterInterface")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String printerInterface;
+/*       */ 
+/*       */   @XmlElement(name="PrinterOutput")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String printerOutput;
+/*       */ 
+/*       */   @XmlElement(name="PrinterResolutionBWHorizontalMax")
+/*       */   protected PixelDimension printerResolutionBWHorizontalMax;
+/*       */ 
+/*       */   @XmlElement(name="PrinterResolutionBWVerticalMax")
+/*       */   protected PixelDimension printerResolutionBWVerticalMax;
+/*       */ 
+/*       */   @XmlElement(name="PrinterResolutionColorHorizontalMax")
+/*       */   protected PixelDimension printerResolutionColorHorizontalMax;
+/*       */ 
+/*       */   @XmlElement(name="PrinterResolutionColorVerticalMax")
+/*       */   protected PixelDimension printerResolutionColorVerticalMax;
+/*       */ 
+/*       */   @XmlElement(name="PrinterTechnology")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String printerTechnology;
+/*       */ 
+/*       */   @XmlElement(name="ProcessorDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String processorDescription;
+/*       */ 
+/*       */   @XmlElement(name="ProcessorMaximum")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger processorMaximum;
+/*       */ 
+/*       */   @XmlElement(name="ProcessorModelNumber")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String processorModelNumber;
+/*       */ 
+/*       */   @XmlElement(name="ProcessorUpgrade")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String processorUpgrade;
+/*       */ 
+/*       */   @XmlElement(name="Programmability")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> programmability;
+/*       */ 
+/*       */   @XmlElement(name="QtsTotalQFactor")
+/*       */   protected BigDecimal qtsTotalQFactor;
+/*       */ 
+/*       */   @XmlElement(name="RadioBandsSupported")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String radioBandsSupported;
+/*       */ 
+/*       */   @XmlElement(name="RadioChannels")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String radioChannels;
+/*       */ 
+/*       */   @XmlElement(name="RAIDLevel")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> raidLevel;
+/*       */ 
+/*       */   @XmlElement(name="RAMMemoryInstalledSize")
+/*       */   protected MemorySizeDimension ramMemoryInstalledSize;
+/*       */ 
+/*       */   @XmlElement(name="RAMMemoryMaximumSize")
+/*       */   protected MemorySizeDimension ramMemoryMaximumSize;
+/*       */ 
+/*       */   @XmlElement(name="RAMMemoryTechnology")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String ramMemoryTechnology;
+/*       */ 
+/*       */   @XmlElement(name="RangefinderType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String rangefinderType;
+/*       */ 
+/*       */   @XmlElement(name="ReceiverDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String receiverDescription;
+/*       */ 
+/*       */   @XmlElement(name="RecordingCapacity")
+/*       */   protected MemorySizeDimension recordingCapacity;
+/*       */ 
+/*       */   @XmlElement(name="RemoteControlAudioControls")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> remoteControlAudioControls;
+/*       */ 
+/*       */   @XmlElement(name="RemoteControlDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String remoteControlDescription;
+/*       */ 
+/*       */   @XmlElement(name="RemoteControlTechnology")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String remoteControlTechnology;
+/*       */ 
+/*       */   @XmlElement(name="RemoteManagementProtocol")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> remoteManagementProtocol;
+/*       */ 
+/*       */   @XmlElement(name="RemovableMediaCapacity")
+/*       */   protected MemorySizeDimension removableMediaCapacity;
+/*       */ 
+/*       */   @XmlElement(name="RemovableMemory")
+/*       */   protected String removableMemory;
+/*       */ 
+/*       */   @XmlElement(name="RemovableStorage")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String removableStorage;
+/*       */ 
+/*       */   @XmlElement(name="RemovableStorageInterface")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String removableStorageInterface;
+/*       */ 
+/*       */   @XmlElement(name="RemovableStorageNativeCapacity")
+/*       */   protected MemorySizeDimension removableStorageNativeCapacity;
+/*       */ 
+/*       */   @XmlElement(name="ResponseTime")
+/*       */   protected TimeDimension responseTime;
+/*       */ 
+/*       */   @XmlElement(name="RightConnectorGender")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String rightConnectorGender;
+/*       */ 
+/*       */   @XmlElement(name="RightConnectorType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> rightConnectorType;
+/*       */ 
+/*       */   @XmlElement(name="RoutingProtocol")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> routingProtocol;
+/*       */ 
+/*       */   @XmlElement(name="SatelliteServiceDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> satelliteServiceDescription;
+/*       */ 
+/*       */   @XmlElement(name="SBAS")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> sbas;
+/*       */ 
+/*       */   @XmlElement(name="ScanElementType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String scanElementType;
+/*       */ 
+/*       */   @XmlElement(name="ScannerInterface")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String scannerInterface;
+/*       */ 
+/*       */   @XmlElement(name="ScannerType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String scannerType;
+/*       */ 
+/*       */   @XmlElement(name="SCSISignalingType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String scsiSignalingType;
+/*       */ 
+/*       */   @XmlElement(name="SealedBoxVolume")
+/*       */   protected SealedBoxVolume sealedBoxVolume;
+/*       */ 
+/*       */   @XmlElement(name="SearchSpeed")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> searchSpeed;
+/*       */ 
+/*       */   @XmlElement(name="SecondaryCache")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger secondaryCache;
+/*       */ 
+/*       */   @XmlElement(name="SellerWarrantyDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String sellerWarrantyDescription;
+/*       */ 
+/*       */   @XmlElement(name="SignalToNoiseRatio")
+/*       */   protected BigDecimal signalToNoiseRatio;
+/*       */ 
+/*       */   @XmlElement(name="Size")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String size;
+/*       */ 
+/*       */   @XmlElement(name="SpeakerAmplificationType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String speakerAmplificationType;
+/*       */ 
+/*       */   @XmlElement(name="SpeakerConnectivity")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String speakerConnectivity;
+/*       */ 
+/*       */   @XmlElement(name="SpeakerDriverMaterial")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String speakerDriverMaterial;
+/*       */ 
+/*       */   @XmlElement(name="SpeakersCrossoverChannelQuantity")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> speakersCrossoverChannelQuantity;
+/*       */ 
+/*       */   @XmlElement(name="SpeakersIncludedDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String speakersIncludedDescription;
+/*       */ 
+/*       */   @XmlElement(name="SpeakersMaximumOutputPower")
+/*       */   protected BigDecimal speakersMaximumOutputPower;
+/*       */ 
+/*       */   @XmlElement(name="SpeakersNominalOutputPower")
+/*       */   protected BigDecimal speakersNominalOutputPower;
+/*       */ 
+/*       */   @XmlElement(name="SpeakersResponseBandwidth")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String speakersResponseBandwidth;
+/*       */ 
+/*       */   @XmlElement(name="SpeakerSystemClass")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String speakerSystemClass;
+/*       */ 
+/*       */   @XmlElement(name="SpeakerType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String speakerType;
+/*       */ 
+/*       */   @XmlElement(name="SpecialFeatures")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> specialFeatures;
+/*       */ 
+/*       */   @XmlElement(name="SpecificationMet")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> specificationMet;
+/*       */ 
+/*       */   @XmlElement(name="SpecificUses")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String specificUses;
+/*       */ 
+/*       */   @XmlElement(name="SSDDriveArchitechture")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String ssdDriveArchitechture;
+/*       */ 
+/*       */   @XmlElement(name="StandardInputSheetCapacity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger standardInputSheetCapacity;
+/*       */ 
+/*       */   @XmlElement(name="StorageController")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String storageController;
+/*       */ 
+/*       */   @XmlElement(name="StorageControllerInterface")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String storageControllerInterface;
+/*       */ 
+/*       */   @XmlElement(name="StorageHumidity")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String storageHumidity;
+/*       */ 
+/*       */   @XmlElement(name="StorageInterface")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String storageInterface;
+/*       */ 
+/*       */   @XmlElement(name="StyleName")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String styleName;
+/*       */ 
+/*       */   @XmlElement(name="SupportedAudioFormat")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> supportedAudioFormat;
+/*       */ 
+/*       */   @XmlElement(name="SupportedDevices")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> supportedDevices;
+/*       */ 
+/*       */   @XmlElement(name="SupportedDevicesQuantity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger supportedDevicesQuantity;
+/*       */ 
+/*       */   @XmlElement(name="SupportedImageFormat")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> supportedImageFormat;
+/*       */ 
+/*       */   @XmlElement(name="SupportedImageType")
+/*       */   protected List<String> supportedImageType;
+/*       */ 
+/*       */   @XmlElement(name="SupportedMediaSize")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String supportedMediaSize;
+/*       */ 
+/*       */   @XmlElement(name="SupportedMotherboard")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String supportedMotherboard;
+/*       */ 
+/*       */   @XmlElement(name="SupportedStandards")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> supportedStandards;
+/*       */ 
+/*       */   @XmlElement(name="SurgeSuppression")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String surgeSuppression;
+/*       */ 
+/*       */   @XmlElement(name="SurroundSoundChannels")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String surroundSoundChannels;
+/*       */ 
+/*       */   @XmlElement(name="SurroundSoundEffects")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> surroundSoundEffects;
+/*       */ 
+/*       */   @XmlElement(name="SwitchingProtocol")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> switchingProtocol;
+/*       */ 
+/*       */   @XmlElement(name="SystemBusSpeed")
+/*       */   protected BigDecimal systemBusSpeed;
+/*       */ 
+/*       */   @XmlElement(name="TalkRangeMaximum")
+/*       */   protected LengthDimension talkRangeMaximum;
+/*       */ 
+/*       */   @XmlElement(name="TapeLength")
+/*       */   protected TimeDimension tapeLength;
+/*       */ 
+/*       */   @XmlElement(name="TelevisionInterface")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String televisionInterface;
+/*       */ 
+/*       */   @XmlElement(name="TelevisionPCInterfaceType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String televisionPCInterfaceType;
+/*       */ 
+/*       */   @XmlElement(name="TemperatureRating")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String temperatureRating;
+/*       */ 
+/*       */   @XmlElement(name="TotalHarmonicDistortion")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String totalHarmonicDistortion;
+/*       */ 
+/*       */   @XmlElement(name="TracklogPoints")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger tracklogPoints;
+/*       */ 
+/*       */   @XmlElement(name="Tracks")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger tracks;
+/*       */ 
+/*       */   @XmlElement(name="TransportProtocol")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> transportProtocol;
+/*       */ 
+/*       */   @XmlElement(name="Tuner")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String tuner;
+/*       */ 
+/*       */   @XmlElement(name="TunerTechnology")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> tunerTechnology;
+/*       */ 
+/*       */   @XmlElement(name="TVTunerSecondaryAudioProgram")
+/*       */   protected Boolean tvTunerSecondaryAudioProgram;
+/*       */ 
+/*       */   @XmlElement(name="UPSTechnology")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String upsTechnology;
+/*       */ 
+/*       */   @XmlElement(name="VCRType")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> vcrType;
+/*       */ 
+/*       */   @XmlElement(name="VerticalResolution")
+/*       */   protected PixelDimension verticalResolution;
+/*       */ 
+/*       */   @XmlElement(name="VideoCaptureFormat")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> videoCaptureFormat;
+/*       */ 
+/*       */   @XmlElement(name="VideoCaptureResolution")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> videoCaptureResolution;
+/*       */ 
+/*       */   @XmlElement(name="VideoHeadQuantity")
+/*       */   @XmlSchemaType(name="nonNegativeInteger")
+/*       */   protected BigInteger videoHeadQuantity;
+/*       */ 
+/*       */   @XmlElement(name="VideoInput")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> videoInput;
+/*       */ 
+/*       */   @XmlElement(name="VideoInputDigitalStandard")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> videoInputDigitalStandard;
+/*       */ 
+/*       */   @XmlElement(name="VideoInputFormat")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> videoInputFormat;
+/*       */ 
+/*       */   @XmlElement(name="VideoOutputFormat")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String videoOutputFormat;
+/*       */ 
+/*       */   @XmlElement(name="VideoOutput")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> videoOutput;
+/*       */ 
+/*       */   @XmlElement(name="VideoOutputInterface")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> videoOutputInterface;
+/*       */ 
+/*       */   @XmlElement(name="VideoOutputMode")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String videoOutputMode;
+/*       */ 
+/*       */   @XmlElement(name="VideoPlaybackFormat")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> videoPlaybackFormat;
+/*       */ 
+/*       */   @XmlElement(name="VideotapePlaybackSpeed")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> videotapePlaybackSpeed;
+/*       */ 
+/*       */   @XmlElement(name="VideotapeRecordingSpeed")
+/*       */   protected String videotapeRecordingSpeed;
+/*       */ 
+/*       */   @XmlElement(name="VoiceCommunicationSupport")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> voiceCommunicationSupport;
+/*       */ 
+/*       */   @XmlElement(name="VoiceCoilDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String voiceCoilDescription;
+/*       */ 
+/*       */   @XmlElement(name="VoicemailCapability")
+/*       */   protected Boolean voicemailCapability;
+/*       */ 
+/*       */   @XmlElement(name="VoiceOperatedTransmission")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String voiceOperatedTransmission;
+/*       */ 
+/*       */   @XmlElement(name="VOIPProtocols")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected List<String> voipProtocols;
+/*       */ 
+/*       */   @XmlElement(name="VolumeAcousticSuspension")
+/*       */   protected VolumeDimension volumeAcousticSuspension;
+/*       */ 
+/*       */   @XmlElement(name="Warnings")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String warnings;
+/*       */ 
+/*       */   @XmlElement(name="WarrantyDescription")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String warrantyDescription;
+/*       */ 
+/*       */   @XmlElement(name="WaterproofRating")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String waterproofRating;
+/*       */ 
+/*       */   @XmlElement(name="Waypoints")
+/*       */   protected BigDecimal waypoints;
+/*       */ 
+/*       */   @XmlElement(name="WaypointsPerRoute")
+/*       */   @XmlSchemaType(name="positiveInteger")
+/*       */   protected BigInteger waypointsPerRoute;
+/*       */ 
+/*       */   @XmlElement(name="Weatherproof")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String weatherproof;
+/*       */ 
+/*       */   @XmlElement(name="WriteSpeed")
+/*       */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */   protected String writeSpeed;
+/*       */ 
+/*       */   public List<RebateType> getRebate()
+/*       */   {
+/*  2005 */     if (this.rebate == null) {
+/*  2006 */       this.rebate = new ArrayList();
+/*       */     }
+/*  2008 */     return this.rebate;
+/*       */   }
+/*       */ 
+/*       */   public ProductType getProductType()
+/*       */   {
+/*  2020 */     return this.productType;
+/*       */   }
+/*       */ 
+/*       */   public void setProductType(ProductType value)
+/*       */   {
+/*  2032 */     this.productType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getProductSubtype()
+/*       */   {
+/*  2044 */     return this.productSubtype;
+/*       */   }
+/*       */ 
+/*       */   public void setProductSubtype(String value)
+/*       */   {
+/*  2056 */     this.productSubtype = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getAnalogVideoFormat()
+/*       */   {
+/*  2082 */     if (this.analogVideoFormat == null) {
+/*  2083 */       this.analogVideoFormat = new ArrayList();
+/*       */     }
+/*  2085 */     return this.analogVideoFormat;
+/*       */   }
+/*       */ 
+/*       */   public EnergyConsumptionDimension getAnnualEnergyConsumption()
+/*       */   {
+/*  2097 */     return this.annualEnergyConsumption;
+/*       */   }
+/*       */ 
+/*       */   public void setAnnualEnergyConsumption(EnergyConsumptionDimension value)
+/*       */   {
+/*  2109 */     this.annualEnergyConsumption = value;
+/*       */   }
+/*       */ 
+/*       */   public String getAnsweringSystemType()
+/*       */   {
+/*  2121 */     return this.answeringSystemType;
+/*       */   }
+/*       */ 
+/*       */   public void setAnsweringSystemType(String value)
+/*       */   {
+/*  2133 */     this.answeringSystemType = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getAntennaLength()
+/*       */   {
+/*  2145 */     return this.antennaLength;
+/*       */   }
+/*       */ 
+/*       */   public void setAntennaLength(LengthDimension value)
+/*       */   {
+/*  2157 */     this.antennaLength = value;
+/*       */   }
+/*       */ 
+/*       */   public AntennaTypeValues getAntennaType()
+/*       */   {
+/*  2169 */     return this.antennaType;
+/*       */   }
+/*       */ 
+/*       */   public void setAntennaType(AntennaTypeValues value)
+/*       */   {
+/*  2181 */     this.antennaType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getAspectRatio()
+/*       */   {
+/*  2193 */     return this.aspectRatio;
+/*       */   }
+/*       */ 
+/*       */   public void setAspectRatio(String value)
+/*       */   {
+/*  2205 */     this.aspectRatio = value;
+/*       */   }
+/*       */ 
+/*       */   public String getAudioFeaturesDescription()
+/*       */   {
+/*  2217 */     return this.audioFeaturesDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setAudioFeaturesDescription(String value)
+/*       */   {
+/*  2229 */     this.audioFeaturesDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getAudioInput()
+/*       */   {
+/*  2255 */     if (this.audioInput == null) {
+/*  2256 */       this.audioInput = new ArrayList();
+/*       */     }
+/*  2258 */     return this.audioInput;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getAudioOutputEffects()
+/*       */   {
+/*  2284 */     if (this.audioOutputEffects == null) {
+/*  2285 */       this.audioOutputEffects = new ArrayList();
+/*       */     }
+/*  2287 */     return this.audioOutputEffects;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getAudioOutputMode()
+/*       */   {
+/*  2313 */     if (this.audioOutputMode == null) {
+/*  2314 */       this.audioOutputMode = new ArrayList();
+/*       */     }
+/*  2316 */     return this.audioOutputMode;
+/*       */   }
+/*       */ 
+/*       */   public String getAudioOutputResponseBandwidth()
+/*       */   {
+/*  2328 */     return this.audioOutputResponseBandwidth;
+/*       */   }
+/*       */ 
+/*       */   public void setAudioOutputResponseBandwidth(String value)
+/*       */   {
+/*  2340 */     this.audioOutputResponseBandwidth = value;
+/*       */   }
+/*       */ 
+/*       */   public String getAudioOutputType()
+/*       */   {
+/*  2352 */     return this.audioOutputType;
+/*       */   }
+/*       */ 
+/*       */   public void setAudioOutputType(String value)
+/*       */   {
+/*  2364 */     this.audioOutputType = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getAudioSensitivity()
+/*       */   {
+/*  2376 */     return this.audioSensitivity;
+/*       */   }
+/*       */ 
+/*       */   public void setAudioSensitivity(BigInteger value)
+/*       */   {
+/*  2388 */     this.audioSensitivity = value;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isAutoRedial()
+/*       */   {
+/*  2400 */     return this.autoRedial;
+/*       */   }
+/*       */ 
+/*       */   public void setAutoRedial(Boolean value)
+/*       */   {
+/*  2412 */     this.autoRedial = value;
+/*       */   }
+/*       */ 
+/*       */   public Battery getBattery()
+/*       */   {
+/*  2424 */     return this.battery;
+/*       */   }
+/*       */ 
+/*       */   public void setBattery(Battery value)
+/*       */   {
+/*  2436 */     this.battery = value;
+/*       */   }
+/*       */ 
+/*       */   public TimeDimension getBatteryAverageLife()
+/*       */   {
+/*  2448 */     return this.batteryAverageLife;
+/*       */   }
+/*       */ 
+/*       */   public void setBatteryAverageLife(TimeDimension value)
+/*       */   {
+/*  2460 */     this.batteryAverageLife = value;
+/*       */   }
+/*       */ 
+/*       */   public TimeDimension getBatteryAverageLifeTalkTime()
+/*       */   {
+/*  2472 */     return this.batteryAverageLifeTalkTime;
+/*       */   }
+/*       */ 
+/*       */   public void setBatteryAverageLifeTalkTime(TimeDimension value)
+/*       */   {
+/*  2484 */     this.batteryAverageLifeTalkTime = value;
+/*       */   }
+/*       */ 
+/*       */   public MemorySizeDimension getBufferSize()
+/*       */   {
+/*  2496 */     return this.bufferSize;
+/*       */   }
+/*       */ 
+/*       */   public void setBufferSize(MemorySizeDimension value)
+/*       */   {
+/*  2508 */     this.bufferSize = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getBatteryTypeLithiumIon()
+/*       */   {
+/*  2520 */     return this.batteryTypeLithiumIon;
+/*       */   }
+/*       */ 
+/*       */   public void setBatteryTypeLithiumIon(BigInteger value)
+/*       */   {
+/*  2532 */     this.batteryTypeLithiumIon = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getBatteryTypeLithiumMetal()
+/*       */   {
+/*  2544 */     return this.batteryTypeLithiumMetal;
+/*       */   }
+/*       */ 
+/*       */   public void setBatteryTypeLithiumMetal(BigInteger value)
+/*       */   {
+/*  2556 */     this.batteryTypeLithiumMetal = value;
+/*       */   }
+/*       */ 
+/*       */   public String getBiometricSecurityFeatures()
+/*       */   {
+/*  2568 */     return this.biometricSecurityFeatures;
+/*       */   }
+/*       */ 
+/*       */   public void setBiometricSecurityFeatures(String value)
+/*       */   {
+/*  2580 */     this.biometricSecurityFeatures = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getBuiltInDecoders()
+/*       */   {
+/*  2606 */     if (this.builtInDecoders == null) {
+/*  2607 */       this.builtInDecoders = new ArrayList();
+/*       */     }
+/*  2609 */     return this.builtInDecoders;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getButtonQuantity()
+/*       */   {
+/*  2621 */     return this.buttonQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setButtonQuantity(BigInteger value)
+/*       */   {
+/*  2633 */     this.buttonQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getCabinetMaterial()
+/*       */   {
+/*  2645 */     return this.cabinetMaterial;
+/*       */   }
+/*       */ 
+/*       */   public void setCabinetMaterial(String value)
+/*       */   {
+/*  2657 */     this.cabinetMaterial = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getCableFeature()
+/*       */   {
+/*  2683 */     if (this.cableFeature == null) {
+/*  2684 */       this.cableFeature = new ArrayList();
+/*       */     }
+/*  2686 */     return this.cableFeature;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getCableTechnology()
+/*       */   {
+/*  2712 */     if (this.cableTechnology == null) {
+/*  2713 */       this.cableTechnology = new ArrayList();
+/*       */     }
+/*  2715 */     return this.cableTechnology;
+/*       */   }
+/*       */ 
+/*       */   public String getCableType()
+/*       */   {
+/*  2727 */     return this.cableType;
+/*       */   }
+/*       */ 
+/*       */   public void setCableType(String value)
+/*       */   {
+/*  2739 */     this.cableType = value;
+/*       */   }
+/*       */ 
+/*       */   public MemorySizeDimension getCacheMemoryInstalledSize()
+/*       */   {
+/*  2751 */     return this.cacheMemoryInstalledSize;
+/*       */   }
+/*       */ 
+/*       */   public void setCacheMemoryInstalledSize(MemorySizeDimension value)
+/*       */   {
+/*  2763 */     this.cacheMemoryInstalledSize = value;
+/*       */   }
+/*       */ 
+/*       */   public String getCallAlerts()
+/*       */   {
+/*  2775 */     return this.callAlerts;
+/*       */   }
+/*       */ 
+/*       */   public void setCallAlerts(String value)
+/*       */   {
+/*  2787 */     this.callAlerts = value;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isCallerIdentification()
+/*       */   {
+/*  2799 */     return this.callerIdentification;
+/*       */   }
+/*       */ 
+/*       */   public void setCallerIdentification(Boolean value)
+/*       */   {
+/*  2811 */     this.callerIdentification = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getCarryingStrap()
+/*       */   {
+/*  2837 */     if (this.carryingStrap == null) {
+/*  2838 */       this.carryingStrap = new ArrayList();
+/*       */     }
+/*  2840 */     return this.carryingStrap;
+/*       */   }
+/*       */ 
+/*       */   public String getCassetteSystemType()
+/*       */   {
+/*  2852 */     return this.cassetteSystemType;
+/*       */   }
+/*       */ 
+/*       */   public void setCassetteSystemType(String value)
+/*       */   {
+/*  2864 */     this.cassetteSystemType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getCDChangerType()
+/*       */   {
+/*  2876 */     return this.cdChangerType;
+/*       */   }
+/*       */ 
+/*       */   public void setCDChangerType(String value)
+/*       */   {
+/*  2888 */     this.cdChangerType = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getCDDiskCapacity()
+/*       */   {
+/*  2900 */     return this.cdDiskCapacity;
+/*       */   }
+/*       */ 
+/*       */   public void setCDDiskCapacity(BigInteger value)
+/*       */   {
+/*  2912 */     this.cdDiskCapacity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getCDLoadType()
+/*       */   {
+/*  2924 */     return this.cdLoadType;
+/*       */   }
+/*       */ 
+/*       */   public void setCDLoadType(String value)
+/*       */   {
+/*  2936 */     this.cdLoadType = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getCDPlaybackMode()
+/*       */   {
+/*  2962 */     if (this.cdPlaybackMode == null) {
+/*  2963 */       this.cdPlaybackMode = new ArrayList();
+/*       */     }
+/*  2965 */     return this.cdPlaybackMode;
+/*       */   }
+/*       */ 
+/*       */   public String getCDSystemType()
+/*       */   {
+/*  2977 */     return this.cdSystemType;
+/*       */   }
+/*       */ 
+/*       */   public void setCDSystemType(String value)
+/*       */   {
+/*  2989 */     this.cdSystemType = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getCellularEnhancementProtocol()
+/*       */   {
+/*  3015 */     if (this.cellularEnhancementProtocol == null) {
+/*  3016 */       this.cellularEnhancementProtocol = new ArrayList();
+/*       */     }
+/*  3018 */     return this.cellularEnhancementProtocol;
+/*       */   }
+/*       */ 
+/*       */   public String getCoaxialDigitalInput()
+/*       */   {
+/*  3030 */     return this.coaxialDigitalInput;
+/*       */   }
+/*       */ 
+/*       */   public void setCoaxialDigitalInput(String value)
+/*       */   {
+/*  3042 */     this.coaxialDigitalInput = value;
+/*       */   }
+/*       */ 
+/*       */   public String getCoaxialDigitalOutput()
+/*       */   {
+/*  3054 */     return this.coaxialDigitalOutput;
+/*       */   }
+/*       */ 
+/*       */   public void setCoaxialDigitalOutput(String value)
+/*       */   {
+/*  3066 */     this.coaxialDigitalOutput = value;
+/*       */   }
+/*       */ 
+/*       */   public String getColor()
+/*       */   {
+/*  3078 */     return this.color;
+/*       */   }
+/*       */ 
+/*       */   public void setColor(String value)
+/*       */   {
+/*  3090 */     this.color = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getColorDepth()
+/*       */   {
+/*  3116 */     if (this.colorDepth == null) {
+/*  3117 */       this.colorDepth = new ArrayList();
+/*       */     }
+/*  3119 */     return this.colorDepth;
+/*       */   }
+/*       */ 
+/*       */   public String getColorMap()
+/*       */   {
+/*  3131 */     return this.colorMap;
+/*       */   }
+/*       */ 
+/*       */   public void setColorMap(String value)
+/*       */   {
+/*  3143 */     this.colorMap = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getColorSupport()
+/*       */   {
+/*  3169 */     if (this.colorSupport == null) {
+/*  3170 */       this.colorSupport = new ArrayList();
+/*       */     }
+/*  3172 */     return this.colorSupport;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getCompatibleCartridge()
+/*       */   {
+/*  3198 */     if (this.compatibleCartridge == null) {
+/*  3199 */       this.compatibleCartridge = new ArrayList();
+/*       */     }
+/*  3201 */     return this.compatibleCartridge;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getCompatibleDevices()
+/*       */   {
+/*  3227 */     if (this.compatibleDevices == null) {
+/*  3228 */       this.compatibleDevices = new ArrayList();
+/*       */     }
+/*  3230 */     return this.compatibleDevices;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getComponentType()
+/*       */   {
+/*  3256 */     if (this.componentType == null) {
+/*  3257 */       this.componentType = new ArrayList();
+/*       */     }
+/*  3259 */     return this.componentType;
+/*       */   }
+/*       */ 
+/*       */   public MemorySizeDimension getCompressedCapacity()
+/*       */   {
+/*  3271 */     return this.compressedCapacity;
+/*       */   }
+/*       */ 
+/*       */   public void setCompressedCapacity(MemorySizeDimension value)
+/*       */   {
+/*  3283 */     this.compressedCapacity = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getComputerPeripheralConnector()
+/*       */   {
+/*  3309 */     if (this.computerPeripheralConnector == null) {
+/*  3310 */       this.computerPeripheralConnector = new ArrayList();
+/*       */     }
+/*  3312 */     return this.computerPeripheralConnector;
+/*       */   }
+/*       */ 
+/*       */   public String getConferenceCallCapability()
+/*       */   {
+/*  3324 */     return this.conferenceCallCapability;
+/*       */   }
+/*       */ 
+/*       */   public void setConferenceCallCapability(String value)
+/*       */   {
+/*  3336 */     this.conferenceCallCapability = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getConnectivityProtocol()
+/*       */   {
+/*  3362 */     if (this.connectivityProtocol == null) {
+/*  3363 */       this.connectivityProtocol = new ArrayList();
+/*       */     }
+/*  3365 */     return this.connectivityProtocol;
+/*       */   }
+/*       */ 
+/*       */   public String getConnectivityTechnology()
+/*       */   {
+/*  3377 */     return this.connectivityTechnology;
+/*       */   }
+/*       */ 
+/*       */   public void setConnectivityTechnology(String value)
+/*       */   {
+/*  3389 */     this.connectivityTechnology = value;
+/*       */   }
+/*       */ 
+/*       */   public String getCopierType()
+/*       */   {
+/*  3401 */     return this.copierType;
+/*       */   }
+/*       */ 
+/*       */   public void setCopierType(String value)
+/*       */   {
+/*  3413 */     this.copierType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getCopySizeMaximum()
+/*       */   {
+/*  3425 */     return this.copySizeMaximum;
+/*       */   }
+/*       */ 
+/*       */   public void setCopySizeMaximum(String value)
+/*       */   {
+/*  3437 */     this.copySizeMaximum = value;
+/*       */   }
+/*       */ 
+/*       */   public String getCountryOfOrigin()
+/*       */   {
+/*  3449 */     return this.countryOfOrigin;
+/*       */   }
+/*       */ 
+/*       */   public void setCountryOfOrigin(String value)
+/*       */   {
+/*  3461 */     this.countryOfOrigin = value;
+/*       */   }
+/*       */ 
+/*       */   public String getCrossoverFrequency()
+/*       */   {
+/*  3473 */     return this.crossoverFrequency;
+/*       */   }
+/*       */ 
+/*       */   public void setCrossoverFrequency(String value)
+/*       */   {
+/*  3485 */     this.crossoverFrequency = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDACDataWidth()
+/*       */   {
+/*  3497 */     return this.dacDataWidth;
+/*       */   }
+/*       */ 
+/*       */   public void setDACDataWidth(String value)
+/*       */   {
+/*  3509 */     this.dacDataWidth = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getDataCompressionProtocol()
+/*       */   {
+/*  3535 */     if (this.dataCompressionProtocol == null) {
+/*  3536 */       this.dataCompressionProtocol = new ArrayList();
+/*       */     }
+/*  3538 */     return this.dataCompressionProtocol;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getDataLinkProtocol()
+/*       */   {
+/*  3564 */     if (this.dataLinkProtocol == null) {
+/*  3565 */       this.dataLinkProtocol = new ArrayList();
+/*       */     }
+/*  3567 */     return this.dataLinkProtocol;
+/*       */   }
+/*       */ 
+/*       */   public String getDataService()
+/*       */   {
+/*  3579 */     return this.dataService;
+/*       */   }
+/*       */ 
+/*       */   public void setDataService(String value)
+/*       */   {
+/*  3591 */     this.dataService = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDataStorageCapability()
+/*       */   {
+/*  3603 */     return this.dataStorageCapability;
+/*       */   }
+/*       */ 
+/*       */   public void setDataStorageCapability(String value)
+/*       */   {
+/*  3615 */     this.dataStorageCapability = value;
+/*       */   }
+/*       */ 
+/*       */   public DataTransferRate getDataTransferRate()
+/*       */   {
+/*  3627 */     return this.dataTransferRate;
+/*       */   }
+/*       */ 
+/*       */   public void setDataTransferRate(DataTransferRate value)
+/*       */   {
+/*  3639 */     this.dataTransferRate = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDeviceType()
+/*       */   {
+/*  3651 */     return this.deviceType;
+/*       */   }
+/*       */ 
+/*       */   public void setDeviceType(String value)
+/*       */   {
+/*  3663 */     this.deviceType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDGPS()
+/*       */   {
+/*  3675 */     return this.dgps;
+/*       */   }
+/*       */ 
+/*       */   public void setDGPS(String value)
+/*       */   {
+/*  3687 */     this.dgps = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDialerType()
+/*       */   {
+/*  3699 */     return this.dialerType;
+/*       */   }
+/*       */ 
+/*       */   public void setDialerType(String value)
+/*       */   {
+/*  3711 */     this.dialerType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDigitalPlayerType()
+/*       */   {
+/*  3723 */     return this.digitalPlayerType;
+/*       */   }
+/*       */ 
+/*       */   public void setDigitalPlayerType(String value)
+/*       */   {
+/*  3735 */     this.digitalPlayerType = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getDigitalRecordingTime()
+/*       */   {
+/*  3761 */     if (this.digitalRecordingTime == null) {
+/*  3762 */       this.digitalRecordingTime = new ArrayList();
+/*       */     }
+/*  3764 */     return this.digitalRecordingTime;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getDigitalSignalingProtocol()
+/*       */   {
+/*  3790 */     if (this.digitalSignalingProtocol == null) {
+/*  3791 */       this.digitalSignalingProtocol = new ArrayList();
+/*       */     }
+/*  3793 */     return this.digitalSignalingProtocol;
+/*       */   }
+/*       */ 
+/*       */   public MemorySizeDimension getDigitalStorageCapacity()
+/*       */   {
+/*  3805 */     return this.digitalStorageCapacity;
+/*       */   }
+/*       */ 
+/*       */   public void setDigitalStorageCapacity(MemorySizeDimension value)
+/*       */   {
+/*  3817 */     this.digitalStorageCapacity = value;
+/*       */   }
+/*       */ 
+/*       */   public ZoomDimension getDigitalZoom()
+/*       */   {
+/*  3829 */     return this.digitalZoom;
+/*       */   }
+/*       */ 
+/*       */   public void setDigitalZoom(ZoomDimension value)
+/*       */   {
+/*  3841 */     this.digitalZoom = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getDisplayColorSupport()
+/*       */   {
+/*  3867 */     if (this.displayColorSupport == null) {
+/*  3868 */       this.displayColorSupport = new ArrayList();
+/*       */     }
+/*  3870 */     return this.displayColorSupport;
+/*       */   }
+/*       */ 
+/*       */   public String getDisplayLanguageOptions()
+/*       */   {
+/*  3882 */     return this.displayLanguageOptions;
+/*       */   }
+/*       */ 
+/*       */   public void setDisplayLanguageOptions(String value)
+/*       */   {
+/*  3894 */     this.displayLanguageOptions = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getDisplayLineQuantity()
+/*       */   {
+/*  3906 */     return this.displayLineQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setDisplayLineQuantity(BigInteger value)
+/*       */   {
+/*  3918 */     this.displayLineQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDisplayResolutionMaximum()
+/*       */   {
+/*  3930 */     return this.displayResolutionMaximum;
+/*       */   }
+/*       */ 
+/*       */   public void setDisplayResolutionMaximum(String value)
+/*       */   {
+/*  3942 */     this.displayResolutionMaximum = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDisplayTechnology()
+/*       */   {
+/*  3954 */     return this.displayTechnology;
+/*       */   }
+/*       */ 
+/*       */   public void setDisplayTechnology(String value)
+/*       */   {
+/*  3966 */     this.displayTechnology = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDisplayType()
+/*       */   {
+/*  3978 */     return this.displayType;
+/*       */   }
+/*       */ 
+/*       */   public void setDisplayType(String value)
+/*       */   {
+/*  3990 */     this.displayType = value;
+/*       */   }
+/*       */ 
+/*       */   public DockingStationExternalInterfaceTypeValues getDockingStationExternalInterface()
+/*       */   {
+/*  4002 */     return this.dockingStationExternalInterface;
+/*       */   }
+/*       */ 
+/*       */   public void setDockingStationExternalInterface(DockingStationExternalInterfaceTypeValues value)
+/*       */   {
+/*  4014 */     this.dockingStationExternalInterface = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDriveUnits()
+/*       */   {
+/*  4026 */     return this.driveUnits;
+/*       */   }
+/*       */ 
+/*       */   public void setDriveUnits(String value)
+/*       */   {
+/*  4038 */     this.driveUnits = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDuplex()
+/*       */   {
+/*  4050 */     return this.duplex;
+/*       */   }
+/*       */ 
+/*       */   public void setDuplex(String value)
+/*       */   {
+/*  4062 */     this.duplex = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getDVDDiskCapacity()
+/*       */   {
+/*  4074 */     return this.dvdDiskCapacity;
+/*       */   }
+/*       */ 
+/*       */   public void setDVDDiskCapacity(BigInteger value)
+/*       */   {
+/*  4086 */     this.dvdDiskCapacity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDVDDiskChangerType()
+/*       */   {
+/*  4098 */     return this.dvdDiskChangerType;
+/*       */   }
+/*       */ 
+/*       */   public void setDVDDiskChangerType(String value)
+/*       */   {
+/*  4110 */     this.dvdDiskChangerType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDVDMediaLoadType()
+/*       */   {
+/*  4122 */     return this.dvdMediaLoadType;
+/*       */   }
+/*       */ 
+/*       */   public void setDVDMediaLoadType(String value)
+/*       */   {
+/*  4134 */     this.dvdMediaLoadType = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getDVDPictureZoomPower()
+/*       */   {
+/*  4160 */     if (this.dvdPictureZoomPower == null) {
+/*  4161 */       this.dvdPictureZoomPower = new ArrayList();
+/*       */     }
+/*  4163 */     return this.dvdPictureZoomPower;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getDVDPlaybackMode()
+/*       */   {
+/*  4189 */     if (this.dvdPlaybackMode == null) {
+/*  4190 */       this.dvdPlaybackMode = new ArrayList();
+/*       */     }
+/*  4192 */     return this.dvdPlaybackMode;
+/*       */   }
+/*       */ 
+/*       */   public String getDVDType()
+/*       */   {
+/*  4204 */     return this.dvdType;
+/*       */   }
+/*       */ 
+/*       */   public void setDVDType(String value)
+/*       */   {
+/*  4216 */     this.dvdType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDVRCompressionRate()
+/*       */   {
+/*  4228 */     return this.dvrCompressionRate;
+/*       */   }
+/*       */ 
+/*       */   public void setDVRCompressionRate(String value)
+/*       */   {
+/*  4240 */     this.dvrCompressionRate = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getDVRMaxRecordingTime()
+/*       */   {
+/*  4252 */     return this.dvrMaxRecordingTime;
+/*       */   }
+/*       */ 
+/*       */   public void setDVRMaxRecordingTime(BigInteger value)
+/*       */   {
+/*  4264 */     this.dvrMaxRecordingTime = value;
+/*       */   }
+/*       */ 
+/*       */   public String getDVRServiceDescription()
+/*       */   {
+/*  4276 */     return this.dvrServiceDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setDVRServiceDescription(String value)
+/*       */   {
+/*  4288 */     this.dvrServiceDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public String getEnclosure()
+/*       */   {
+/*  4300 */     return this.enclosure;
+/*       */   }
+/*       */ 
+/*       */   public void setEnclosure(String value)
+/*       */   {
+/*  4312 */     this.enclosure = value;
+/*       */   }
+/*       */ 
+/*       */   public String getEqualizer()
+/*       */   {
+/*  4324 */     return this.equalizer;
+/*       */   }
+/*       */ 
+/*       */   public void setEqualizer(String value)
+/*       */   {
+/*  4336 */     this.equalizer = value;
+/*       */   }
+/*       */ 
+/*       */   public String getEqualizerBandChannels()
+/*       */   {
+/*  4348 */     return this.equalizerBandChannels;
+/*       */   }
+/*       */ 
+/*       */   public void setEqualizerBandChannels(String value)
+/*       */   {
+/*  4360 */     this.equalizerBandChannels = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getErrorCorrectionProtocol()
+/*       */   {
+/*  4386 */     if (this.errorCorrectionProtocol == null) {
+/*  4387 */       this.errorCorrectionProtocol = new ArrayList();
+/*       */     }
+/*  4389 */     return this.errorCorrectionProtocol;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getEyeRelief()
+/*       */   {
+/*  4401 */     return this.eyeRelief;
+/*       */   }
+/*       */ 
+/*       */   public void setEyeRelief(LengthDimension value)
+/*       */   {
+/*  4413 */     this.eyeRelief = value;
+/*       */   }
+/*       */ 
+/*       */   public String getFaceplateType()
+/*       */   {
+/*  4425 */     return this.faceplateType;
+/*       */   }
+/*       */ 
+/*       */   public void setFaceplateType(String value)
+/*       */   {
+/*  4437 */     this.faceplateType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getFaxMachineCompatibility()
+/*       */   {
+/*  4449 */     return this.faxMachineCompatibility;
+/*       */   }
+/*       */ 
+/*       */   public void setFaxMachineCompatibility(String value)
+/*       */   {
+/*  4461 */     this.faxMachineCompatibility = value;
+/*       */   }
+/*       */ 
+/*       */   public String getFaxType()
+/*       */   {
+/*  4473 */     return this.faxType;
+/*       */   }
+/*       */ 
+/*       */   public void setFaxType(String value)
+/*       */   {
+/*  4485 */     this.faxType = value;
+/*       */   }
+/*       */ 
+/*       */   public MemorySizeDimension getFlashMemoryInstalledSize()
+/*       */   {
+/*  4497 */     return this.flashMemoryInstalledSize;
+/*       */   }
+/*       */ 
+/*       */   public void setFlashMemoryInstalledSize(MemorySizeDimension value)
+/*       */   {
+/*  4509 */     this.flashMemoryInstalledSize = value;
+/*       */   }
+/*       */ 
+/*       */   public String getFloppyDiskDrive()
+/*       */   {
+/*  4521 */     return this.floppyDiskDrive;
+/*       */   }
+/*       */ 
+/*       */   public void setFloppyDiskDrive(String value)
+/*       */   {
+/*  4533 */     this.floppyDiskDrive = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getFormFactor()
+/*       */   {
+/*  4559 */     if (this.formFactor == null) {
+/*  4560 */       this.formFactor = new ArrayList();
+/*       */     }
+/*  4562 */     return this.formFactor;
+/*       */   }
+/*       */ 
+/*       */   public FrequencyDimension getFreeAirResonantFrequency()
+/*       */   {
+/*  4574 */     return this.freeAirResonantFrequency;
+/*       */   }
+/*       */ 
+/*       */   public void setFreeAirResonantFrequency(FrequencyDimension value)
+/*       */   {
+/*  4586 */     this.freeAirResonantFrequency = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getFrequencyRange()
+/*       */   {
+/*  4612 */     if (this.frequencyRange == null) {
+/*  4613 */       this.frequencyRange = new ArrayList();
+/*       */     }
+/*  4615 */     return this.frequencyRange;
+/*       */   }
+/*       */ 
+/*       */   public String getFrequencyRequired()
+/*       */   {
+/*  4627 */     return this.frequencyRequired;
+/*       */   }
+/*       */ 
+/*       */   public void setFrequencyRequired(String value)
+/*       */   {
+/*  4639 */     this.frequencyRequired = value;
+/*       */   }
+/*       */ 
+/*       */   public String getFrequencyResponseCurve()
+/*       */   {
+/*  4651 */     return this.frequencyResponseCurve;
+/*       */   }
+/*       */ 
+/*       */   public void setFrequencyResponseCurve(String value)
+/*       */   {
+/*  4663 */     this.frequencyResponseCurve = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getFrontAccessibleBaysQuantity()
+/*       */   {
+/*  4675 */     return this.frontAccessibleBaysQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setFrontAccessibleBaysQuantity(BigInteger value)
+/*       */   {
+/*  4687 */     this.frontAccessibleBaysQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getFuseDescription()
+/*       */   {
+/*  4699 */     return this.fuseDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setFuseDescription(String value)
+/*       */   {
+/*  4711 */     this.fuseDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public String getGPSNavigation()
+/*       */   {
+/*  4723 */     return this.gpsNavigation;
+/*       */   }
+/*       */ 
+/*       */   public void setGPSNavigation(String value)
+/*       */   {
+/*  4735 */     this.gpsNavigation = value;
+/*       */   }
+/*       */ 
+/*       */   public String getGraphicsCoprocessor()
+/*       */   {
+/*  4747 */     return this.graphicsCoprocessor;
+/*       */   }
+/*       */ 
+/*       */   public void setGraphicsCoprocessor(String value)
+/*       */   {
+/*  4759 */     this.graphicsCoprocessor = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getGraphicsCoprocessorQuantity()
+/*       */   {
+/*  4771 */     return this.graphicsCoprocessorQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setGraphicsCoprocessorQuantity(BigInteger value)
+/*       */   {
+/*  4783 */     this.graphicsCoprocessorQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public BigDecimal getGraphicsRam()
+/*       */   {
+/*  4795 */     return this.graphicsRam;
+/*       */   }
+/*       */ 
+/*       */   public void setGraphicsRam(BigDecimal value)
+/*       */   {
+/*  4807 */     this.graphicsRam = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getGreyscaleDepth()
+/*       */   {
+/*  4833 */     if (this.greyscaleDepth == null) {
+/*  4834 */       this.greyscaleDepth = new ArrayList();
+/*       */     }
+/*  4836 */     return this.greyscaleDepth;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getHandsetDepth()
+/*       */   {
+/*  4848 */     return this.handsetDepth;
+/*       */   }
+/*       */ 
+/*       */   public void setHandsetDepth(LengthDimension value)
+/*       */   {
+/*  4860 */     this.handsetDepth = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getHandsetHeight()
+/*       */   {
+/*  4872 */     return this.handsetHeight;
+/*       */   }
+/*       */ 
+/*       */   public void setHandsetHeight(LengthDimension value)
+/*       */   {
+/*  4884 */     this.handsetHeight = value;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isHandsetLocator()
+/*       */   {
+/*  4896 */     return this.handsetLocator;
+/*       */   }
+/*       */ 
+/*       */   public void setHandsetLocator(Boolean value)
+/*       */   {
+/*  4908 */     this.handsetLocator = value;
+/*       */   }
+/*       */ 
+/*       */   public WeightDimension getHandsetWeight()
+/*       */   {
+/*  4920 */     return this.handsetWeight;
+/*       */   }
+/*       */ 
+/*       */   public void setHandsetWeight(WeightDimension value)
+/*       */   {
+/*  4932 */     this.handsetWeight = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getHandsetWidth()
+/*       */   {
+/*  4944 */     return this.handsetWidth;
+/*       */   }
+/*       */ 
+/*       */   public void setHandsetWidth(LengthDimension value)
+/*       */   {
+/*  4956 */     this.handsetWidth = value;
+/*       */   }
+/*       */ 
+/*       */   public String getHardDiskDescription()
+/*       */   {
+/*  4968 */     return this.hardDiskDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setHardDiskDescription(String value)
+/*       */   {
+/*  4980 */     this.hardDiskDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getHardDiskInstalledQuantity()
+/*       */   {
+/*  4992 */     return this.hardDiskInstalledQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setHardDiskInstalledQuantity(BigInteger value)
+/*       */   {
+/*  5004 */     this.hardDiskInstalledQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getHardDiskRotationalSpeed()
+/*       */   {
+/*  5016 */     return this.hardDiskRotationalSpeed;
+/*       */   }
+/*       */ 
+/*       */   public void setHardDiskRotationalSpeed(BigInteger value)
+/*       */   {
+/*  5028 */     this.hardDiskRotationalSpeed = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getHardwareInterface()
+/*       */   {
+/*  5054 */     if (this.hardwareInterface == null) {
+/*  5055 */       this.hardwareInterface = new ArrayList();
+/*       */     }
+/*  5057 */     return this.hardwareInterface;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isHasCommercialSkip()
+/*       */   {
+/*  5069 */     return this.hasCommercialSkip;
+/*       */   }
+/*       */ 
+/*       */   public void setHasCommercialSkip(Boolean value)
+/*       */   {
+/*  5081 */     this.hasCommercialSkip = value;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isHasDVDPictureZoom()
+/*       */   {
+/*  5093 */     return this.hasDVDPictureZoom;
+/*       */   }
+/*       */ 
+/*       */   public void setHasDVDPictureZoom(Boolean value)
+/*       */   {
+/*  5105 */     this.hasDVDPictureZoom = value;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isHasParentalChannelLock()
+/*       */   {
+/*  5117 */     return this.hasParentalChannelLock;
+/*       */   }
+/*       */ 
+/*       */   public void setHasParentalChannelLock(Boolean value)
+/*       */   {
+/*  5129 */     this.hasParentalChannelLock = value;
+/*       */   }
+/*       */ 
+/*       */   public String getHeadphonesFormFactor()
+/*       */   {
+/*  5141 */     return this.headphonesFormFactor;
+/*       */   }
+/*       */ 
+/*       */   public void setHeadphonesFormFactor(String value)
+/*       */   {
+/*  5153 */     this.headphonesFormFactor = value;
+/*       */   }
+/*       */ 
+/*       */   public String getHeadphonesJack()
+/*       */   {
+/*  5165 */     return this.headphonesJack;
+/*       */   }
+/*       */ 
+/*       */   public void setHeadphonesJack(String value)
+/*       */   {
+/*  5177 */     this.headphonesJack = value;
+/*       */   }
+/*       */ 
+/*       */   public String getHeadphonesTechnology()
+/*       */   {
+/*  5189 */     return this.headphonesTechnology;
+/*       */   }
+/*       */ 
+/*       */   public void setHeadphonesTechnology(String value)
+/*       */   {
+/*  5201 */     this.headphonesTechnology = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getHorizontalResolution()
+/*       */   {
+/*  5213 */     return this.horizontalResolution;
+/*       */   }
+/*       */ 
+/*       */   public void setHorizontalResolution(BigInteger value)
+/*       */   {
+/*  5225 */     this.horizontalResolution = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getHotSwapBaysQuantity()
+/*       */   {
+/*  5237 */     return this.hotSwapBaysQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setHotSwapBaysQuantity(BigInteger value)
+/*       */   {
+/*  5249 */     this.hotSwapBaysQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public List<HumanInterfaceInputType> getHumanInterfaceInput()
+/*       */   {
+/*  5275 */     if (this.humanInterfaceInput == null) {
+/*  5276 */       this.humanInterfaceInput = new ArrayList();
+/*       */     }
+/*  5278 */     return this.humanInterfaceInput;
+/*       */   }
+/*       */ 
+/*       */   public HumanInterfaceOutputType getHumanInterfaceOutput()
+/*       */   {
+/*  5290 */     return this.humanInterfaceOutput;
+/*       */   }
+/*       */ 
+/*       */   public void setHumanInterfaceOutput(HumanInterfaceOutputType value)
+/*       */   {
+/*  5302 */     this.humanInterfaceOutput = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getImageAspectRatio()
+/*       */   {
+/*  5328 */     if (this.imageAspectRatio == null) {
+/*  5329 */       this.imageAspectRatio = new ArrayList();
+/*       */     }
+/*  5331 */     return this.imageAspectRatio;
+/*       */   }
+/*       */ 
+/*       */   public String getImageBrightness()
+/*       */   {
+/*  5343 */     return this.imageBrightness;
+/*       */   }
+/*       */ 
+/*       */   public void setImageBrightness(String value)
+/*       */   {
+/*  5355 */     this.imageBrightness = value;
+/*       */   }
+/*       */ 
+/*       */   public String getImageContrastRatio()
+/*       */   {
+/*  5367 */     return this.imageContrastRatio;
+/*       */   }
+/*       */ 
+/*       */   public void setImageContrastRatio(String value)
+/*       */   {
+/*  5379 */     this.imageContrastRatio = value;
+/*       */   }
+/*       */ 
+/*       */   public ResistanceDimension getImpedance()
+/*       */   {
+/*  5391 */     return this.impedance;
+/*       */   }
+/*       */ 
+/*       */   public void setImpedance(ResistanceDimension value)
+/*       */   {
+/*  5403 */     this.impedance = value;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isIncludesMP3Player()
+/*       */   {
+/*  5415 */     return this.includesMP3Player;
+/*       */   }
+/*       */ 
+/*       */   public void setIncludesMP3Player(Boolean value)
+/*       */   {
+/*  5427 */     this.includesMP3Player = value;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isIncludesRechargableBattery()
+/*       */   {
+/*  5439 */     return this.includesRechargableBattery;
+/*       */   }
+/*       */ 
+/*       */   public void setIncludesRechargableBattery(Boolean value)
+/*       */   {
+/*  5451 */     this.includesRechargableBattery = value;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isIncludesRemote()
+/*       */   {
+/*  5463 */     return this.includesRemote;
+/*       */   }
+/*       */ 
+/*       */   public void setIncludesRemote(Boolean value)
+/*       */   {
+/*  5475 */     this.includesRemote = value;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isIncludesSpeakerphone()
+/*       */   {
+/*  5487 */     return this.includesSpeakerphone;
+/*       */   }
+/*       */ 
+/*       */   public void setIncludesSpeakerphone(Boolean value)
+/*       */   {
+/*  5499 */     this.includesSpeakerphone = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getInputAdapter()
+/*       */   {
+/*  5525 */     if (this.inputAdapter == null) {
+/*  5526 */       this.inputAdapter = new ArrayList();
+/*       */     }
+/*  5528 */     return this.inputAdapter;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getInputChannelQuantity()
+/*       */   {
+/*  5540 */     return this.inputChannelQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setInputChannelQuantity(BigInteger value)
+/*       */   {
+/*  5552 */     this.inputChannelQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public List<Connection> getInputConnection()
+/*       */   {
+/*  5578 */     if (this.inputConnection == null) {
+/*  5579 */       this.inputConnection = new ArrayList();
+/*       */     }
+/*  5581 */     return this.inputConnection;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getInputConnectorType()
+/*       */   {
+/*  5607 */     if (this.inputConnectorType == null) {
+/*  5608 */       this.inputConnectorType = new ArrayList();
+/*       */     }
+/*  5610 */     return this.inputConnectorType;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getInputDevice()
+/*       */   {
+/*  5636 */     if (this.inputDevice == null) {
+/*  5637 */       this.inputDevice = new ArrayList();
+/*       */     }
+/*  5639 */     return this.inputDevice;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getInputDeviceInterface()
+/*       */   {
+/*  5665 */     if (this.inputDeviceInterface == null) {
+/*  5666 */       this.inputDeviceInterface = new ArrayList();
+/*       */     }
+/*  5668 */     return this.inputDeviceInterface;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isIntercom()
+/*       */   {
+/*  5680 */     return this.intercom;
+/*       */   }
+/*       */ 
+/*       */   public void setIntercom(Boolean value)
+/*       */   {
+/*  5692 */     this.intercom = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getInternalBaysQuantity()
+/*       */   {
+/*  5704 */     return this.internalBaysQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setInternalBaysQuantity(BigInteger value)
+/*       */   {
+/*  5716 */     this.internalBaysQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getISDNTerminalAdapterInterface()
+/*       */   {
+/*  5728 */     return this.isdnTerminalAdapterInterface;
+/*       */   }
+/*       */ 
+/*       */   public void setISDNTerminalAdapterInterface(String value)
+/*       */   {
+/*  5740 */     this.isdnTerminalAdapterInterface = value;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isIsHDTVCompatible()
+/*       */   {
+/*  5752 */     return this.isHDTVCompatible;
+/*       */   }
+/*       */ 
+/*       */   public void setIsHDTVCompatible(Boolean value)
+/*       */   {
+/*  5764 */     this.isHDTVCompatible = value;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isIsWaterproof()
+/*       */   {
+/*  5776 */     return this.isWaterproof;
+/*       */   }
+/*       */ 
+/*       */   public void setIsWaterproof(Boolean value)
+/*       */   {
+/*  5788 */     this.isWaterproof = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getItemDisplayDepth()
+/*       */   {
+/*  5800 */     return this.itemDisplayDepth;
+/*       */   }
+/*       */ 
+/*       */   public void setItemDisplayDepth(LengthDimension value)
+/*       */   {
+/*  5812 */     this.itemDisplayDepth = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getItemDisplayHeight()
+/*       */   {
+/*  5824 */     return this.itemDisplayHeight;
+/*       */   }
+/*       */ 
+/*       */   public void setItemDisplayHeight(LengthDimension value)
+/*       */   {
+/*  5836 */     this.itemDisplayHeight = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getItemDisplayLength()
+/*       */   {
+/*  5848 */     return this.itemDisplayLength;
+/*       */   }
+/*       */ 
+/*       */   public void setItemDisplayLength(LengthDimension value)
+/*       */   {
+/*  5860 */     this.itemDisplayLength = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getItemDisplayLengthMaximum()
+/*       */   {
+/*  5872 */     return this.itemDisplayLengthMaximum;
+/*       */   }
+/*       */ 
+/*       */   public void setItemDisplayLengthMaximum(LengthDimension value)
+/*       */   {
+/*  5884 */     this.itemDisplayLengthMaximum = value;
+/*       */   }
+/*       */ 
+/*       */   public WeightDimension getItemDisplayWeight()
+/*       */   {
+/*  5896 */     return this.itemDisplayWeight;
+/*       */   }
+/*       */ 
+/*       */   public void setItemDisplayWeight(WeightDimension value)
+/*       */   {
+/*  5908 */     this.itemDisplayWeight = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getItemDisplayWidth()
+/*       */   {
+/*  5920 */     return this.itemDisplayWidth;
+/*       */   }
+/*       */ 
+/*       */   public void setItemDisplayWidth(LengthDimension value)
+/*       */   {
+/*  5932 */     this.itemDisplayWidth = value;
+/*       */   }
+/*       */ 
+/*       */   public BigDecimal getLithiumBatteryEnergyContent()
+/*       */   {
+/*  5944 */     return this.lithiumBatteryEnergyContent;
+/*       */   }
+/*       */ 
+/*       */   public void setLithiumBatteryEnergyContent(BigDecimal value)
+/*       */   {
+/*  5956 */     this.lithiumBatteryEnergyContent = value;
+/*       */   }
+/*       */ 
+/*       */   public String getLithiumBatteryPackaging()
+/*       */   {
+/*  5968 */     return this.lithiumBatteryPackaging;
+/*       */   }
+/*       */ 
+/*       */   public void setLithiumBatteryPackaging(String value)
+/*       */   {
+/*  5980 */     this.lithiumBatteryPackaging = value;
+/*       */   }
+/*       */ 
+/*       */   public BigDecimal getLithiumBatteryVoltage()
+/*       */   {
+/*  5992 */     return this.lithiumBatteryVoltage;
+/*       */   }
+/*       */ 
+/*       */   public void setLithiumBatteryVoltage(BigDecimal value)
+/*       */   {
+/*  6004 */     this.lithiumBatteryVoltage = value;
+/*       */   }
+/*       */ 
+/*       */   public BigDecimal getLithiumBatteryWeight()
+/*       */   {
+/*  6016 */     return this.lithiumBatteryWeight;
+/*       */   }
+/*       */ 
+/*       */   public void setLithiumBatteryWeight(BigDecimal value)
+/*       */   {
+/*  6028 */     this.lithiumBatteryWeight = value;
+/*       */   }
+/*       */ 
+/*       */   public String getKeyboardDescription()
+/*       */   {
+/*  6040 */     return this.keyboardDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setKeyboardDescription(String value)
+/*       */   {
+/*  6052 */     this.keyboardDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public String getLampType()
+/*       */   {
+/*  6064 */     return this.lampType;
+/*       */   }
+/*       */ 
+/*       */   public void setLampType(String value)
+/*       */   {
+/*  6076 */     this.lampType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getLeftConnectorGender()
+/*       */   {
+/*  6088 */     return this.leftConnectorGender;
+/*       */   }
+/*       */ 
+/*       */   public void setLeftConnectorGender(String value)
+/*       */   {
+/*  6100 */     this.leftConnectorGender = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getLeftConnectorType()
+/*       */   {
+/*  6126 */     if (this.leftConnectorType == null) {
+/*  6127 */       this.leftConnectorType = new ArrayList();
+/*       */     }
+/*  6129 */     return this.leftConnectorType;
+/*       */   }
+/*       */ 
+/*       */   public String getManufacturerWarrantyType()
+/*       */   {
+/*  6141 */     return this.manufacturerWarrantyType;
+/*       */   }
+/*       */ 
+/*       */   public void setManufacturerWarrantyType(String value)
+/*       */   {
+/*  6153 */     this.manufacturerWarrantyType = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getMapType()
+/*       */   {
+/*  6179 */     if (this.mapType == null) {
+/*  6180 */       this.mapType = new ArrayList();
+/*       */     }
+/*  6182 */     return this.mapType;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getMaterialComposition()
+/*       */   {
+/*  6208 */     if (this.materialComposition == null) {
+/*  6209 */       this.materialComposition = new ArrayList();
+/*       */     }
+/*  6211 */     return this.materialComposition;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getMaterialType()
+/*       */   {
+/*  6237 */     if (this.materialType == null) {
+/*  6238 */       this.materialType = new ArrayList();
+/*       */     }
+/*  6240 */     return this.materialType;
+/*       */   }
+/*       */ 
+/*       */   public String getMaxCopyResolutionBlackWhite()
+/*       */   {
+/*  6252 */     return this.maxCopyResolutionBlackWhite;
+/*       */   }
+/*       */ 
+/*       */   public void setMaxCopyResolutionBlackWhite(String value)
+/*       */   {
+/*  6264 */     this.maxCopyResolutionBlackWhite = value;
+/*       */   }
+/*       */ 
+/*       */   public String getMaxCopyResolutionColor()
+/*       */   {
+/*  6276 */     return this.maxCopyResolutionColor;
+/*       */   }
+/*       */ 
+/*       */   public void setMaxCopyResolutionColor(String value)
+/*       */   {
+/*  6288 */     this.maxCopyResolutionColor = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getMaximumBridgedOutputPower()
+/*       */   {
+/*  6300 */     return this.maximumBridgedOutputPower;
+/*       */   }
+/*       */ 
+/*       */   public void setMaximumBridgedOutputPower(BigInteger value)
+/*       */   {
+/*  6312 */     this.maximumBridgedOutputPower = value;
+/*       */   }
+/*       */ 
+/*       */   public String getMaximumExternalResolution()
+/*       */   {
+/*  6324 */     return this.maximumExternalResolution;
+/*       */   }
+/*       */ 
+/*       */   public void setMaximumExternalResolution(String value)
+/*       */   {
+/*  6336 */     this.maximumExternalResolution = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getMaximumImageSize()
+/*       */   {
+/*  6348 */     return this.maximumImageSize;
+/*       */   }
+/*       */ 
+/*       */   public void setMaximumImageSize(LengthDimension value)
+/*       */   {
+/*  6360 */     this.maximumImageSize = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getMaximumLinearPeakExcursion()
+/*       */   {
+/*  6372 */     return this.maximumLinearPeakExcursion;
+/*       */   }
+/*       */ 
+/*       */   public void setMaximumLinearPeakExcursion(LengthDimension value)
+/*       */   {
+/*  6384 */     this.maximumLinearPeakExcursion = value;
+/*       */   }
+/*       */ 
+/*       */   public String getMaximumOutputPower()
+/*       */   {
+/*  6396 */     return this.maximumOutputPower;
+/*       */   }
+/*       */ 
+/*       */   public void setMaximumOutputPower(String value)
+/*       */   {
+/*  6408 */     this.maximumOutputPower = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getMaximumRange()
+/*       */   {
+/*  6420 */     return this.maximumRange;
+/*       */   }
+/*       */ 
+/*       */   public void setMaximumRange(LengthDimension value)
+/*       */   {
+/*  6432 */     this.maximumRange = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getMaximumRangeIndoors()
+/*       */   {
+/*  6444 */     return this.maximumRangeIndoors;
+/*       */   }
+/*       */ 
+/*       */   public void setMaximumRangeIndoors(LengthDimension value)
+/*       */   {
+/*  6456 */     this.maximumRangeIndoors = value;
+/*       */   }
+/*       */ 
+/*       */   public FrequencyDimension getMaximumSampleRate()
+/*       */   {
+/*  6468 */     return this.maximumSampleRate;
+/*       */   }
+/*       */ 
+/*       */   public void setMaximumSampleRate(FrequencyDimension value)
+/*       */   {
+/*  6480 */     this.maximumSampleRate = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getMaximumScreenDistance()
+/*       */   {
+/*  6492 */     return this.maximumScreenDistance;
+/*       */   }
+/*       */ 
+/*       */   public void setMaximumScreenDistance(LengthDimension value)
+/*       */   {
+/*  6504 */     this.maximumScreenDistance = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getMaxInputSheetCapacity()
+/*       */   {
+/*  6516 */     return this.maxInputSheetCapacity;
+/*       */   }
+/*       */ 
+/*       */   public void setMaxInputSheetCapacity(BigInteger value)
+/*       */   {
+/*  6528 */     this.maxInputSheetCapacity = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getMaxPrintResolutionBlackWhite()
+/*       */   {
+/*  6554 */     if (this.maxPrintResolutionBlackWhite == null) {
+/*  6555 */       this.maxPrintResolutionBlackWhite = new ArrayList();
+/*       */     }
+/*  6557 */     return this.maxPrintResolutionBlackWhite;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getMaxPrintResolutionColor()
+/*       */   {
+/*  6583 */     if (this.maxPrintResolutionColor == null) {
+/*  6584 */       this.maxPrintResolutionColor = new ArrayList();
+/*       */     }
+/*  6586 */     return this.maxPrintResolutionColor;
+/*       */   }
+/*       */ 
+/*       */   public String getMediaFormat()
+/*       */   {
+/*  6598 */     return this.mediaFormat;
+/*       */   }
+/*       */ 
+/*       */   public void setMediaFormat(String value)
+/*       */   {
+/*  6610 */     this.mediaFormat = value;
+/*       */   }
+/*       */ 
+/*       */   public String getMediaLoadType()
+/*       */   {
+/*  6622 */     return this.mediaLoadType;
+/*       */   }
+/*       */ 
+/*       */   public void setMediaLoadType(String value)
+/*       */   {
+/*  6634 */     this.mediaLoadType = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getMediaSizeMaximum()
+/*       */   {
+/*  6660 */     if (this.mediaSizeMaximum == null) {
+/*  6661 */       this.mediaSizeMaximum = new ArrayList();
+/*       */     }
+/*  6663 */     return this.mediaSizeMaximum;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getMediaType()
+/*       */   {
+/*  6689 */     if (this.mediaType == null) {
+/*  6690 */       this.mediaType = new ArrayList();
+/*       */     }
+/*  6692 */     return this.mediaType;
+/*       */   }
+/*       */ 
+/*       */   public MemorySizeDimension getMemoryStorageCapacity()
+/*       */   {
+/*  6704 */     return this.memoryStorageCapacity;
+/*       */   }
+/*       */ 
+/*       */   public void setMemoryStorageCapacity(MemorySizeDimension value)
+/*       */   {
+/*  6716 */     this.memoryStorageCapacity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getMemoryTechnology()
+/*       */   {
+/*  6728 */     return this.memoryTechnology;
+/*       */   }
+/*       */ 
+/*       */   public void setMemoryTechnology(String value)
+/*       */   {
+/*  6740 */     this.memoryTechnology = value;
+/*       */   }
+/*       */ 
+/*       */   public String getMfgWarrantyDescriptionLabor()
+/*       */   {
+/*  6752 */     return this.mfgWarrantyDescriptionLabor;
+/*       */   }
+/*       */ 
+/*       */   public void setMfgWarrantyDescriptionLabor(String value)
+/*       */   {
+/*  6764 */     this.mfgWarrantyDescriptionLabor = value;
+/*       */   }
+/*       */ 
+/*       */   public String getMfgWarrantyDescriptionParts()
+/*       */   {
+/*  6776 */     return this.mfgWarrantyDescriptionParts;
+/*       */   }
+/*       */ 
+/*       */   public void setMfgWarrantyDescriptionParts(String value)
+/*       */   {
+/*  6788 */     this.mfgWarrantyDescriptionParts = value;
+/*       */   }
+/*       */ 
+/*       */   public String getMicrophoneFormFactor()
+/*       */   {
+/*  6800 */     return this.microphoneFormFactor;
+/*       */   }
+/*       */ 
+/*       */   public void setMicrophoneFormFactor(String value)
+/*       */   {
+/*  6812 */     this.microphoneFormFactor = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getMicrophoneOperationMode()
+/*       */   {
+/*  6838 */     if (this.microphoneOperationMode == null) {
+/*  6839 */       this.microphoneOperationMode = new ArrayList();
+/*       */     }
+/*  6841 */     return this.microphoneOperationMode;
+/*       */   }
+/*       */ 
+/*       */   public String getMicrophoneTechnology()
+/*       */   {
+/*  6853 */     return this.microphoneTechnology;
+/*       */   }
+/*       */ 
+/*       */   public void setMicrophoneTechnology(String value)
+/*       */   {
+/*  6865 */     this.microphoneTechnology = value;
+/*       */   }
+/*       */ 
+/*       */   public String getMiniDiscSystem()
+/*       */   {
+/*  6877 */     return this.miniDiscSystem;
+/*       */   }
+/*       */ 
+/*       */   public void setMiniDiscSystem(String value)
+/*       */   {
+/*  6889 */     this.miniDiscSystem = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getMinimumImageSize()
+/*       */   {
+/*  6901 */     return this.minimumImageSize;
+/*       */   }
+/*       */ 
+/*       */   public void setMinimumImageSize(LengthDimension value)
+/*       */   {
+/*  6913 */     this.minimumImageSize = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getMinimumScreenDistance()
+/*       */   {
+/*  6925 */     return this.minimumScreenDistance;
+/*       */   }
+/*       */ 
+/*       */   public void setMinimumScreenDistance(LengthDimension value)
+/*       */   {
+/*  6937 */     this.minimumScreenDistance = value;
+/*       */   }
+/*       */ 
+/*       */   public String getMinimumSystemRequirementDescription()
+/*       */   {
+/*  6949 */     return this.minimumSystemRequirementDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setMinimumSystemRequirementDescription(String value)
+/*       */   {
+/*  6961 */     this.minimumSystemRequirementDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public String getModel()
+/*       */   {
+/*  6973 */     return this.model;
+/*       */   }
+/*       */ 
+/*       */   public void setModel(String value)
+/*       */   {
+/*  6985 */     this.model = value;
+/*       */   }
+/*       */ 
+/*       */   public String getModelName()
+/*       */   {
+/*  6997 */     return this.modelName;
+/*       */   }
+/*       */ 
+/*       */   public void setModelName(String value)
+/*       */   {
+/*  7009 */     this.modelName = value;
+/*       */   }
+/*       */ 
+/*       */   public String getModemDescription()
+/*       */   {
+/*  7021 */     return this.modemDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setModemDescription(String value)
+/*       */   {
+/*  7033 */     this.modemDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public String getModemInterface()
+/*       */   {
+/*  7045 */     return this.modemInterface;
+/*       */   }
+/*       */ 
+/*       */   public void setModemInterface(String value)
+/*       */   {
+/*  7057 */     this.modemInterface = value;
+/*       */   }
+/*       */ 
+/*       */   public ModemTypeValues getModemType()
+/*       */   {
+/*  7069 */     return this.modemType;
+/*       */   }
+/*       */ 
+/*       */   public void setModemType(ModemTypeValues value)
+/*       */   {
+/*  7081 */     this.modemType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getMonthlyDutyCycle()
+/*       */   {
+/*  7093 */     return this.monthlyDutyCycle;
+/*       */   }
+/*       */ 
+/*       */   public void setMonthlyDutyCycle(String value)
+/*       */   {
+/*  7105 */     this.monthlyDutyCycle = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getMountingHoleDiameter()
+/*       */   {
+/*  7117 */     return this.mountingHoleDiameter;
+/*       */   }
+/*       */ 
+/*       */   public void setMountingHoleDiameter(LengthDimension value)
+/*       */   {
+/*  7129 */     this.mountingHoleDiameter = value;
+/*       */   }
+/*       */ 
+/*       */   public String getMovementDetectionTechnology()
+/*       */   {
+/*  7141 */     return this.movementDetectionTechnology;
+/*       */   }
+/*       */ 
+/*       */   public void setMovementDetectionTechnology(String value)
+/*       */   {
+/*  7153 */     this.movementDetectionTechnology = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getMultilineOperation()
+/*       */   {
+/*  7179 */     if (this.multilineOperation == null) {
+/*  7180 */       this.multilineOperation = new ArrayList();
+/*       */     }
+/*  7182 */     return this.multilineOperation;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getMultimediaFunctionality()
+/*       */   {
+/*  7208 */     if (this.multimediaFunctionality == null) {
+/*  7209 */       this.multimediaFunctionality = new ArrayList();
+/*       */     }
+/*  7211 */     return this.multimediaFunctionality;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getNavigationRoutes()
+/*       */   {
+/*  7223 */     return this.navigationRoutes;
+/*       */   }
+/*       */ 
+/*       */   public void setNavigationRoutes(BigInteger value)
+/*       */   {
+/*  7235 */     this.navigationRoutes = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getNetworkingFeature()
+/*       */   {
+/*  7261 */     if (this.networkingFeature == null) {
+/*  7262 */       this.networkingFeature = new ArrayList();
+/*       */     }
+/*  7264 */     return this.networkingFeature;
+/*       */   }
+/*       */ 
+/*       */   public String getNetworkInterfaceDescription()
+/*       */   {
+/*  7276 */     return this.networkInterfaceDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setNetworkInterfaceDescription(String value)
+/*       */   {
+/*  7288 */     this.networkInterfaceDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getNumberOfLithiumIonCells()
+/*       */   {
+/*  7300 */     return this.numberOfLithiumIonCells;
+/*       */   }
+/*       */ 
+/*       */   public void setNumberOfLithiumIonCells(BigInteger value)
+/*       */   {
+/*  7312 */     this.numberOfLithiumIonCells = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getNumberOfLithiumMetalCells()
+/*       */   {
+/*  7324 */     return this.numberOfLithiumMetalCells;
+/*       */   }
+/*       */ 
+/*       */   public void setNumberOfLithiumMetalCells(BigInteger value)
+/*       */   {
+/*  7336 */     this.numberOfLithiumMetalCells = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getNumberOfPorts()
+/*       */   {
+/*  7348 */     return this.numberOfPorts;
+/*       */   }
+/*       */ 
+/*       */   public void setNumberOfPorts(BigInteger value)
+/*       */   {
+/*  7360 */     this.numberOfPorts = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getNumberOfSupportedZones()
+/*       */   {
+/*  7372 */     return this.numberOfSupportedZones;
+/*       */   }
+/*       */ 
+/*       */   public void setNumberOfSupportedZones(BigInteger value)
+/*       */   {
+/*  7384 */     this.numberOfSupportedZones = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getObjectiveLensDiameter()
+/*       */   {
+/*  7396 */     return this.objectiveLensDiameter;
+/*       */   }
+/*       */ 
+/*       */   public void setObjectiveLensDiameter(LengthDimension value)
+/*       */   {
+/*  7408 */     this.objectiveLensDiameter = value;
+/*       */   }
+/*       */ 
+/*       */   public String getOperatingHumidity()
+/*       */   {
+/*  7420 */     return this.operatingHumidity;
+/*       */   }
+/*       */ 
+/*       */   public void setOperatingHumidity(String value)
+/*       */   {
+/*  7432 */     this.operatingHumidity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getOpticalDigitalInput()
+/*       */   {
+/*  7444 */     return this.opticalDigitalInput;
+/*       */   }
+/*       */ 
+/*       */   public void setOpticalDigitalInput(String value)
+/*       */   {
+/*  7456 */     this.opticalDigitalInput = value;
+/*       */   }
+/*       */ 
+/*       */   public String getOpticalDigitalOutput()
+/*       */   {
+/*  7468 */     return this.opticalDigitalOutput;
+/*       */   }
+/*       */ 
+/*       */   public void setOpticalDigitalOutput(String value)
+/*       */   {
+/*  7480 */     this.opticalDigitalOutput = value;
+/*       */   }
+/*       */ 
+/*       */   public PixelDimension getOpticalSensorInterpolatedResolution()
+/*       */   {
+/*  7492 */     return this.opticalSensorInterpolatedResolution;
+/*       */   }
+/*       */ 
+/*       */   public void setOpticalSensorInterpolatedResolution(PixelDimension value)
+/*       */   {
+/*  7504 */     this.opticalSensorInterpolatedResolution = value;
+/*       */   }
+/*       */ 
+/*       */   public PixelDimension getOpticalSensorResolution()
+/*       */   {
+/*  7516 */     return this.opticalSensorResolution;
+/*       */   }
+/*       */ 
+/*       */   public void setOpticalSensorResolution(PixelDimension value)
+/*       */   {
+/*  7528 */     this.opticalSensorResolution = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getOpticalStorageDevice()
+/*       */   {
+/*  7554 */     if (this.opticalStorageDevice == null) {
+/*  7555 */       this.opticalStorageDevice = new ArrayList();
+/*       */     }
+/*  7557 */     return this.opticalStorageDevice;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getOpticalStorageInstalledQuantity()
+/*       */   {
+/*  7569 */     return this.opticalStorageInstalledQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setOpticalStorageInstalledQuantity(BigInteger value)
+/*       */   {
+/*  7581 */     this.opticalStorageInstalledQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getOpticalStorageReadSpeed()
+/*       */   {
+/*  7593 */     return this.opticalStorageReadSpeed;
+/*       */   }
+/*       */ 
+/*       */   public void setOpticalStorageReadSpeed(String value)
+/*       */   {
+/*  7605 */     this.opticalStorageReadSpeed = value;
+/*       */   }
+/*       */ 
+/*       */   public String getOpticalStorageRewriteSpeed()
+/*       */   {
+/*  7617 */     return this.opticalStorageRewriteSpeed;
+/*       */   }
+/*       */ 
+/*       */   public void setOpticalStorageRewriteSpeed(String value)
+/*       */   {
+/*  7629 */     this.opticalStorageRewriteSpeed = value;
+/*       */   }
+/*       */ 
+/*       */   public String getOpticalStorageSecondaryReadSpeed()
+/*       */   {
+/*  7641 */     return this.opticalStorageSecondaryReadSpeed;
+/*       */   }
+/*       */ 
+/*       */   public void setOpticalStorageSecondaryReadSpeed(String value)
+/*       */   {
+/*  7653 */     this.opticalStorageSecondaryReadSpeed = value;
+/*       */   }
+/*       */ 
+/*       */   public String getOpticalStorageSecondaryRewriteSpeed()
+/*       */   {
+/*  7665 */     return this.opticalStorageSecondaryRewriteSpeed;
+/*       */   }
+/*       */ 
+/*       */   public void setOpticalStorageSecondaryRewriteSpeed(String value)
+/*       */   {
+/*  7677 */     this.opticalStorageSecondaryRewriteSpeed = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getOpticalStorageSecondaryType()
+/*       */   {
+/*  7703 */     if (this.opticalStorageSecondaryType == null) {
+/*  7704 */       this.opticalStorageSecondaryType = new ArrayList();
+/*       */     }
+/*  7706 */     return this.opticalStorageSecondaryType;
+/*       */   }
+/*       */ 
+/*       */   public String getOpticalStorageSecondaryWriteSpeed()
+/*       */   {
+/*  7718 */     return this.opticalStorageSecondaryWriteSpeed;
+/*       */   }
+/*       */ 
+/*       */   public void setOpticalStorageSecondaryWriteSpeed(String value)
+/*       */   {
+/*  7730 */     this.opticalStorageSecondaryWriteSpeed = value;
+/*       */   }
+/*       */ 
+/*       */   public String getOpticalStorageWriteSpeed()
+/*       */   {
+/*  7742 */     return this.opticalStorageWriteSpeed;
+/*       */   }
+/*       */ 
+/*       */   public void setOpticalStorageWriteSpeed(String value)
+/*       */   {
+/*  7754 */     this.opticalStorageWriteSpeed = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getOutputChannelQuantity()
+/*       */   {
+/*  7766 */     return this.outputChannelQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setOutputChannelQuantity(BigInteger value)
+/*       */   {
+/*  7778 */     this.outputChannelQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public List<Connection> getOutputConnection()
+/*       */   {
+/*  7804 */     if (this.outputConnection == null) {
+/*  7805 */       this.outputConnection = new ArrayList();
+/*       */     }
+/*  7807 */     return this.outputConnection;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getOutputConnectorQuantity()
+/*       */   {
+/*  7819 */     return this.outputConnectorQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setOutputConnectorQuantity(BigInteger value)
+/*       */   {
+/*  7831 */     this.outputConnectorQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getOutputConnectorType()
+/*       */   {
+/*  7857 */     if (this.outputConnectorType == null) {
+/*  7858 */       this.outputConnectorType = new ArrayList();
+/*       */     }
+/*  7860 */     return this.outputConnectorType;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getOutputPower()
+/*       */   {
+/*  7872 */     return this.outputPower;
+/*       */   }
+/*       */ 
+/*       */   public void setOutputPower(BigInteger value)
+/*       */   {
+/*  7884 */     this.outputPower = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getOutputWattage()
+/*       */   {
+/*  7896 */     return this.outputWattage;
+/*       */   }
+/*       */ 
+/*       */   public void setOutputWattage(BigInteger value)
+/*       */   {
+/*  7908 */     this.outputWattage = value;
+/*       */   }
+/*       */ 
+/*       */   public String getPackageContentType()
+/*       */   {
+/*  7920 */     return this.packageContentType;
+/*       */   }
+/*       */ 
+/*       */   public void setPackageContentType(String value)
+/*       */   {
+/*  7932 */     this.packageContentType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getPackageTypeName()
+/*       */   {
+/*  7944 */     return this.packageTypeName;
+/*       */   }
+/*       */ 
+/*       */   public void setPackageTypeName(String value)
+/*       */   {
+/*  7956 */     this.packageTypeName = value;
+/*       */   }
+/*       */ 
+/*       */   public String getPCConnectionAvailable()
+/*       */   {
+/*  7968 */     return this.pcConnectionAvailable;
+/*       */   }
+/*       */ 
+/*       */   public void setPCConnectionAvailable(String value)
+/*       */   {
+/*  7980 */     this.pcConnectionAvailable = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getPhoneBaseDepth()
+/*       */   {
+/*  7992 */     return this.phoneBaseDepth;
+/*       */   }
+/*       */ 
+/*       */   public void setPhoneBaseDepth(LengthDimension value)
+/*       */   {
+/*  8004 */     this.phoneBaseDepth = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getPhoneBaseHeight()
+/*       */   {
+/*  8016 */     return this.phoneBaseHeight;
+/*       */   }
+/*       */ 
+/*       */   public void setPhoneBaseHeight(LengthDimension value)
+/*       */   {
+/*  8028 */     this.phoneBaseHeight = value;
+/*       */   }
+/*       */ 
+/*       */   public WeightDimension getPhoneBaseWeight()
+/*       */   {
+/*  8040 */     return this.phoneBaseWeight;
+/*       */   }
+/*       */ 
+/*       */   public void setPhoneBaseWeight(WeightDimension value)
+/*       */   {
+/*  8052 */     this.phoneBaseWeight = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getPhoneBaseWidth()
+/*       */   {
+/*  8064 */     return this.phoneBaseWidth;
+/*       */   }
+/*       */ 
+/*       */   public void setPhoneBaseWidth(LengthDimension value)
+/*       */   {
+/*  8076 */     this.phoneBaseWidth = value;
+/*       */   }
+/*       */ 
+/*       */   public PortedBoxVolume getPortedBoxVolume()
+/*       */   {
+/*  8088 */     return this.portedBoxVolume;
+/*       */   }
+/*       */ 
+/*       */   public void setPortedBoxVolume(PortedBoxVolume value)
+/*       */   {
+/*  8100 */     this.portedBoxVolume = value;
+/*       */   }
+/*       */ 
+/*       */   public String getPowerAmplifierClass()
+/*       */   {
+/*  8112 */     return this.powerAmplifierClass;
+/*       */   }
+/*       */ 
+/*       */   public void setPowerAmplifierClass(String value)
+/*       */   {
+/*  8124 */     this.powerAmplifierClass = value;
+/*       */   }
+/*       */ 
+/*       */   public String getPowerDevice()
+/*       */   {
+/*  8136 */     return this.powerDevice;
+/*       */   }
+/*       */ 
+/*       */   public void setPowerDevice(String value)
+/*       */   {
+/*  8148 */     this.powerDevice = value;
+/*       */   }
+/*       */ 
+/*       */   public VoltageIntegerDimension getPowerGain()
+/*       */   {
+/*  8160 */     return this.powerGain;
+/*       */   }
+/*       */ 
+/*       */   public void setPowerGain(VoltageIntegerDimension value)
+/*       */   {
+/*  8172 */     this.powerGain = value;
+/*       */   }
+/*       */ 
+/*       */   public String getPowerLoadRating()
+/*       */   {
+/*  8184 */     return this.powerLoadRating;
+/*       */   }
+/*       */ 
+/*       */   public void setPowerLoadRating(String value)
+/*       */   {
+/*  8196 */     this.powerLoadRating = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getPreampOutputChannels()
+/*       */   {
+/*  8208 */     return this.preampOutputChannels;
+/*       */   }
+/*       */ 
+/*       */   public void setPreampOutputChannels(BigInteger value)
+/*       */   {
+/*  8220 */     this.preampOutputChannels = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getPresetChannelQuantity()
+/*       */   {
+/*  8232 */     return this.presetChannelQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setPresetChannelQuantity(BigInteger value)
+/*       */   {
+/*  8244 */     this.presetChannelQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getPrinterInterface()
+/*       */   {
+/*  8256 */     return this.printerInterface;
+/*       */   }
+/*       */ 
+/*       */   public void setPrinterInterface(String value)
+/*       */   {
+/*  8268 */     this.printerInterface = value;
+/*       */   }
+/*       */ 
+/*       */   public String getPrinterOutput()
+/*       */   {
+/*  8280 */     return this.printerOutput;
+/*       */   }
+/*       */ 
+/*       */   public void setPrinterOutput(String value)
+/*       */   {
+/*  8292 */     this.printerOutput = value;
+/*       */   }
+/*       */ 
+/*       */   public PixelDimension getPrinterResolutionBWHorizontalMax()
+/*       */   {
+/*  8304 */     return this.printerResolutionBWHorizontalMax;
+/*       */   }
+/*       */ 
+/*       */   public void setPrinterResolutionBWHorizontalMax(PixelDimension value)
+/*       */   {
+/*  8316 */     this.printerResolutionBWHorizontalMax = value;
+/*       */   }
+/*       */ 
+/*       */   public PixelDimension getPrinterResolutionBWVerticalMax()
+/*       */   {
+/*  8328 */     return this.printerResolutionBWVerticalMax;
+/*       */   }
+/*       */ 
+/*       */   public void setPrinterResolutionBWVerticalMax(PixelDimension value)
+/*       */   {
+/*  8340 */     this.printerResolutionBWVerticalMax = value;
+/*       */   }
+/*       */ 
+/*       */   public PixelDimension getPrinterResolutionColorHorizontalMax()
+/*       */   {
+/*  8352 */     return this.printerResolutionColorHorizontalMax;
+/*       */   }
+/*       */ 
+/*       */   public void setPrinterResolutionColorHorizontalMax(PixelDimension value)
+/*       */   {
+/*  8364 */     this.printerResolutionColorHorizontalMax = value;
+/*       */   }
+/*       */ 
+/*       */   public PixelDimension getPrinterResolutionColorVerticalMax()
+/*       */   {
+/*  8376 */     return this.printerResolutionColorVerticalMax;
+/*       */   }
+/*       */ 
+/*       */   public void setPrinterResolutionColorVerticalMax(PixelDimension value)
+/*       */   {
+/*  8388 */     this.printerResolutionColorVerticalMax = value;
+/*       */   }
+/*       */ 
+/*       */   public String getPrinterTechnology()
+/*       */   {
+/*  8400 */     return this.printerTechnology;
+/*       */   }
+/*       */ 
+/*       */   public void setPrinterTechnology(String value)
+/*       */   {
+/*  8412 */     this.printerTechnology = value;
+/*       */   }
+/*       */ 
+/*       */   public String getProcessorDescription()
+/*       */   {
+/*  8424 */     return this.processorDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setProcessorDescription(String value)
+/*       */   {
+/*  8436 */     this.processorDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getProcessorMaximum()
+/*       */   {
+/*  8448 */     return this.processorMaximum;
+/*       */   }
+/*       */ 
+/*       */   public void setProcessorMaximum(BigInteger value)
+/*       */   {
+/*  8460 */     this.processorMaximum = value;
+/*       */   }
+/*       */ 
+/*       */   public String getProcessorModelNumber()
+/*       */   {
+/*  8472 */     return this.processorModelNumber;
+/*       */   }
+/*       */ 
+/*       */   public void setProcessorModelNumber(String value)
+/*       */   {
+/*  8484 */     this.processorModelNumber = value;
+/*       */   }
+/*       */ 
+/*       */   public String getProcessorUpgrade()
+/*       */   {
+/*  8496 */     return this.processorUpgrade;
+/*       */   }
+/*       */ 
+/*       */   public void setProcessorUpgrade(String value)
+/*       */   {
+/*  8508 */     this.processorUpgrade = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getProgrammability()
+/*       */   {
+/*  8534 */     if (this.programmability == null) {
+/*  8535 */       this.programmability = new ArrayList();
+/*       */     }
+/*  8537 */     return this.programmability;
+/*       */   }
+/*       */ 
+/*       */   public BigDecimal getQtsTotalQFactor()
+/*       */   {
+/*  8549 */     return this.qtsTotalQFactor;
+/*       */   }
+/*       */ 
+/*       */   public void setQtsTotalQFactor(BigDecimal value)
+/*       */   {
+/*  8561 */     this.qtsTotalQFactor = value;
+/*       */   }
+/*       */ 
+/*       */   public String getRadioBandsSupported()
+/*       */   {
+/*  8573 */     return this.radioBandsSupported;
+/*       */   }
+/*       */ 
+/*       */   public void setRadioBandsSupported(String value)
+/*       */   {
+/*  8585 */     this.radioBandsSupported = value;
+/*       */   }
+/*       */ 
+/*       */   public String getRadioChannels()
+/*       */   {
+/*  8597 */     return this.radioChannels;
+/*       */   }
+/*       */ 
+/*       */   public void setRadioChannels(String value)
+/*       */   {
+/*  8609 */     this.radioChannels = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getRAIDLevel()
+/*       */   {
+/*  8635 */     if (this.raidLevel == null) {
+/*  8636 */       this.raidLevel = new ArrayList();
+/*       */     }
+/*  8638 */     return this.raidLevel;
+/*       */   }
+/*       */ 
+/*       */   public MemorySizeDimension getRAMMemoryInstalledSize()
+/*       */   {
+/*  8650 */     return this.ramMemoryInstalledSize;
+/*       */   }
+/*       */ 
+/*       */   public void setRAMMemoryInstalledSize(MemorySizeDimension value)
+/*       */   {
+/*  8662 */     this.ramMemoryInstalledSize = value;
+/*       */   }
+/*       */ 
+/*       */   public MemorySizeDimension getRAMMemoryMaximumSize()
+/*       */   {
+/*  8674 */     return this.ramMemoryMaximumSize;
+/*       */   }
+/*       */ 
+/*       */   public void setRAMMemoryMaximumSize(MemorySizeDimension value)
+/*       */   {
+/*  8686 */     this.ramMemoryMaximumSize = value;
+/*       */   }
+/*       */ 
+/*       */   public String getRAMMemoryTechnology()
+/*       */   {
+/*  8698 */     return this.ramMemoryTechnology;
+/*       */   }
+/*       */ 
+/*       */   public void setRAMMemoryTechnology(String value)
+/*       */   {
+/*  8710 */     this.ramMemoryTechnology = value;
+/*       */   }
+/*       */ 
+/*       */   public String getRangefinderType()
+/*       */   {
+/*  8722 */     return this.rangefinderType;
+/*       */   }
+/*       */ 
+/*       */   public void setRangefinderType(String value)
+/*       */   {
+/*  8734 */     this.rangefinderType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getReceiverDescription()
+/*       */   {
+/*  8746 */     return this.receiverDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setReceiverDescription(String value)
+/*       */   {
+/*  8758 */     this.receiverDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public MemorySizeDimension getRecordingCapacity()
+/*       */   {
+/*  8770 */     return this.recordingCapacity;
+/*       */   }
+/*       */ 
+/*       */   public void setRecordingCapacity(MemorySizeDimension value)
+/*       */   {
+/*  8782 */     this.recordingCapacity = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getRemoteControlAudioControls()
+/*       */   {
+/*  8808 */     if (this.remoteControlAudioControls == null) {
+/*  8809 */       this.remoteControlAudioControls = new ArrayList();
+/*       */     }
+/*  8811 */     return this.remoteControlAudioControls;
+/*       */   }
+/*       */ 
+/*       */   public String getRemoteControlDescription()
+/*       */   {
+/*  8823 */     return this.remoteControlDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setRemoteControlDescription(String value)
+/*       */   {
+/*  8835 */     this.remoteControlDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public String getRemoteControlTechnology()
+/*       */   {
+/*  8847 */     return this.remoteControlTechnology;
+/*       */   }
+/*       */ 
+/*       */   public void setRemoteControlTechnology(String value)
+/*       */   {
+/*  8859 */     this.remoteControlTechnology = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getRemoteManagementProtocol()
+/*       */   {
+/*  8885 */     if (this.remoteManagementProtocol == null) {
+/*  8886 */       this.remoteManagementProtocol = new ArrayList();
+/*       */     }
+/*  8888 */     return this.remoteManagementProtocol;
+/*       */   }
+/*       */ 
+/*       */   public MemorySizeDimension getRemovableMediaCapacity()
+/*       */   {
+/*  8900 */     return this.removableMediaCapacity;
+/*       */   }
+/*       */ 
+/*       */   public void setRemovableMediaCapacity(MemorySizeDimension value)
+/*       */   {
+/*  8912 */     this.removableMediaCapacity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getRemovableMemory()
+/*       */   {
+/*  8924 */     return this.removableMemory;
+/*       */   }
+/*       */ 
+/*       */   public void setRemovableMemory(String value)
+/*       */   {
+/*  8936 */     this.removableMemory = value;
+/*       */   }
+/*       */ 
+/*       */   public String getRemovableStorage()
+/*       */   {
+/*  8948 */     return this.removableStorage;
+/*       */   }
+/*       */ 
+/*       */   public void setRemovableStorage(String value)
+/*       */   {
+/*  8960 */     this.removableStorage = value;
+/*       */   }
+/*       */ 
+/*       */   public String getRemovableStorageInterface()
+/*       */   {
+/*  8972 */     return this.removableStorageInterface;
+/*       */   }
+/*       */ 
+/*       */   public void setRemovableStorageInterface(String value)
+/*       */   {
+/*  8984 */     this.removableStorageInterface = value;
+/*       */   }
+/*       */ 
+/*       */   public MemorySizeDimension getRemovableStorageNativeCapacity()
+/*       */   {
+/*  8996 */     return this.removableStorageNativeCapacity;
+/*       */   }
+/*       */ 
+/*       */   public void setRemovableStorageNativeCapacity(MemorySizeDimension value)
+/*       */   {
+/*  9008 */     this.removableStorageNativeCapacity = value;
+/*       */   }
+/*       */ 
+/*       */   public TimeDimension getResponseTime()
+/*       */   {
+/*  9020 */     return this.responseTime;
+/*       */   }
+/*       */ 
+/*       */   public void setResponseTime(TimeDimension value)
+/*       */   {
+/*  9032 */     this.responseTime = value;
+/*       */   }
+/*       */ 
+/*       */   public String getRightConnectorGender()
+/*       */   {
+/*  9044 */     return this.rightConnectorGender;
+/*       */   }
+/*       */ 
+/*       */   public void setRightConnectorGender(String value)
+/*       */   {
+/*  9056 */     this.rightConnectorGender = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getRightConnectorType()
+/*       */   {
+/*  9082 */     if (this.rightConnectorType == null) {
+/*  9083 */       this.rightConnectorType = new ArrayList();
+/*       */     }
+/*  9085 */     return this.rightConnectorType;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getRoutingProtocol()
+/*       */   {
+/*  9111 */     if (this.routingProtocol == null) {
+/*  9112 */       this.routingProtocol = new ArrayList();
+/*       */     }
+/*  9114 */     return this.routingProtocol;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getSatelliteServiceDescription()
+/*       */   {
+/*  9140 */     if (this.satelliteServiceDescription == null) {
+/*  9141 */       this.satelliteServiceDescription = new ArrayList();
+/*       */     }
+/*  9143 */     return this.satelliteServiceDescription;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getSBAS()
+/*       */   {
+/*  9169 */     if (this.sbas == null) {
+/*  9170 */       this.sbas = new ArrayList();
+/*       */     }
+/*  9172 */     return this.sbas;
+/*       */   }
+/*       */ 
+/*       */   public String getScanElementType()
+/*       */   {
+/*  9184 */     return this.scanElementType;
+/*       */   }
+/*       */ 
+/*       */   public void setScanElementType(String value)
+/*       */   {
+/*  9196 */     this.scanElementType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getScannerInterface()
+/*       */   {
+/*  9208 */     return this.scannerInterface;
+/*       */   }
+/*       */ 
+/*       */   public void setScannerInterface(String value)
+/*       */   {
+/*  9220 */     this.scannerInterface = value;
+/*       */   }
+/*       */ 
+/*       */   public String getScannerType()
+/*       */   {
+/*  9232 */     return this.scannerType;
+/*       */   }
+/*       */ 
+/*       */   public void setScannerType(String value)
+/*       */   {
+/*  9244 */     this.scannerType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getSCSISignalingType()
+/*       */   {
+/*  9256 */     return this.scsiSignalingType;
+/*       */   }
+/*       */ 
+/*       */   public void setSCSISignalingType(String value)
+/*       */   {
+/*  9268 */     this.scsiSignalingType = value;
+/*       */   }
+/*       */ 
+/*       */   public SealedBoxVolume getSealedBoxVolume()
+/*       */   {
+/*  9280 */     return this.sealedBoxVolume;
+/*       */   }
+/*       */ 
+/*       */   public void setSealedBoxVolume(SealedBoxVolume value)
+/*       */   {
+/*  9292 */     this.sealedBoxVolume = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getSearchSpeed()
+/*       */   {
+/*  9318 */     if (this.searchSpeed == null) {
+/*  9319 */       this.searchSpeed = new ArrayList();
+/*       */     }
+/*  9321 */     return this.searchSpeed;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getSecondaryCache()
+/*       */   {
+/*  9333 */     return this.secondaryCache;
+/*       */   }
+/*       */ 
+/*       */   public void setSecondaryCache(BigInteger value)
+/*       */   {
+/*  9345 */     this.secondaryCache = value;
+/*       */   }
+/*       */ 
+/*       */   public String getSellerWarrantyDescription()
+/*       */   {
+/*  9357 */     return this.sellerWarrantyDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setSellerWarrantyDescription(String value)
+/*       */   {
+/*  9369 */     this.sellerWarrantyDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public BigDecimal getSignalToNoiseRatio()
+/*       */   {
+/*  9381 */     return this.signalToNoiseRatio;
+/*       */   }
+/*       */ 
+/*       */   public void setSignalToNoiseRatio(BigDecimal value)
+/*       */   {
+/*  9393 */     this.signalToNoiseRatio = value;
+/*       */   }
+/*       */ 
+/*       */   public String getSize()
+/*       */   {
+/*  9405 */     return this.size;
+/*       */   }
+/*       */ 
+/*       */   public void setSize(String value)
+/*       */   {
+/*  9417 */     this.size = value;
+/*       */   }
+/*       */ 
+/*       */   public String getSpeakerAmplificationType()
+/*       */   {
+/*  9429 */     return this.speakerAmplificationType;
+/*       */   }
+/*       */ 
+/*       */   public void setSpeakerAmplificationType(String value)
+/*       */   {
+/*  9441 */     this.speakerAmplificationType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getSpeakerConnectivity()
+/*       */   {
+/*  9453 */     return this.speakerConnectivity;
+/*       */   }
+/*       */ 
+/*       */   public void setSpeakerConnectivity(String value)
+/*       */   {
+/*  9465 */     this.speakerConnectivity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getSpeakerDriverMaterial()
+/*       */   {
+/*  9477 */     return this.speakerDriverMaterial;
+/*       */   }
+/*       */ 
+/*       */   public void setSpeakerDriverMaterial(String value)
+/*       */   {
+/*  9489 */     this.speakerDriverMaterial = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getSpeakersCrossoverChannelQuantity()
+/*       */   {
+/*  9515 */     if (this.speakersCrossoverChannelQuantity == null) {
+/*  9516 */       this.speakersCrossoverChannelQuantity = new ArrayList();
+/*       */     }
+/*  9518 */     return this.speakersCrossoverChannelQuantity;
+/*       */   }
+/*       */ 
+/*       */   public String getSpeakersIncludedDescription()
+/*       */   {
+/*  9530 */     return this.speakersIncludedDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setSpeakersIncludedDescription(String value)
+/*       */   {
+/*  9542 */     this.speakersIncludedDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public BigDecimal getSpeakersMaximumOutputPower()
+/*       */   {
+/*  9554 */     return this.speakersMaximumOutputPower;
+/*       */   }
+/*       */ 
+/*       */   public void setSpeakersMaximumOutputPower(BigDecimal value)
+/*       */   {
+/*  9566 */     this.speakersMaximumOutputPower = value;
+/*       */   }
+/*       */ 
+/*       */   public BigDecimal getSpeakersNominalOutputPower()
+/*       */   {
+/*  9578 */     return this.speakersNominalOutputPower;
+/*       */   }
+/*       */ 
+/*       */   public void setSpeakersNominalOutputPower(BigDecimal value)
+/*       */   {
+/*  9590 */     this.speakersNominalOutputPower = value;
+/*       */   }
+/*       */ 
+/*       */   public String getSpeakersResponseBandwidth()
+/*       */   {
+/*  9602 */     return this.speakersResponseBandwidth;
+/*       */   }
+/*       */ 
+/*       */   public void setSpeakersResponseBandwidth(String value)
+/*       */   {
+/*  9614 */     this.speakersResponseBandwidth = value;
+/*       */   }
+/*       */ 
+/*       */   public String getSpeakerSystemClass()
+/*       */   {
+/*  9626 */     return this.speakerSystemClass;
+/*       */   }
+/*       */ 
+/*       */   public void setSpeakerSystemClass(String value)
+/*       */   {
+/*  9638 */     this.speakerSystemClass = value;
+/*       */   }
+/*       */ 
+/*       */   public String getSpeakerType()
+/*       */   {
+/*  9650 */     return this.speakerType;
+/*       */   }
+/*       */ 
+/*       */   public void setSpeakerType(String value)
+/*       */   {
+/*  9662 */     this.speakerType = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getSpecialFeatures()
+/*       */   {
+/*  9688 */     if (this.specialFeatures == null) {
+/*  9689 */       this.specialFeatures = new ArrayList();
+/*       */     }
+/*  9691 */     return this.specialFeatures;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getSpecificationMet()
+/*       */   {
+/*  9717 */     if (this.specificationMet == null) {
+/*  9718 */       this.specificationMet = new ArrayList();
+/*       */     }
+/*  9720 */     return this.specificationMet;
+/*       */   }
+/*       */ 
+/*       */   public String getSpecificUses()
+/*       */   {
+/*  9732 */     return this.specificUses;
+/*       */   }
+/*       */ 
+/*       */   public void setSpecificUses(String value)
+/*       */   {
+/*  9744 */     this.specificUses = value;
+/*       */   }
+/*       */ 
+/*       */   public String getSSDDriveArchitechture()
+/*       */   {
+/*  9756 */     return this.ssdDriveArchitechture;
+/*       */   }
+/*       */ 
+/*       */   public void setSSDDriveArchitechture(String value)
+/*       */   {
+/*  9768 */     this.ssdDriveArchitechture = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getStandardInputSheetCapacity()
+/*       */   {
+/*  9780 */     return this.standardInputSheetCapacity;
+/*       */   }
+/*       */ 
+/*       */   public void setStandardInputSheetCapacity(BigInteger value)
+/*       */   {
+/*  9792 */     this.standardInputSheetCapacity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getStorageController()
+/*       */   {
+/*  9804 */     return this.storageController;
+/*       */   }
+/*       */ 
+/*       */   public void setStorageController(String value)
+/*       */   {
+/*  9816 */     this.storageController = value;
+/*       */   }
+/*       */ 
+/*       */   public String getStorageControllerInterface()
+/*       */   {
+/*  9828 */     return this.storageControllerInterface;
+/*       */   }
+/*       */ 
+/*       */   public void setStorageControllerInterface(String value)
+/*       */   {
+/*  9840 */     this.storageControllerInterface = value;
+/*       */   }
+/*       */ 
+/*       */   public String getStorageHumidity()
+/*       */   {
+/*  9852 */     return this.storageHumidity;
+/*       */   }
+/*       */ 
+/*       */   public void setStorageHumidity(String value)
+/*       */   {
+/*  9864 */     this.storageHumidity = value;
+/*       */   }
+/*       */ 
+/*       */   public String getStorageInterface()
+/*       */   {
+/*  9876 */     return this.storageInterface;
+/*       */   }
+/*       */ 
+/*       */   public void setStorageInterface(String value)
+/*       */   {
+/*  9888 */     this.storageInterface = value;
+/*       */   }
+/*       */ 
+/*       */   public String getStyleName()
+/*       */   {
+/*  9900 */     return this.styleName;
+/*       */   }
+/*       */ 
+/*       */   public void setStyleName(String value)
+/*       */   {
+/*  9912 */     this.styleName = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getSupportedAudioFormat()
+/*       */   {
+/*  9938 */     if (this.supportedAudioFormat == null) {
+/*  9939 */       this.supportedAudioFormat = new ArrayList();
+/*       */     }
+/*  9941 */     return this.supportedAudioFormat;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getSupportedDevices()
+/*       */   {
+/*  9967 */     if (this.supportedDevices == null) {
+/*  9968 */       this.supportedDevices = new ArrayList();
+/*       */     }
+/*  9970 */     return this.supportedDevices;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getSupportedDevicesQuantity()
+/*       */   {
+/*  9982 */     return this.supportedDevicesQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setSupportedDevicesQuantity(BigInteger value)
+/*       */   {
+/*  9994 */     this.supportedDevicesQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getSupportedImageFormat()
+/*       */   {
+/* 10020 */     if (this.supportedImageFormat == null) {
+/* 10021 */       this.supportedImageFormat = new ArrayList();
+/*       */     }
+/* 10023 */     return this.supportedImageFormat;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getSupportedImageType()
+/*       */   {
+/* 10049 */     if (this.supportedImageType == null) {
+/* 10050 */       this.supportedImageType = new ArrayList();
+/*       */     }
+/* 10052 */     return this.supportedImageType;
+/*       */   }
+/*       */ 
+/*       */   public String getSupportedMediaSize()
+/*       */   {
+/* 10064 */     return this.supportedMediaSize;
+/*       */   }
+/*       */ 
+/*       */   public void setSupportedMediaSize(String value)
+/*       */   {
+/* 10076 */     this.supportedMediaSize = value;
+/*       */   }
+/*       */ 
+/*       */   public String getSupportedMotherboard()
+/*       */   {
+/* 10088 */     return this.supportedMotherboard;
+/*       */   }
+/*       */ 
+/*       */   public void setSupportedMotherboard(String value)
+/*       */   {
+/* 10100 */     this.supportedMotherboard = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getSupportedStandards()
+/*       */   {
+/* 10126 */     if (this.supportedStandards == null) {
+/* 10127 */       this.supportedStandards = new ArrayList();
+/*       */     }
+/* 10129 */     return this.supportedStandards;
+/*       */   }
+/*       */ 
+/*       */   public String getSurgeSuppression()
+/*       */   {
+/* 10141 */     return this.surgeSuppression;
+/*       */   }
+/*       */ 
+/*       */   public void setSurgeSuppression(String value)
+/*       */   {
+/* 10153 */     this.surgeSuppression = value;
+/*       */   }
+/*       */ 
+/*       */   public String getSurroundSoundChannels()
+/*       */   {
+/* 10165 */     return this.surroundSoundChannels;
+/*       */   }
+/*       */ 
+/*       */   public void setSurroundSoundChannels(String value)
+/*       */   {
+/* 10177 */     this.surroundSoundChannels = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getSurroundSoundEffects()
+/*       */   {
+/* 10203 */     if (this.surroundSoundEffects == null) {
+/* 10204 */       this.surroundSoundEffects = new ArrayList();
+/*       */     }
+/* 10206 */     return this.surroundSoundEffects;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getSwitchingProtocol()
+/*       */   {
+/* 10232 */     if (this.switchingProtocol == null) {
+/* 10233 */       this.switchingProtocol = new ArrayList();
+/*       */     }
+/* 10235 */     return this.switchingProtocol;
+/*       */   }
+/*       */ 
+/*       */   public BigDecimal getSystemBusSpeed()
+/*       */   {
+/* 10247 */     return this.systemBusSpeed;
+/*       */   }
+/*       */ 
+/*       */   public void setSystemBusSpeed(BigDecimal value)
+/*       */   {
+/* 10259 */     this.systemBusSpeed = value;
+/*       */   }
+/*       */ 
+/*       */   public LengthDimension getTalkRangeMaximum()
+/*       */   {
+/* 10271 */     return this.talkRangeMaximum;
+/*       */   }
+/*       */ 
+/*       */   public void setTalkRangeMaximum(LengthDimension value)
+/*       */   {
+/* 10283 */     this.talkRangeMaximum = value;
+/*       */   }
+/*       */ 
+/*       */   public TimeDimension getTapeLength()
+/*       */   {
+/* 10295 */     return this.tapeLength;
+/*       */   }
+/*       */ 
+/*       */   public void setTapeLength(TimeDimension value)
+/*       */   {
+/* 10307 */     this.tapeLength = value;
+/*       */   }
+/*       */ 
+/*       */   public String getTelevisionInterface()
+/*       */   {
+/* 10319 */     return this.televisionInterface;
+/*       */   }
+/*       */ 
+/*       */   public void setTelevisionInterface(String value)
+/*       */   {
+/* 10331 */     this.televisionInterface = value;
+/*       */   }
+/*       */ 
+/*       */   public String getTelevisionPCInterfaceType()
+/*       */   {
+/* 10343 */     return this.televisionPCInterfaceType;
+/*       */   }
+/*       */ 
+/*       */   public void setTelevisionPCInterfaceType(String value)
+/*       */   {
+/* 10355 */     this.televisionPCInterfaceType = value;
+/*       */   }
+/*       */ 
+/*       */   public String getTemperatureRating()
+/*       */   {
+/* 10367 */     return this.temperatureRating;
+/*       */   }
+/*       */ 
+/*       */   public void setTemperatureRating(String value)
+/*       */   {
+/* 10379 */     this.temperatureRating = value;
+/*       */   }
+/*       */ 
+/*       */   public String getTotalHarmonicDistortion()
+/*       */   {
+/* 10391 */     return this.totalHarmonicDistortion;
+/*       */   }
+/*       */ 
+/*       */   public void setTotalHarmonicDistortion(String value)
+/*       */   {
+/* 10403 */     this.totalHarmonicDistortion = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getTracklogPoints()
+/*       */   {
+/* 10415 */     return this.tracklogPoints;
+/*       */   }
+/*       */ 
+/*       */   public void setTracklogPoints(BigInteger value)
+/*       */   {
+/* 10427 */     this.tracklogPoints = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getTracks()
+/*       */   {
+/* 10439 */     return this.tracks;
+/*       */   }
+/*       */ 
+/*       */   public void setTracks(BigInteger value)
+/*       */   {
+/* 10451 */     this.tracks = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getTransportProtocol()
+/*       */   {
+/* 10477 */     if (this.transportProtocol == null) {
+/* 10478 */       this.transportProtocol = new ArrayList();
+/*       */     }
+/* 10480 */     return this.transportProtocol;
+/*       */   }
+/*       */ 
+/*       */   public String getTuner()
+/*       */   {
+/* 10492 */     return this.tuner;
+/*       */   }
+/*       */ 
+/*       */   public void setTuner(String value)
+/*       */   {
+/* 10504 */     this.tuner = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getTunerTechnology()
+/*       */   {
+/* 10530 */     if (this.tunerTechnology == null) {
+/* 10531 */       this.tunerTechnology = new ArrayList();
+/*       */     }
+/* 10533 */     return this.tunerTechnology;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isTVTunerSecondaryAudioProgram()
+/*       */   {
+/* 10545 */     return this.tvTunerSecondaryAudioProgram;
+/*       */   }
+/*       */ 
+/*       */   public void setTVTunerSecondaryAudioProgram(Boolean value)
+/*       */   {
+/* 10557 */     this.tvTunerSecondaryAudioProgram = value;
+/*       */   }
+/*       */ 
+/*       */   public String getUPSTechnology()
+/*       */   {
+/* 10569 */     return this.upsTechnology;
+/*       */   }
+/*       */ 
+/*       */   public void setUPSTechnology(String value)
+/*       */   {
+/* 10581 */     this.upsTechnology = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getVCRType()
+/*       */   {
+/* 10607 */     if (this.vcrType == null) {
+/* 10608 */       this.vcrType = new ArrayList();
+/*       */     }
+/* 10610 */     return this.vcrType;
+/*       */   }
+/*       */ 
+/*       */   public PixelDimension getVerticalResolution()
+/*       */   {
+/* 10622 */     return this.verticalResolution;
+/*       */   }
+/*       */ 
+/*       */   public void setVerticalResolution(PixelDimension value)
+/*       */   {
+/* 10634 */     this.verticalResolution = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getVideoCaptureFormat()
+/*       */   {
+/* 10660 */     if (this.videoCaptureFormat == null) {
+/* 10661 */       this.videoCaptureFormat = new ArrayList();
+/*       */     }
+/* 10663 */     return this.videoCaptureFormat;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getVideoCaptureResolution()
+/*       */   {
+/* 10689 */     if (this.videoCaptureResolution == null) {
+/* 10690 */       this.videoCaptureResolution = new ArrayList();
+/*       */     }
+/* 10692 */     return this.videoCaptureResolution;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getVideoHeadQuantity()
+/*       */   {
+/* 10704 */     return this.videoHeadQuantity;
+/*       */   }
+/*       */ 
+/*       */   public void setVideoHeadQuantity(BigInteger value)
+/*       */   {
+/* 10716 */     this.videoHeadQuantity = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getVideoInput()
+/*       */   {
+/* 10742 */     if (this.videoInput == null) {
+/* 10743 */       this.videoInput = new ArrayList();
+/*       */     }
+/* 10745 */     return this.videoInput;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getVideoInputDigitalStandard()
+/*       */   {
+/* 10771 */     if (this.videoInputDigitalStandard == null) {
+/* 10772 */       this.videoInputDigitalStandard = new ArrayList();
+/*       */     }
+/* 10774 */     return this.videoInputDigitalStandard;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getVideoInputFormat()
+/*       */   {
+/* 10800 */     if (this.videoInputFormat == null) {
+/* 10801 */       this.videoInputFormat = new ArrayList();
+/*       */     }
+/* 10803 */     return this.videoInputFormat;
+/*       */   }
+/*       */ 
+/*       */   public String getVideoOutputFormat()
+/*       */   {
+/* 10815 */     return this.videoOutputFormat;
+/*       */   }
+/*       */ 
+/*       */   public void setVideoOutputFormat(String value)
+/*       */   {
+/* 10827 */     this.videoOutputFormat = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getVideoOutput()
+/*       */   {
+/* 10853 */     if (this.videoOutput == null) {
+/* 10854 */       this.videoOutput = new ArrayList();
+/*       */     }
+/* 10856 */     return this.videoOutput;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getVideoOutputInterface()
+/*       */   {
+/* 10882 */     if (this.videoOutputInterface == null) {
+/* 10883 */       this.videoOutputInterface = new ArrayList();
+/*       */     }
+/* 10885 */     return this.videoOutputInterface;
+/*       */   }
+/*       */ 
+/*       */   public String getVideoOutputMode()
+/*       */   {
+/* 10897 */     return this.videoOutputMode;
+/*       */   }
+/*       */ 
+/*       */   public void setVideoOutputMode(String value)
+/*       */   {
+/* 10909 */     this.videoOutputMode = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getVideoPlaybackFormat()
+/*       */   {
+/* 10935 */     if (this.videoPlaybackFormat == null) {
+/* 10936 */       this.videoPlaybackFormat = new ArrayList();
+/*       */     }
+/* 10938 */     return this.videoPlaybackFormat;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getVideotapePlaybackSpeed()
+/*       */   {
+/* 10964 */     if (this.videotapePlaybackSpeed == null) {
+/* 10965 */       this.videotapePlaybackSpeed = new ArrayList();
+/*       */     }
+/* 10967 */     return this.videotapePlaybackSpeed;
+/*       */   }
+/*       */ 
+/*       */   public String getVideotapeRecordingSpeed()
+/*       */   {
+/* 10979 */     return this.videotapeRecordingSpeed;
+/*       */   }
+/*       */ 
+/*       */   public void setVideotapeRecordingSpeed(String value)
+/*       */   {
+/* 10991 */     this.videotapeRecordingSpeed = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getVoiceCommunicationSupport()
+/*       */   {
+/* 11017 */     if (this.voiceCommunicationSupport == null) {
+/* 11018 */       this.voiceCommunicationSupport = new ArrayList();
+/*       */     }
+/* 11020 */     return this.voiceCommunicationSupport;
+/*       */   }
+/*       */ 
+/*       */   public String getVoiceCoilDescription()
+/*       */   {
+/* 11032 */     return this.voiceCoilDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setVoiceCoilDescription(String value)
+/*       */   {
+/* 11044 */     this.voiceCoilDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public Boolean isVoicemailCapability()
+/*       */   {
+/* 11056 */     return this.voicemailCapability;
+/*       */   }
+/*       */ 
+/*       */   public void setVoicemailCapability(Boolean value)
+/*       */   {
+/* 11068 */     this.voicemailCapability = value;
+/*       */   }
+/*       */ 
+/*       */   public String getVoiceOperatedTransmission()
+/*       */   {
+/* 11080 */     return this.voiceOperatedTransmission;
+/*       */   }
+/*       */ 
+/*       */   public void setVoiceOperatedTransmission(String value)
+/*       */   {
+/* 11092 */     this.voiceOperatedTransmission = value;
+/*       */   }
+/*       */ 
+/*       */   public List<String> getVOIPProtocols()
+/*       */   {
+/* 11118 */     if (this.voipProtocols == null) {
+/* 11119 */       this.voipProtocols = new ArrayList();
+/*       */     }
+/* 11121 */     return this.voipProtocols;
+/*       */   }
+/*       */ 
+/*       */   public VolumeDimension getVolumeAcousticSuspension()
+/*       */   {
+/* 11133 */     return this.volumeAcousticSuspension;
+/*       */   }
+/*       */ 
+/*       */   public void setVolumeAcousticSuspension(VolumeDimension value)
+/*       */   {
+/* 11145 */     this.volumeAcousticSuspension = value;
+/*       */   }
+/*       */ 
+/*       */   public String getWarnings()
+/*       */   {
+/* 11157 */     return this.warnings;
+/*       */   }
+/*       */ 
+/*       */   public void setWarnings(String value)
+/*       */   {
+/* 11169 */     this.warnings = value;
+/*       */   }
+/*       */ 
+/*       */   public String getWarrantyDescription()
+/*       */   {
+/* 11181 */     return this.warrantyDescription;
+/*       */   }
+/*       */ 
+/*       */   public void setWarrantyDescription(String value)
+/*       */   {
+/* 11193 */     this.warrantyDescription = value;
+/*       */   }
+/*       */ 
+/*       */   public String getWaterproofRating()
+/*       */   {
+/* 11205 */     return this.waterproofRating;
+/*       */   }
+/*       */ 
+/*       */   public void setWaterproofRating(String value)
+/*       */   {
+/* 11217 */     this.waterproofRating = value;
+/*       */   }
+/*       */ 
+/*       */   public BigDecimal getWaypoints()
+/*       */   {
+/* 11229 */     return this.waypoints;
+/*       */   }
+/*       */ 
+/*       */   public void setWaypoints(BigDecimal value)
+/*       */   {
+/* 11241 */     this.waypoints = value;
+/*       */   }
+/*       */ 
+/*       */   public BigInteger getWaypointsPerRoute()
+/*       */   {
+/* 11253 */     return this.waypointsPerRoute;
+/*       */   }
+/*       */ 
+/*       */   public void setWaypointsPerRoute(BigInteger value)
+/*       */   {
+/* 11265 */     this.waypointsPerRoute = value;
+/*       */   }
+/*       */ 
+/*       */   public String getWeatherproof()
+/*       */   {
+/* 11277 */     return this.weatherproof;
+/*       */   }
+/*       */ 
+/*       */   public void setWeatherproof(String value)
+/*       */   {
+/* 11289 */     this.weatherproof = value;
+/*       */   }
+/*       */ 
+/*       */   public String getWriteSpeed()
+/*       */   {
+/* 11301 */     return this.writeSpeed;
+/*       */   }
+/*       */ 
+/*       */   public void setWriteSpeed(String value)
+/*       */   {
+/* 11313 */     this.writeSpeed = value;
+/*       */   }
+/*       */ 
+/*       */   @XmlAccessorType(XmlAccessType.FIELD)
+/*       */   @XmlType(name="", propOrder={"value"})
+/*       */   public static class SealedBoxVolume
+/*       */   {
+/*       */ 
+/*       */     @XmlValue
+/*       */     @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */     protected String value;
+/*       */ 
+/*       */     @XmlAttribute(name="unitOfMeasure", required=true)
+/*       */     protected VolumeUnitOfMeasure unitOfMeasure;
+/*       */ 
+/*       */     public String getValue()
+/*       */     {
+/* 13138 */       return this.value;
+/*       */     }
+/*       */ 
+/*       */     public void setValue(String value)
+/*       */     {
+/* 13150 */       this.value = value;
+/*       */     }
+/*       */ 
+/*       */     public VolumeUnitOfMeasure getUnitOfMeasure()
+/*       */     {
+/* 13162 */       return this.unitOfMeasure;
+/*       */     }
+/*       */ 
+/*       */     public void setUnitOfMeasure(VolumeUnitOfMeasure value)
+/*       */     {
+/* 13174 */       this.unitOfMeasure = value;
+/*       */     }
+/*       */   }
+/*       */ 
+/*       */   @XmlAccessorType(XmlAccessType.FIELD)
+/*       */   @XmlType(name="", propOrder={"antenna", "audioVideoAccessory", "avFurniture", "barCodeReader", "ceBinocular", "ceCamcorder", "cameraBagsAndCases", "ceBattery", "ceBlankMedia", "cableOrAdapter", "ceCameraFlash", "cameraLenses", "cameraOtherAccessories", "cameraPowerSupply", "carAlarm", "carAudioOrTheater", "carElectronics", "consumerElectronics", "ceDigitalCamera", "digitalPictureFrame", "digitalVideoRecorder", "dvdPlayerOrRecorder", "ceFilmCamera", "gpsOrNavigationAccessory", "gpsOrNavigationSystem", "handheldOrPDA", "headphones", "homeTheaterSystemOrHTIB", "kindleAccessories", "kindleEReaderAccessories", "kindleFireAccessories", "mediaPlayer", "mediaPlayerOrEReaderAccessory", "mediaStorage", "miscAudioComponents", "pc", "pda", "phone", "phoneAccessory", "photographicStudioItems", "portableAudio", "portableAvDevice", "powerSuppliesOrProtection", "radarDetector", "radioOrClockRadio", "receiverOrAmplifier", "remoteControl", "speakers", "stereoShelfSystem", "ceTelescope", "television", "tuner", "tvCombos", "twoWayRadio", "vcr", "ceVideoProjector", "videoProjectorsAndAccessories"})
+/*       */   public static class ProductType
+/*       */   {
+/*       */ 
+/*       */     @XmlElement(name="Antenna")
+/*       */     protected Antenna antenna;
+/*       */ 
+/*       */     @XmlElement(name="AudioVideoAccessory")
+/*       */     protected AudioVideoAccessory audioVideoAccessory;
+/*       */ 
+/*       */     @XmlElement(name="AVFurniture")
+/*       */     protected AVFurniture avFurniture;
+/*       */ 
+/*       */     @XmlElement(name="BarCodeReader")
+/*       */     protected BarCodeReader barCodeReader;
+/*       */ 
+/*       */     @XmlElement(name="CEBinocular")
+/*       */     protected CEBinocular ceBinocular;
+/*       */ 
+/*       */     @XmlElement(name="CECamcorder")
+/*       */     protected CECamcorder ceCamcorder;
+/*       */ 
+/*       */     @XmlElement(name="CameraBagsAndCases")
+/*       */     protected CameraBagsAndCases cameraBagsAndCases;
+/*       */ 
+/*       */     @XmlElement(name="CEBattery")
+/*       */     protected CEBattery ceBattery;
+/*       */ 
+/*       */     @XmlElement(name="CEBlankMedia")
+/*       */     protected CEBlankMedia ceBlankMedia;
+/*       */ 
+/*       */     @XmlElement(name="CableOrAdapter")
+/*       */     protected CableOrAdapter cableOrAdapter;
+/*       */ 
+/*       */     @XmlElement(name="CECameraFlash")
+/*       */     protected CECameraFlash ceCameraFlash;
+/*       */ 
+/*       */     @XmlElement(name="CameraLenses")
+/*       */     protected CameraLenses cameraLenses;
+/*       */ 
+/*       */     @XmlElement(name="CameraOtherAccessories")
+/*       */     protected CameraOtherAccessories cameraOtherAccessories;
+/*       */ 
+/*       */     @XmlElement(name="CameraPowerSupply")
+/*       */     protected CameraPowerSupply cameraPowerSupply;
+/*       */ 
+/*       */     @XmlElement(name="CarAlarm")
+/*       */     protected CarAlarm carAlarm;
+/*       */ 
+/*       */     @XmlElement(name="CarAudioOrTheater")
+/*       */     protected CarAudioOrTheater carAudioOrTheater;
+/*       */ 
+/*       */     @XmlElement(name="CarElectronics")
+/*       */     protected CarElectronics carElectronics;
+/*       */ 
+/*       */     @XmlElement(name="ConsumerElectronics")
+/*       */     protected ConsumerElectronics consumerElectronics;
+/*       */ 
+/*       */     @XmlElement(name="CEDigitalCamera")
+/*       */     protected CEDigitalCamera ceDigitalCamera;
+/*       */ 
+/*       */     @XmlElement(name="DigitalPictureFrame")
+/*       */     protected DigitalPictureFrame digitalPictureFrame;
+/*       */ 
+/*       */     @XmlElement(name="DigitalVideoRecorder")
+/*       */     protected DigitalVideoRecorder digitalVideoRecorder;
+/*       */ 
+/*       */     @XmlElement(name="DVDPlayerOrRecorder")
+/*       */     protected DVDPlayerOrRecorder dvdPlayerOrRecorder;
+/*       */ 
+/*       */     @XmlElement(name="CEFilmCamera")
+/*       */     protected CEFilmCamera ceFilmCamera;
+/*       */ 
+/*       */     @XmlElement(name="GPSOrNavigationAccessory")
+/*       */     protected GPSOrNavigationAccessory gpsOrNavigationAccessory;
+/*       */ 
+/*       */     @XmlElement(name="GPSOrNavigationSystem")
+/*       */     protected GPSOrNavigationSystem gpsOrNavigationSystem;
+/*       */ 
+/*       */     @XmlElement(name="HandheldOrPDA")
+/*       */     protected HandheldOrPDA handheldOrPDA;
+/*       */ 
+/*       */     @XmlElement(name="Headphones")
+/*       */     protected Headphones headphones;
+/*       */ 
+/*       */     @XmlElement(name="HomeTheaterSystemOrHTIB")
+/*       */     protected HomeTheaterSystemOrHTIB homeTheaterSystemOrHTIB;
+/*       */ 
+/*       */     @XmlElement(name="KindleAccessories")
+/*       */     protected KindleAccessories kindleAccessories;
+/*       */ 
+/*       */     @XmlElement(name="KindleEReaderAccessories")
+/*       */     protected KindleEReaderAccessories kindleEReaderAccessories;
+/*       */ 
+/*       */     @XmlElement(name="KindleFireAccessories")
+/*       */     protected KindleFireAccessories kindleFireAccessories;
+/*       */ 
+/*       */     @XmlElement(name="MediaPlayer")
+/*       */     protected MediaPlayer mediaPlayer;
+/*       */ 
+/*       */     @XmlElement(name="MediaPlayerOrEReaderAccessory")
+/*       */     protected MediaPlayerOrEReaderAccessory mediaPlayerOrEReaderAccessory;
+/*       */ 
+/*       */     @XmlElement(name="MediaStorage")
+/*       */     protected MediaStorage mediaStorage;
+/*       */ 
+/*       */     @XmlElement(name="MiscAudioComponents")
+/*       */     protected MiscAudioComponents miscAudioComponents;
+/*       */ 
+/*       */     @XmlElement(name="PC")
+/*       */     protected PC pc;
+/*       */ 
+/*       */     @XmlElement(name="PDA")
+/*       */     protected PDA pda;
+/*       */ 
+/*       */     @XmlElement(name="Phone")
+/*       */     protected Phone phone;
+/*       */ 
+/*       */     @XmlElement(name="PhoneAccessory")
+/*       */     protected PhoneAccessory phoneAccessory;
+/*       */ 
+/*       */     @XmlElement(name="PhotographicStudioItems")
+/*       */     protected PhotographicStudioItems photographicStudioItems;
+/*       */ 
+/*       */     @XmlElement(name="PortableAudio")
+/*       */     protected PortableAudio portableAudio;
+/*       */ 
+/*       */     @XmlElement(name="PortableAvDevice")
+/*       */     protected PortableAvDevice portableAvDevice;
+/*       */ 
+/*       */     @XmlElement(name="PowerSuppliesOrProtection")
+/*       */     protected PowerSuppliesOrProtection powerSuppliesOrProtection;
+/*       */ 
+/*       */     @XmlElement(name="RadarDetector")
+/*       */     protected RadarDetector radarDetector;
+/*       */ 
+/*       */     @XmlElement(name="RadioOrClockRadio")
+/*       */     protected RadioOrClockRadio radioOrClockRadio;
+/*       */ 
+/*       */     @XmlElement(name="ReceiverOrAmplifier")
+/*       */     protected ReceiverOrAmplifier receiverOrAmplifier;
+/*       */ 
+/*       */     @XmlElement(name="RemoteControl")
+/*       */     protected RemoteControl remoteControl;
+/*       */ 
+/*       */     @XmlElement(name="Speakers")
+/*       */     protected Speakers speakers;
+/*       */ 
+/*       */     @XmlElement(name="StereoShelfSystem")
+/*       */     protected StereoShelfSystem stereoShelfSystem;
+/*       */ 
+/*       */     @XmlElement(name="CETelescope")
+/*       */     protected CETelescope ceTelescope;
+/*       */ 
+/*       */     @XmlElement(name="Television")
+/*       */     protected Television television;
+/*       */ 
+/*       */     @XmlElement(name="Tuner")
+/*       */     protected Tuner tuner;
+/*       */ 
+/*       */     @XmlElement(name="TVCombos")
+/*       */     protected TVCombos tvCombos;
+/*       */ 
+/*       */     @XmlElement(name="TwoWayRadio")
+/*       */     protected TwoWayRadio twoWayRadio;
+/*       */ 
+/*       */     @XmlElement(name="VCR")
+/*       */     protected VCR vcr;
+/*       */ 
+/*       */     @XmlElement(name="CEVideoProjector")
+/*       */     protected CEVideoProjector ceVideoProjector;
+/*       */ 
+/*       */     @XmlElement(name="VideoProjectorsAndAccessories")
+/*       */     protected VideoProjectorsAndAccessories videoProjectorsAndAccessories;
+/*       */ 
+/*       */     public Antenna getAntenna()
+/*       */     {
+/* 11738 */       return this.antenna;
+/*       */     }
+/*       */ 
+/*       */     public void setAntenna(Antenna value)
+/*       */     {
+/* 11750 */       this.antenna = value;
+/*       */     }
+/*       */ 
+/*       */     public AudioVideoAccessory getAudioVideoAccessory()
+/*       */     {
+/* 11762 */       return this.audioVideoAccessory;
+/*       */     }
+/*       */ 
+/*       */     public void setAudioVideoAccessory(AudioVideoAccessory value)
+/*       */     {
+/* 11774 */       this.audioVideoAccessory = value;
+/*       */     }
+/*       */ 
+/*       */     public AVFurniture getAVFurniture()
+/*       */     {
+/* 11786 */       return this.avFurniture;
+/*       */     }
+/*       */ 
+/*       */     public void setAVFurniture(AVFurniture value)
+/*       */     {
+/* 11798 */       this.avFurniture = value;
+/*       */     }
+/*       */ 
+/*       */     public BarCodeReader getBarCodeReader()
+/*       */     {
+/* 11810 */       return this.barCodeReader;
+/*       */     }
+/*       */ 
+/*       */     public void setBarCodeReader(BarCodeReader value)
+/*       */     {
+/* 11822 */       this.barCodeReader = value;
+/*       */     }
+/*       */ 
+/*       */     public CEBinocular getCEBinocular()
+/*       */     {
+/* 11834 */       return this.ceBinocular;
+/*       */     }
+/*       */ 
+/*       */     public void setCEBinocular(CEBinocular value)
+/*       */     {
+/* 11846 */       this.ceBinocular = value;
+/*       */     }
+/*       */ 
+/*       */     public CECamcorder getCECamcorder()
+/*       */     {
+/* 11858 */       return this.ceCamcorder;
+/*       */     }
+/*       */ 
+/*       */     public void setCECamcorder(CECamcorder value)
+/*       */     {
+/* 11870 */       this.ceCamcorder = value;
+/*       */     }
+/*       */ 
+/*       */     public CameraBagsAndCases getCameraBagsAndCases()
+/*       */     {
+/* 11882 */       return this.cameraBagsAndCases;
+/*       */     }
+/*       */ 
+/*       */     public void setCameraBagsAndCases(CameraBagsAndCases value)
+/*       */     {
+/* 11894 */       this.cameraBagsAndCases = value;
+/*       */     }
+/*       */ 
+/*       */     public CEBattery getCEBattery()
+/*       */     {
+/* 11906 */       return this.ceBattery;
+/*       */     }
+/*       */ 
+/*       */     public void setCEBattery(CEBattery value)
+/*       */     {
+/* 11918 */       this.ceBattery = value;
+/*       */     }
+/*       */ 
+/*       */     public CEBlankMedia getCEBlankMedia()
+/*       */     {
+/* 11930 */       return this.ceBlankMedia;
+/*       */     }
+/*       */ 
+/*       */     public void setCEBlankMedia(CEBlankMedia value)
+/*       */     {
+/* 11942 */       this.ceBlankMedia = value;
+/*       */     }
+/*       */ 
+/*       */     public CableOrAdapter getCableOrAdapter()
+/*       */     {
+/* 11954 */       return this.cableOrAdapter;
+/*       */     }
+/*       */ 
+/*       */     public void setCableOrAdapter(CableOrAdapter value)
+/*       */     {
+/* 11966 */       this.cableOrAdapter = value;
+/*       */     }
+/*       */ 
+/*       */     public CECameraFlash getCECameraFlash()
+/*       */     {
+/* 11978 */       return this.ceCameraFlash;
+/*       */     }
+/*       */ 
+/*       */     public void setCECameraFlash(CECameraFlash value)
+/*       */     {
+/* 11990 */       this.ceCameraFlash = value;
+/*       */     }
+/*       */ 
+/*       */     public CameraLenses getCameraLenses()
+/*       */     {
+/* 12002 */       return this.cameraLenses;
+/*       */     }
+/*       */ 
+/*       */     public void setCameraLenses(CameraLenses value)
+/*       */     {
+/* 12014 */       this.cameraLenses = value;
+/*       */     }
+/*       */ 
+/*       */     public CameraOtherAccessories getCameraOtherAccessories()
+/*       */     {
+/* 12026 */       return this.cameraOtherAccessories;
+/*       */     }
+/*       */ 
+/*       */     public void setCameraOtherAccessories(CameraOtherAccessories value)
+/*       */     {
+/* 12038 */       this.cameraOtherAccessories = value;
+/*       */     }
+/*       */ 
+/*       */     public CameraPowerSupply getCameraPowerSupply()
+/*       */     {
+/* 12050 */       return this.cameraPowerSupply;
+/*       */     }
+/*       */ 
+/*       */     public void setCameraPowerSupply(CameraPowerSupply value)
+/*       */     {
+/* 12062 */       this.cameraPowerSupply = value;
+/*       */     }
+/*       */ 
+/*       */     public CarAlarm getCarAlarm()
+/*       */     {
+/* 12074 */       return this.carAlarm;
+/*       */     }
+/*       */ 
+/*       */     public void setCarAlarm(CarAlarm value)
+/*       */     {
+/* 12086 */       this.carAlarm = value;
+/*       */     }
+/*       */ 
+/*       */     public CarAudioOrTheater getCarAudioOrTheater()
+/*       */     {
+/* 12098 */       return this.carAudioOrTheater;
+/*       */     }
+/*       */ 
+/*       */     public void setCarAudioOrTheater(CarAudioOrTheater value)
+/*       */     {
+/* 12110 */       this.carAudioOrTheater = value;
+/*       */     }
+/*       */ 
+/*       */     public CarElectronics getCarElectronics()
+/*       */     {
+/* 12122 */       return this.carElectronics;
+/*       */     }
+/*       */ 
+/*       */     public void setCarElectronics(CarElectronics value)
+/*       */     {
+/* 12134 */       this.carElectronics = value;
+/*       */     }
+/*       */ 
+/*       */     public ConsumerElectronics getConsumerElectronics()
+/*       */     {
+/* 12146 */       return this.consumerElectronics;
+/*       */     }
+/*       */ 
+/*       */     public void setConsumerElectronics(ConsumerElectronics value)
+/*       */     {
+/* 12158 */       this.consumerElectronics = value;
+/*       */     }
+/*       */ 
+/*       */     public CEDigitalCamera getCEDigitalCamera()
+/*       */     {
+/* 12170 */       return this.ceDigitalCamera;
+/*       */     }
+/*       */ 
+/*       */     public void setCEDigitalCamera(CEDigitalCamera value)
+/*       */     {
+/* 12182 */       this.ceDigitalCamera = value;
+/*       */     }
+/*       */ 
+/*       */     public DigitalPictureFrame getDigitalPictureFrame()
+/*       */     {
+/* 12194 */       return this.digitalPictureFrame;
+/*       */     }
+/*       */ 
+/*       */     public void setDigitalPictureFrame(DigitalPictureFrame value)
+/*       */     {
+/* 12206 */       this.digitalPictureFrame = value;
+/*       */     }
+/*       */ 
+/*       */     public DigitalVideoRecorder getDigitalVideoRecorder()
+/*       */     {
+/* 12218 */       return this.digitalVideoRecorder;
+/*       */     }
+/*       */ 
+/*       */     public void setDigitalVideoRecorder(DigitalVideoRecorder value)
+/*       */     {
+/* 12230 */       this.digitalVideoRecorder = value;
+/*       */     }
+/*       */ 
+/*       */     public DVDPlayerOrRecorder getDVDPlayerOrRecorder()
+/*       */     {
+/* 12242 */       return this.dvdPlayerOrRecorder;
+/*       */     }
+/*       */ 
+/*       */     public void setDVDPlayerOrRecorder(DVDPlayerOrRecorder value)
+/*       */     {
+/* 12254 */       this.dvdPlayerOrRecorder = value;
+/*       */     }
+/*       */ 
+/*       */     public CEFilmCamera getCEFilmCamera()
+/*       */     {
+/* 12266 */       return this.ceFilmCamera;
+/*       */     }
+/*       */ 
+/*       */     public void setCEFilmCamera(CEFilmCamera value)
+/*       */     {
+/* 12278 */       this.ceFilmCamera = value;
+/*       */     }
+/*       */ 
+/*       */     public GPSOrNavigationAccessory getGPSOrNavigationAccessory()
+/*       */     {
+/* 12290 */       return this.gpsOrNavigationAccessory;
+/*       */     }
+/*       */ 
+/*       */     public void setGPSOrNavigationAccessory(GPSOrNavigationAccessory value)
+/*       */     {
+/* 12302 */       this.gpsOrNavigationAccessory = value;
+/*       */     }
+/*       */ 
+/*       */     public GPSOrNavigationSystem getGPSOrNavigationSystem()
+/*       */     {
+/* 12314 */       return this.gpsOrNavigationSystem;
+/*       */     }
+/*       */ 
+/*       */     public void setGPSOrNavigationSystem(GPSOrNavigationSystem value)
+/*       */     {
+/* 12326 */       this.gpsOrNavigationSystem = value;
+/*       */     }
+/*       */ 
+/*       */     public HandheldOrPDA getHandheldOrPDA()
+/*       */     {
+/* 12338 */       return this.handheldOrPDA;
+/*       */     }
+/*       */ 
+/*       */     public void setHandheldOrPDA(HandheldOrPDA value)
+/*       */     {
+/* 12350 */       this.handheldOrPDA = value;
+/*       */     }
+/*       */ 
+/*       */     public Headphones getHeadphones()
+/*       */     {
+/* 12362 */       return this.headphones;
+/*       */     }
+/*       */ 
+/*       */     public void setHeadphones(Headphones value)
+/*       */     {
+/* 12374 */       this.headphones = value;
+/*       */     }
+/*       */ 
+/*       */     public HomeTheaterSystemOrHTIB getHomeTheaterSystemOrHTIB()
+/*       */     {
+/* 12386 */       return this.homeTheaterSystemOrHTIB;
+/*       */     }
+/*       */ 
+/*       */     public void setHomeTheaterSystemOrHTIB(HomeTheaterSystemOrHTIB value)
+/*       */     {
+/* 12398 */       this.homeTheaterSystemOrHTIB = value;
+/*       */     }
+/*       */ 
+/*       */     public KindleAccessories getKindleAccessories()
+/*       */     {
+/* 12410 */       return this.kindleAccessories;
+/*       */     }
+/*       */ 
+/*       */     public void setKindleAccessories(KindleAccessories value)
+/*       */     {
+/* 12422 */       this.kindleAccessories = value;
+/*       */     }
+/*       */ 
+/*       */     public KindleEReaderAccessories getKindleEReaderAccessories()
+/*       */     {
+/* 12434 */       return this.kindleEReaderAccessories;
+/*       */     }
+/*       */ 
+/*       */     public void setKindleEReaderAccessories(KindleEReaderAccessories value)
+/*       */     {
+/* 12446 */       this.kindleEReaderAccessories = value;
+/*       */     }
+/*       */ 
+/*       */     public KindleFireAccessories getKindleFireAccessories()
+/*       */     {
+/* 12458 */       return this.kindleFireAccessories;
+/*       */     }
+/*       */ 
+/*       */     public void setKindleFireAccessories(KindleFireAccessories value)
+/*       */     {
+/* 12470 */       this.kindleFireAccessories = value;
+/*       */     }
+/*       */ 
+/*       */     public MediaPlayer getMediaPlayer()
+/*       */     {
+/* 12482 */       return this.mediaPlayer;
+/*       */     }
+/*       */ 
+/*       */     public void setMediaPlayer(MediaPlayer value)
+/*       */     {
+/* 12494 */       this.mediaPlayer = value;
+/*       */     }
+/*       */ 
+/*       */     public MediaPlayerOrEReaderAccessory getMediaPlayerOrEReaderAccessory()
+/*       */     {
+/* 12506 */       return this.mediaPlayerOrEReaderAccessory;
+/*       */     }
+/*       */ 
+/*       */     public void setMediaPlayerOrEReaderAccessory(MediaPlayerOrEReaderAccessory value)
+/*       */     {
+/* 12518 */       this.mediaPlayerOrEReaderAccessory = value;
+/*       */     }
+/*       */ 
+/*       */     public MediaStorage getMediaStorage()
+/*       */     {
+/* 12530 */       return this.mediaStorage;
+/*       */     }
+/*       */ 
+/*       */     public void setMediaStorage(MediaStorage value)
+/*       */     {
+/* 12542 */       this.mediaStorage = value;
+/*       */     }
+/*       */ 
+/*       */     public MiscAudioComponents getMiscAudioComponents()
+/*       */     {
+/* 12554 */       return this.miscAudioComponents;
+/*       */     }
+/*       */ 
+/*       */     public void setMiscAudioComponents(MiscAudioComponents value)
+/*       */     {
+/* 12566 */       this.miscAudioComponents = value;
+/*       */     }
+/*       */ 
+/*       */     public PC getPC()
+/*       */     {
+/* 12578 */       return this.pc;
+/*       */     }
+/*       */ 
+/*       */     public void setPC(PC value)
+/*       */     {
+/* 12590 */       this.pc = value;
+/*       */     }
+/*       */ 
+/*       */     public PDA getPDA()
+/*       */     {
+/* 12602 */       return this.pda;
+/*       */     }
+/*       */ 
+/*       */     public void setPDA(PDA value)
+/*       */     {
+/* 12614 */       this.pda = value;
+/*       */     }
+/*       */ 
+/*       */     public Phone getPhone()
+/*       */     {
+/* 12626 */       return this.phone;
+/*       */     }
+/*       */ 
+/*       */     public void setPhone(Phone value)
+/*       */     {
+/* 12638 */       this.phone = value;
+/*       */     }
+/*       */ 
+/*       */     public PhoneAccessory getPhoneAccessory()
+/*       */     {
+/* 12650 */       return this.phoneAccessory;
+/*       */     }
+/*       */ 
+/*       */     public void setPhoneAccessory(PhoneAccessory value)
+/*       */     {
+/* 12662 */       this.phoneAccessory = value;
+/*       */     }
+/*       */ 
+/*       */     public PhotographicStudioItems getPhotographicStudioItems()
+/*       */     {
+/* 12674 */       return this.photographicStudioItems;
+/*       */     }
+/*       */ 
+/*       */     public void setPhotographicStudioItems(PhotographicStudioItems value)
+/*       */     {
+/* 12686 */       this.photographicStudioItems = value;
+/*       */     }
+/*       */ 
+/*       */     public PortableAudio getPortableAudio()
+/*       */     {
+/* 12698 */       return this.portableAudio;
+/*       */     }
+/*       */ 
+/*       */     public void setPortableAudio(PortableAudio value)
+/*       */     {
+/* 12710 */       this.portableAudio = value;
+/*       */     }
+/*       */ 
+/*       */     public PortableAvDevice getPortableAvDevice()
+/*       */     {
+/* 12722 */       return this.portableAvDevice;
+/*       */     }
+/*       */ 
+/*       */     public void setPortableAvDevice(PortableAvDevice value)
+/*       */     {
+/* 12734 */       this.portableAvDevice = value;
+/*       */     }
+/*       */ 
+/*       */     public PowerSuppliesOrProtection getPowerSuppliesOrProtection()
+/*       */     {
+/* 12746 */       return this.powerSuppliesOrProtection;
+/*       */     }
+/*       */ 
+/*       */     public void setPowerSuppliesOrProtection(PowerSuppliesOrProtection value)
+/*       */     {
+/* 12758 */       this.powerSuppliesOrProtection = value;
+/*       */     }
+/*       */ 
+/*       */     public RadarDetector getRadarDetector()
+/*       */     {
+/* 12770 */       return this.radarDetector;
+/*       */     }
+/*       */ 
+/*       */     public void setRadarDetector(RadarDetector value)
+/*       */     {
+/* 12782 */       this.radarDetector = value;
+/*       */     }
+/*       */ 
+/*       */     public RadioOrClockRadio getRadioOrClockRadio()
+/*       */     {
+/* 12794 */       return this.radioOrClockRadio;
+/*       */     }
+/*       */ 
+/*       */     public void setRadioOrClockRadio(RadioOrClockRadio value)
+/*       */     {
+/* 12806 */       this.radioOrClockRadio = value;
+/*       */     }
+/*       */ 
+/*       */     public ReceiverOrAmplifier getReceiverOrAmplifier()
+/*       */     {
+/* 12818 */       return this.receiverOrAmplifier;
+/*       */     }
+/*       */ 
+/*       */     public void setReceiverOrAmplifier(ReceiverOrAmplifier value)
+/*       */     {
+/* 12830 */       this.receiverOrAmplifier = value;
+/*       */     }
+/*       */ 
+/*       */     public RemoteControl getRemoteControl()
+/*       */     {
+/* 12842 */       return this.remoteControl;
+/*       */     }
+/*       */ 
+/*       */     public void setRemoteControl(RemoteControl value)
+/*       */     {
+/* 12854 */       this.remoteControl = value;
+/*       */     }
+/*       */ 
+/*       */     public Speakers getSpeakers()
+/*       */     {
+/* 12866 */       return this.speakers;
+/*       */     }
+/*       */ 
+/*       */     public void setSpeakers(Speakers value)
+/*       */     {
+/* 12878 */       this.speakers = value;
+/*       */     }
+/*       */ 
+/*       */     public StereoShelfSystem getStereoShelfSystem()
+/*       */     {
+/* 12890 */       return this.stereoShelfSystem;
+/*       */     }
+/*       */ 
+/*       */     public void setStereoShelfSystem(StereoShelfSystem value)
+/*       */     {
+/* 12902 */       this.stereoShelfSystem = value;
+/*       */     }
+/*       */ 
+/*       */     public CETelescope getCETelescope()
+/*       */     {
+/* 12914 */       return this.ceTelescope;
+/*       */     }
+/*       */ 
+/*       */     public void setCETelescope(CETelescope value)
+/*       */     {
+/* 12926 */       this.ceTelescope = value;
+/*       */     }
+/*       */ 
+/*       */     public Television getTelevision()
+/*       */     {
+/* 12938 */       return this.television;
+/*       */     }
+/*       */ 
+/*       */     public void setTelevision(Television value)
+/*       */     {
+/* 12950 */       this.television = value;
+/*       */     }
+/*       */ 
+/*       */     public Tuner getTuner()
+/*       */     {
+/* 12962 */       return this.tuner;
+/*       */     }
+/*       */ 
+/*       */     public void setTuner(Tuner value)
+/*       */     {
+/* 12974 */       this.tuner = value;
+/*       */     }
+/*       */ 
+/*       */     public TVCombos getTVCombos()
+/*       */     {
+/* 12986 */       return this.tvCombos;
+/*       */     }
+/*       */ 
+/*       */     public void setTVCombos(TVCombos value)
+/*       */     {
+/* 12998 */       this.tvCombos = value;
+/*       */     }
+/*       */ 
+/*       */     public TwoWayRadio getTwoWayRadio()
+/*       */     {
+/* 13010 */       return this.twoWayRadio;
+/*       */     }
+/*       */ 
+/*       */     public void setTwoWayRadio(TwoWayRadio value)
+/*       */     {
+/* 13022 */       this.twoWayRadio = value;
+/*       */     }
+/*       */ 
+/*       */     public VCR getVCR()
+/*       */     {
+/* 13034 */       return this.vcr;
+/*       */     }
+/*       */ 
+/*       */     public void setVCR(VCR value)
+/*       */     {
+/* 13046 */       this.vcr = value;
+/*       */     }
+/*       */ 
+/*       */     public CEVideoProjector getCEVideoProjector()
+/*       */     {
+/* 13058 */       return this.ceVideoProjector;
+/*       */     }
+/*       */ 
+/*       */     public void setCEVideoProjector(CEVideoProjector value)
+/*       */     {
+/* 13070 */       this.ceVideoProjector = value;
+/*       */     }
+/*       */ 
+/*       */     public VideoProjectorsAndAccessories getVideoProjectorsAndAccessories()
+/*       */     {
+/* 13082 */       return this.videoProjectorsAndAccessories;
+/*       */     }
+/*       */ 
+/*       */     public void setVideoProjectorsAndAccessories(VideoProjectorsAndAccessories value)
+/*       */     {
+/* 13094 */       this.videoProjectorsAndAccessories = value;
+/*       */     }
+/*       */   }
+/*       */ 
+/*       */   @XmlAccessorType(XmlAccessType.FIELD)
+/*       */   @XmlType(name="", propOrder={"value"})
+/*       */   public static class PortedBoxVolume
+/*       */   {
+/*       */ 
+/*       */     @XmlValue
+/*       */     @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*       */     protected String value;
+/*       */ 
+/*       */     @XmlAttribute(name="unitOfMeasure", required=true)
+/*       */     protected VolumeUnitOfMeasure unitOfMeasure;
+/*       */ 
+/*       */     public String getValue()
+/*       */     {
+/* 11435 */       return this.value;
+/*       */     }
+/*       */ 
+/*       */     public void setValue(String value)
+/*       */     {
+/* 11447 */       this.value = value;
+/*       */     }
+/*       */ 
+/*       */     public VolumeUnitOfMeasure getUnitOfMeasure()
+/*       */     {
+/* 11459 */       return this.unitOfMeasure;
+/*       */     }
+/*       */ 
+/*       */     public void setUnitOfMeasure(VolumeUnitOfMeasure value)
+/*       */     {
+/* 11471 */       this.unitOfMeasure = value;
+/*       */     }
+/*       */   }
+/*       */ 
+/*       */   @XmlAccessorType(XmlAccessType.FIELD)
+/*       */   @XmlType(name="", propOrder={"value"})
+/*       */   public static class DataTransferRate
+/*       */   {
+/*       */ 
+/*       */     @XmlValue
+/*       */     @XmlSchemaType(name="nonNegativeInteger")
+/*       */     protected BigInteger value;
+/*       */ 
+/*       */     @XmlAttribute(name="unitOfMeasure", required=true)
+/*       */     protected DataTransferUnitOfMeasure unitOfMeasure;
+/*       */ 
+/*       */     public BigInteger getValue()
+/*       */     {
+/* 11355 */       return this.value;
+/*       */     }
+/*       */ 
+/*       */     public void setValue(BigInteger value)
+/*       */     {
+/* 11367 */       this.value = value;
+/*       */     }
+/*       */ 
+/*       */     public DataTransferUnitOfMeasure getUnitOfMeasure()
+/*       */     {
+/* 11379 */       return this.unitOfMeasure;
+/*       */     }
+/*       */ 
+/*       */     public void setUnitOfMeasure(DataTransferUnitOfMeasure value)
+/*       */     {
+/* 11391 */       this.unitOfMeasure = value;
+/*       */     }
+/*       */   }
+/*       */ }
 
-package com.elcuk.jaxb;
-
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
-import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-
-/**
- * <p>anonymous complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="Rebate" type="{}RebateType" maxOccurs="2" minOccurs="0"/>
- *         &lt;element name="ProductType">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;choice>
- *                   &lt;element ref="{}Antenna"/>
- *                   &lt;element ref="{}AudioVideoAccessory"/>
- *                   &lt;element ref="{}AVFurniture"/>
- *                   &lt;element ref="{}BarCodeReader"/>
- *                   &lt;element ref="{}CEBinocular"/>
- *                   &lt;element ref="{}CECamcorder"/>
- *                   &lt;element ref="{}CameraBagsAndCases"/>
- *                   &lt;element ref="{}CEBattery"/>
- *                   &lt;element ref="{}CEBlankMedia"/>
- *                   &lt;element ref="{}CableOrAdapter"/>
- *                   &lt;element ref="{}CECameraFlash"/>
- *                   &lt;element ref="{}CameraLenses"/>
- *                   &lt;element ref="{}CameraOtherAccessories"/>
- *                   &lt;element ref="{}CameraPowerSupply"/>
- *                   &lt;element ref="{}CarAlarm"/>
- *                   &lt;element ref="{}CarAudioOrTheater"/>
- *                   &lt;element ref="{}CarElectronics"/>
- *                   &lt;element ref="{}ConsumerElectronics"/>
- *                   &lt;element ref="{}CEDigitalCamera"/>
- *                   &lt;element ref="{}DigitalPictureFrame"/>
- *                   &lt;element ref="{}DigitalVideoRecorder"/>
- *                   &lt;element ref="{}DVDPlayerOrRecorder"/>
- *                   &lt;element ref="{}CEFilmCamera"/>
- *                   &lt;element ref="{}GPSOrNavigationAccessory"/>
- *                   &lt;element ref="{}GPSOrNavigationSystem"/>
- *                   &lt;element ref="{}HandheldOrPDA"/>
- *                   &lt;element ref="{}Headphones"/>
- *                   &lt;element ref="{}HomeTheaterSystemOrHTIB"/>
- *                   &lt;element ref="{}KindleAccessories"/>
- *                   &lt;element ref="{}KindleEReaderAccessories"/>
- *                   &lt;element ref="{}KindleFireAccessories"/>
- *                   &lt;element ref="{}MediaPlayer"/>
- *                   &lt;element ref="{}MediaPlayerOrEReaderAccessory"/>
- *                   &lt;element ref="{}MediaStorage"/>
- *                   &lt;element ref="{}MiscAudioComponents"/>
- *                   &lt;element ref="{}PC"/>
- *                   &lt;element ref="{}PDA"/>
- *                   &lt;element ref="{}Phone"/>
- *                   &lt;element ref="{}PhoneAccessory"/>
- *                   &lt;element ref="{}PhotographicStudioItems"/>
- *                   &lt;element ref="{}PortableAudio"/>
- *                   &lt;element ref="{}PortableAvDevice"/>
- *                   &lt;element ref="{}PowerSuppliesOrProtection"/>
- *                   &lt;element ref="{}RadarDetector"/>
- *                   &lt;element ref="{}RadioOrClockRadio"/>
- *                   &lt;element ref="{}ReceiverOrAmplifier"/>
- *                   &lt;element ref="{}RemoteControl"/>
- *                   &lt;element ref="{}Speakers"/>
- *                   &lt;element ref="{}StereoShelfSystem"/>
- *                   &lt;element ref="{}CETelescope"/>
- *                   &lt;element ref="{}Television"/>
- *                   &lt;element ref="{}Tuner"/>
- *                   &lt;element ref="{}TVCombos"/>
- *                   &lt;element ref="{}TwoWayRadio"/>
- *                   &lt;element ref="{}VCR"/>
- *                   &lt;element ref="{}CEVideoProjector"/>
- *                   &lt;element ref="{}VideoProjectorsAndAccessories"/>
- *                 &lt;/choice>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="ProductSubtype" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="Antenna"/>
- *               &lt;enumeration value="AVFurniture"/>
- *               &lt;enumeration value="BarCodeReader"/>
- *               &lt;enumeration value="CEBinocular"/>
- *               &lt;enumeration value="CECamcorder"/>
- *               &lt;enumeration value="CameraBagsAndCases"/>
- *               &lt;enumeration value="Battery"/>
- *               &lt;enumeration value="BlankMedia"/>
- *               &lt;enumeration value="CableOrAdapter"/>
- *               &lt;enumeration value="CECameraFlash"/>
- *               &lt;enumeration value="CameraLenses"/>
- *               &lt;enumeration value="CameraOtherAccessories"/>
- *               &lt;enumeration value="CameraPowerSupply"/>
- *               &lt;enumeration value="CarAudioOrTheater"/>
- *               &lt;enumeration value="CarElectronics"/>
- *               &lt;enumeration value="CEDigitalCamera"/>
- *               &lt;enumeration value="DigitalPictureFrame"/>
- *               &lt;enumeration value="CECarryingCaseOrBag"/>
- *               &lt;enumeration value="CombinedAvDevice"/>
- *               &lt;enumeration value="Computer"/>
- *               &lt;enumeration value="ComputerDriveOrStorage"/>
- *               &lt;enumeration value="ComputerProcessor"/>
- *               &lt;enumeration value="ComputerVideoGameController"/>
- *               &lt;enumeration value="DigitalVideoRecorder"/>
- *               &lt;enumeration value="DVDPlayerOrRecorder"/>
- *               &lt;enumeration value="CEFilmCamera"/>
- *               &lt;enumeration value="FlashMemory"/>
- *               &lt;enumeration value="GPSOrNavigationAccessory"/>
- *               &lt;enumeration value="GPSOrNavigationSystem"/>
- *               &lt;enumeration value="HandheldOrPDA"/>
- *               &lt;enumeration value="HomeTheaterSystemOrHTIB"/>
- *               &lt;enumeration value="Keyboards"/>
- *               &lt;enumeration value="MemoryReader"/>
- *               &lt;enumeration value="Microphone"/>
- *               &lt;enumeration value="Monitor"/>
- *               &lt;enumeration value="MP3Player"/>
- *               &lt;enumeration value="MultifunctionOfficeMachine"/>
- *               &lt;enumeration value="NetworkAdapter"/>
- *               &lt;enumeration value="NetworkMediaPlayer"/>
- *               &lt;enumeration value="NetworkStorage"/>
- *               &lt;enumeration value="NetworkTransceiver"/>
- *               &lt;enumeration value="NetworkingDevice"/>
- *               &lt;enumeration value="NetworkingHub"/>
- *               &lt;enumeration value="Phone"/>
- *               &lt;enumeration value="PhoneAccessory"/>
- *               &lt;enumeration value="PhotographicStudioItems"/>
- *               &lt;enumeration value="PointingDevice"/>
- *               &lt;enumeration value="PortableAudio"/>
- *               &lt;enumeration value="PortableAvDevice"/>
- *               &lt;enumeration value="PortableElectronics"/>
- *               &lt;enumeration value="Printer"/>
- *               &lt;enumeration value="PrinterConsumable"/>
- *               &lt;enumeration value="ReceiverOrAmplifier"/>
- *               &lt;enumeration value="RemoteControl"/>
- *               &lt;enumeration value="SatelliteOrDSS"/>
- *               &lt;enumeration value="Scanner"/>
- *               &lt;enumeration value="SoundCard"/>
- *               &lt;enumeration value="Speakers"/>
- *               &lt;enumeration value="CETelescope"/>
- *               &lt;enumeration value="SystemCabinet"/>
- *               &lt;enumeration value="SystemPowerDevice"/>
- *               &lt;enumeration value="Television"/>
- *               &lt;enumeration value="TwoWayRadio"/>
- *               &lt;enumeration value="VCR"/>
- *               &lt;enumeration value="VideoCard"/>
- *               &lt;enumeration value="VideoProjector"/>
- *               &lt;enumeration value="VideoProjectorsAndAccessories"/>
- *               &lt;enumeration value="Webcam"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="AnalogVideoFormat" type="{}StringNotNull" maxOccurs="2" minOccurs="0"/>
- *         &lt;element name="AnnualEnergyConsumption" type="{}EnergyConsumptionDimension" minOccurs="0"/>
- *         &lt;element name="AnsweringSystemType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="AntennaLength" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="AntennaType" type="{}AntennaTypeValues" minOccurs="0"/>
- *         &lt;element name="AspectRatio" type="{}AspectRatio" minOccurs="0"/>
- *         &lt;element name="AudioFeaturesDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="AudioInput" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="AudioOutputEffects" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="AudioOutputMode" type="{}StringNotNull" maxOccurs="2" minOccurs="0"/>
- *         &lt;element name="AudioOutputResponseBandwidth" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="AudioOutputType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="AudioSensitivity" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="AutoRedial" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element ref="{}Battery" minOccurs="0"/>
- *         &lt;element name="BatteryAverageLife" type="{}TimeDimension" minOccurs="0"/>
- *         &lt;element name="BatteryAverageLifeTalkTime" type="{}TimeDimension" minOccurs="0"/>
- *         &lt;element name="BufferSize" type="{}MemorySizeDimension" minOccurs="0"/>
- *         &lt;element name="BatteryTypeLithiumIon" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="BatteryTypeLithiumMetal" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="BiometricSecurityFeatures" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="BuiltInDecoders" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="ButtonQuantity" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="CabinetMaterial" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="CableFeature" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="CableTechnology" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="CableType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="CacheMemoryInstalledSize" type="{}MemorySizeDimension" minOccurs="0"/>
- *         &lt;element name="CallAlerts" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="CallerIdentification" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="CarryingStrap" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="CassetteSystemType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="CDChangerType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="CDDiskCapacity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="CDLoadType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="CDPlaybackMode" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="CDSystemType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="CellularEnhancementProtocol" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="CoaxialDigitalInput" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="CoaxialDigitalOutput" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="Color" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ColorDepth" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="ColorMap" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ColorSupport" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="CompatibleCartridge" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="CompatibleDevices" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="ComponentType" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="CompressedCapacity" type="{}MemorySizeDimension" minOccurs="0"/>
- *         &lt;element name="ComputerPeripheralConnector" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="ConferenceCallCapability" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ConnectivityProtocol" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="ConnectivityTechnology" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="CopierType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="CopySizeMaximum" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="CountryOfOrigin" type="{}CountryOfOriginType" minOccurs="0"/>
- *         &lt;element name="CrossoverFrequency" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DACDataWidth" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DataCompressionProtocol" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="DataLinkProtocol" type="{}MediumStringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="DataService" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DataStorageCapability" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DataTransferRate" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>nonNegativeInteger">
- *                 &lt;attribute name="unitOfMeasure" use="required" type="{}DataTransferUnitOfMeasure" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="DeviceType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DGPS" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DialerType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DigitalPlayerType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DigitalRecordingTime" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="DigitalSignalingProtocol" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="DigitalStorageCapacity" type="{}MemorySizeDimension" minOccurs="0"/>
- *         &lt;element name="DigitalZoom" type="{}ZoomDimension" minOccurs="0"/>
- *         &lt;element name="DisplayColorSupport" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="DisplayLanguageOptions" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DisplayLineQuantity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="DisplayResolutionMaximum" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DisplayTechnology" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DisplayType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DockingStationExternalInterface" type="{}DockingStationExternalInterfaceTypeValues" minOccurs="0"/>
- *         &lt;element name="DriveUnits" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="Duplex" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DVDDiskCapacity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="DVDDiskChangerType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DVDMediaLoadType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DVDPictureZoomPower" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="DVDPlaybackMode" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="DVDType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DVRCompressionRate" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="DVRMaxRecordingTime" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="DVRServiceDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="Enclosure" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="Equalizer" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="EqualizerBandChannels" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ErrorCorrectionProtocol" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="EyeRelief" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="FaceplateType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="FaxMachineCompatibility" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="FaxType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="FlashMemoryInstalledSize" type="{}MemorySizeDimension" minOccurs="0"/>
- *         &lt;element name="FloppyDiskDrive" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="1_44_mb_3_5_inch"/>
- *               &lt;enumeration value="720_kb_3_5_inch"/>
- *               &lt;enumeration value="floppy_cd_drive_combo"/>
- *               &lt;enumeration value="floppy_cd_rw_dvd_rom_combo"/>
- *               &lt;enumeration value="floppy_dvd_drive_combo"/>
- *               &lt;enumeration value="ls_120_superdisk"/>
- *               &lt;enumeration value="none"/>
- *               &lt;enumeration value="unknown"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="FormFactor" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="FreeAirResonantFrequency" type="{}FrequencyDimension" minOccurs="0"/>
- *         &lt;element name="FrequencyRange" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="FrequencyRequired" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="FrequencyResponseCurve" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="FrontAccessibleBaysQuantity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="FuseDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="GPSNavigation" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="GraphicsCoprocessor" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="GraphicsCoprocessorQuantity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="GraphicsRam" type="{}Dimension" minOccurs="0"/>
- *         &lt;element name="GreyscaleDepth" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="HandsetDepth" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="HandsetHeight" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="HandsetLocator" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="HandsetWeight" type="{}WeightDimension" minOccurs="0"/>
- *         &lt;element name="HandsetWidth" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="HardDiskDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="HardDiskInstalledQuantity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="HardDiskRotationalSpeed" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="HardwareInterface" type="{}HardwareInterfaceValues" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="HasCommercialSkip" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="HasDVDPictureZoom" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="HasParentalChannelLock" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="HeadphonesFormFactor" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="HeadphonesJack" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="HeadphonesTechnology" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="HorizontalResolution" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="HotSwapBaysQuantity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="HumanInterfaceInput" type="{}HumanInterfaceInputType" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="HumanInterfaceOutput" type="{}HumanInterfaceOutputType" minOccurs="0"/>
- *         &lt;element name="ImageAspectRatio" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="ImageBrightness" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ImageContrastRatio" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="Impedance" type="{}ResistanceDimension" minOccurs="0"/>
- *         &lt;element name="IncludesMP3Player" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="IncludesRechargableBattery" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="IncludesRemote" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="IncludesSpeakerphone" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="InputAdapter" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="InputChannelQuantity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="InputConnection" type="{}Connection" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="InputConnectorType" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="InputDevice" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="InputDeviceInterface" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="Intercom" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="InternalBaysQuantity" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="ISDNTerminalAdapterInterface" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="IsHDTVCompatible" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="IsWaterproof" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="ItemDisplayDepth" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="ItemDisplayHeight" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="ItemDisplayLength" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="ItemDisplayLengthMaximum" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="ItemDisplayWeight" type="{}WeightDimension" minOccurs="0"/>
- *         &lt;element name="ItemDisplayWidth" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="LithiumBatteryEnergyContent" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *         &lt;element name="LithiumBatteryPackaging" minOccurs="0">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="batteries_contained_in_equipment"/>
- *               &lt;enumeration value="batteries_only"/>
- *               &lt;enumeration value="batteries_packed_with_equipment"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="LithiumBatteryVoltage" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *         &lt;element name="LithiumBatteryWeight" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *         &lt;element name="KeyboardDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="LampType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="LeftConnectorGender" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="LeftConnectorType" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="ManufacturerWarrantyType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="MapType" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="MaterialComposition" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="MaterialType" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="MaxCopyResolutionBlackWhite" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="MaxCopyResolutionColor" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="MaximumBridgedOutputPower" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="MaximumExternalResolution" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="MaximumImageSize" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="MaximumLinearPeakExcursion" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="MaximumOutputPower" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="MaximumRange" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="MaximumRangeIndoors" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="MaximumSampleRate" type="{}FrequencyDimension" minOccurs="0"/>
- *         &lt;element name="MaximumScreenDistance" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="MaxInputSheetCapacity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="MaxPrintResolutionBlackWhite" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="MaxPrintResolutionColor" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="MediaFormat" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="MediaLoadType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="MediaSizeMaximum" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="MediaType" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="MemoryStorageCapacity" type="{}MemorySizeDimension" minOccurs="0"/>
- *         &lt;element name="MemoryTechnology" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="MfgWarrantyDescriptionLabor" type="{}SuperLongStringNotNull" minOccurs="0"/>
- *         &lt;element name="MfgWarrantyDescriptionParts" type="{}SuperLongStringNotNull" minOccurs="0"/>
- *         &lt;element name="MicrophoneFormFactor" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="MicrophoneOperationMode" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="MicrophoneTechnology" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="MiniDiscSystem" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="MinimumImageSize" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="MinimumScreenDistance" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="MinimumSystemRequirementDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="Model" type="{}FortyStringNotNull" minOccurs="0"/>
- *         &lt;element name="ModelName" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ModemDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ModemInterface" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ModemType" type="{}ModemTypeValues" minOccurs="0"/>
- *         &lt;element name="MonthlyDutyCycle" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="MountingHoleDiameter" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="MovementDetectionTechnology" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="MultilineOperation" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="MultimediaFunctionality" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="NavigationRoutes" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="NetworkingFeature" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="NetworkInterfaceDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="NumberOfLithiumIonCells" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="NumberOfLithiumMetalCells" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="NumberOfPorts" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="NumberOfSupportedZones" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="ObjectiveLensDiameter" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="OperatingHumidity" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="OpticalDigitalInput" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="OpticalDigitalOutput" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="OpticalSensorInterpolatedResolution" type="{}PixelDimension" minOccurs="0"/>
- *         &lt;element name="OpticalSensorResolution" type="{}PixelDimension" minOccurs="0"/>
- *         &lt;element name="OpticalStorageDevice" type="{}StringNotNull" maxOccurs="2" minOccurs="0"/>
- *         &lt;element name="OpticalStorageInstalledQuantity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="OpticalStorageReadSpeed" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="OpticalStorageRewriteSpeed" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="OpticalStorageSecondaryReadSpeed" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="OpticalStorageSecondaryRewriteSpeed" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="OpticalStorageSecondaryType" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="OpticalStorageSecondaryWriteSpeed" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="OpticalStorageWriteSpeed" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="OutputChannelQuantity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="OutputConnection" type="{}Connection" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="OutputConnectorQuantity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="OutputConnectorType" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="OutputPower" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="OutputWattage" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="PackageContentType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="PackageTypeName" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="PCConnectionAvailable" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="PhoneBaseDepth" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="PhoneBaseHeight" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="PhoneBaseWeight" type="{}WeightDimension" minOccurs="0"/>
- *         &lt;element name="PhoneBaseWidth" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="PortedBoxVolume" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>StringNotNull">
- *                 &lt;attribute name="unitOfMeasure" use="required" type="{}VolumeUnitOfMeasure" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="PowerAmplifierClass" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="PowerDevice" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="PowerGain" type="{}VoltageIntegerDimension" minOccurs="0"/>
- *         &lt;element name="PowerLoadRating" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="PreampOutputChannels" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="PresetChannelQuantity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="PrinterInterface" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="PrinterOutput" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="PrinterResolutionBWHorizontalMax" type="{}PixelDimension" minOccurs="0"/>
- *         &lt;element name="PrinterResolutionBWVerticalMax" type="{}PixelDimension" minOccurs="0"/>
- *         &lt;element name="PrinterResolutionColorHorizontalMax" type="{}PixelDimension" minOccurs="0"/>
- *         &lt;element name="PrinterResolutionColorVerticalMax" type="{}PixelDimension" minOccurs="0"/>
- *         &lt;element name="PrinterTechnology" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ProcessorDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ProcessorMaximum" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="ProcessorModelNumber" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ProcessorUpgrade" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="Programmability" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="QtsTotalQFactor" type="{}PositiveDimension" minOccurs="0"/>
- *         &lt;element name="RadioBandsSupported" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="RadioChannels" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="RAIDLevel" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="RAMMemoryInstalledSize" type="{}MemorySizeDimension" minOccurs="0"/>
- *         &lt;element name="RAMMemoryMaximumSize" type="{}MemorySizeDimension" minOccurs="0"/>
- *         &lt;element name="RAMMemoryTechnology" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="RangefinderType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ReceiverDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="RecordingCapacity" type="{}MemorySizeDimension" minOccurs="0"/>
- *         &lt;element name="RemoteControlAudioControls" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="RemoteControlDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="RemoteControlTechnology" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="RemoteManagementProtocol" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="RemovableMediaCapacity" type="{}MemorySizeDimension" minOccurs="0"/>
- *         &lt;element name="RemovableMemory" type="{}RemovableMemoryValues" minOccurs="0"/>
- *         &lt;element name="RemovableStorage" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="RemovableStorageInterface" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="RemovableStorageNativeCapacity" type="{}MemorySizeDimension" minOccurs="0"/>
- *         &lt;element name="ResponseTime" type="{}TimeDimension" minOccurs="0"/>
- *         &lt;element name="RightConnectorGender" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="RightConnectorType" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="RoutingProtocol" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="SatelliteServiceDescription" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="SBAS" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="ScanElementType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ScannerInterface" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ScannerType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SCSISignalingType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SealedBoxVolume" minOccurs="0">
- *           &lt;complexType>
- *             &lt;simpleContent>
- *               &lt;extension base="&lt;>StringNotNull">
- *                 &lt;attribute name="unitOfMeasure" use="required" type="{}VolumeUnitOfMeasure" />
- *               &lt;/extension>
- *             &lt;/simpleContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element name="SearchSpeed" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="SecondaryCache" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="SellerWarrantyDescription" type="{}SuperLongStringNotNull" minOccurs="0"/>
- *         &lt;element name="SignalToNoiseRatio" type="{}PositiveDimension" minOccurs="0"/>
- *         &lt;element name="Size" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SpeakerAmplificationType" type="{}HundredString" minOccurs="0"/>
- *         &lt;element name="SpeakerConnectivity" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SpeakerDriverMaterial" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SpeakersCrossoverChannelQuantity" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="SpeakersIncludedDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SpeakersMaximumOutputPower" type="{}PositiveDimension" minOccurs="0"/>
- *         &lt;element name="SpeakersNominalOutputPower" type="{}PositiveDimension" minOccurs="0"/>
- *         &lt;element name="SpeakersResponseBandwidth" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SpeakerSystemClass" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SpeakerType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SpecialFeatures" type="{}LongStringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="SpecificationMet" type="{}HundredString" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="SpecificUses" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SSDDriveArchitechture" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="StandardInputSheetCapacity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="StorageController" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="StorageControllerInterface" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="StorageHumidity" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="StorageInterface" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="StyleName" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SupportedAudioFormat" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="SupportedDevices" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="SupportedDevicesQuantity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="SupportedImageFormat" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="SupportedImageType" type="{}SupportedImageTypeValues" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="SupportedMediaSize" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SupportedMotherboard" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SupportedStandards" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="SurgeSuppression" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SurroundSoundChannels" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="SurroundSoundEffects" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="SwitchingProtocol" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="SystemBusSpeed" type="{}Dimension" minOccurs="0"/>
- *         &lt;element name="TalkRangeMaximum" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="TapeLength" type="{}TimeDimension" minOccurs="0"/>
- *         &lt;element name="TelevisionInterface" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="TelevisionPCInterfaceType" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="TemperatureRating" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="TotalHarmonicDistortion" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="TracklogPoints" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="Tracks" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="TransportProtocol" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="Tuner" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="TunerTechnology" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="TVTunerSecondaryAudioProgram" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="UPSTechnology" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="VCRType" type="{}StringNotNull" maxOccurs="2" minOccurs="0"/>
- *         &lt;element name="VerticalResolution" type="{}PixelDimension" minOccurs="0"/>
- *         &lt;element name="VideoCaptureFormat" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="VideoCaptureResolution" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="VideoHeadQuantity" type="{http://www.w3.org/2001/XMLSchema}nonNegativeInteger" minOccurs="0"/>
- *         &lt;element name="VideoInput" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="VideoInputDigitalStandard" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="VideoInputFormat" type="{}StringNotNull" maxOccurs="10" minOccurs="0"/>
- *         &lt;element name="VideoOutputFormat" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="VideoOutput" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="VideoOutputInterface" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="VideoOutputMode" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="VideoPlaybackFormat" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="VideotapePlaybackSpeed" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="VideotapeRecordingSpeed" type="{}VideotapeRecordingSpeedType" minOccurs="0"/>
- *         &lt;element name="VoiceCommunicationSupport" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="VoiceCoilDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="VoicemailCapability" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="VoiceOperatedTransmission" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="VOIPProtocols" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element name="VolumeAcousticSuspension" type="{}VolumeDimension" minOccurs="0"/>
- *         &lt;element name="Warnings" type="{}LongStringNotNull" minOccurs="0"/>
- *         &lt;element name="WarrantyDescription" type="{}SuperLongStringNotNull" minOccurs="0"/>
- *         &lt;element name="WaterproofRating" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="Waypoints" type="{}Dimension" minOccurs="0"/>
- *         &lt;element name="WaypointsPerRoute" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element name="Weatherproof" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="WriteSpeed" type="{}StringNotNull" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.CE
+ * JD-Core Version:    0.6.2
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "rebate",
-    "productType",
-    "productSubtype",
-    "analogVideoFormat",
-    "annualEnergyConsumption",
-    "answeringSystemType",
-    "antennaLength",
-    "antennaType",
-    "aspectRatio",
-    "audioFeaturesDescription",
-    "audioInput",
-    "audioOutputEffects",
-    "audioOutputMode",
-    "audioOutputResponseBandwidth",
-    "audioOutputType",
-    "audioSensitivity",
-    "autoRedial",
-    "battery",
-    "batteryAverageLife",
-    "batteryAverageLifeTalkTime",
-    "bufferSize",
-    "batteryTypeLithiumIon",
-    "batteryTypeLithiumMetal",
-    "biometricSecurityFeatures",
-    "builtInDecoders",
-    "buttonQuantity",
-    "cabinetMaterial",
-    "cableFeature",
-    "cableTechnology",
-    "cableType",
-    "cacheMemoryInstalledSize",
-    "callAlerts",
-    "callerIdentification",
-    "carryingStrap",
-    "cassetteSystemType",
-    "cdChangerType",
-    "cdDiskCapacity",
-    "cdLoadType",
-    "cdPlaybackMode",
-    "cdSystemType",
-    "cellularEnhancementProtocol",
-    "coaxialDigitalInput",
-    "coaxialDigitalOutput",
-    "color",
-    "colorDepth",
-    "colorMap",
-    "colorSupport",
-    "compatibleCartridge",
-    "compatibleDevices",
-    "componentType",
-    "compressedCapacity",
-    "computerPeripheralConnector",
-    "conferenceCallCapability",
-    "connectivityProtocol",
-    "connectivityTechnology",
-    "copierType",
-    "copySizeMaximum",
-    "countryOfOrigin",
-    "crossoverFrequency",
-    "dacDataWidth",
-    "dataCompressionProtocol",
-    "dataLinkProtocol",
-    "dataService",
-    "dataStorageCapability",
-    "dataTransferRate",
-    "deviceType",
-    "dgps",
-    "dialerType",
-    "digitalPlayerType",
-    "digitalRecordingTime",
-    "digitalSignalingProtocol",
-    "digitalStorageCapacity",
-    "digitalZoom",
-    "displayColorSupport",
-    "displayLanguageOptions",
-    "displayLineQuantity",
-    "displayResolutionMaximum",
-    "displayTechnology",
-    "displayType",
-    "dockingStationExternalInterface",
-    "driveUnits",
-    "duplex",
-    "dvdDiskCapacity",
-    "dvdDiskChangerType",
-    "dvdMediaLoadType",
-    "dvdPictureZoomPower",
-    "dvdPlaybackMode",
-    "dvdType",
-    "dvrCompressionRate",
-    "dvrMaxRecordingTime",
-    "dvrServiceDescription",
-    "enclosure",
-    "equalizer",
-    "equalizerBandChannels",
-    "errorCorrectionProtocol",
-    "eyeRelief",
-    "faceplateType",
-    "faxMachineCompatibility",
-    "faxType",
-    "flashMemoryInstalledSize",
-    "floppyDiskDrive",
-    "formFactor",
-    "freeAirResonantFrequency",
-    "frequencyRange",
-    "frequencyRequired",
-    "frequencyResponseCurve",
-    "frontAccessibleBaysQuantity",
-    "fuseDescription",
-    "gpsNavigation",
-    "graphicsCoprocessor",
-    "graphicsCoprocessorQuantity",
-    "graphicsRam",
-    "greyscaleDepth",
-    "handsetDepth",
-    "handsetHeight",
-    "handsetLocator",
-    "handsetWeight",
-    "handsetWidth",
-    "hardDiskDescription",
-    "hardDiskInstalledQuantity",
-    "hardDiskRotationalSpeed",
-    "hardwareInterface",
-    "hasCommercialSkip",
-    "hasDVDPictureZoom",
-    "hasParentalChannelLock",
-    "headphonesFormFactor",
-    "headphonesJack",
-    "headphonesTechnology",
-    "horizontalResolution",
-    "hotSwapBaysQuantity",
-    "humanInterfaceInput",
-    "humanInterfaceOutput",
-    "imageAspectRatio",
-    "imageBrightness",
-    "imageContrastRatio",
-    "impedance",
-    "includesMP3Player",
-    "includesRechargableBattery",
-    "includesRemote",
-    "includesSpeakerphone",
-    "inputAdapter",
-    "inputChannelQuantity",
-    "inputConnection",
-    "inputConnectorType",
-    "inputDevice",
-    "inputDeviceInterface",
-    "intercom",
-    "internalBaysQuantity",
-    "isdnTerminalAdapterInterface",
-    "isHDTVCompatible",
-    "isWaterproof",
-    "itemDisplayDepth",
-    "itemDisplayHeight",
-    "itemDisplayLength",
-    "itemDisplayLengthMaximum",
-    "itemDisplayWeight",
-    "itemDisplayWidth",
-    "lithiumBatteryEnergyContent",
-    "lithiumBatteryPackaging",
-    "lithiumBatteryVoltage",
-    "lithiumBatteryWeight",
-    "keyboardDescription",
-    "lampType",
-    "leftConnectorGender",
-    "leftConnectorType",
-    "manufacturerWarrantyType",
-    "mapType",
-    "materialComposition",
-    "materialType",
-    "maxCopyResolutionBlackWhite",
-    "maxCopyResolutionColor",
-    "maximumBridgedOutputPower",
-    "maximumExternalResolution",
-    "maximumImageSize",
-    "maximumLinearPeakExcursion",
-    "maximumOutputPower",
-    "maximumRange",
-    "maximumRangeIndoors",
-    "maximumSampleRate",
-    "maximumScreenDistance",
-    "maxInputSheetCapacity",
-    "maxPrintResolutionBlackWhite",
-    "maxPrintResolutionColor",
-    "mediaFormat",
-    "mediaLoadType",
-    "mediaSizeMaximum",
-    "mediaType",
-    "memoryStorageCapacity",
-    "memoryTechnology",
-    "mfgWarrantyDescriptionLabor",
-    "mfgWarrantyDescriptionParts",
-    "microphoneFormFactor",
-    "microphoneOperationMode",
-    "microphoneTechnology",
-    "miniDiscSystem",
-    "minimumImageSize",
-    "minimumScreenDistance",
-    "minimumSystemRequirementDescription",
-    "model",
-    "modelName",
-    "modemDescription",
-    "modemInterface",
-    "modemType",
-    "monthlyDutyCycle",
-    "mountingHoleDiameter",
-    "movementDetectionTechnology",
-    "multilineOperation",
-    "multimediaFunctionality",
-    "navigationRoutes",
-    "networkingFeature",
-    "networkInterfaceDescription",
-    "numberOfLithiumIonCells",
-    "numberOfLithiumMetalCells",
-    "numberOfPorts",
-    "numberOfSupportedZones",
-    "objectiveLensDiameter",
-    "operatingHumidity",
-    "opticalDigitalInput",
-    "opticalDigitalOutput",
-    "opticalSensorInterpolatedResolution",
-    "opticalSensorResolution",
-    "opticalStorageDevice",
-    "opticalStorageInstalledQuantity",
-    "opticalStorageReadSpeed",
-    "opticalStorageRewriteSpeed",
-    "opticalStorageSecondaryReadSpeed",
-    "opticalStorageSecondaryRewriteSpeed",
-    "opticalStorageSecondaryType",
-    "opticalStorageSecondaryWriteSpeed",
-    "opticalStorageWriteSpeed",
-    "outputChannelQuantity",
-    "outputConnection",
-    "outputConnectorQuantity",
-    "outputConnectorType",
-    "outputPower",
-    "outputWattage",
-    "packageContentType",
-    "packageTypeName",
-    "pcConnectionAvailable",
-    "phoneBaseDepth",
-    "phoneBaseHeight",
-    "phoneBaseWeight",
-    "phoneBaseWidth",
-    "portedBoxVolume",
-    "powerAmplifierClass",
-    "powerDevice",
-    "powerGain",
-    "powerLoadRating",
-    "preampOutputChannels",
-    "presetChannelQuantity",
-    "printerInterface",
-    "printerOutput",
-    "printerResolutionBWHorizontalMax",
-    "printerResolutionBWVerticalMax",
-    "printerResolutionColorHorizontalMax",
-    "printerResolutionColorVerticalMax",
-    "printerTechnology",
-    "processorDescription",
-    "processorMaximum",
-    "processorModelNumber",
-    "processorUpgrade",
-    "programmability",
-    "qtsTotalQFactor",
-    "radioBandsSupported",
-    "radioChannels",
-    "raidLevel",
-    "ramMemoryInstalledSize",
-    "ramMemoryMaximumSize",
-    "ramMemoryTechnology",
-    "rangefinderType",
-    "receiverDescription",
-    "recordingCapacity",
-    "remoteControlAudioControls",
-    "remoteControlDescription",
-    "remoteControlTechnology",
-    "remoteManagementProtocol",
-    "removableMediaCapacity",
-    "removableMemory",
-    "removableStorage",
-    "removableStorageInterface",
-    "removableStorageNativeCapacity",
-    "responseTime",
-    "rightConnectorGender",
-    "rightConnectorType",
-    "routingProtocol",
-    "satelliteServiceDescription",
-    "sbas",
-    "scanElementType",
-    "scannerInterface",
-    "scannerType",
-    "scsiSignalingType",
-    "sealedBoxVolume",
-    "searchSpeed",
-    "secondaryCache",
-    "sellerWarrantyDescription",
-    "signalToNoiseRatio",
-    "size",
-    "speakerAmplificationType",
-    "speakerConnectivity",
-    "speakerDriverMaterial",
-    "speakersCrossoverChannelQuantity",
-    "speakersIncludedDescription",
-    "speakersMaximumOutputPower",
-    "speakersNominalOutputPower",
-    "speakersResponseBandwidth",
-    "speakerSystemClass",
-    "speakerType",
-    "specialFeatures",
-    "specificationMet",
-    "specificUses",
-    "ssdDriveArchitechture",
-    "standardInputSheetCapacity",
-    "storageController",
-    "storageControllerInterface",
-    "storageHumidity",
-    "storageInterface",
-    "styleName",
-    "supportedAudioFormat",
-    "supportedDevices",
-    "supportedDevicesQuantity",
-    "supportedImageFormat",
-    "supportedImageType",
-    "supportedMediaSize",
-    "supportedMotherboard",
-    "supportedStandards",
-    "surgeSuppression",
-    "surroundSoundChannels",
-    "surroundSoundEffects",
-    "switchingProtocol",
-    "systemBusSpeed",
-    "talkRangeMaximum",
-    "tapeLength",
-    "televisionInterface",
-    "televisionPCInterfaceType",
-    "temperatureRating",
-    "totalHarmonicDistortion",
-    "tracklogPoints",
-    "tracks",
-    "transportProtocol",
-    "tuner",
-    "tunerTechnology",
-    "tvTunerSecondaryAudioProgram",
-    "upsTechnology",
-    "vcrType",
-    "verticalResolution",
-    "videoCaptureFormat",
-    "videoCaptureResolution",
-    "videoHeadQuantity",
-    "videoInput",
-    "videoInputDigitalStandard",
-    "videoInputFormat",
-    "videoOutputFormat",
-    "videoOutput",
-    "videoOutputInterface",
-    "videoOutputMode",
-    "videoPlaybackFormat",
-    "videotapePlaybackSpeed",
-    "videotapeRecordingSpeed",
-    "voiceCommunicationSupport",
-    "voiceCoilDescription",
-    "voicemailCapability",
-    "voiceOperatedTransmission",
-    "voipProtocols",
-    "volumeAcousticSuspension",
-    "warnings",
-    "warrantyDescription",
-    "waterproofRating",
-    "waypoints",
-    "waypointsPerRoute",
-    "weatherproof",
-    "writeSpeed"
-})
-@XmlRootElement(name = "CE")
-public class CE {
-
-    @XmlElement(name = "Rebate")
-    protected List<RebateType> rebate;
-    @XmlElement(name = "ProductType", required = true)
-    protected CE.ProductType productType;
-    @XmlElement(name = "ProductSubtype")
-    protected String productSubtype;
-    @XmlElement(name = "AnalogVideoFormat")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> analogVideoFormat;
-    @XmlElement(name = "AnnualEnergyConsumption")
-    protected EnergyConsumptionDimension annualEnergyConsumption;
-    @XmlElement(name = "AnsweringSystemType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String answeringSystemType;
-    @XmlElement(name = "AntennaLength")
-    protected LengthDimension antennaLength;
-    @XmlElement(name = "AntennaType")
-    @XmlSchemaType(name = "string")
-    protected AntennaTypeValues antennaType;
-    @XmlElement(name = "AspectRatio")
-    protected String aspectRatio;
-    @XmlElement(name = "AudioFeaturesDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String audioFeaturesDescription;
-    @XmlElement(name = "AudioInput")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> audioInput;
-    @XmlElement(name = "AudioOutputEffects")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> audioOutputEffects;
-    @XmlElement(name = "AudioOutputMode")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> audioOutputMode;
-    @XmlElement(name = "AudioOutputResponseBandwidth")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String audioOutputResponseBandwidth;
-    @XmlElement(name = "AudioOutputType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String audioOutputType;
-    @XmlElement(name = "AudioSensitivity")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger audioSensitivity;
-    @XmlElement(name = "AutoRedial")
-    protected Boolean autoRedial;
-    @XmlElement(name = "Battery")
-    protected Battery battery;
-    @XmlElement(name = "BatteryAverageLife")
-    protected TimeDimension batteryAverageLife;
-    @XmlElement(name = "BatteryAverageLifeTalkTime")
-    protected TimeDimension batteryAverageLifeTalkTime;
-    @XmlElement(name = "BufferSize")
-    protected MemorySizeDimension bufferSize;
-    @XmlElement(name = "BatteryTypeLithiumIon")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger batteryTypeLithiumIon;
-    @XmlElement(name = "BatteryTypeLithiumMetal")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger batteryTypeLithiumMetal;
-    @XmlElement(name = "BiometricSecurityFeatures")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String biometricSecurityFeatures;
-    @XmlElement(name = "BuiltInDecoders")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> builtInDecoders;
-    @XmlElement(name = "ButtonQuantity")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger buttonQuantity;
-    @XmlElement(name = "CabinetMaterial")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String cabinetMaterial;
-    @XmlElement(name = "CableFeature")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> cableFeature;
-    @XmlElement(name = "CableTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> cableTechnology;
-    @XmlElement(name = "CableType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String cableType;
-    @XmlElement(name = "CacheMemoryInstalledSize")
-    protected MemorySizeDimension cacheMemoryInstalledSize;
-    @XmlElement(name = "CallAlerts")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String callAlerts;
-    @XmlElement(name = "CallerIdentification")
-    protected Boolean callerIdentification;
-    @XmlElement(name = "CarryingStrap")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> carryingStrap;
-    @XmlElement(name = "CassetteSystemType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String cassetteSystemType;
-    @XmlElement(name = "CDChangerType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String cdChangerType;
-    @XmlElement(name = "CDDiskCapacity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger cdDiskCapacity;
-    @XmlElement(name = "CDLoadType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String cdLoadType;
-    @XmlElement(name = "CDPlaybackMode")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> cdPlaybackMode;
-    @XmlElement(name = "CDSystemType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String cdSystemType;
-    @XmlElement(name = "CellularEnhancementProtocol")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> cellularEnhancementProtocol;
-    @XmlElement(name = "CoaxialDigitalInput")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String coaxialDigitalInput;
-    @XmlElement(name = "CoaxialDigitalOutput")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String coaxialDigitalOutput;
-    @XmlElement(name = "Color")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String color;
-    @XmlElement(name = "ColorDepth")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> colorDepth;
-    @XmlElement(name = "ColorMap")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String colorMap;
-    @XmlElement(name = "ColorSupport")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> colorSupport;
-    @XmlElement(name = "CompatibleCartridge")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> compatibleCartridge;
-    @XmlElement(name = "CompatibleDevices")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> compatibleDevices;
-    @XmlElement(name = "ComponentType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> componentType;
-    @XmlElement(name = "CompressedCapacity")
-    protected MemorySizeDimension compressedCapacity;
-    @XmlElement(name = "ComputerPeripheralConnector")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> computerPeripheralConnector;
-    @XmlElement(name = "ConferenceCallCapability")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String conferenceCallCapability;
-    @XmlElement(name = "ConnectivityProtocol")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> connectivityProtocol;
-    @XmlElement(name = "ConnectivityTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String connectivityTechnology;
-    @XmlElement(name = "CopierType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String copierType;
-    @XmlElement(name = "CopySizeMaximum")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String copySizeMaximum;
-    @XmlElement(name = "CountryOfOrigin")
-    protected String countryOfOrigin;
-    @XmlElement(name = "CrossoverFrequency")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String crossoverFrequency;
-    @XmlElement(name = "DACDataWidth")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String dacDataWidth;
-    @XmlElement(name = "DataCompressionProtocol")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> dataCompressionProtocol;
-    @XmlElement(name = "DataLinkProtocol")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> dataLinkProtocol;
-    @XmlElement(name = "DataService")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String dataService;
-    @XmlElement(name = "DataStorageCapability")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String dataStorageCapability;
-    @XmlElement(name = "DataTransferRate")
-    protected CE.DataTransferRate dataTransferRate;
-    @XmlElement(name = "DeviceType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String deviceType;
-    @XmlElement(name = "DGPS")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String dgps;
-    @XmlElement(name = "DialerType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String dialerType;
-    @XmlElement(name = "DigitalPlayerType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String digitalPlayerType;
-    @XmlElement(name = "DigitalRecordingTime")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> digitalRecordingTime;
-    @XmlElement(name = "DigitalSignalingProtocol")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> digitalSignalingProtocol;
-    @XmlElement(name = "DigitalStorageCapacity")
-    protected MemorySizeDimension digitalStorageCapacity;
-    @XmlElement(name = "DigitalZoom")
-    protected ZoomDimension digitalZoom;
-    @XmlElement(name = "DisplayColorSupport")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> displayColorSupport;
-    @XmlElement(name = "DisplayLanguageOptions")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String displayLanguageOptions;
-    @XmlElement(name = "DisplayLineQuantity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger displayLineQuantity;
-    @XmlElement(name = "DisplayResolutionMaximum")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String displayResolutionMaximum;
-    @XmlElement(name = "DisplayTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String displayTechnology;
-    @XmlElement(name = "DisplayType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String displayType;
-    @XmlElement(name = "DockingStationExternalInterface")
-    @XmlSchemaType(name = "string")
-    protected DockingStationExternalInterfaceTypeValues dockingStationExternalInterface;
-    @XmlElement(name = "DriveUnits")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String driveUnits;
-    @XmlElement(name = "Duplex")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String duplex;
-    @XmlElement(name = "DVDDiskCapacity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger dvdDiskCapacity;
-    @XmlElement(name = "DVDDiskChangerType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String dvdDiskChangerType;
-    @XmlElement(name = "DVDMediaLoadType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String dvdMediaLoadType;
-    @XmlElement(name = "DVDPictureZoomPower")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> dvdPictureZoomPower;
-    @XmlElement(name = "DVDPlaybackMode")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> dvdPlaybackMode;
-    @XmlElement(name = "DVDType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String dvdType;
-    @XmlElement(name = "DVRCompressionRate")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String dvrCompressionRate;
-    @XmlElement(name = "DVRMaxRecordingTime")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger dvrMaxRecordingTime;
-    @XmlElement(name = "DVRServiceDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String dvrServiceDescription;
-    @XmlElement(name = "Enclosure")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String enclosure;
-    @XmlElement(name = "Equalizer")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String equalizer;
-    @XmlElement(name = "EqualizerBandChannels")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String equalizerBandChannels;
-    @XmlElement(name = "ErrorCorrectionProtocol")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> errorCorrectionProtocol;
-    @XmlElement(name = "EyeRelief")
-    protected LengthDimension eyeRelief;
-    @XmlElement(name = "FaceplateType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String faceplateType;
-    @XmlElement(name = "FaxMachineCompatibility")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String faxMachineCompatibility;
-    @XmlElement(name = "FaxType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String faxType;
-    @XmlElement(name = "FlashMemoryInstalledSize")
-    protected MemorySizeDimension flashMemoryInstalledSize;
-    @XmlElement(name = "FloppyDiskDrive")
-    protected String floppyDiskDrive;
-    @XmlElement(name = "FormFactor")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> formFactor;
-    @XmlElement(name = "FreeAirResonantFrequency")
-    protected FrequencyDimension freeAirResonantFrequency;
-    @XmlElement(name = "FrequencyRange")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> frequencyRange;
-    @XmlElement(name = "FrequencyRequired")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String frequencyRequired;
-    @XmlElement(name = "FrequencyResponseCurve")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String frequencyResponseCurve;
-    @XmlElement(name = "FrontAccessibleBaysQuantity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger frontAccessibleBaysQuantity;
-    @XmlElement(name = "FuseDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String fuseDescription;
-    @XmlElement(name = "GPSNavigation")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String gpsNavigation;
-    @XmlElement(name = "GraphicsCoprocessor")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String graphicsCoprocessor;
-    @XmlElement(name = "GraphicsCoprocessorQuantity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger graphicsCoprocessorQuantity;
-    @XmlElement(name = "GraphicsRam")
-    protected BigDecimal graphicsRam;
-    @XmlElement(name = "GreyscaleDepth")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> greyscaleDepth;
-    @XmlElement(name = "HandsetDepth")
-    protected LengthDimension handsetDepth;
-    @XmlElement(name = "HandsetHeight")
-    protected LengthDimension handsetHeight;
-    @XmlElement(name = "HandsetLocator")
-    protected Boolean handsetLocator;
-    @XmlElement(name = "HandsetWeight")
-    protected WeightDimension handsetWeight;
-    @XmlElement(name = "HandsetWidth")
-    protected LengthDimension handsetWidth;
-    @XmlElement(name = "HardDiskDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String hardDiskDescription;
-    @XmlElement(name = "HardDiskInstalledQuantity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger hardDiskInstalledQuantity;
-    @XmlElement(name = "HardDiskRotationalSpeed")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger hardDiskRotationalSpeed;
-    @XmlElement(name = "HardwareInterface")
-    protected List<String> hardwareInterface;
-    @XmlElement(name = "HasCommercialSkip")
-    protected Boolean hasCommercialSkip;
-    @XmlElement(name = "HasDVDPictureZoom")
-    protected Boolean hasDVDPictureZoom;
-    @XmlElement(name = "HasParentalChannelLock")
-    protected Boolean hasParentalChannelLock;
-    @XmlElement(name = "HeadphonesFormFactor")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String headphonesFormFactor;
-    @XmlElement(name = "HeadphonesJack")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String headphonesJack;
-    @XmlElement(name = "HeadphonesTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String headphonesTechnology;
-    @XmlElement(name = "HorizontalResolution")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger horizontalResolution;
-    @XmlElement(name = "HotSwapBaysQuantity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger hotSwapBaysQuantity;
-    @XmlElement(name = "HumanInterfaceInput")
-    @XmlSchemaType(name = "string")
-    protected List<HumanInterfaceInputType> humanInterfaceInput;
-    @XmlElement(name = "HumanInterfaceOutput")
-    @XmlSchemaType(name = "string")
-    protected HumanInterfaceOutputType humanInterfaceOutput;
-    @XmlElement(name = "ImageAspectRatio")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> imageAspectRatio;
-    @XmlElement(name = "ImageBrightness")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String imageBrightness;
-    @XmlElement(name = "ImageContrastRatio")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String imageContrastRatio;
-    @XmlElement(name = "Impedance")
-    protected ResistanceDimension impedance;
-    @XmlElement(name = "IncludesMP3Player")
-    protected Boolean includesMP3Player;
-    @XmlElement(name = "IncludesRechargableBattery")
-    protected Boolean includesRechargableBattery;
-    @XmlElement(name = "IncludesRemote")
-    protected Boolean includesRemote;
-    @XmlElement(name = "IncludesSpeakerphone")
-    protected Boolean includesSpeakerphone;
-    @XmlElement(name = "InputAdapter")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> inputAdapter;
-    @XmlElement(name = "InputChannelQuantity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger inputChannelQuantity;
-    @XmlElement(name = "InputConnection")
-    protected List<Connection> inputConnection;
-    @XmlElement(name = "InputConnectorType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> inputConnectorType;
-    @XmlElement(name = "InputDevice")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> inputDevice;
-    @XmlElement(name = "InputDeviceInterface")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> inputDeviceInterface;
-    @XmlElement(name = "Intercom")
-    protected Boolean intercom;
-    @XmlElement(name = "InternalBaysQuantity")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger internalBaysQuantity;
-    @XmlElement(name = "ISDNTerminalAdapterInterface")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String isdnTerminalAdapterInterface;
-    @XmlElement(name = "IsHDTVCompatible")
-    protected Boolean isHDTVCompatible;
-    @XmlElement(name = "IsWaterproof")
-    protected Boolean isWaterproof;
-    @XmlElement(name = "ItemDisplayDepth")
-    protected LengthDimension itemDisplayDepth;
-    @XmlElement(name = "ItemDisplayHeight")
-    protected LengthDimension itemDisplayHeight;
-    @XmlElement(name = "ItemDisplayLength")
-    protected LengthDimension itemDisplayLength;
-    @XmlElement(name = "ItemDisplayLengthMaximum")
-    protected LengthDimension itemDisplayLengthMaximum;
-    @XmlElement(name = "ItemDisplayWeight")
-    protected WeightDimension itemDisplayWeight;
-    @XmlElement(name = "ItemDisplayWidth")
-    protected LengthDimension itemDisplayWidth;
-    @XmlElement(name = "LithiumBatteryEnergyContent")
-    protected BigDecimal lithiumBatteryEnergyContent;
-    @XmlElement(name = "LithiumBatteryPackaging")
-    protected String lithiumBatteryPackaging;
-    @XmlElement(name = "LithiumBatteryVoltage")
-    protected BigDecimal lithiumBatteryVoltage;
-    @XmlElement(name = "LithiumBatteryWeight")
-    protected BigDecimal lithiumBatteryWeight;
-    @XmlElement(name = "KeyboardDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String keyboardDescription;
-    @XmlElement(name = "LampType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String lampType;
-    @XmlElement(name = "LeftConnectorGender")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String leftConnectorGender;
-    @XmlElement(name = "LeftConnectorType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> leftConnectorType;
-    @XmlElement(name = "ManufacturerWarrantyType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String manufacturerWarrantyType;
-    @XmlElement(name = "MapType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> mapType;
-    @XmlElement(name = "MaterialComposition")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> materialComposition;
-    @XmlElement(name = "MaterialType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> materialType;
-    @XmlElement(name = "MaxCopyResolutionBlackWhite")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String maxCopyResolutionBlackWhite;
-    @XmlElement(name = "MaxCopyResolutionColor")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String maxCopyResolutionColor;
-    @XmlElement(name = "MaximumBridgedOutputPower")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger maximumBridgedOutputPower;
-    @XmlElement(name = "MaximumExternalResolution")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String maximumExternalResolution;
-    @XmlElement(name = "MaximumImageSize")
-    protected LengthDimension maximumImageSize;
-    @XmlElement(name = "MaximumLinearPeakExcursion")
-    protected LengthDimension maximumLinearPeakExcursion;
-    @XmlElement(name = "MaximumOutputPower")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String maximumOutputPower;
-    @XmlElement(name = "MaximumRange")
-    protected LengthDimension maximumRange;
-    @XmlElement(name = "MaximumRangeIndoors")
-    protected LengthDimension maximumRangeIndoors;
-    @XmlElement(name = "MaximumSampleRate")
-    protected FrequencyDimension maximumSampleRate;
-    @XmlElement(name = "MaximumScreenDistance")
-    protected LengthDimension maximumScreenDistance;
-    @XmlElement(name = "MaxInputSheetCapacity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger maxInputSheetCapacity;
-    @XmlElement(name = "MaxPrintResolutionBlackWhite")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> maxPrintResolutionBlackWhite;
-    @XmlElement(name = "MaxPrintResolutionColor")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> maxPrintResolutionColor;
-    @XmlElement(name = "MediaFormat")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String mediaFormat;
-    @XmlElement(name = "MediaLoadType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String mediaLoadType;
-    @XmlElement(name = "MediaSizeMaximum")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> mediaSizeMaximum;
-    @XmlElement(name = "MediaType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> mediaType;
-    @XmlElement(name = "MemoryStorageCapacity")
-    protected MemorySizeDimension memoryStorageCapacity;
-    @XmlElement(name = "MemoryTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String memoryTechnology;
-    @XmlElement(name = "MfgWarrantyDescriptionLabor")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String mfgWarrantyDescriptionLabor;
-    @XmlElement(name = "MfgWarrantyDescriptionParts")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String mfgWarrantyDescriptionParts;
-    @XmlElement(name = "MicrophoneFormFactor")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String microphoneFormFactor;
-    @XmlElement(name = "MicrophoneOperationMode")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> microphoneOperationMode;
-    @XmlElement(name = "MicrophoneTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String microphoneTechnology;
-    @XmlElement(name = "MiniDiscSystem")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String miniDiscSystem;
-    @XmlElement(name = "MinimumImageSize")
-    protected LengthDimension minimumImageSize;
-    @XmlElement(name = "MinimumScreenDistance")
-    protected LengthDimension minimumScreenDistance;
-    @XmlElement(name = "MinimumSystemRequirementDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String minimumSystemRequirementDescription;
-    @XmlElement(name = "Model")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String model;
-    @XmlElement(name = "ModelName")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String modelName;
-    @XmlElement(name = "ModemDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String modemDescription;
-    @XmlElement(name = "ModemInterface")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String modemInterface;
-    @XmlElement(name = "ModemType")
-    @XmlSchemaType(name = "string")
-    protected ModemTypeValues modemType;
-    @XmlElement(name = "MonthlyDutyCycle")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String monthlyDutyCycle;
-    @XmlElement(name = "MountingHoleDiameter")
-    protected LengthDimension mountingHoleDiameter;
-    @XmlElement(name = "MovementDetectionTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String movementDetectionTechnology;
-    @XmlElement(name = "MultilineOperation")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> multilineOperation;
-    @XmlElement(name = "MultimediaFunctionality")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> multimediaFunctionality;
-    @XmlElement(name = "NavigationRoutes")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger navigationRoutes;
-    @XmlElement(name = "NetworkingFeature")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> networkingFeature;
-    @XmlElement(name = "NetworkInterfaceDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String networkInterfaceDescription;
-    @XmlElement(name = "NumberOfLithiumIonCells")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger numberOfLithiumIonCells;
-    @XmlElement(name = "NumberOfLithiumMetalCells")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger numberOfLithiumMetalCells;
-    @XmlElement(name = "NumberOfPorts")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger numberOfPorts;
-    @XmlElement(name = "NumberOfSupportedZones")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger numberOfSupportedZones;
-    @XmlElement(name = "ObjectiveLensDiameter")
-    protected LengthDimension objectiveLensDiameter;
-    @XmlElement(name = "OperatingHumidity")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String operatingHumidity;
-    @XmlElement(name = "OpticalDigitalInput")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String opticalDigitalInput;
-    @XmlElement(name = "OpticalDigitalOutput")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String opticalDigitalOutput;
-    @XmlElement(name = "OpticalSensorInterpolatedResolution")
-    protected PixelDimension opticalSensorInterpolatedResolution;
-    @XmlElement(name = "OpticalSensorResolution")
-    protected PixelDimension opticalSensorResolution;
-    @XmlElement(name = "OpticalStorageDevice")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> opticalStorageDevice;
-    @XmlElement(name = "OpticalStorageInstalledQuantity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger opticalStorageInstalledQuantity;
-    @XmlElement(name = "OpticalStorageReadSpeed")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String opticalStorageReadSpeed;
-    @XmlElement(name = "OpticalStorageRewriteSpeed")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String opticalStorageRewriteSpeed;
-    @XmlElement(name = "OpticalStorageSecondaryReadSpeed")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String opticalStorageSecondaryReadSpeed;
-    @XmlElement(name = "OpticalStorageSecondaryRewriteSpeed")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String opticalStorageSecondaryRewriteSpeed;
-    @XmlElement(name = "OpticalStorageSecondaryType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> opticalStorageSecondaryType;
-    @XmlElement(name = "OpticalStorageSecondaryWriteSpeed")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String opticalStorageSecondaryWriteSpeed;
-    @XmlElement(name = "OpticalStorageWriteSpeed")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String opticalStorageWriteSpeed;
-    @XmlElement(name = "OutputChannelQuantity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger outputChannelQuantity;
-    @XmlElement(name = "OutputConnection")
-    protected List<Connection> outputConnection;
-    @XmlElement(name = "OutputConnectorQuantity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger outputConnectorQuantity;
-    @XmlElement(name = "OutputConnectorType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> outputConnectorType;
-    @XmlElement(name = "OutputPower")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger outputPower;
-    @XmlElement(name = "OutputWattage")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger outputWattage;
-    @XmlElement(name = "PackageContentType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String packageContentType;
-    @XmlElement(name = "PackageTypeName")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String packageTypeName;
-    @XmlElement(name = "PCConnectionAvailable")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String pcConnectionAvailable;
-    @XmlElement(name = "PhoneBaseDepth")
-    protected LengthDimension phoneBaseDepth;
-    @XmlElement(name = "PhoneBaseHeight")
-    protected LengthDimension phoneBaseHeight;
-    @XmlElement(name = "PhoneBaseWeight")
-    protected WeightDimension phoneBaseWeight;
-    @XmlElement(name = "PhoneBaseWidth")
-    protected LengthDimension phoneBaseWidth;
-    @XmlElement(name = "PortedBoxVolume")
-    protected CE.PortedBoxVolume portedBoxVolume;
-    @XmlElement(name = "PowerAmplifierClass")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String powerAmplifierClass;
-    @XmlElement(name = "PowerDevice")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String powerDevice;
-    @XmlElement(name = "PowerGain")
-    protected VoltageIntegerDimension powerGain;
-    @XmlElement(name = "PowerLoadRating")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String powerLoadRating;
-    @XmlElement(name = "PreampOutputChannels")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger preampOutputChannels;
-    @XmlElement(name = "PresetChannelQuantity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger presetChannelQuantity;
-    @XmlElement(name = "PrinterInterface")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String printerInterface;
-    @XmlElement(name = "PrinterOutput")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String printerOutput;
-    @XmlElement(name = "PrinterResolutionBWHorizontalMax")
-    protected PixelDimension printerResolutionBWHorizontalMax;
-    @XmlElement(name = "PrinterResolutionBWVerticalMax")
-    protected PixelDimension printerResolutionBWVerticalMax;
-    @XmlElement(name = "PrinterResolutionColorHorizontalMax")
-    protected PixelDimension printerResolutionColorHorizontalMax;
-    @XmlElement(name = "PrinterResolutionColorVerticalMax")
-    protected PixelDimension printerResolutionColorVerticalMax;
-    @XmlElement(name = "PrinterTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String printerTechnology;
-    @XmlElement(name = "ProcessorDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String processorDescription;
-    @XmlElement(name = "ProcessorMaximum")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger processorMaximum;
-    @XmlElement(name = "ProcessorModelNumber")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String processorModelNumber;
-    @XmlElement(name = "ProcessorUpgrade")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String processorUpgrade;
-    @XmlElement(name = "Programmability")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> programmability;
-    @XmlElement(name = "QtsTotalQFactor")
-    protected BigDecimal qtsTotalQFactor;
-    @XmlElement(name = "RadioBandsSupported")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String radioBandsSupported;
-    @XmlElement(name = "RadioChannels")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String radioChannels;
-    @XmlElement(name = "RAIDLevel")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> raidLevel;
-    @XmlElement(name = "RAMMemoryInstalledSize")
-    protected MemorySizeDimension ramMemoryInstalledSize;
-    @XmlElement(name = "RAMMemoryMaximumSize")
-    protected MemorySizeDimension ramMemoryMaximumSize;
-    @XmlElement(name = "RAMMemoryTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String ramMemoryTechnology;
-    @XmlElement(name = "RangefinderType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String rangefinderType;
-    @XmlElement(name = "ReceiverDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String receiverDescription;
-    @XmlElement(name = "RecordingCapacity")
-    protected MemorySizeDimension recordingCapacity;
-    @XmlElement(name = "RemoteControlAudioControls")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> remoteControlAudioControls;
-    @XmlElement(name = "RemoteControlDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String remoteControlDescription;
-    @XmlElement(name = "RemoteControlTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String remoteControlTechnology;
-    @XmlElement(name = "RemoteManagementProtocol")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> remoteManagementProtocol;
-    @XmlElement(name = "RemovableMediaCapacity")
-    protected MemorySizeDimension removableMediaCapacity;
-    @XmlElement(name = "RemovableMemory")
-    protected String removableMemory;
-    @XmlElement(name = "RemovableStorage")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String removableStorage;
-    @XmlElement(name = "RemovableStorageInterface")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String removableStorageInterface;
-    @XmlElement(name = "RemovableStorageNativeCapacity")
-    protected MemorySizeDimension removableStorageNativeCapacity;
-    @XmlElement(name = "ResponseTime")
-    protected TimeDimension responseTime;
-    @XmlElement(name = "RightConnectorGender")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String rightConnectorGender;
-    @XmlElement(name = "RightConnectorType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> rightConnectorType;
-    @XmlElement(name = "RoutingProtocol")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> routingProtocol;
-    @XmlElement(name = "SatelliteServiceDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> satelliteServiceDescription;
-    @XmlElement(name = "SBAS")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> sbas;
-    @XmlElement(name = "ScanElementType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String scanElementType;
-    @XmlElement(name = "ScannerInterface")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String scannerInterface;
-    @XmlElement(name = "ScannerType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String scannerType;
-    @XmlElement(name = "SCSISignalingType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String scsiSignalingType;
-    @XmlElement(name = "SealedBoxVolume")
-    protected CE.SealedBoxVolume sealedBoxVolume;
-    @XmlElement(name = "SearchSpeed")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> searchSpeed;
-    @XmlElement(name = "SecondaryCache")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger secondaryCache;
-    @XmlElement(name = "SellerWarrantyDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String sellerWarrantyDescription;
-    @XmlElement(name = "SignalToNoiseRatio")
-    protected BigDecimal signalToNoiseRatio;
-    @XmlElement(name = "Size")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String size;
-    @XmlElement(name = "SpeakerAmplificationType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String speakerAmplificationType;
-    @XmlElement(name = "SpeakerConnectivity")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String speakerConnectivity;
-    @XmlElement(name = "SpeakerDriverMaterial")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String speakerDriverMaterial;
-    @XmlElement(name = "SpeakersCrossoverChannelQuantity")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> speakersCrossoverChannelQuantity;
-    @XmlElement(name = "SpeakersIncludedDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String speakersIncludedDescription;
-    @XmlElement(name = "SpeakersMaximumOutputPower")
-    protected BigDecimal speakersMaximumOutputPower;
-    @XmlElement(name = "SpeakersNominalOutputPower")
-    protected BigDecimal speakersNominalOutputPower;
-    @XmlElement(name = "SpeakersResponseBandwidth")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String speakersResponseBandwidth;
-    @XmlElement(name = "SpeakerSystemClass")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String speakerSystemClass;
-    @XmlElement(name = "SpeakerType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String speakerType;
-    @XmlElement(name = "SpecialFeatures")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> specialFeatures;
-    @XmlElement(name = "SpecificationMet")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> specificationMet;
-    @XmlElement(name = "SpecificUses")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String specificUses;
-    @XmlElement(name = "SSDDriveArchitechture")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String ssdDriveArchitechture;
-    @XmlElement(name = "StandardInputSheetCapacity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger standardInputSheetCapacity;
-    @XmlElement(name = "StorageController")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String storageController;
-    @XmlElement(name = "StorageControllerInterface")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String storageControllerInterface;
-    @XmlElement(name = "StorageHumidity")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String storageHumidity;
-    @XmlElement(name = "StorageInterface")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String storageInterface;
-    @XmlElement(name = "StyleName")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String styleName;
-    @XmlElement(name = "SupportedAudioFormat")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> supportedAudioFormat;
-    @XmlElement(name = "SupportedDevices")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> supportedDevices;
-    @XmlElement(name = "SupportedDevicesQuantity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger supportedDevicesQuantity;
-    @XmlElement(name = "SupportedImageFormat")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> supportedImageFormat;
-    @XmlElement(name = "SupportedImageType")
-    protected List<String> supportedImageType;
-    @XmlElement(name = "SupportedMediaSize")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String supportedMediaSize;
-    @XmlElement(name = "SupportedMotherboard")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String supportedMotherboard;
-    @XmlElement(name = "SupportedStandards")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> supportedStandards;
-    @XmlElement(name = "SurgeSuppression")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String surgeSuppression;
-    @XmlElement(name = "SurroundSoundChannels")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String surroundSoundChannels;
-    @XmlElement(name = "SurroundSoundEffects")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> surroundSoundEffects;
-    @XmlElement(name = "SwitchingProtocol")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> switchingProtocol;
-    @XmlElement(name = "SystemBusSpeed")
-    protected BigDecimal systemBusSpeed;
-    @XmlElement(name = "TalkRangeMaximum")
-    protected LengthDimension talkRangeMaximum;
-    @XmlElement(name = "TapeLength")
-    protected TimeDimension tapeLength;
-    @XmlElement(name = "TelevisionInterface")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String televisionInterface;
-    @XmlElement(name = "TelevisionPCInterfaceType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String televisionPCInterfaceType;
-    @XmlElement(name = "TemperatureRating")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String temperatureRating;
-    @XmlElement(name = "TotalHarmonicDistortion")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String totalHarmonicDistortion;
-    @XmlElement(name = "TracklogPoints")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger tracklogPoints;
-    @XmlElement(name = "Tracks")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger tracks;
-    @XmlElement(name = "TransportProtocol")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> transportProtocol;
-    @XmlElement(name = "Tuner")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String tuner;
-    @XmlElement(name = "TunerTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> tunerTechnology;
-    @XmlElement(name = "TVTunerSecondaryAudioProgram")
-    protected Boolean tvTunerSecondaryAudioProgram;
-    @XmlElement(name = "UPSTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String upsTechnology;
-    @XmlElement(name = "VCRType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> vcrType;
-    @XmlElement(name = "VerticalResolution")
-    protected PixelDimension verticalResolution;
-    @XmlElement(name = "VideoCaptureFormat")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> videoCaptureFormat;
-    @XmlElement(name = "VideoCaptureResolution")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> videoCaptureResolution;
-    @XmlElement(name = "VideoHeadQuantity")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger videoHeadQuantity;
-    @XmlElement(name = "VideoInput")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> videoInput;
-    @XmlElement(name = "VideoInputDigitalStandard")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> videoInputDigitalStandard;
-    @XmlElement(name = "VideoInputFormat")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> videoInputFormat;
-    @XmlElement(name = "VideoOutputFormat")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String videoOutputFormat;
-    @XmlElement(name = "VideoOutput")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> videoOutput;
-    @XmlElement(name = "VideoOutputInterface")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> videoOutputInterface;
-    @XmlElement(name = "VideoOutputMode")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String videoOutputMode;
-    @XmlElement(name = "VideoPlaybackFormat")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> videoPlaybackFormat;
-    @XmlElement(name = "VideotapePlaybackSpeed")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> videotapePlaybackSpeed;
-    @XmlElement(name = "VideotapeRecordingSpeed")
-    protected String videotapeRecordingSpeed;
-    @XmlElement(name = "VoiceCommunicationSupport")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> voiceCommunicationSupport;
-    @XmlElement(name = "VoiceCoilDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String voiceCoilDescription;
-    @XmlElement(name = "VoicemailCapability")
-    protected Boolean voicemailCapability;
-    @XmlElement(name = "VoiceOperatedTransmission")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String voiceOperatedTransmission;
-    @XmlElement(name = "VOIPProtocols")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> voipProtocols;
-    @XmlElement(name = "VolumeAcousticSuspension")
-    protected VolumeDimension volumeAcousticSuspension;
-    @XmlElement(name = "Warnings")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String warnings;
-    @XmlElement(name = "WarrantyDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String warrantyDescription;
-    @XmlElement(name = "WaterproofRating")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String waterproofRating;
-    @XmlElement(name = "Waypoints")
-    protected BigDecimal waypoints;
-    @XmlElement(name = "WaypointsPerRoute")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger waypointsPerRoute;
-    @XmlElement(name = "Weatherproof")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String weatherproof;
-    @XmlElement(name = "WriteSpeed")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String writeSpeed;
-
-    /**
-     * Gets the value of the rebate property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rebate property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRebate().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link RebateType }
-     * 
-     * 
-     */
-    public List<RebateType> getRebate() {
-        if (rebate == null) {
-            rebate = new ArrayList<RebateType>();
-        }
-        return this.rebate;
-    }
-
-    /**
-     * 获取productType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link CE.ProductType }
-     *     
-     */
-    public CE.ProductType getProductType() {
-        return productType;
-    }
-
-    /**
-     * 设置productType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CE.ProductType }
-     *     
-     */
-    public void setProductType(CE.ProductType value) {
-        this.productType = value;
-    }
-
-    /**
-     * 获取productSubtype属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getProductSubtype() {
-        return productSubtype;
-    }
-
-    /**
-     * 设置productSubtype属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setProductSubtype(String value) {
-        this.productSubtype = value;
-    }
-
-    /**
-     * Gets the value of the analogVideoFormat property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the analogVideoFormat property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAnalogVideoFormat().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getAnalogVideoFormat() {
-        if (analogVideoFormat == null) {
-            analogVideoFormat = new ArrayList<String>();
-        }
-        return this.analogVideoFormat;
-    }
-
-    /**
-     * 获取annualEnergyConsumption属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link EnergyConsumptionDimension }
-     *     
-     */
-    public EnergyConsumptionDimension getAnnualEnergyConsumption() {
-        return annualEnergyConsumption;
-    }
-
-    /**
-     * 设置annualEnergyConsumption属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link EnergyConsumptionDimension }
-     *     
-     */
-    public void setAnnualEnergyConsumption(EnergyConsumptionDimension value) {
-        this.annualEnergyConsumption = value;
-    }
-
-    /**
-     * 获取answeringSystemType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAnsweringSystemType() {
-        return answeringSystemType;
-    }
-
-    /**
-     * 设置answeringSystemType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAnsweringSystemType(String value) {
-        this.answeringSystemType = value;
-    }
-
-    /**
-     * 获取antennaLength属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getAntennaLength() {
-        return antennaLength;
-    }
-
-    /**
-     * 设置antennaLength属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setAntennaLength(LengthDimension value) {
-        this.antennaLength = value;
-    }
-
-    /**
-     * 获取antennaType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link AntennaTypeValues }
-     *     
-     */
-    public AntennaTypeValues getAntennaType() {
-        return antennaType;
-    }
-
-    /**
-     * 设置antennaType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AntennaTypeValues }
-     *     
-     */
-    public void setAntennaType(AntennaTypeValues value) {
-        this.antennaType = value;
-    }
-
-    /**
-     * 获取aspectRatio属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAspectRatio() {
-        return aspectRatio;
-    }
-
-    /**
-     * 设置aspectRatio属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAspectRatio(String value) {
-        this.aspectRatio = value;
-    }
-
-    /**
-     * 获取audioFeaturesDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAudioFeaturesDescription() {
-        return audioFeaturesDescription;
-    }
-
-    /**
-     * 设置audioFeaturesDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAudioFeaturesDescription(String value) {
-        this.audioFeaturesDescription = value;
-    }
-
-    /**
-     * Gets the value of the audioInput property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioInput property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAudioInput().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getAudioInput() {
-        if (audioInput == null) {
-            audioInput = new ArrayList<String>();
-        }
-        return this.audioInput;
-    }
-
-    /**
-     * Gets the value of the audioOutputEffects property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioOutputEffects property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAudioOutputEffects().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getAudioOutputEffects() {
-        if (audioOutputEffects == null) {
-            audioOutputEffects = new ArrayList<String>();
-        }
-        return this.audioOutputEffects;
-    }
-
-    /**
-     * Gets the value of the audioOutputMode property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the audioOutputMode property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAudioOutputMode().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getAudioOutputMode() {
-        if (audioOutputMode == null) {
-            audioOutputMode = new ArrayList<String>();
-        }
-        return this.audioOutputMode;
-    }
-
-    /**
-     * 获取audioOutputResponseBandwidth属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAudioOutputResponseBandwidth() {
-        return audioOutputResponseBandwidth;
-    }
-
-    /**
-     * 设置audioOutputResponseBandwidth属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAudioOutputResponseBandwidth(String value) {
-        this.audioOutputResponseBandwidth = value;
-    }
-
-    /**
-     * 获取audioOutputType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAudioOutputType() {
-        return audioOutputType;
-    }
-
-    /**
-     * 设置audioOutputType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAudioOutputType(String value) {
-        this.audioOutputType = value;
-    }
-
-    /**
-     * 获取audioSensitivity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getAudioSensitivity() {
-        return audioSensitivity;
-    }
-
-    /**
-     * 设置audioSensitivity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setAudioSensitivity(BigInteger value) {
-        this.audioSensitivity = value;
-    }
-
-    /**
-     * 获取autoRedial属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isAutoRedial() {
-        return autoRedial;
-    }
-
-    /**
-     * 设置autoRedial属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setAutoRedial(Boolean value) {
-        this.autoRedial = value;
-    }
-
-    /**
-     * 获取battery属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Battery }
-     *     
-     */
-    public Battery getBattery() {
-        return battery;
-    }
-
-    /**
-     * 设置battery属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Battery }
-     *     
-     */
-    public void setBattery(Battery value) {
-        this.battery = value;
-    }
-
-    /**
-     * 获取batteryAverageLife属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link TimeDimension }
-     *     
-     */
-    public TimeDimension getBatteryAverageLife() {
-        return batteryAverageLife;
-    }
-
-    /**
-     * 设置batteryAverageLife属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeDimension }
-     *     
-     */
-    public void setBatteryAverageLife(TimeDimension value) {
-        this.batteryAverageLife = value;
-    }
-
-    /**
-     * 获取batteryAverageLifeTalkTime属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link TimeDimension }
-     *     
-     */
-    public TimeDimension getBatteryAverageLifeTalkTime() {
-        return batteryAverageLifeTalkTime;
-    }
-
-    /**
-     * 设置batteryAverageLifeTalkTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeDimension }
-     *     
-     */
-    public void setBatteryAverageLifeTalkTime(TimeDimension value) {
-        this.batteryAverageLifeTalkTime = value;
-    }
-
-    /**
-     * 获取bufferSize属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public MemorySizeDimension getBufferSize() {
-        return bufferSize;
-    }
-
-    /**
-     * 设置bufferSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public void setBufferSize(MemorySizeDimension value) {
-        this.bufferSize = value;
-    }
-
-    /**
-     * 获取batteryTypeLithiumIon属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getBatteryTypeLithiumIon() {
-        return batteryTypeLithiumIon;
-    }
-
-    /**
-     * 设置batteryTypeLithiumIon属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setBatteryTypeLithiumIon(BigInteger value) {
-        this.batteryTypeLithiumIon = value;
-    }
-
-    /**
-     * 获取batteryTypeLithiumMetal属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getBatteryTypeLithiumMetal() {
-        return batteryTypeLithiumMetal;
-    }
-
-    /**
-     * 设置batteryTypeLithiumMetal属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setBatteryTypeLithiumMetal(BigInteger value) {
-        this.batteryTypeLithiumMetal = value;
-    }
-
-    /**
-     * 获取biometricSecurityFeatures属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getBiometricSecurityFeatures() {
-        return biometricSecurityFeatures;
-    }
-
-    /**
-     * 设置biometricSecurityFeatures属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBiometricSecurityFeatures(String value) {
-        this.biometricSecurityFeatures = value;
-    }
-
-    /**
-     * Gets the value of the builtInDecoders property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the builtInDecoders property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBuiltInDecoders().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getBuiltInDecoders() {
-        if (builtInDecoders == null) {
-            builtInDecoders = new ArrayList<String>();
-        }
-        return this.builtInDecoders;
-    }
-
-    /**
-     * 获取buttonQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getButtonQuantity() {
-        return buttonQuantity;
-    }
-
-    /**
-     * 设置buttonQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setButtonQuantity(BigInteger value) {
-        this.buttonQuantity = value;
-    }
-
-    /**
-     * 获取cabinetMaterial属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCabinetMaterial() {
-        return cabinetMaterial;
-    }
-
-    /**
-     * 设置cabinetMaterial属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCabinetMaterial(String value) {
-        this.cabinetMaterial = value;
-    }
-
-    /**
-     * Gets the value of the cableFeature property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cableFeature property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCableFeature().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getCableFeature() {
-        if (cableFeature == null) {
-            cableFeature = new ArrayList<String>();
-        }
-        return this.cableFeature;
-    }
-
-    /**
-     * Gets the value of the cableTechnology property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cableTechnology property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCableTechnology().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getCableTechnology() {
-        if (cableTechnology == null) {
-            cableTechnology = new ArrayList<String>();
-        }
-        return this.cableTechnology;
-    }
-
-    /**
-     * 获取cableType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCableType() {
-        return cableType;
-    }
-
-    /**
-     * 设置cableType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCableType(String value) {
-        this.cableType = value;
-    }
-
-    /**
-     * 获取cacheMemoryInstalledSize属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public MemorySizeDimension getCacheMemoryInstalledSize() {
-        return cacheMemoryInstalledSize;
-    }
-
-    /**
-     * 设置cacheMemoryInstalledSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public void setCacheMemoryInstalledSize(MemorySizeDimension value) {
-        this.cacheMemoryInstalledSize = value;
-    }
-
-    /**
-     * 获取callAlerts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCallAlerts() {
-        return callAlerts;
-    }
-
-    /**
-     * 设置callAlerts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCallAlerts(String value) {
-        this.callAlerts = value;
-    }
-
-    /**
-     * 获取callerIdentification属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isCallerIdentification() {
-        return callerIdentification;
-    }
-
-    /**
-     * 设置callerIdentification属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setCallerIdentification(Boolean value) {
-        this.callerIdentification = value;
-    }
-
-    /**
-     * Gets the value of the carryingStrap property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the carryingStrap property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCarryingStrap().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getCarryingStrap() {
-        if (carryingStrap == null) {
-            carryingStrap = new ArrayList<String>();
-        }
-        return this.carryingStrap;
-    }
-
-    /**
-     * 获取cassetteSystemType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCassetteSystemType() {
-        return cassetteSystemType;
-    }
-
-    /**
-     * 设置cassetteSystemType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCassetteSystemType(String value) {
-        this.cassetteSystemType = value;
-    }
-
-    /**
-     * 获取cdChangerType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCDChangerType() {
-        return cdChangerType;
-    }
-
-    /**
-     * 设置cdChangerType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCDChangerType(String value) {
-        this.cdChangerType = value;
-    }
-
-    /**
-     * 获取cdDiskCapacity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getCDDiskCapacity() {
-        return cdDiskCapacity;
-    }
-
-    /**
-     * 设置cdDiskCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setCDDiskCapacity(BigInteger value) {
-        this.cdDiskCapacity = value;
-    }
-
-    /**
-     * 获取cdLoadType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCDLoadType() {
-        return cdLoadType;
-    }
-
-    /**
-     * 设置cdLoadType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCDLoadType(String value) {
-        this.cdLoadType = value;
-    }
-
-    /**
-     * Gets the value of the cdPlaybackMode property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cdPlaybackMode property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCDPlaybackMode().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getCDPlaybackMode() {
-        if (cdPlaybackMode == null) {
-            cdPlaybackMode = new ArrayList<String>();
-        }
-        return this.cdPlaybackMode;
-    }
-
-    /**
-     * 获取cdSystemType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCDSystemType() {
-        return cdSystemType;
-    }
-
-    /**
-     * 设置cdSystemType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCDSystemType(String value) {
-        this.cdSystemType = value;
-    }
-
-    /**
-     * Gets the value of the cellularEnhancementProtocol property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cellularEnhancementProtocol property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCellularEnhancementProtocol().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getCellularEnhancementProtocol() {
-        if (cellularEnhancementProtocol == null) {
-            cellularEnhancementProtocol = new ArrayList<String>();
-        }
-        return this.cellularEnhancementProtocol;
-    }
-
-    /**
-     * 获取coaxialDigitalInput属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCoaxialDigitalInput() {
-        return coaxialDigitalInput;
-    }
-
-    /**
-     * 设置coaxialDigitalInput属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCoaxialDigitalInput(String value) {
-        this.coaxialDigitalInput = value;
-    }
-
-    /**
-     * 获取coaxialDigitalOutput属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCoaxialDigitalOutput() {
-        return coaxialDigitalOutput;
-    }
-
-    /**
-     * 设置coaxialDigitalOutput属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCoaxialDigitalOutput(String value) {
-        this.coaxialDigitalOutput = value;
-    }
-
-    /**
-     * 获取color属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getColor() {
-        return color;
-    }
-
-    /**
-     * 设置color属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setColor(String value) {
-        this.color = value;
-    }
-
-    /**
-     * Gets the value of the colorDepth property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the colorDepth property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getColorDepth().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getColorDepth() {
-        if (colorDepth == null) {
-            colorDepth = new ArrayList<String>();
-        }
-        return this.colorDepth;
-    }
-
-    /**
-     * 获取colorMap属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getColorMap() {
-        return colorMap;
-    }
-
-    /**
-     * 设置colorMap属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setColorMap(String value) {
-        this.colorMap = value;
-    }
-
-    /**
-     * Gets the value of the colorSupport property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the colorSupport property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getColorSupport().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getColorSupport() {
-        if (colorSupport == null) {
-            colorSupport = new ArrayList<String>();
-        }
-        return this.colorSupport;
-    }
-
-    /**
-     * Gets the value of the compatibleCartridge property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the compatibleCartridge property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCompatibleCartridge().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getCompatibleCartridge() {
-        if (compatibleCartridge == null) {
-            compatibleCartridge = new ArrayList<String>();
-        }
-        return this.compatibleCartridge;
-    }
-
-    /**
-     * Gets the value of the compatibleDevices property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the compatibleDevices property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCompatibleDevices().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getCompatibleDevices() {
-        if (compatibleDevices == null) {
-            compatibleDevices = new ArrayList<String>();
-        }
-        return this.compatibleDevices;
-    }
-
-    /**
-     * Gets the value of the componentType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the componentType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getComponentType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getComponentType() {
-        if (componentType == null) {
-            componentType = new ArrayList<String>();
-        }
-        return this.componentType;
-    }
-
-    /**
-     * 获取compressedCapacity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public MemorySizeDimension getCompressedCapacity() {
-        return compressedCapacity;
-    }
-
-    /**
-     * 设置compressedCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public void setCompressedCapacity(MemorySizeDimension value) {
-        this.compressedCapacity = value;
-    }
-
-    /**
-     * Gets the value of the computerPeripheralConnector property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the computerPeripheralConnector property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getComputerPeripheralConnector().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getComputerPeripheralConnector() {
-        if (computerPeripheralConnector == null) {
-            computerPeripheralConnector = new ArrayList<String>();
-        }
-        return this.computerPeripheralConnector;
-    }
-
-    /**
-     * 获取conferenceCallCapability属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getConferenceCallCapability() {
-        return conferenceCallCapability;
-    }
-
-    /**
-     * 设置conferenceCallCapability属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setConferenceCallCapability(String value) {
-        this.conferenceCallCapability = value;
-    }
-
-    /**
-     * Gets the value of the connectivityProtocol property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the connectivityProtocol property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getConnectivityProtocol().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getConnectivityProtocol() {
-        if (connectivityProtocol == null) {
-            connectivityProtocol = new ArrayList<String>();
-        }
-        return this.connectivityProtocol;
-    }
-
-    /**
-     * 获取connectivityTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getConnectivityTechnology() {
-        return connectivityTechnology;
-    }
-
-    /**
-     * 设置connectivityTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setConnectivityTechnology(String value) {
-        this.connectivityTechnology = value;
-    }
-
-    /**
-     * 获取copierType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCopierType() {
-        return copierType;
-    }
-
-    /**
-     * 设置copierType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCopierType(String value) {
-        this.copierType = value;
-    }
-
-    /**
-     * 获取copySizeMaximum属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCopySizeMaximum() {
-        return copySizeMaximum;
-    }
-
-    /**
-     * 设置copySizeMaximum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCopySizeMaximum(String value) {
-        this.copySizeMaximum = value;
-    }
-
-    /**
-     * 获取countryOfOrigin属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCountryOfOrigin() {
-        return countryOfOrigin;
-    }
-
-    /**
-     * 设置countryOfOrigin属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCountryOfOrigin(String value) {
-        this.countryOfOrigin = value;
-    }
-
-    /**
-     * 获取crossoverFrequency属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCrossoverFrequency() {
-        return crossoverFrequency;
-    }
-
-    /**
-     * 设置crossoverFrequency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCrossoverFrequency(String value) {
-        this.crossoverFrequency = value;
-    }
-
-    /**
-     * 获取dacDataWidth属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDACDataWidth() {
-        return dacDataWidth;
-    }
-
-    /**
-     * 设置dacDataWidth属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDACDataWidth(String value) {
-        this.dacDataWidth = value;
-    }
-
-    /**
-     * Gets the value of the dataCompressionProtocol property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dataCompressionProtocol property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDataCompressionProtocol().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getDataCompressionProtocol() {
-        if (dataCompressionProtocol == null) {
-            dataCompressionProtocol = new ArrayList<String>();
-        }
-        return this.dataCompressionProtocol;
-    }
-
-    /**
-     * Gets the value of the dataLinkProtocol property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dataLinkProtocol property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDataLinkProtocol().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getDataLinkProtocol() {
-        if (dataLinkProtocol == null) {
-            dataLinkProtocol = new ArrayList<String>();
-        }
-        return this.dataLinkProtocol;
-    }
-
-    /**
-     * 获取dataService属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDataService() {
-        return dataService;
-    }
-
-    /**
-     * 设置dataService属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDataService(String value) {
-        this.dataService = value;
-    }
-
-    /**
-     * 获取dataStorageCapability属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDataStorageCapability() {
-        return dataStorageCapability;
-    }
-
-    /**
-     * 设置dataStorageCapability属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDataStorageCapability(String value) {
-        this.dataStorageCapability = value;
-    }
-
-    /**
-     * 获取dataTransferRate属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link CE.DataTransferRate }
-     *     
-     */
-    public CE.DataTransferRate getDataTransferRate() {
-        return dataTransferRate;
-    }
-
-    /**
-     * 设置dataTransferRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CE.DataTransferRate }
-     *     
-     */
-    public void setDataTransferRate(CE.DataTransferRate value) {
-        this.dataTransferRate = value;
-    }
-
-    /**
-     * 获取deviceType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDeviceType() {
-        return deviceType;
-    }
-
-    /**
-     * 设置deviceType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDeviceType(String value) {
-        this.deviceType = value;
-    }
-
-    /**
-     * 获取dgps属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDGPS() {
-        return dgps;
-    }
-
-    /**
-     * 设置dgps属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDGPS(String value) {
-        this.dgps = value;
-    }
-
-    /**
-     * 获取dialerType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDialerType() {
-        return dialerType;
-    }
-
-    /**
-     * 设置dialerType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDialerType(String value) {
-        this.dialerType = value;
-    }
-
-    /**
-     * 获取digitalPlayerType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDigitalPlayerType() {
-        return digitalPlayerType;
-    }
-
-    /**
-     * 设置digitalPlayerType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDigitalPlayerType(String value) {
-        this.digitalPlayerType = value;
-    }
-
-    /**
-     * Gets the value of the digitalRecordingTime property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the digitalRecordingTime property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDigitalRecordingTime().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getDigitalRecordingTime() {
-        if (digitalRecordingTime == null) {
-            digitalRecordingTime = new ArrayList<String>();
-        }
-        return this.digitalRecordingTime;
-    }
-
-    /**
-     * Gets the value of the digitalSignalingProtocol property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the digitalSignalingProtocol property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDigitalSignalingProtocol().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getDigitalSignalingProtocol() {
-        if (digitalSignalingProtocol == null) {
-            digitalSignalingProtocol = new ArrayList<String>();
-        }
-        return this.digitalSignalingProtocol;
-    }
-
-    /**
-     * 获取digitalStorageCapacity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public MemorySizeDimension getDigitalStorageCapacity() {
-        return digitalStorageCapacity;
-    }
-
-    /**
-     * 设置digitalStorageCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public void setDigitalStorageCapacity(MemorySizeDimension value) {
-        this.digitalStorageCapacity = value;
-    }
-
-    /**
-     * 获取digitalZoom属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ZoomDimension }
-     *     
-     */
-    public ZoomDimension getDigitalZoom() {
-        return digitalZoom;
-    }
-
-    /**
-     * 设置digitalZoom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ZoomDimension }
-     *     
-     */
-    public void setDigitalZoom(ZoomDimension value) {
-        this.digitalZoom = value;
-    }
-
-    /**
-     * Gets the value of the displayColorSupport property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the displayColorSupport property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDisplayColorSupport().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getDisplayColorSupport() {
-        if (displayColorSupport == null) {
-            displayColorSupport = new ArrayList<String>();
-        }
-        return this.displayColorSupport;
-    }
-
-    /**
-     * 获取displayLanguageOptions属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDisplayLanguageOptions() {
-        return displayLanguageOptions;
-    }
-
-    /**
-     * 设置displayLanguageOptions属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDisplayLanguageOptions(String value) {
-        this.displayLanguageOptions = value;
-    }
-
-    /**
-     * 获取displayLineQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getDisplayLineQuantity() {
-        return displayLineQuantity;
-    }
-
-    /**
-     * 设置displayLineQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setDisplayLineQuantity(BigInteger value) {
-        this.displayLineQuantity = value;
-    }
-
-    /**
-     * 获取displayResolutionMaximum属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDisplayResolutionMaximum() {
-        return displayResolutionMaximum;
-    }
-
-    /**
-     * 设置displayResolutionMaximum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDisplayResolutionMaximum(String value) {
-        this.displayResolutionMaximum = value;
-    }
-
-    /**
-     * 获取displayTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDisplayTechnology() {
-        return displayTechnology;
-    }
-
-    /**
-     * 设置displayTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDisplayTechnology(String value) {
-        this.displayTechnology = value;
-    }
-
-    /**
-     * 获取displayType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDisplayType() {
-        return displayType;
-    }
-
-    /**
-     * 设置displayType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDisplayType(String value) {
-        this.displayType = value;
-    }
-
-    /**
-     * 获取dockingStationExternalInterface属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link DockingStationExternalInterfaceTypeValues }
-     *     
-     */
-    public DockingStationExternalInterfaceTypeValues getDockingStationExternalInterface() {
-        return dockingStationExternalInterface;
-    }
-
-    /**
-     * 设置dockingStationExternalInterface属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DockingStationExternalInterfaceTypeValues }
-     *     
-     */
-    public void setDockingStationExternalInterface(DockingStationExternalInterfaceTypeValues value) {
-        this.dockingStationExternalInterface = value;
-    }
-
-    /**
-     * 获取driveUnits属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDriveUnits() {
-        return driveUnits;
-    }
-
-    /**
-     * 设置driveUnits属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDriveUnits(String value) {
-        this.driveUnits = value;
-    }
-
-    /**
-     * 获取duplex属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDuplex() {
-        return duplex;
-    }
-
-    /**
-     * 设置duplex属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDuplex(String value) {
-        this.duplex = value;
-    }
-
-    /**
-     * 获取dvdDiskCapacity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getDVDDiskCapacity() {
-        return dvdDiskCapacity;
-    }
-
-    /**
-     * 设置dvdDiskCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setDVDDiskCapacity(BigInteger value) {
-        this.dvdDiskCapacity = value;
-    }
-
-    /**
-     * 获取dvdDiskChangerType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDVDDiskChangerType() {
-        return dvdDiskChangerType;
-    }
-
-    /**
-     * 设置dvdDiskChangerType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDVDDiskChangerType(String value) {
-        this.dvdDiskChangerType = value;
-    }
-
-    /**
-     * 获取dvdMediaLoadType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDVDMediaLoadType() {
-        return dvdMediaLoadType;
-    }
-
-    /**
-     * 设置dvdMediaLoadType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDVDMediaLoadType(String value) {
-        this.dvdMediaLoadType = value;
-    }
-
-    /**
-     * Gets the value of the dvdPictureZoomPower property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dvdPictureZoomPower property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDVDPictureZoomPower().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getDVDPictureZoomPower() {
-        if (dvdPictureZoomPower == null) {
-            dvdPictureZoomPower = new ArrayList<String>();
-        }
-        return this.dvdPictureZoomPower;
-    }
-
-    /**
-     * Gets the value of the dvdPlaybackMode property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dvdPlaybackMode property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDVDPlaybackMode().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getDVDPlaybackMode() {
-        if (dvdPlaybackMode == null) {
-            dvdPlaybackMode = new ArrayList<String>();
-        }
-        return this.dvdPlaybackMode;
-    }
-
-    /**
-     * 获取dvdType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDVDType() {
-        return dvdType;
-    }
-
-    /**
-     * 设置dvdType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDVDType(String value) {
-        this.dvdType = value;
-    }
-
-    /**
-     * 获取dvrCompressionRate属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDVRCompressionRate() {
-        return dvrCompressionRate;
-    }
-
-    /**
-     * 设置dvrCompressionRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDVRCompressionRate(String value) {
-        this.dvrCompressionRate = value;
-    }
-
-    /**
-     * 获取dvrMaxRecordingTime属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getDVRMaxRecordingTime() {
-        return dvrMaxRecordingTime;
-    }
-
-    /**
-     * 设置dvrMaxRecordingTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setDVRMaxRecordingTime(BigInteger value) {
-        this.dvrMaxRecordingTime = value;
-    }
-
-    /**
-     * 获取dvrServiceDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDVRServiceDescription() {
-        return dvrServiceDescription;
-    }
-
-    /**
-     * 设置dvrServiceDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDVRServiceDescription(String value) {
-        this.dvrServiceDescription = value;
-    }
-
-    /**
-     * 获取enclosure属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEnclosure() {
-        return enclosure;
-    }
-
-    /**
-     * 设置enclosure属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEnclosure(String value) {
-        this.enclosure = value;
-    }
-
-    /**
-     * 获取equalizer属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEqualizer() {
-        return equalizer;
-    }
-
-    /**
-     * 设置equalizer属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEqualizer(String value) {
-        this.equalizer = value;
-    }
-
-    /**
-     * 获取equalizerBandChannels属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEqualizerBandChannels() {
-        return equalizerBandChannels;
-    }
-
-    /**
-     * 设置equalizerBandChannels属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEqualizerBandChannels(String value) {
-        this.equalizerBandChannels = value;
-    }
-
-    /**
-     * Gets the value of the errorCorrectionProtocol property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the errorCorrectionProtocol property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getErrorCorrectionProtocol().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getErrorCorrectionProtocol() {
-        if (errorCorrectionProtocol == null) {
-            errorCorrectionProtocol = new ArrayList<String>();
-        }
-        return this.errorCorrectionProtocol;
-    }
-
-    /**
-     * 获取eyeRelief属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getEyeRelief() {
-        return eyeRelief;
-    }
-
-    /**
-     * 设置eyeRelief属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setEyeRelief(LengthDimension value) {
-        this.eyeRelief = value;
-    }
-
-    /**
-     * 获取faceplateType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFaceplateType() {
-        return faceplateType;
-    }
-
-    /**
-     * 设置faceplateType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFaceplateType(String value) {
-        this.faceplateType = value;
-    }
-
-    /**
-     * 获取faxMachineCompatibility属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFaxMachineCompatibility() {
-        return faxMachineCompatibility;
-    }
-
-    /**
-     * 设置faxMachineCompatibility属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFaxMachineCompatibility(String value) {
-        this.faxMachineCompatibility = value;
-    }
-
-    /**
-     * 获取faxType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFaxType() {
-        return faxType;
-    }
-
-    /**
-     * 设置faxType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFaxType(String value) {
-        this.faxType = value;
-    }
-
-    /**
-     * 获取flashMemoryInstalledSize属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public MemorySizeDimension getFlashMemoryInstalledSize() {
-        return flashMemoryInstalledSize;
-    }
-
-    /**
-     * 设置flashMemoryInstalledSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public void setFlashMemoryInstalledSize(MemorySizeDimension value) {
-        this.flashMemoryInstalledSize = value;
-    }
-
-    /**
-     * 获取floppyDiskDrive属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFloppyDiskDrive() {
-        return floppyDiskDrive;
-    }
-
-    /**
-     * 设置floppyDiskDrive属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFloppyDiskDrive(String value) {
-        this.floppyDiskDrive = value;
-    }
-
-    /**
-     * Gets the value of the formFactor property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the formFactor property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFormFactor().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getFormFactor() {
-        if (formFactor == null) {
-            formFactor = new ArrayList<String>();
-        }
-        return this.formFactor;
-    }
-
-    /**
-     * 获取freeAirResonantFrequency属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link FrequencyDimension }
-     *     
-     */
-    public FrequencyDimension getFreeAirResonantFrequency() {
-        return freeAirResonantFrequency;
-    }
-
-    /**
-     * 设置freeAirResonantFrequency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link FrequencyDimension }
-     *     
-     */
-    public void setFreeAirResonantFrequency(FrequencyDimension value) {
-        this.freeAirResonantFrequency = value;
-    }
-
-    /**
-     * Gets the value of the frequencyRange property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the frequencyRange property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFrequencyRange().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getFrequencyRange() {
-        if (frequencyRange == null) {
-            frequencyRange = new ArrayList<String>();
-        }
-        return this.frequencyRange;
-    }
-
-    /**
-     * 获取frequencyRequired属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFrequencyRequired() {
-        return frequencyRequired;
-    }
-
-    /**
-     * 设置frequencyRequired属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFrequencyRequired(String value) {
-        this.frequencyRequired = value;
-    }
-
-    /**
-     * 获取frequencyResponseCurve属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFrequencyResponseCurve() {
-        return frequencyResponseCurve;
-    }
-
-    /**
-     * 设置frequencyResponseCurve属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFrequencyResponseCurve(String value) {
-        this.frequencyResponseCurve = value;
-    }
-
-    /**
-     * 获取frontAccessibleBaysQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getFrontAccessibleBaysQuantity() {
-        return frontAccessibleBaysQuantity;
-    }
-
-    /**
-     * 设置frontAccessibleBaysQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setFrontAccessibleBaysQuantity(BigInteger value) {
-        this.frontAccessibleBaysQuantity = value;
-    }
-
-    /**
-     * 获取fuseDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFuseDescription() {
-        return fuseDescription;
-    }
-
-    /**
-     * 设置fuseDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFuseDescription(String value) {
-        this.fuseDescription = value;
-    }
-
-    /**
-     * 获取gpsNavigation属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getGPSNavigation() {
-        return gpsNavigation;
-    }
-
-    /**
-     * 设置gpsNavigation属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setGPSNavigation(String value) {
-        this.gpsNavigation = value;
-    }
-
-    /**
-     * 获取graphicsCoprocessor属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getGraphicsCoprocessor() {
-        return graphicsCoprocessor;
-    }
-
-    /**
-     * 设置graphicsCoprocessor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setGraphicsCoprocessor(String value) {
-        this.graphicsCoprocessor = value;
-    }
-
-    /**
-     * 获取graphicsCoprocessorQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getGraphicsCoprocessorQuantity() {
-        return graphicsCoprocessorQuantity;
-    }
-
-    /**
-     * 设置graphicsCoprocessorQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setGraphicsCoprocessorQuantity(BigInteger value) {
-        this.graphicsCoprocessorQuantity = value;
-    }
-
-    /**
-     * 获取graphicsRam属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getGraphicsRam() {
-        return graphicsRam;
-    }
-
-    /**
-     * 设置graphicsRam属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setGraphicsRam(BigDecimal value) {
-        this.graphicsRam = value;
-    }
-
-    /**
-     * Gets the value of the greyscaleDepth property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the greyscaleDepth property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getGreyscaleDepth().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getGreyscaleDepth() {
-        if (greyscaleDepth == null) {
-            greyscaleDepth = new ArrayList<String>();
-        }
-        return this.greyscaleDepth;
-    }
-
-    /**
-     * 获取handsetDepth属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getHandsetDepth() {
-        return handsetDepth;
-    }
-
-    /**
-     * 设置handsetDepth属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setHandsetDepth(LengthDimension value) {
-        this.handsetDepth = value;
-    }
-
-    /**
-     * 获取handsetHeight属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getHandsetHeight() {
-        return handsetHeight;
-    }
-
-    /**
-     * 设置handsetHeight属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setHandsetHeight(LengthDimension value) {
-        this.handsetHeight = value;
-    }
-
-    /**
-     * 获取handsetLocator属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isHandsetLocator() {
-        return handsetLocator;
-    }
-
-    /**
-     * 设置handsetLocator属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setHandsetLocator(Boolean value) {
-        this.handsetLocator = value;
-    }
-
-    /**
-     * 获取handsetWeight属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link WeightDimension }
-     *     
-     */
-    public WeightDimension getHandsetWeight() {
-        return handsetWeight;
-    }
-
-    /**
-     * 设置handsetWeight属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WeightDimension }
-     *     
-     */
-    public void setHandsetWeight(WeightDimension value) {
-        this.handsetWeight = value;
-    }
-
-    /**
-     * 获取handsetWidth属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getHandsetWidth() {
-        return handsetWidth;
-    }
-
-    /**
-     * 设置handsetWidth属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setHandsetWidth(LengthDimension value) {
-        this.handsetWidth = value;
-    }
-
-    /**
-     * 获取hardDiskDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getHardDiskDescription() {
-        return hardDiskDescription;
-    }
-
-    /**
-     * 设置hardDiskDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHardDiskDescription(String value) {
-        this.hardDiskDescription = value;
-    }
-
-    /**
-     * 获取hardDiskInstalledQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getHardDiskInstalledQuantity() {
-        return hardDiskInstalledQuantity;
-    }
-
-    /**
-     * 设置hardDiskInstalledQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setHardDiskInstalledQuantity(BigInteger value) {
-        this.hardDiskInstalledQuantity = value;
-    }
-
-    /**
-     * 获取hardDiskRotationalSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getHardDiskRotationalSpeed() {
-        return hardDiskRotationalSpeed;
-    }
-
-    /**
-     * 设置hardDiskRotationalSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setHardDiskRotationalSpeed(BigInteger value) {
-        this.hardDiskRotationalSpeed = value;
-    }
-
-    /**
-     * Gets the value of the hardwareInterface property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hardwareInterface property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getHardwareInterface().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getHardwareInterface() {
-        if (hardwareInterface == null) {
-            hardwareInterface = new ArrayList<String>();
-        }
-        return this.hardwareInterface;
-    }
-
-    /**
-     * 获取hasCommercialSkip属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isHasCommercialSkip() {
-        return hasCommercialSkip;
-    }
-
-    /**
-     * 设置hasCommercialSkip属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setHasCommercialSkip(Boolean value) {
-        this.hasCommercialSkip = value;
-    }
-
-    /**
-     * 获取hasDVDPictureZoom属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isHasDVDPictureZoom() {
-        return hasDVDPictureZoom;
-    }
-
-    /**
-     * 设置hasDVDPictureZoom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setHasDVDPictureZoom(Boolean value) {
-        this.hasDVDPictureZoom = value;
-    }
-
-    /**
-     * 获取hasParentalChannelLock属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isHasParentalChannelLock() {
-        return hasParentalChannelLock;
-    }
-
-    /**
-     * 设置hasParentalChannelLock属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setHasParentalChannelLock(Boolean value) {
-        this.hasParentalChannelLock = value;
-    }
-
-    /**
-     * 获取headphonesFormFactor属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getHeadphonesFormFactor() {
-        return headphonesFormFactor;
-    }
-
-    /**
-     * 设置headphonesFormFactor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHeadphonesFormFactor(String value) {
-        this.headphonesFormFactor = value;
-    }
-
-    /**
-     * 获取headphonesJack属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getHeadphonesJack() {
-        return headphonesJack;
-    }
-
-    /**
-     * 设置headphonesJack属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHeadphonesJack(String value) {
-        this.headphonesJack = value;
-    }
-
-    /**
-     * 获取headphonesTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getHeadphonesTechnology() {
-        return headphonesTechnology;
-    }
-
-    /**
-     * 设置headphonesTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHeadphonesTechnology(String value) {
-        this.headphonesTechnology = value;
-    }
-
-    /**
-     * 获取horizontalResolution属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getHorizontalResolution() {
-        return horizontalResolution;
-    }
-
-    /**
-     * 设置horizontalResolution属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setHorizontalResolution(BigInteger value) {
-        this.horizontalResolution = value;
-    }
-
-    /**
-     * 获取hotSwapBaysQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getHotSwapBaysQuantity() {
-        return hotSwapBaysQuantity;
-    }
-
-    /**
-     * 设置hotSwapBaysQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setHotSwapBaysQuantity(BigInteger value) {
-        this.hotSwapBaysQuantity = value;
-    }
-
-    /**
-     * Gets the value of the humanInterfaceInput property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the humanInterfaceInput property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getHumanInterfaceInput().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link HumanInterfaceInputType }
-     * 
-     * 
-     */
-    public List<HumanInterfaceInputType> getHumanInterfaceInput() {
-        if (humanInterfaceInput == null) {
-            humanInterfaceInput = new ArrayList<HumanInterfaceInputType>();
-        }
-        return this.humanInterfaceInput;
-    }
-
-    /**
-     * 获取humanInterfaceOutput属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link HumanInterfaceOutputType }
-     *     
-     */
-    public HumanInterfaceOutputType getHumanInterfaceOutput() {
-        return humanInterfaceOutput;
-    }
-
-    /**
-     * 设置humanInterfaceOutput属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link HumanInterfaceOutputType }
-     *     
-     */
-    public void setHumanInterfaceOutput(HumanInterfaceOutputType value) {
-        this.humanInterfaceOutput = value;
-    }
-
-    /**
-     * Gets the value of the imageAspectRatio property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the imageAspectRatio property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getImageAspectRatio().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getImageAspectRatio() {
-        if (imageAspectRatio == null) {
-            imageAspectRatio = new ArrayList<String>();
-        }
-        return this.imageAspectRatio;
-    }
-
-    /**
-     * 获取imageBrightness属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getImageBrightness() {
-        return imageBrightness;
-    }
-
-    /**
-     * 设置imageBrightness属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setImageBrightness(String value) {
-        this.imageBrightness = value;
-    }
-
-    /**
-     * 获取imageContrastRatio属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getImageContrastRatio() {
-        return imageContrastRatio;
-    }
-
-    /**
-     * 设置imageContrastRatio属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setImageContrastRatio(String value) {
-        this.imageContrastRatio = value;
-    }
-
-    /**
-     * 获取impedance属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ResistanceDimension }
-     *     
-     */
-    public ResistanceDimension getImpedance() {
-        return impedance;
-    }
-
-    /**
-     * 设置impedance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ResistanceDimension }
-     *     
-     */
-    public void setImpedance(ResistanceDimension value) {
-        this.impedance = value;
-    }
-
-    /**
-     * 获取includesMP3Player属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isIncludesMP3Player() {
-        return includesMP3Player;
-    }
-
-    /**
-     * 设置includesMP3Player属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIncludesMP3Player(Boolean value) {
-        this.includesMP3Player = value;
-    }
-
-    /**
-     * 获取includesRechargableBattery属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isIncludesRechargableBattery() {
-        return includesRechargableBattery;
-    }
-
-    /**
-     * 设置includesRechargableBattery属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIncludesRechargableBattery(Boolean value) {
-        this.includesRechargableBattery = value;
-    }
-
-    /**
-     * 获取includesRemote属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isIncludesRemote() {
-        return includesRemote;
-    }
-
-    /**
-     * 设置includesRemote属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIncludesRemote(Boolean value) {
-        this.includesRemote = value;
-    }
-
-    /**
-     * 获取includesSpeakerphone属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isIncludesSpeakerphone() {
-        return includesSpeakerphone;
-    }
-
-    /**
-     * 设置includesSpeakerphone属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIncludesSpeakerphone(Boolean value) {
-        this.includesSpeakerphone = value;
-    }
-
-    /**
-     * Gets the value of the inputAdapter property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the inputAdapter property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInputAdapter().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getInputAdapter() {
-        if (inputAdapter == null) {
-            inputAdapter = new ArrayList<String>();
-        }
-        return this.inputAdapter;
-    }
-
-    /**
-     * 获取inputChannelQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getInputChannelQuantity() {
-        return inputChannelQuantity;
-    }
-
-    /**
-     * 设置inputChannelQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setInputChannelQuantity(BigInteger value) {
-        this.inputChannelQuantity = value;
-    }
-
-    /**
-     * Gets the value of the inputConnection property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the inputConnection property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInputConnection().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Connection }
-     * 
-     * 
-     */
-    public List<Connection> getInputConnection() {
-        if (inputConnection == null) {
-            inputConnection = new ArrayList<Connection>();
-        }
-        return this.inputConnection;
-    }
-
-    /**
-     * Gets the value of the inputConnectorType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the inputConnectorType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInputConnectorType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getInputConnectorType() {
-        if (inputConnectorType == null) {
-            inputConnectorType = new ArrayList<String>();
-        }
-        return this.inputConnectorType;
-    }
-
-    /**
-     * Gets the value of the inputDevice property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the inputDevice property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInputDevice().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getInputDevice() {
-        if (inputDevice == null) {
-            inputDevice = new ArrayList<String>();
-        }
-        return this.inputDevice;
-    }
-
-    /**
-     * Gets the value of the inputDeviceInterface property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the inputDeviceInterface property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInputDeviceInterface().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getInputDeviceInterface() {
-        if (inputDeviceInterface == null) {
-            inputDeviceInterface = new ArrayList<String>();
-        }
-        return this.inputDeviceInterface;
-    }
-
-    /**
-     * 获取intercom属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isIntercom() {
-        return intercom;
-    }
-
-    /**
-     * 设置intercom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIntercom(Boolean value) {
-        this.intercom = value;
-    }
-
-    /**
-     * 获取internalBaysQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getInternalBaysQuantity() {
-        return internalBaysQuantity;
-    }
-
-    /**
-     * 设置internalBaysQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setInternalBaysQuantity(BigInteger value) {
-        this.internalBaysQuantity = value;
-    }
-
-    /**
-     * 获取isdnTerminalAdapterInterface属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getISDNTerminalAdapterInterface() {
-        return isdnTerminalAdapterInterface;
-    }
-
-    /**
-     * 设置isdnTerminalAdapterInterface属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setISDNTerminalAdapterInterface(String value) {
-        this.isdnTerminalAdapterInterface = value;
-    }
-
-    /**
-     * 获取isHDTVCompatible属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isIsHDTVCompatible() {
-        return isHDTVCompatible;
-    }
-
-    /**
-     * 设置isHDTVCompatible属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsHDTVCompatible(Boolean value) {
-        this.isHDTVCompatible = value;
-    }
-
-    /**
-     * 获取isWaterproof属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isIsWaterproof() {
-        return isWaterproof;
-    }
-
-    /**
-     * 设置isWaterproof属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setIsWaterproof(Boolean value) {
-        this.isWaterproof = value;
-    }
-
-    /**
-     * 获取itemDisplayDepth属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getItemDisplayDepth() {
-        return itemDisplayDepth;
-    }
-
-    /**
-     * 设置itemDisplayDepth属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setItemDisplayDepth(LengthDimension value) {
-        this.itemDisplayDepth = value;
-    }
-
-    /**
-     * 获取itemDisplayHeight属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getItemDisplayHeight() {
-        return itemDisplayHeight;
-    }
-
-    /**
-     * 设置itemDisplayHeight属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setItemDisplayHeight(LengthDimension value) {
-        this.itemDisplayHeight = value;
-    }
-
-    /**
-     * 获取itemDisplayLength属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getItemDisplayLength() {
-        return itemDisplayLength;
-    }
-
-    /**
-     * 设置itemDisplayLength属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setItemDisplayLength(LengthDimension value) {
-        this.itemDisplayLength = value;
-    }
-
-    /**
-     * 获取itemDisplayLengthMaximum属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getItemDisplayLengthMaximum() {
-        return itemDisplayLengthMaximum;
-    }
-
-    /**
-     * 设置itemDisplayLengthMaximum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setItemDisplayLengthMaximum(LengthDimension value) {
-        this.itemDisplayLengthMaximum = value;
-    }
-
-    /**
-     * 获取itemDisplayWeight属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link WeightDimension }
-     *     
-     */
-    public WeightDimension getItemDisplayWeight() {
-        return itemDisplayWeight;
-    }
-
-    /**
-     * 设置itemDisplayWeight属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WeightDimension }
-     *     
-     */
-    public void setItemDisplayWeight(WeightDimension value) {
-        this.itemDisplayWeight = value;
-    }
-
-    /**
-     * 获取itemDisplayWidth属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getItemDisplayWidth() {
-        return itemDisplayWidth;
-    }
-
-    /**
-     * 设置itemDisplayWidth属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setItemDisplayWidth(LengthDimension value) {
-        this.itemDisplayWidth = value;
-    }
-
-    /**
-     * 获取lithiumBatteryEnergyContent属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getLithiumBatteryEnergyContent() {
-        return lithiumBatteryEnergyContent;
-    }
-
-    /**
-     * 设置lithiumBatteryEnergyContent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setLithiumBatteryEnergyContent(BigDecimal value) {
-        this.lithiumBatteryEnergyContent = value;
-    }
-
-    /**
-     * 获取lithiumBatteryPackaging属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLithiumBatteryPackaging() {
-        return lithiumBatteryPackaging;
-    }
-
-    /**
-     * 设置lithiumBatteryPackaging属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLithiumBatteryPackaging(String value) {
-        this.lithiumBatteryPackaging = value;
-    }
-
-    /**
-     * 获取lithiumBatteryVoltage属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getLithiumBatteryVoltage() {
-        return lithiumBatteryVoltage;
-    }
-
-    /**
-     * 设置lithiumBatteryVoltage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setLithiumBatteryVoltage(BigDecimal value) {
-        this.lithiumBatteryVoltage = value;
-    }
-
-    /**
-     * 获取lithiumBatteryWeight属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getLithiumBatteryWeight() {
-        return lithiumBatteryWeight;
-    }
-
-    /**
-     * 设置lithiumBatteryWeight属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setLithiumBatteryWeight(BigDecimal value) {
-        this.lithiumBatteryWeight = value;
-    }
-
-    /**
-     * 获取keyboardDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getKeyboardDescription() {
-        return keyboardDescription;
-    }
-
-    /**
-     * 设置keyboardDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setKeyboardDescription(String value) {
-        this.keyboardDescription = value;
-    }
-
-    /**
-     * 获取lampType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLampType() {
-        return lampType;
-    }
-
-    /**
-     * 设置lampType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLampType(String value) {
-        this.lampType = value;
-    }
-
-    /**
-     * 获取leftConnectorGender属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLeftConnectorGender() {
-        return leftConnectorGender;
-    }
-
-    /**
-     * 设置leftConnectorGender属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLeftConnectorGender(String value) {
-        this.leftConnectorGender = value;
-    }
-
-    /**
-     * Gets the value of the leftConnectorType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the leftConnectorType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLeftConnectorType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getLeftConnectorType() {
-        if (leftConnectorType == null) {
-            leftConnectorType = new ArrayList<String>();
-        }
-        return this.leftConnectorType;
-    }
-
-    /**
-     * 获取manufacturerWarrantyType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getManufacturerWarrantyType() {
-        return manufacturerWarrantyType;
-    }
-
-    /**
-     * 设置manufacturerWarrantyType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setManufacturerWarrantyType(String value) {
-        this.manufacturerWarrantyType = value;
-    }
-
-    /**
-     * Gets the value of the mapType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mapType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMapType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getMapType() {
-        if (mapType == null) {
-            mapType = new ArrayList<String>();
-        }
-        return this.mapType;
-    }
-
-    /**
-     * Gets the value of the materialComposition property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the materialComposition property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMaterialComposition().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getMaterialComposition() {
-        if (materialComposition == null) {
-            materialComposition = new ArrayList<String>();
-        }
-        return this.materialComposition;
-    }
-
-    /**
-     * Gets the value of the materialType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the materialType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMaterialType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getMaterialType() {
-        if (materialType == null) {
-            materialType = new ArrayList<String>();
-        }
-        return this.materialType;
-    }
-
-    /**
-     * 获取maxCopyResolutionBlackWhite属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMaxCopyResolutionBlackWhite() {
-        return maxCopyResolutionBlackWhite;
-    }
-
-    /**
-     * 设置maxCopyResolutionBlackWhite属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMaxCopyResolutionBlackWhite(String value) {
-        this.maxCopyResolutionBlackWhite = value;
-    }
-
-    /**
-     * 获取maxCopyResolutionColor属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMaxCopyResolutionColor() {
-        return maxCopyResolutionColor;
-    }
-
-    /**
-     * 设置maxCopyResolutionColor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMaxCopyResolutionColor(String value) {
-        this.maxCopyResolutionColor = value;
-    }
-
-    /**
-     * 获取maximumBridgedOutputPower属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getMaximumBridgedOutputPower() {
-        return maximumBridgedOutputPower;
-    }
-
-    /**
-     * 设置maximumBridgedOutputPower属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setMaximumBridgedOutputPower(BigInteger value) {
-        this.maximumBridgedOutputPower = value;
-    }
-
-    /**
-     * 获取maximumExternalResolution属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMaximumExternalResolution() {
-        return maximumExternalResolution;
-    }
-
-    /**
-     * 设置maximumExternalResolution属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMaximumExternalResolution(String value) {
-        this.maximumExternalResolution = value;
-    }
-
-    /**
-     * 获取maximumImageSize属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getMaximumImageSize() {
-        return maximumImageSize;
-    }
-
-    /**
-     * 设置maximumImageSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setMaximumImageSize(LengthDimension value) {
-        this.maximumImageSize = value;
-    }
-
-    /**
-     * 获取maximumLinearPeakExcursion属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getMaximumLinearPeakExcursion() {
-        return maximumLinearPeakExcursion;
-    }
-
-    /**
-     * 设置maximumLinearPeakExcursion属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setMaximumLinearPeakExcursion(LengthDimension value) {
-        this.maximumLinearPeakExcursion = value;
-    }
-
-    /**
-     * 获取maximumOutputPower属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMaximumOutputPower() {
-        return maximumOutputPower;
-    }
-
-    /**
-     * 设置maximumOutputPower属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMaximumOutputPower(String value) {
-        this.maximumOutputPower = value;
-    }
-
-    /**
-     * 获取maximumRange属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getMaximumRange() {
-        return maximumRange;
-    }
-
-    /**
-     * 设置maximumRange属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setMaximumRange(LengthDimension value) {
-        this.maximumRange = value;
-    }
-
-    /**
-     * 获取maximumRangeIndoors属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getMaximumRangeIndoors() {
-        return maximumRangeIndoors;
-    }
-
-    /**
-     * 设置maximumRangeIndoors属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setMaximumRangeIndoors(LengthDimension value) {
-        this.maximumRangeIndoors = value;
-    }
-
-    /**
-     * 获取maximumSampleRate属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link FrequencyDimension }
-     *     
-     */
-    public FrequencyDimension getMaximumSampleRate() {
-        return maximumSampleRate;
-    }
-
-    /**
-     * 设置maximumSampleRate属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link FrequencyDimension }
-     *     
-     */
-    public void setMaximumSampleRate(FrequencyDimension value) {
-        this.maximumSampleRate = value;
-    }
-
-    /**
-     * 获取maximumScreenDistance属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getMaximumScreenDistance() {
-        return maximumScreenDistance;
-    }
-
-    /**
-     * 设置maximumScreenDistance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setMaximumScreenDistance(LengthDimension value) {
-        this.maximumScreenDistance = value;
-    }
-
-    /**
-     * 获取maxInputSheetCapacity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getMaxInputSheetCapacity() {
-        return maxInputSheetCapacity;
-    }
-
-    /**
-     * 设置maxInputSheetCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setMaxInputSheetCapacity(BigInteger value) {
-        this.maxInputSheetCapacity = value;
-    }
-
-    /**
-     * Gets the value of the maxPrintResolutionBlackWhite property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the maxPrintResolutionBlackWhite property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMaxPrintResolutionBlackWhite().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getMaxPrintResolutionBlackWhite() {
-        if (maxPrintResolutionBlackWhite == null) {
-            maxPrintResolutionBlackWhite = new ArrayList<String>();
-        }
-        return this.maxPrintResolutionBlackWhite;
-    }
-
-    /**
-     * Gets the value of the maxPrintResolutionColor property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the maxPrintResolutionColor property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMaxPrintResolutionColor().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getMaxPrintResolutionColor() {
-        if (maxPrintResolutionColor == null) {
-            maxPrintResolutionColor = new ArrayList<String>();
-        }
-        return this.maxPrintResolutionColor;
-    }
-
-    /**
-     * 获取mediaFormat属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMediaFormat() {
-        return mediaFormat;
-    }
-
-    /**
-     * 设置mediaFormat属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMediaFormat(String value) {
-        this.mediaFormat = value;
-    }
-
-    /**
-     * 获取mediaLoadType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMediaLoadType() {
-        return mediaLoadType;
-    }
-
-    /**
-     * 设置mediaLoadType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMediaLoadType(String value) {
-        this.mediaLoadType = value;
-    }
-
-    /**
-     * Gets the value of the mediaSizeMaximum property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mediaSizeMaximum property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMediaSizeMaximum().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getMediaSizeMaximum() {
-        if (mediaSizeMaximum == null) {
-            mediaSizeMaximum = new ArrayList<String>();
-        }
-        return this.mediaSizeMaximum;
-    }
-
-    /**
-     * Gets the value of the mediaType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mediaType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMediaType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getMediaType() {
-        if (mediaType == null) {
-            mediaType = new ArrayList<String>();
-        }
-        return this.mediaType;
-    }
-
-    /**
-     * 获取memoryStorageCapacity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public MemorySizeDimension getMemoryStorageCapacity() {
-        return memoryStorageCapacity;
-    }
-
-    /**
-     * 设置memoryStorageCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public void setMemoryStorageCapacity(MemorySizeDimension value) {
-        this.memoryStorageCapacity = value;
-    }
-
-    /**
-     * 获取memoryTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMemoryTechnology() {
-        return memoryTechnology;
-    }
-
-    /**
-     * 设置memoryTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemoryTechnology(String value) {
-        this.memoryTechnology = value;
-    }
-
-    /**
-     * 获取mfgWarrantyDescriptionLabor属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMfgWarrantyDescriptionLabor() {
-        return mfgWarrantyDescriptionLabor;
-    }
-
-    /**
-     * 设置mfgWarrantyDescriptionLabor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMfgWarrantyDescriptionLabor(String value) {
-        this.mfgWarrantyDescriptionLabor = value;
-    }
-
-    /**
-     * 获取mfgWarrantyDescriptionParts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMfgWarrantyDescriptionParts() {
-        return mfgWarrantyDescriptionParts;
-    }
-
-    /**
-     * 设置mfgWarrantyDescriptionParts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMfgWarrantyDescriptionParts(String value) {
-        this.mfgWarrantyDescriptionParts = value;
-    }
-
-    /**
-     * 获取microphoneFormFactor属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMicrophoneFormFactor() {
-        return microphoneFormFactor;
-    }
-
-    /**
-     * 设置microphoneFormFactor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMicrophoneFormFactor(String value) {
-        this.microphoneFormFactor = value;
-    }
-
-    /**
-     * Gets the value of the microphoneOperationMode property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the microphoneOperationMode property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMicrophoneOperationMode().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getMicrophoneOperationMode() {
-        if (microphoneOperationMode == null) {
-            microphoneOperationMode = new ArrayList<String>();
-        }
-        return this.microphoneOperationMode;
-    }
-
-    /**
-     * 获取microphoneTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMicrophoneTechnology() {
-        return microphoneTechnology;
-    }
-
-    /**
-     * 设置microphoneTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMicrophoneTechnology(String value) {
-        this.microphoneTechnology = value;
-    }
-
-    /**
-     * 获取miniDiscSystem属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMiniDiscSystem() {
-        return miniDiscSystem;
-    }
-
-    /**
-     * 设置miniDiscSystem属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMiniDiscSystem(String value) {
-        this.miniDiscSystem = value;
-    }
-
-    /**
-     * 获取minimumImageSize属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getMinimumImageSize() {
-        return minimumImageSize;
-    }
-
-    /**
-     * 设置minimumImageSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setMinimumImageSize(LengthDimension value) {
-        this.minimumImageSize = value;
-    }
-
-    /**
-     * 获取minimumScreenDistance属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getMinimumScreenDistance() {
-        return minimumScreenDistance;
-    }
-
-    /**
-     * 设置minimumScreenDistance属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setMinimumScreenDistance(LengthDimension value) {
-        this.minimumScreenDistance = value;
-    }
-
-    /**
-     * 获取minimumSystemRequirementDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMinimumSystemRequirementDescription() {
-        return minimumSystemRequirementDescription;
-    }
-
-    /**
-     * 设置minimumSystemRequirementDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMinimumSystemRequirementDescription(String value) {
-        this.minimumSystemRequirementDescription = value;
-    }
-
-    /**
-     * 获取model属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getModel() {
-        return model;
-    }
-
-    /**
-     * 设置model属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setModel(String value) {
-        this.model = value;
-    }
-
-    /**
-     * 获取modelName属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getModelName() {
-        return modelName;
-    }
-
-    /**
-     * 设置modelName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setModelName(String value) {
-        this.modelName = value;
-    }
-
-    /**
-     * 获取modemDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getModemDescription() {
-        return modemDescription;
-    }
-
-    /**
-     * 设置modemDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setModemDescription(String value) {
-        this.modemDescription = value;
-    }
-
-    /**
-     * 获取modemInterface属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getModemInterface() {
-        return modemInterface;
-    }
-
-    /**
-     * 设置modemInterface属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setModemInterface(String value) {
-        this.modemInterface = value;
-    }
-
-    /**
-     * 获取modemType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ModemTypeValues }
-     *     
-     */
-    public ModemTypeValues getModemType() {
-        return modemType;
-    }
-
-    /**
-     * 设置modemType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ModemTypeValues }
-     *     
-     */
-    public void setModemType(ModemTypeValues value) {
-        this.modemType = value;
-    }
-
-    /**
-     * 获取monthlyDutyCycle属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMonthlyDutyCycle() {
-        return monthlyDutyCycle;
-    }
-
-    /**
-     * 设置monthlyDutyCycle属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMonthlyDutyCycle(String value) {
-        this.monthlyDutyCycle = value;
-    }
-
-    /**
-     * 获取mountingHoleDiameter属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getMountingHoleDiameter() {
-        return mountingHoleDiameter;
-    }
-
-    /**
-     * 设置mountingHoleDiameter属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setMountingHoleDiameter(LengthDimension value) {
-        this.mountingHoleDiameter = value;
-    }
-
-    /**
-     * 获取movementDetectionTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMovementDetectionTechnology() {
-        return movementDetectionTechnology;
-    }
-
-    /**
-     * 设置movementDetectionTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMovementDetectionTechnology(String value) {
-        this.movementDetectionTechnology = value;
-    }
-
-    /**
-     * Gets the value of the multilineOperation property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the multilineOperation property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMultilineOperation().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getMultilineOperation() {
-        if (multilineOperation == null) {
-            multilineOperation = new ArrayList<String>();
-        }
-        return this.multilineOperation;
-    }
-
-    /**
-     * Gets the value of the multimediaFunctionality property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the multimediaFunctionality property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMultimediaFunctionality().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getMultimediaFunctionality() {
-        if (multimediaFunctionality == null) {
-            multimediaFunctionality = new ArrayList<String>();
-        }
-        return this.multimediaFunctionality;
-    }
-
-    /**
-     * 获取navigationRoutes属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getNavigationRoutes() {
-        return navigationRoutes;
-    }
-
-    /**
-     * 设置navigationRoutes属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setNavigationRoutes(BigInteger value) {
-        this.navigationRoutes = value;
-    }
-
-    /**
-     * Gets the value of the networkingFeature property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the networkingFeature property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getNetworkingFeature().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getNetworkingFeature() {
-        if (networkingFeature == null) {
-            networkingFeature = new ArrayList<String>();
-        }
-        return this.networkingFeature;
-    }
-
-    /**
-     * 获取networkInterfaceDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getNetworkInterfaceDescription() {
-        return networkInterfaceDescription;
-    }
-
-    /**
-     * 设置networkInterfaceDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNetworkInterfaceDescription(String value) {
-        this.networkInterfaceDescription = value;
-    }
-
-    /**
-     * 获取numberOfLithiumIonCells属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getNumberOfLithiumIonCells() {
-        return numberOfLithiumIonCells;
-    }
-
-    /**
-     * 设置numberOfLithiumIonCells属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setNumberOfLithiumIonCells(BigInteger value) {
-        this.numberOfLithiumIonCells = value;
-    }
-
-    /**
-     * 获取numberOfLithiumMetalCells属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getNumberOfLithiumMetalCells() {
-        return numberOfLithiumMetalCells;
-    }
-
-    /**
-     * 设置numberOfLithiumMetalCells属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setNumberOfLithiumMetalCells(BigInteger value) {
-        this.numberOfLithiumMetalCells = value;
-    }
-
-    /**
-     * 获取numberOfPorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getNumberOfPorts() {
-        return numberOfPorts;
-    }
-
-    /**
-     * 设置numberOfPorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setNumberOfPorts(BigInteger value) {
-        this.numberOfPorts = value;
-    }
-
-    /**
-     * 获取numberOfSupportedZones属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getNumberOfSupportedZones() {
-        return numberOfSupportedZones;
-    }
-
-    /**
-     * 设置numberOfSupportedZones属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setNumberOfSupportedZones(BigInteger value) {
-        this.numberOfSupportedZones = value;
-    }
-
-    /**
-     * 获取objectiveLensDiameter属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getObjectiveLensDiameter() {
-        return objectiveLensDiameter;
-    }
-
-    /**
-     * 设置objectiveLensDiameter属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setObjectiveLensDiameter(LengthDimension value) {
-        this.objectiveLensDiameter = value;
-    }
-
-    /**
-     * 获取operatingHumidity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getOperatingHumidity() {
-        return operatingHumidity;
-    }
-
-    /**
-     * 设置operatingHumidity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOperatingHumidity(String value) {
-        this.operatingHumidity = value;
-    }
-
-    /**
-     * 获取opticalDigitalInput属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getOpticalDigitalInput() {
-        return opticalDigitalInput;
-    }
-
-    /**
-     * 设置opticalDigitalInput属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOpticalDigitalInput(String value) {
-        this.opticalDigitalInput = value;
-    }
-
-    /**
-     * 获取opticalDigitalOutput属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getOpticalDigitalOutput() {
-        return opticalDigitalOutput;
-    }
-
-    /**
-     * 设置opticalDigitalOutput属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOpticalDigitalOutput(String value) {
-        this.opticalDigitalOutput = value;
-    }
-
-    /**
-     * 获取opticalSensorInterpolatedResolution属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public PixelDimension getOpticalSensorInterpolatedResolution() {
-        return opticalSensorInterpolatedResolution;
-    }
-
-    /**
-     * 设置opticalSensorInterpolatedResolution属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public void setOpticalSensorInterpolatedResolution(PixelDimension value) {
-        this.opticalSensorInterpolatedResolution = value;
-    }
-
-    /**
-     * 获取opticalSensorResolution属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public PixelDimension getOpticalSensorResolution() {
-        return opticalSensorResolution;
-    }
-
-    /**
-     * 设置opticalSensorResolution属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public void setOpticalSensorResolution(PixelDimension value) {
-        this.opticalSensorResolution = value;
-    }
-
-    /**
-     * Gets the value of the opticalStorageDevice property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the opticalStorageDevice property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getOpticalStorageDevice().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getOpticalStorageDevice() {
-        if (opticalStorageDevice == null) {
-            opticalStorageDevice = new ArrayList<String>();
-        }
-        return this.opticalStorageDevice;
-    }
-
-    /**
-     * 获取opticalStorageInstalledQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getOpticalStorageInstalledQuantity() {
-        return opticalStorageInstalledQuantity;
-    }
-
-    /**
-     * 设置opticalStorageInstalledQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setOpticalStorageInstalledQuantity(BigInteger value) {
-        this.opticalStorageInstalledQuantity = value;
-    }
-
-    /**
-     * 获取opticalStorageReadSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getOpticalStorageReadSpeed() {
-        return opticalStorageReadSpeed;
-    }
-
-    /**
-     * 设置opticalStorageReadSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOpticalStorageReadSpeed(String value) {
-        this.opticalStorageReadSpeed = value;
-    }
-
-    /**
-     * 获取opticalStorageRewriteSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getOpticalStorageRewriteSpeed() {
-        return opticalStorageRewriteSpeed;
-    }
-
-    /**
-     * 设置opticalStorageRewriteSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOpticalStorageRewriteSpeed(String value) {
-        this.opticalStorageRewriteSpeed = value;
-    }
-
-    /**
-     * 获取opticalStorageSecondaryReadSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getOpticalStorageSecondaryReadSpeed() {
-        return opticalStorageSecondaryReadSpeed;
-    }
-
-    /**
-     * 设置opticalStorageSecondaryReadSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOpticalStorageSecondaryReadSpeed(String value) {
-        this.opticalStorageSecondaryReadSpeed = value;
-    }
-
-    /**
-     * 获取opticalStorageSecondaryRewriteSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getOpticalStorageSecondaryRewriteSpeed() {
-        return opticalStorageSecondaryRewriteSpeed;
-    }
-
-    /**
-     * 设置opticalStorageSecondaryRewriteSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOpticalStorageSecondaryRewriteSpeed(String value) {
-        this.opticalStorageSecondaryRewriteSpeed = value;
-    }
-
-    /**
-     * Gets the value of the opticalStorageSecondaryType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the opticalStorageSecondaryType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getOpticalStorageSecondaryType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getOpticalStorageSecondaryType() {
-        if (opticalStorageSecondaryType == null) {
-            opticalStorageSecondaryType = new ArrayList<String>();
-        }
-        return this.opticalStorageSecondaryType;
-    }
-
-    /**
-     * 获取opticalStorageSecondaryWriteSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getOpticalStorageSecondaryWriteSpeed() {
-        return opticalStorageSecondaryWriteSpeed;
-    }
-
-    /**
-     * 设置opticalStorageSecondaryWriteSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOpticalStorageSecondaryWriteSpeed(String value) {
-        this.opticalStorageSecondaryWriteSpeed = value;
-    }
-
-    /**
-     * 获取opticalStorageWriteSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getOpticalStorageWriteSpeed() {
-        return opticalStorageWriteSpeed;
-    }
-
-    /**
-     * 设置opticalStorageWriteSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setOpticalStorageWriteSpeed(String value) {
-        this.opticalStorageWriteSpeed = value;
-    }
-
-    /**
-     * 获取outputChannelQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getOutputChannelQuantity() {
-        return outputChannelQuantity;
-    }
-
-    /**
-     * 设置outputChannelQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setOutputChannelQuantity(BigInteger value) {
-        this.outputChannelQuantity = value;
-    }
-
-    /**
-     * Gets the value of the outputConnection property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the outputConnection property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getOutputConnection().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Connection }
-     * 
-     * 
-     */
-    public List<Connection> getOutputConnection() {
-        if (outputConnection == null) {
-            outputConnection = new ArrayList<Connection>();
-        }
-        return this.outputConnection;
-    }
-
-    /**
-     * 获取outputConnectorQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getOutputConnectorQuantity() {
-        return outputConnectorQuantity;
-    }
-
-    /**
-     * 设置outputConnectorQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setOutputConnectorQuantity(BigInteger value) {
-        this.outputConnectorQuantity = value;
-    }
-
-    /**
-     * Gets the value of the outputConnectorType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the outputConnectorType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getOutputConnectorType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getOutputConnectorType() {
-        if (outputConnectorType == null) {
-            outputConnectorType = new ArrayList<String>();
-        }
-        return this.outputConnectorType;
-    }
-
-    /**
-     * 获取outputPower属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getOutputPower() {
-        return outputPower;
-    }
-
-    /**
-     * 设置outputPower属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setOutputPower(BigInteger value) {
-        this.outputPower = value;
-    }
-
-    /**
-     * 获取outputWattage属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getOutputWattage() {
-        return outputWattage;
-    }
-
-    /**
-     * 设置outputWattage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setOutputWattage(BigInteger value) {
-        this.outputWattage = value;
-    }
-
-    /**
-     * 获取packageContentType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPackageContentType() {
-        return packageContentType;
-    }
-
-    /**
-     * 设置packageContentType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPackageContentType(String value) {
-        this.packageContentType = value;
-    }
-
-    /**
-     * 获取packageTypeName属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPackageTypeName() {
-        return packageTypeName;
-    }
-
-    /**
-     * 设置packageTypeName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPackageTypeName(String value) {
-        this.packageTypeName = value;
-    }
-
-    /**
-     * 获取pcConnectionAvailable属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPCConnectionAvailable() {
-        return pcConnectionAvailable;
-    }
-
-    /**
-     * 设置pcConnectionAvailable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPCConnectionAvailable(String value) {
-        this.pcConnectionAvailable = value;
-    }
-
-    /**
-     * 获取phoneBaseDepth属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getPhoneBaseDepth() {
-        return phoneBaseDepth;
-    }
-
-    /**
-     * 设置phoneBaseDepth属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setPhoneBaseDepth(LengthDimension value) {
-        this.phoneBaseDepth = value;
-    }
-
-    /**
-     * 获取phoneBaseHeight属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getPhoneBaseHeight() {
-        return phoneBaseHeight;
-    }
-
-    /**
-     * 设置phoneBaseHeight属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setPhoneBaseHeight(LengthDimension value) {
-        this.phoneBaseHeight = value;
-    }
-
-    /**
-     * 获取phoneBaseWeight属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link WeightDimension }
-     *     
-     */
-    public WeightDimension getPhoneBaseWeight() {
-        return phoneBaseWeight;
-    }
-
-    /**
-     * 设置phoneBaseWeight属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WeightDimension }
-     *     
-     */
-    public void setPhoneBaseWeight(WeightDimension value) {
-        this.phoneBaseWeight = value;
-    }
-
-    /**
-     * 获取phoneBaseWidth属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getPhoneBaseWidth() {
-        return phoneBaseWidth;
-    }
-
-    /**
-     * 设置phoneBaseWidth属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setPhoneBaseWidth(LengthDimension value) {
-        this.phoneBaseWidth = value;
-    }
-
-    /**
-     * 获取portedBoxVolume属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link CE.PortedBoxVolume }
-     *     
-     */
-    public CE.PortedBoxVolume getPortedBoxVolume() {
-        return portedBoxVolume;
-    }
-
-    /**
-     * 设置portedBoxVolume属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CE.PortedBoxVolume }
-     *     
-     */
-    public void setPortedBoxVolume(CE.PortedBoxVolume value) {
-        this.portedBoxVolume = value;
-    }
-
-    /**
-     * 获取powerAmplifierClass属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPowerAmplifierClass() {
-        return powerAmplifierClass;
-    }
-
-    /**
-     * 设置powerAmplifierClass属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPowerAmplifierClass(String value) {
-        this.powerAmplifierClass = value;
-    }
-
-    /**
-     * 获取powerDevice属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPowerDevice() {
-        return powerDevice;
-    }
-
-    /**
-     * 设置powerDevice属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPowerDevice(String value) {
-        this.powerDevice = value;
-    }
-
-    /**
-     * 获取powerGain属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link VoltageIntegerDimension }
-     *     
-     */
-    public VoltageIntegerDimension getPowerGain() {
-        return powerGain;
-    }
-
-    /**
-     * 设置powerGain属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VoltageIntegerDimension }
-     *     
-     */
-    public void setPowerGain(VoltageIntegerDimension value) {
-        this.powerGain = value;
-    }
-
-    /**
-     * 获取powerLoadRating属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPowerLoadRating() {
-        return powerLoadRating;
-    }
-
-    /**
-     * 设置powerLoadRating属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPowerLoadRating(String value) {
-        this.powerLoadRating = value;
-    }
-
-    /**
-     * 获取preampOutputChannels属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getPreampOutputChannels() {
-        return preampOutputChannels;
-    }
-
-    /**
-     * 设置preampOutputChannels属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setPreampOutputChannels(BigInteger value) {
-        this.preampOutputChannels = value;
-    }
-
-    /**
-     * 获取presetChannelQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getPresetChannelQuantity() {
-        return presetChannelQuantity;
-    }
-
-    /**
-     * 设置presetChannelQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setPresetChannelQuantity(BigInteger value) {
-        this.presetChannelQuantity = value;
-    }
-
-    /**
-     * 获取printerInterface属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPrinterInterface() {
-        return printerInterface;
-    }
-
-    /**
-     * 设置printerInterface属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPrinterInterface(String value) {
-        this.printerInterface = value;
-    }
-
-    /**
-     * 获取printerOutput属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPrinterOutput() {
-        return printerOutput;
-    }
-
-    /**
-     * 设置printerOutput属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPrinterOutput(String value) {
-        this.printerOutput = value;
-    }
-
-    /**
-     * 获取printerResolutionBWHorizontalMax属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public PixelDimension getPrinterResolutionBWHorizontalMax() {
-        return printerResolutionBWHorizontalMax;
-    }
-
-    /**
-     * 设置printerResolutionBWHorizontalMax属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public void setPrinterResolutionBWHorizontalMax(PixelDimension value) {
-        this.printerResolutionBWHorizontalMax = value;
-    }
-
-    /**
-     * 获取printerResolutionBWVerticalMax属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public PixelDimension getPrinterResolutionBWVerticalMax() {
-        return printerResolutionBWVerticalMax;
-    }
-
-    /**
-     * 设置printerResolutionBWVerticalMax属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public void setPrinterResolutionBWVerticalMax(PixelDimension value) {
-        this.printerResolutionBWVerticalMax = value;
-    }
-
-    /**
-     * 获取printerResolutionColorHorizontalMax属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public PixelDimension getPrinterResolutionColorHorizontalMax() {
-        return printerResolutionColorHorizontalMax;
-    }
-
-    /**
-     * 设置printerResolutionColorHorizontalMax属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public void setPrinterResolutionColorHorizontalMax(PixelDimension value) {
-        this.printerResolutionColorHorizontalMax = value;
-    }
-
-    /**
-     * 获取printerResolutionColorVerticalMax属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public PixelDimension getPrinterResolutionColorVerticalMax() {
-        return printerResolutionColorVerticalMax;
-    }
-
-    /**
-     * 设置printerResolutionColorVerticalMax属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public void setPrinterResolutionColorVerticalMax(PixelDimension value) {
-        this.printerResolutionColorVerticalMax = value;
-    }
-
-    /**
-     * 获取printerTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPrinterTechnology() {
-        return printerTechnology;
-    }
-
-    /**
-     * 设置printerTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPrinterTechnology(String value) {
-        this.printerTechnology = value;
-    }
-
-    /**
-     * 获取processorDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getProcessorDescription() {
-        return processorDescription;
-    }
-
-    /**
-     * 设置processorDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setProcessorDescription(String value) {
-        this.processorDescription = value;
-    }
-
-    /**
-     * 获取processorMaximum属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getProcessorMaximum() {
-        return processorMaximum;
-    }
-
-    /**
-     * 设置processorMaximum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setProcessorMaximum(BigInteger value) {
-        this.processorMaximum = value;
-    }
-
-    /**
-     * 获取processorModelNumber属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getProcessorModelNumber() {
-        return processorModelNumber;
-    }
-
-    /**
-     * 设置processorModelNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setProcessorModelNumber(String value) {
-        this.processorModelNumber = value;
-    }
-
-    /**
-     * 获取processorUpgrade属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getProcessorUpgrade() {
-        return processorUpgrade;
-    }
-
-    /**
-     * 设置processorUpgrade属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setProcessorUpgrade(String value) {
-        this.processorUpgrade = value;
-    }
-
-    /**
-     * Gets the value of the programmability property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the programmability property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProgrammability().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getProgrammability() {
-        if (programmability == null) {
-            programmability = new ArrayList<String>();
-        }
-        return this.programmability;
-    }
-
-    /**
-     * 获取qtsTotalQFactor属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getQtsTotalQFactor() {
-        return qtsTotalQFactor;
-    }
-
-    /**
-     * 设置qtsTotalQFactor属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setQtsTotalQFactor(BigDecimal value) {
-        this.qtsTotalQFactor = value;
-    }
-
-    /**
-     * 获取radioBandsSupported属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRadioBandsSupported() {
-        return radioBandsSupported;
-    }
-
-    /**
-     * 设置radioBandsSupported属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRadioBandsSupported(String value) {
-        this.radioBandsSupported = value;
-    }
-
-    /**
-     * 获取radioChannels属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRadioChannels() {
-        return radioChannels;
-    }
-
-    /**
-     * 设置radioChannels属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRadioChannels(String value) {
-        this.radioChannels = value;
-    }
-
-    /**
-     * Gets the value of the raidLevel property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the raidLevel property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRAIDLevel().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getRAIDLevel() {
-        if (raidLevel == null) {
-            raidLevel = new ArrayList<String>();
-        }
-        return this.raidLevel;
-    }
-
-    /**
-     * 获取ramMemoryInstalledSize属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public MemorySizeDimension getRAMMemoryInstalledSize() {
-        return ramMemoryInstalledSize;
-    }
-
-    /**
-     * 设置ramMemoryInstalledSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public void setRAMMemoryInstalledSize(MemorySizeDimension value) {
-        this.ramMemoryInstalledSize = value;
-    }
-
-    /**
-     * 获取ramMemoryMaximumSize属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public MemorySizeDimension getRAMMemoryMaximumSize() {
-        return ramMemoryMaximumSize;
-    }
-
-    /**
-     * 设置ramMemoryMaximumSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public void setRAMMemoryMaximumSize(MemorySizeDimension value) {
-        this.ramMemoryMaximumSize = value;
-    }
-
-    /**
-     * 获取ramMemoryTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRAMMemoryTechnology() {
-        return ramMemoryTechnology;
-    }
-
-    /**
-     * 设置ramMemoryTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRAMMemoryTechnology(String value) {
-        this.ramMemoryTechnology = value;
-    }
-
-    /**
-     * 获取rangefinderType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRangefinderType() {
-        return rangefinderType;
-    }
-
-    /**
-     * 设置rangefinderType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRangefinderType(String value) {
-        this.rangefinderType = value;
-    }
-
-    /**
-     * 获取receiverDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getReceiverDescription() {
-        return receiverDescription;
-    }
-
-    /**
-     * 设置receiverDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setReceiverDescription(String value) {
-        this.receiverDescription = value;
-    }
-
-    /**
-     * 获取recordingCapacity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public MemorySizeDimension getRecordingCapacity() {
-        return recordingCapacity;
-    }
-
-    /**
-     * 设置recordingCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public void setRecordingCapacity(MemorySizeDimension value) {
-        this.recordingCapacity = value;
-    }
-
-    /**
-     * Gets the value of the remoteControlAudioControls property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the remoteControlAudioControls property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRemoteControlAudioControls().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getRemoteControlAudioControls() {
-        if (remoteControlAudioControls == null) {
-            remoteControlAudioControls = new ArrayList<String>();
-        }
-        return this.remoteControlAudioControls;
-    }
-
-    /**
-     * 获取remoteControlDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRemoteControlDescription() {
-        return remoteControlDescription;
-    }
-
-    /**
-     * 设置remoteControlDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRemoteControlDescription(String value) {
-        this.remoteControlDescription = value;
-    }
-
-    /**
-     * 获取remoteControlTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRemoteControlTechnology() {
-        return remoteControlTechnology;
-    }
-
-    /**
-     * 设置remoteControlTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRemoteControlTechnology(String value) {
-        this.remoteControlTechnology = value;
-    }
-
-    /**
-     * Gets the value of the remoteManagementProtocol property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the remoteManagementProtocol property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRemoteManagementProtocol().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getRemoteManagementProtocol() {
-        if (remoteManagementProtocol == null) {
-            remoteManagementProtocol = new ArrayList<String>();
-        }
-        return this.remoteManagementProtocol;
-    }
-
-    /**
-     * 获取removableMediaCapacity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public MemorySizeDimension getRemovableMediaCapacity() {
-        return removableMediaCapacity;
-    }
-
-    /**
-     * 设置removableMediaCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public void setRemovableMediaCapacity(MemorySizeDimension value) {
-        this.removableMediaCapacity = value;
-    }
-
-    /**
-     * 获取removableMemory属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRemovableMemory() {
-        return removableMemory;
-    }
-
-    /**
-     * 设置removableMemory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRemovableMemory(String value) {
-        this.removableMemory = value;
-    }
-
-    /**
-     * 获取removableStorage属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRemovableStorage() {
-        return removableStorage;
-    }
-
-    /**
-     * 设置removableStorage属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRemovableStorage(String value) {
-        this.removableStorage = value;
-    }
-
-    /**
-     * 获取removableStorageInterface属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRemovableStorageInterface() {
-        return removableStorageInterface;
-    }
-
-    /**
-     * 设置removableStorageInterface属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRemovableStorageInterface(String value) {
-        this.removableStorageInterface = value;
-    }
-
-    /**
-     * 获取removableStorageNativeCapacity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public MemorySizeDimension getRemovableStorageNativeCapacity() {
-        return removableStorageNativeCapacity;
-    }
-
-    /**
-     * 设置removableStorageNativeCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MemorySizeDimension }
-     *     
-     */
-    public void setRemovableStorageNativeCapacity(MemorySizeDimension value) {
-        this.removableStorageNativeCapacity = value;
-    }
-
-    /**
-     * 获取responseTime属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link TimeDimension }
-     *     
-     */
-    public TimeDimension getResponseTime() {
-        return responseTime;
-    }
-
-    /**
-     * 设置responseTime属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeDimension }
-     *     
-     */
-    public void setResponseTime(TimeDimension value) {
-        this.responseTime = value;
-    }
-
-    /**
-     * 获取rightConnectorGender属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRightConnectorGender() {
-        return rightConnectorGender;
-    }
-
-    /**
-     * 设置rightConnectorGender属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRightConnectorGender(String value) {
-        this.rightConnectorGender = value;
-    }
-
-    /**
-     * Gets the value of the rightConnectorType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rightConnectorType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRightConnectorType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getRightConnectorType() {
-        if (rightConnectorType == null) {
-            rightConnectorType = new ArrayList<String>();
-        }
-        return this.rightConnectorType;
-    }
-
-    /**
-     * Gets the value of the routingProtocol property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the routingProtocol property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRoutingProtocol().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getRoutingProtocol() {
-        if (routingProtocol == null) {
-            routingProtocol = new ArrayList<String>();
-        }
-        return this.routingProtocol;
-    }
-
-    /**
-     * Gets the value of the satelliteServiceDescription property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the satelliteServiceDescription property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSatelliteServiceDescription().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getSatelliteServiceDescription() {
-        if (satelliteServiceDescription == null) {
-            satelliteServiceDescription = new ArrayList<String>();
-        }
-        return this.satelliteServiceDescription;
-    }
-
-    /**
-     * Gets the value of the sbas property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sbas property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSBAS().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getSBAS() {
-        if (sbas == null) {
-            sbas = new ArrayList<String>();
-        }
-        return this.sbas;
-    }
-
-    /**
-     * 获取scanElementType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getScanElementType() {
-        return scanElementType;
-    }
-
-    /**
-     * 设置scanElementType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setScanElementType(String value) {
-        this.scanElementType = value;
-    }
-
-    /**
-     * 获取scannerInterface属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getScannerInterface() {
-        return scannerInterface;
-    }
-
-    /**
-     * 设置scannerInterface属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setScannerInterface(String value) {
-        this.scannerInterface = value;
-    }
-
-    /**
-     * 获取scannerType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getScannerType() {
-        return scannerType;
-    }
-
-    /**
-     * 设置scannerType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setScannerType(String value) {
-        this.scannerType = value;
-    }
-
-    /**
-     * 获取scsiSignalingType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSCSISignalingType() {
-        return scsiSignalingType;
-    }
-
-    /**
-     * 设置scsiSignalingType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSCSISignalingType(String value) {
-        this.scsiSignalingType = value;
-    }
-
-    /**
-     * 获取sealedBoxVolume属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link CE.SealedBoxVolume }
-     *     
-     */
-    public CE.SealedBoxVolume getSealedBoxVolume() {
-        return sealedBoxVolume;
-    }
-
-    /**
-     * 设置sealedBoxVolume属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CE.SealedBoxVolume }
-     *     
-     */
-    public void setSealedBoxVolume(CE.SealedBoxVolume value) {
-        this.sealedBoxVolume = value;
-    }
-
-    /**
-     * Gets the value of the searchSpeed property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the searchSpeed property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSearchSpeed().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getSearchSpeed() {
-        if (searchSpeed == null) {
-            searchSpeed = new ArrayList<String>();
-        }
-        return this.searchSpeed;
-    }
-
-    /**
-     * 获取secondaryCache属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getSecondaryCache() {
-        return secondaryCache;
-    }
-
-    /**
-     * 设置secondaryCache属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setSecondaryCache(BigInteger value) {
-        this.secondaryCache = value;
-    }
-
-    /**
-     * 获取sellerWarrantyDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSellerWarrantyDescription() {
-        return sellerWarrantyDescription;
-    }
-
-    /**
-     * 设置sellerWarrantyDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSellerWarrantyDescription(String value) {
-        this.sellerWarrantyDescription = value;
-    }
-
-    /**
-     * 获取signalToNoiseRatio属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getSignalToNoiseRatio() {
-        return signalToNoiseRatio;
-    }
-
-    /**
-     * 设置signalToNoiseRatio属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setSignalToNoiseRatio(BigDecimal value) {
-        this.signalToNoiseRatio = value;
-    }
-
-    /**
-     * 获取size属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSize() {
-        return size;
-    }
-
-    /**
-     * 设置size属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSize(String value) {
-        this.size = value;
-    }
-
-    /**
-     * 获取speakerAmplificationType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSpeakerAmplificationType() {
-        return speakerAmplificationType;
-    }
-
-    /**
-     * 设置speakerAmplificationType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSpeakerAmplificationType(String value) {
-        this.speakerAmplificationType = value;
-    }
-
-    /**
-     * 获取speakerConnectivity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSpeakerConnectivity() {
-        return speakerConnectivity;
-    }
-
-    /**
-     * 设置speakerConnectivity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSpeakerConnectivity(String value) {
-        this.speakerConnectivity = value;
-    }
-
-    /**
-     * 获取speakerDriverMaterial属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSpeakerDriverMaterial() {
-        return speakerDriverMaterial;
-    }
-
-    /**
-     * 设置speakerDriverMaterial属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSpeakerDriverMaterial(String value) {
-        this.speakerDriverMaterial = value;
-    }
-
-    /**
-     * Gets the value of the speakersCrossoverChannelQuantity property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the speakersCrossoverChannelQuantity property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSpeakersCrossoverChannelQuantity().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getSpeakersCrossoverChannelQuantity() {
-        if (speakersCrossoverChannelQuantity == null) {
-            speakersCrossoverChannelQuantity = new ArrayList<String>();
-        }
-        return this.speakersCrossoverChannelQuantity;
-    }
-
-    /**
-     * 获取speakersIncludedDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSpeakersIncludedDescription() {
-        return speakersIncludedDescription;
-    }
-
-    /**
-     * 设置speakersIncludedDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSpeakersIncludedDescription(String value) {
-        this.speakersIncludedDescription = value;
-    }
-
-    /**
-     * 获取speakersMaximumOutputPower属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getSpeakersMaximumOutputPower() {
-        return speakersMaximumOutputPower;
-    }
-
-    /**
-     * 设置speakersMaximumOutputPower属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setSpeakersMaximumOutputPower(BigDecimal value) {
-        this.speakersMaximumOutputPower = value;
-    }
-
-    /**
-     * 获取speakersNominalOutputPower属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getSpeakersNominalOutputPower() {
-        return speakersNominalOutputPower;
-    }
-
-    /**
-     * 设置speakersNominalOutputPower属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setSpeakersNominalOutputPower(BigDecimal value) {
-        this.speakersNominalOutputPower = value;
-    }
-
-    /**
-     * 获取speakersResponseBandwidth属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSpeakersResponseBandwidth() {
-        return speakersResponseBandwidth;
-    }
-
-    /**
-     * 设置speakersResponseBandwidth属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSpeakersResponseBandwidth(String value) {
-        this.speakersResponseBandwidth = value;
-    }
-
-    /**
-     * 获取speakerSystemClass属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSpeakerSystemClass() {
-        return speakerSystemClass;
-    }
-
-    /**
-     * 设置speakerSystemClass属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSpeakerSystemClass(String value) {
-        this.speakerSystemClass = value;
-    }
-
-    /**
-     * 获取speakerType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSpeakerType() {
-        return speakerType;
-    }
-
-    /**
-     * 设置speakerType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSpeakerType(String value) {
-        this.speakerType = value;
-    }
-
-    /**
-     * Gets the value of the specialFeatures property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the specialFeatures property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSpecialFeatures().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getSpecialFeatures() {
-        if (specialFeatures == null) {
-            specialFeatures = new ArrayList<String>();
-        }
-        return this.specialFeatures;
-    }
-
-    /**
-     * Gets the value of the specificationMet property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the specificationMet property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSpecificationMet().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getSpecificationMet() {
-        if (specificationMet == null) {
-            specificationMet = new ArrayList<String>();
-        }
-        return this.specificationMet;
-    }
-
-    /**
-     * 获取specificUses属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSpecificUses() {
-        return specificUses;
-    }
-
-    /**
-     * 设置specificUses属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSpecificUses(String value) {
-        this.specificUses = value;
-    }
-
-    /**
-     * 获取ssdDriveArchitechture属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSSDDriveArchitechture() {
-        return ssdDriveArchitechture;
-    }
-
-    /**
-     * 设置ssdDriveArchitechture属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSSDDriveArchitechture(String value) {
-        this.ssdDriveArchitechture = value;
-    }
-
-    /**
-     * 获取standardInputSheetCapacity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getStandardInputSheetCapacity() {
-        return standardInputSheetCapacity;
-    }
-
-    /**
-     * 设置standardInputSheetCapacity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setStandardInputSheetCapacity(BigInteger value) {
-        this.standardInputSheetCapacity = value;
-    }
-
-    /**
-     * 获取storageController属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getStorageController() {
-        return storageController;
-    }
-
-    /**
-     * 设置storageController属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStorageController(String value) {
-        this.storageController = value;
-    }
-
-    /**
-     * 获取storageControllerInterface属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getStorageControllerInterface() {
-        return storageControllerInterface;
-    }
-
-    /**
-     * 设置storageControllerInterface属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStorageControllerInterface(String value) {
-        this.storageControllerInterface = value;
-    }
-
-    /**
-     * 获取storageHumidity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getStorageHumidity() {
-        return storageHumidity;
-    }
-
-    /**
-     * 设置storageHumidity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStorageHumidity(String value) {
-        this.storageHumidity = value;
-    }
-
-    /**
-     * 获取storageInterface属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getStorageInterface() {
-        return storageInterface;
-    }
-
-    /**
-     * 设置storageInterface属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStorageInterface(String value) {
-        this.storageInterface = value;
-    }
-
-    /**
-     * 获取styleName属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getStyleName() {
-        return styleName;
-    }
-
-    /**
-     * 设置styleName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStyleName(String value) {
-        this.styleName = value;
-    }
-
-    /**
-     * Gets the value of the supportedAudioFormat property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the supportedAudioFormat property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSupportedAudioFormat().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getSupportedAudioFormat() {
-        if (supportedAudioFormat == null) {
-            supportedAudioFormat = new ArrayList<String>();
-        }
-        return this.supportedAudioFormat;
-    }
-
-    /**
-     * Gets the value of the supportedDevices property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the supportedDevices property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSupportedDevices().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getSupportedDevices() {
-        if (supportedDevices == null) {
-            supportedDevices = new ArrayList<String>();
-        }
-        return this.supportedDevices;
-    }
-
-    /**
-     * 获取supportedDevicesQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getSupportedDevicesQuantity() {
-        return supportedDevicesQuantity;
-    }
-
-    /**
-     * 设置supportedDevicesQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setSupportedDevicesQuantity(BigInteger value) {
-        this.supportedDevicesQuantity = value;
-    }
-
-    /**
-     * Gets the value of the supportedImageFormat property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the supportedImageFormat property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSupportedImageFormat().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getSupportedImageFormat() {
-        if (supportedImageFormat == null) {
-            supportedImageFormat = new ArrayList<String>();
-        }
-        return this.supportedImageFormat;
-    }
-
-    /**
-     * Gets the value of the supportedImageType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the supportedImageType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSupportedImageType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getSupportedImageType() {
-        if (supportedImageType == null) {
-            supportedImageType = new ArrayList<String>();
-        }
-        return this.supportedImageType;
-    }
-
-    /**
-     * 获取supportedMediaSize属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSupportedMediaSize() {
-        return supportedMediaSize;
-    }
-
-    /**
-     * 设置supportedMediaSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSupportedMediaSize(String value) {
-        this.supportedMediaSize = value;
-    }
-
-    /**
-     * 获取supportedMotherboard属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSupportedMotherboard() {
-        return supportedMotherboard;
-    }
-
-    /**
-     * 设置supportedMotherboard属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSupportedMotherboard(String value) {
-        this.supportedMotherboard = value;
-    }
-
-    /**
-     * Gets the value of the supportedStandards property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the supportedStandards property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSupportedStandards().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getSupportedStandards() {
-        if (supportedStandards == null) {
-            supportedStandards = new ArrayList<String>();
-        }
-        return this.supportedStandards;
-    }
-
-    /**
-     * 获取surgeSuppression属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSurgeSuppression() {
-        return surgeSuppression;
-    }
-
-    /**
-     * 设置surgeSuppression属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSurgeSuppression(String value) {
-        this.surgeSuppression = value;
-    }
-
-    /**
-     * 获取surroundSoundChannels属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSurroundSoundChannels() {
-        return surroundSoundChannels;
-    }
-
-    /**
-     * 设置surroundSoundChannels属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSurroundSoundChannels(String value) {
-        this.surroundSoundChannels = value;
-    }
-
-    /**
-     * Gets the value of the surroundSoundEffects property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the surroundSoundEffects property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSurroundSoundEffects().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getSurroundSoundEffects() {
-        if (surroundSoundEffects == null) {
-            surroundSoundEffects = new ArrayList<String>();
-        }
-        return this.surroundSoundEffects;
-    }
-
-    /**
-     * Gets the value of the switchingProtocol property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the switchingProtocol property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getSwitchingProtocol().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getSwitchingProtocol() {
-        if (switchingProtocol == null) {
-            switchingProtocol = new ArrayList<String>();
-        }
-        return this.switchingProtocol;
-    }
-
-    /**
-     * 获取systemBusSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getSystemBusSpeed() {
-        return systemBusSpeed;
-    }
-
-    /**
-     * 设置systemBusSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setSystemBusSpeed(BigDecimal value) {
-        this.systemBusSpeed = value;
-    }
-
-    /**
-     * 获取talkRangeMaximum属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getTalkRangeMaximum() {
-        return talkRangeMaximum;
-    }
-
-    /**
-     * 设置talkRangeMaximum属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setTalkRangeMaximum(LengthDimension value) {
-        this.talkRangeMaximum = value;
-    }
-
-    /**
-     * 获取tapeLength属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link TimeDimension }
-     *     
-     */
-    public TimeDimension getTapeLength() {
-        return tapeLength;
-    }
-
-    /**
-     * 设置tapeLength属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TimeDimension }
-     *     
-     */
-    public void setTapeLength(TimeDimension value) {
-        this.tapeLength = value;
-    }
-
-    /**
-     * 获取televisionInterface属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTelevisionInterface() {
-        return televisionInterface;
-    }
-
-    /**
-     * 设置televisionInterface属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTelevisionInterface(String value) {
-        this.televisionInterface = value;
-    }
-
-    /**
-     * 获取televisionPCInterfaceType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTelevisionPCInterfaceType() {
-        return televisionPCInterfaceType;
-    }
-
-    /**
-     * 设置televisionPCInterfaceType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTelevisionPCInterfaceType(String value) {
-        this.televisionPCInterfaceType = value;
-    }
-
-    /**
-     * 获取temperatureRating属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTemperatureRating() {
-        return temperatureRating;
-    }
-
-    /**
-     * 设置temperatureRating属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTemperatureRating(String value) {
-        this.temperatureRating = value;
-    }
-
-    /**
-     * 获取totalHarmonicDistortion属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTotalHarmonicDistortion() {
-        return totalHarmonicDistortion;
-    }
-
-    /**
-     * 设置totalHarmonicDistortion属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTotalHarmonicDistortion(String value) {
-        this.totalHarmonicDistortion = value;
-    }
-
-    /**
-     * 获取tracklogPoints属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTracklogPoints() {
-        return tracklogPoints;
-    }
-
-    /**
-     * 设置tracklogPoints属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTracklogPoints(BigInteger value) {
-        this.tracklogPoints = value;
-    }
-
-    /**
-     * 获取tracks属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTracks() {
-        return tracks;
-    }
-
-    /**
-     * 设置tracks属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTracks(BigInteger value) {
-        this.tracks = value;
-    }
-
-    /**
-     * Gets the value of the transportProtocol property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the transportProtocol property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTransportProtocol().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getTransportProtocol() {
-        if (transportProtocol == null) {
-            transportProtocol = new ArrayList<String>();
-        }
-        return this.transportProtocol;
-    }
-
-    /**
-     * 获取tuner属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getTuner() {
-        return tuner;
-    }
-
-    /**
-     * 设置tuner属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setTuner(String value) {
-        this.tuner = value;
-    }
-
-    /**
-     * Gets the value of the tunerTechnology property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tunerTechnology property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTunerTechnology().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getTunerTechnology() {
-        if (tunerTechnology == null) {
-            tunerTechnology = new ArrayList<String>();
-        }
-        return this.tunerTechnology;
-    }
-
-    /**
-     * 获取tvTunerSecondaryAudioProgram属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isTVTunerSecondaryAudioProgram() {
-        return tvTunerSecondaryAudioProgram;
-    }
-
-    /**
-     * 设置tvTunerSecondaryAudioProgram属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setTVTunerSecondaryAudioProgram(Boolean value) {
-        this.tvTunerSecondaryAudioProgram = value;
-    }
-
-    /**
-     * 获取upsTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getUPSTechnology() {
-        return upsTechnology;
-    }
-
-    /**
-     * 设置upsTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUPSTechnology(String value) {
-        this.upsTechnology = value;
-    }
-
-    /**
-     * Gets the value of the vcrType property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the vcrType property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVCRType().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getVCRType() {
-        if (vcrType == null) {
-            vcrType = new ArrayList<String>();
-        }
-        return this.vcrType;
-    }
-
-    /**
-     * 获取verticalResolution属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public PixelDimension getVerticalResolution() {
-        return verticalResolution;
-    }
-
-    /**
-     * 设置verticalResolution属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public void setVerticalResolution(PixelDimension value) {
-        this.verticalResolution = value;
-    }
-
-    /**
-     * Gets the value of the videoCaptureFormat property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the videoCaptureFormat property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVideoCaptureFormat().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getVideoCaptureFormat() {
-        if (videoCaptureFormat == null) {
-            videoCaptureFormat = new ArrayList<String>();
-        }
-        return this.videoCaptureFormat;
-    }
-
-    /**
-     * Gets the value of the videoCaptureResolution property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the videoCaptureResolution property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVideoCaptureResolution().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getVideoCaptureResolution() {
-        if (videoCaptureResolution == null) {
-            videoCaptureResolution = new ArrayList<String>();
-        }
-        return this.videoCaptureResolution;
-    }
-
-    /**
-     * 获取videoHeadQuantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getVideoHeadQuantity() {
-        return videoHeadQuantity;
-    }
-
-    /**
-     * 设置videoHeadQuantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setVideoHeadQuantity(BigInteger value) {
-        this.videoHeadQuantity = value;
-    }
-
-    /**
-     * Gets the value of the videoInput property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the videoInput property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVideoInput().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getVideoInput() {
-        if (videoInput == null) {
-            videoInput = new ArrayList<String>();
-        }
-        return this.videoInput;
-    }
-
-    /**
-     * Gets the value of the videoInputDigitalStandard property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the videoInputDigitalStandard property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVideoInputDigitalStandard().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getVideoInputDigitalStandard() {
-        if (videoInputDigitalStandard == null) {
-            videoInputDigitalStandard = new ArrayList<String>();
-        }
-        return this.videoInputDigitalStandard;
-    }
-
-    /**
-     * Gets the value of the videoInputFormat property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the videoInputFormat property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVideoInputFormat().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getVideoInputFormat() {
-        if (videoInputFormat == null) {
-            videoInputFormat = new ArrayList<String>();
-        }
-        return this.videoInputFormat;
-    }
-
-    /**
-     * 获取videoOutputFormat属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getVideoOutputFormat() {
-        return videoOutputFormat;
-    }
-
-    /**
-     * 设置videoOutputFormat属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVideoOutputFormat(String value) {
-        this.videoOutputFormat = value;
-    }
-
-    /**
-     * Gets the value of the videoOutput property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the videoOutput property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVideoOutput().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getVideoOutput() {
-        if (videoOutput == null) {
-            videoOutput = new ArrayList<String>();
-        }
-        return this.videoOutput;
-    }
-
-    /**
-     * Gets the value of the videoOutputInterface property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the videoOutputInterface property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVideoOutputInterface().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getVideoOutputInterface() {
-        if (videoOutputInterface == null) {
-            videoOutputInterface = new ArrayList<String>();
-        }
-        return this.videoOutputInterface;
-    }
-
-    /**
-     * 获取videoOutputMode属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getVideoOutputMode() {
-        return videoOutputMode;
-    }
-
-    /**
-     * 设置videoOutputMode属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVideoOutputMode(String value) {
-        this.videoOutputMode = value;
-    }
-
-    /**
-     * Gets the value of the videoPlaybackFormat property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the videoPlaybackFormat property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVideoPlaybackFormat().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getVideoPlaybackFormat() {
-        if (videoPlaybackFormat == null) {
-            videoPlaybackFormat = new ArrayList<String>();
-        }
-        return this.videoPlaybackFormat;
-    }
-
-    /**
-     * Gets the value of the videotapePlaybackSpeed property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the videotapePlaybackSpeed property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVideotapePlaybackSpeed().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getVideotapePlaybackSpeed() {
-        if (videotapePlaybackSpeed == null) {
-            videotapePlaybackSpeed = new ArrayList<String>();
-        }
-        return this.videotapePlaybackSpeed;
-    }
-
-    /**
-     * 获取videotapeRecordingSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getVideotapeRecordingSpeed() {
-        return videotapeRecordingSpeed;
-    }
-
-    /**
-     * 设置videotapeRecordingSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVideotapeRecordingSpeed(String value) {
-        this.videotapeRecordingSpeed = value;
-    }
-
-    /**
-     * Gets the value of the voiceCommunicationSupport property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the voiceCommunicationSupport property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVoiceCommunicationSupport().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getVoiceCommunicationSupport() {
-        if (voiceCommunicationSupport == null) {
-            voiceCommunicationSupport = new ArrayList<String>();
-        }
-        return this.voiceCommunicationSupport;
-    }
-
-    /**
-     * 获取voiceCoilDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getVoiceCoilDescription() {
-        return voiceCoilDescription;
-    }
-
-    /**
-     * 设置voiceCoilDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVoiceCoilDescription(String value) {
-        this.voiceCoilDescription = value;
-    }
-
-    /**
-     * 获取voicemailCapability属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isVoicemailCapability() {
-        return voicemailCapability;
-    }
-
-    /**
-     * 设置voicemailCapability属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setVoicemailCapability(Boolean value) {
-        this.voicemailCapability = value;
-    }
-
-    /**
-     * 获取voiceOperatedTransmission属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getVoiceOperatedTransmission() {
-        return voiceOperatedTransmission;
-    }
-
-    /**
-     * 设置voiceOperatedTransmission属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVoiceOperatedTransmission(String value) {
-        this.voiceOperatedTransmission = value;
-    }
-
-    /**
-     * Gets the value of the voipProtocols property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the voipProtocols property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getVOIPProtocols().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getVOIPProtocols() {
-        if (voipProtocols == null) {
-            voipProtocols = new ArrayList<String>();
-        }
-        return this.voipProtocols;
-    }
-
-    /**
-     * 获取volumeAcousticSuspension属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link VolumeDimension }
-     *     
-     */
-    public VolumeDimension getVolumeAcousticSuspension() {
-        return volumeAcousticSuspension;
-    }
-
-    /**
-     * 设置volumeAcousticSuspension属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link VolumeDimension }
-     *     
-     */
-    public void setVolumeAcousticSuspension(VolumeDimension value) {
-        this.volumeAcousticSuspension = value;
-    }
-
-    /**
-     * 获取warnings属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getWarnings() {
-        return warnings;
-    }
-
-    /**
-     * 设置warnings属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setWarnings(String value) {
-        this.warnings = value;
-    }
-
-    /**
-     * 获取warrantyDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getWarrantyDescription() {
-        return warrantyDescription;
-    }
-
-    /**
-     * 设置warrantyDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setWarrantyDescription(String value) {
-        this.warrantyDescription = value;
-    }
-
-    /**
-     * 获取waterproofRating属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getWaterproofRating() {
-        return waterproofRating;
-    }
-
-    /**
-     * 设置waterproofRating属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setWaterproofRating(String value) {
-        this.waterproofRating = value;
-    }
-
-    /**
-     * 获取waypoints属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getWaypoints() {
-        return waypoints;
-    }
-
-    /**
-     * 设置waypoints属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setWaypoints(BigDecimal value) {
-        this.waypoints = value;
-    }
-
-    /**
-     * 获取waypointsPerRoute属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getWaypointsPerRoute() {
-        return waypointsPerRoute;
-    }
-
-    /**
-     * 设置waypointsPerRoute属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setWaypointsPerRoute(BigInteger value) {
-        this.waypointsPerRoute = value;
-    }
-
-    /**
-     * 获取weatherproof属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getWeatherproof() {
-        return weatherproof;
-    }
-
-    /**
-     * 设置weatherproof属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setWeatherproof(String value) {
-        this.weatherproof = value;
-    }
-
-    /**
-     * 获取writeSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getWriteSpeed() {
-        return writeSpeed;
-    }
-
-    /**
-     * 设置writeSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setWriteSpeed(String value) {
-        this.writeSpeed = value;
-    }
-
-
-    /**
-     * <p>anonymous complex type的 Java 类。
-     * 
-     * <p>以下模式片段指定包含在此类中的预期内容。
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>nonNegativeInteger">
-     *       &lt;attribute name="unitOfMeasure" use="required" type="{}DataTransferUnitOfMeasure" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "value"
-    })
-    public static class DataTransferRate {
-
-        @XmlValue
-        @XmlSchemaType(name = "nonNegativeInteger")
-        protected BigInteger value;
-        @XmlAttribute(name = "unitOfMeasure", required = true)
-        protected DataTransferUnitOfMeasure unitOfMeasure;
-
-        /**
-         * 获取value属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link BigInteger }
-         *     
-         */
-        public BigInteger getValue() {
-            return value;
-        }
-
-        /**
-         * 设置value属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link BigInteger }
-         *     
-         */
-        public void setValue(BigInteger value) {
-            this.value = value;
-        }
-
-        /**
-         * 获取unitOfMeasure属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link DataTransferUnitOfMeasure }
-         *     
-         */
-        public DataTransferUnitOfMeasure getUnitOfMeasure() {
-            return unitOfMeasure;
-        }
-
-        /**
-         * 设置unitOfMeasure属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link DataTransferUnitOfMeasure }
-         *     
-         */
-        public void setUnitOfMeasure(DataTransferUnitOfMeasure value) {
-            this.unitOfMeasure = value;
-        }
-
-    }
-
-
-    /**
-     * <p>anonymous complex type的 Java 类。
-     * 
-     * <p>以下模式片段指定包含在此类中的预期内容。
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>StringNotNull">
-     *       &lt;attribute name="unitOfMeasure" use="required" type="{}VolumeUnitOfMeasure" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "value"
-    })
-    public static class PortedBoxVolume {
-
-        @XmlValue
-        @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-        protected String value;
-        @XmlAttribute(name = "unitOfMeasure", required = true)
-        protected VolumeUnitOfMeasure unitOfMeasure;
-
-        /**
-         * 获取value属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getValue() {
-            return value;
-        }
-
-        /**
-         * 设置value属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setValue(String value) {
-            this.value = value;
-        }
-
-        /**
-         * 获取unitOfMeasure属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link VolumeUnitOfMeasure }
-         *     
-         */
-        public VolumeUnitOfMeasure getUnitOfMeasure() {
-            return unitOfMeasure;
-        }
-
-        /**
-         * 设置unitOfMeasure属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link VolumeUnitOfMeasure }
-         *     
-         */
-        public void setUnitOfMeasure(VolumeUnitOfMeasure value) {
-            this.unitOfMeasure = value;
-        }
-
-    }
-
-
-    /**
-     * <p>anonymous complex type的 Java 类。
-     * 
-     * <p>以下模式片段指定包含在此类中的预期内容。
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;choice>
-     *         &lt;element ref="{}Antenna"/>
-     *         &lt;element ref="{}AudioVideoAccessory"/>
-     *         &lt;element ref="{}AVFurniture"/>
-     *         &lt;element ref="{}BarCodeReader"/>
-     *         &lt;element ref="{}CEBinocular"/>
-     *         &lt;element ref="{}CECamcorder"/>
-     *         &lt;element ref="{}CameraBagsAndCases"/>
-     *         &lt;element ref="{}CEBattery"/>
-     *         &lt;element ref="{}CEBlankMedia"/>
-     *         &lt;element ref="{}CableOrAdapter"/>
-     *         &lt;element ref="{}CECameraFlash"/>
-     *         &lt;element ref="{}CameraLenses"/>
-     *         &lt;element ref="{}CameraOtherAccessories"/>
-     *         &lt;element ref="{}CameraPowerSupply"/>
-     *         &lt;element ref="{}CarAlarm"/>
-     *         &lt;element ref="{}CarAudioOrTheater"/>
-     *         &lt;element ref="{}CarElectronics"/>
-     *         &lt;element ref="{}ConsumerElectronics"/>
-     *         &lt;element ref="{}CEDigitalCamera"/>
-     *         &lt;element ref="{}DigitalPictureFrame"/>
-     *         &lt;element ref="{}DigitalVideoRecorder"/>
-     *         &lt;element ref="{}DVDPlayerOrRecorder"/>
-     *         &lt;element ref="{}CEFilmCamera"/>
-     *         &lt;element ref="{}GPSOrNavigationAccessory"/>
-     *         &lt;element ref="{}GPSOrNavigationSystem"/>
-     *         &lt;element ref="{}HandheldOrPDA"/>
-     *         &lt;element ref="{}Headphones"/>
-     *         &lt;element ref="{}HomeTheaterSystemOrHTIB"/>
-     *         &lt;element ref="{}KindleAccessories"/>
-     *         &lt;element ref="{}KindleEReaderAccessories"/>
-     *         &lt;element ref="{}KindleFireAccessories"/>
-     *         &lt;element ref="{}MediaPlayer"/>
-     *         &lt;element ref="{}MediaPlayerOrEReaderAccessory"/>
-     *         &lt;element ref="{}MediaStorage"/>
-     *         &lt;element ref="{}MiscAudioComponents"/>
-     *         &lt;element ref="{}PC"/>
-     *         &lt;element ref="{}PDA"/>
-     *         &lt;element ref="{}Phone"/>
-     *         &lt;element ref="{}PhoneAccessory"/>
-     *         &lt;element ref="{}PhotographicStudioItems"/>
-     *         &lt;element ref="{}PortableAudio"/>
-     *         &lt;element ref="{}PortableAvDevice"/>
-     *         &lt;element ref="{}PowerSuppliesOrProtection"/>
-     *         &lt;element ref="{}RadarDetector"/>
-     *         &lt;element ref="{}RadioOrClockRadio"/>
-     *         &lt;element ref="{}ReceiverOrAmplifier"/>
-     *         &lt;element ref="{}RemoteControl"/>
-     *         &lt;element ref="{}Speakers"/>
-     *         &lt;element ref="{}StereoShelfSystem"/>
-     *         &lt;element ref="{}CETelescope"/>
-     *         &lt;element ref="{}Television"/>
-     *         &lt;element ref="{}Tuner"/>
-     *         &lt;element ref="{}TVCombos"/>
-     *         &lt;element ref="{}TwoWayRadio"/>
-     *         &lt;element ref="{}VCR"/>
-     *         &lt;element ref="{}CEVideoProjector"/>
-     *         &lt;element ref="{}VideoProjectorsAndAccessories"/>
-     *       &lt;/choice>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "antenna",
-        "audioVideoAccessory",
-        "avFurniture",
-        "barCodeReader",
-        "ceBinocular",
-        "ceCamcorder",
-        "cameraBagsAndCases",
-        "ceBattery",
-        "ceBlankMedia",
-        "cableOrAdapter",
-        "ceCameraFlash",
-        "cameraLenses",
-        "cameraOtherAccessories",
-        "cameraPowerSupply",
-        "carAlarm",
-        "carAudioOrTheater",
-        "carElectronics",
-        "consumerElectronics",
-        "ceDigitalCamera",
-        "digitalPictureFrame",
-        "digitalVideoRecorder",
-        "dvdPlayerOrRecorder",
-        "ceFilmCamera",
-        "gpsOrNavigationAccessory",
-        "gpsOrNavigationSystem",
-        "handheldOrPDA",
-        "headphones",
-        "homeTheaterSystemOrHTIB",
-        "kindleAccessories",
-        "kindleEReaderAccessories",
-        "kindleFireAccessories",
-        "mediaPlayer",
-        "mediaPlayerOrEReaderAccessory",
-        "mediaStorage",
-        "miscAudioComponents",
-        "pc",
-        "pda",
-        "phone",
-        "phoneAccessory",
-        "photographicStudioItems",
-        "portableAudio",
-        "portableAvDevice",
-        "powerSuppliesOrProtection",
-        "radarDetector",
-        "radioOrClockRadio",
-        "receiverOrAmplifier",
-        "remoteControl",
-        "speakers",
-        "stereoShelfSystem",
-        "ceTelescope",
-        "television",
-        "tuner",
-        "tvCombos",
-        "twoWayRadio",
-        "vcr",
-        "ceVideoProjector",
-        "videoProjectorsAndAccessories"
-    })
-    public static class ProductType {
-
-        @XmlElement(name = "Antenna")
-        protected Antenna antenna;
-        @XmlElement(name = "AudioVideoAccessory")
-        protected AudioVideoAccessory audioVideoAccessory;
-        @XmlElement(name = "AVFurniture")
-        protected AVFurniture avFurniture;
-        @XmlElement(name = "BarCodeReader")
-        protected BarCodeReader barCodeReader;
-        @XmlElement(name = "CEBinocular")
-        protected CEBinocular ceBinocular;
-        @XmlElement(name = "CECamcorder")
-        protected CECamcorder ceCamcorder;
-        @XmlElement(name = "CameraBagsAndCases")
-        protected CameraBagsAndCases cameraBagsAndCases;
-        @XmlElement(name = "CEBattery")
-        protected CEBattery ceBattery;
-        @XmlElement(name = "CEBlankMedia")
-        protected CEBlankMedia ceBlankMedia;
-        @XmlElement(name = "CableOrAdapter")
-        protected CableOrAdapter cableOrAdapter;
-        @XmlElement(name = "CECameraFlash")
-        protected CECameraFlash ceCameraFlash;
-        @XmlElement(name = "CameraLenses")
-        protected CameraLenses cameraLenses;
-        @XmlElement(name = "CameraOtherAccessories")
-        protected CameraOtherAccessories cameraOtherAccessories;
-        @XmlElement(name = "CameraPowerSupply")
-        protected CameraPowerSupply cameraPowerSupply;
-        @XmlElement(name = "CarAlarm")
-        protected CarAlarm carAlarm;
-        @XmlElement(name = "CarAudioOrTheater")
-        protected CarAudioOrTheater carAudioOrTheater;
-        @XmlElement(name = "CarElectronics")
-        protected CarElectronics carElectronics;
-        @XmlElement(name = "ConsumerElectronics")
-        protected ConsumerElectronics consumerElectronics;
-        @XmlElement(name = "CEDigitalCamera")
-        protected CEDigitalCamera ceDigitalCamera;
-        @XmlElement(name = "DigitalPictureFrame")
-        protected DigitalPictureFrame digitalPictureFrame;
-        @XmlElement(name = "DigitalVideoRecorder")
-        protected DigitalVideoRecorder digitalVideoRecorder;
-        @XmlElement(name = "DVDPlayerOrRecorder")
-        protected DVDPlayerOrRecorder dvdPlayerOrRecorder;
-        @XmlElement(name = "CEFilmCamera")
-        protected CEFilmCamera ceFilmCamera;
-        @XmlElement(name = "GPSOrNavigationAccessory")
-        protected GPSOrNavigationAccessory gpsOrNavigationAccessory;
-        @XmlElement(name = "GPSOrNavigationSystem")
-        protected GPSOrNavigationSystem gpsOrNavigationSystem;
-        @XmlElement(name = "HandheldOrPDA")
-        protected HandheldOrPDA handheldOrPDA;
-        @XmlElement(name = "Headphones")
-        protected Headphones headphones;
-        @XmlElement(name = "HomeTheaterSystemOrHTIB")
-        protected HomeTheaterSystemOrHTIB homeTheaterSystemOrHTIB;
-        @XmlElement(name = "KindleAccessories")
-        protected KindleAccessories kindleAccessories;
-        @XmlElement(name = "KindleEReaderAccessories")
-        protected KindleEReaderAccessories kindleEReaderAccessories;
-        @XmlElement(name = "KindleFireAccessories")
-        protected KindleFireAccessories kindleFireAccessories;
-        @XmlElement(name = "MediaPlayer")
-        protected MediaPlayer mediaPlayer;
-        @XmlElement(name = "MediaPlayerOrEReaderAccessory")
-        protected MediaPlayerOrEReaderAccessory mediaPlayerOrEReaderAccessory;
-        @XmlElement(name = "MediaStorage")
-        protected MediaStorage mediaStorage;
-        @XmlElement(name = "MiscAudioComponents")
-        protected MiscAudioComponents miscAudioComponents;
-        @XmlElement(name = "PC")
-        protected PC pc;
-        @XmlElement(name = "PDA")
-        protected PDA pda;
-        @XmlElement(name = "Phone")
-        protected Phone phone;
-        @XmlElement(name = "PhoneAccessory")
-        protected PhoneAccessory phoneAccessory;
-        @XmlElement(name = "PhotographicStudioItems")
-        protected PhotographicStudioItems photographicStudioItems;
-        @XmlElement(name = "PortableAudio")
-        protected PortableAudio portableAudio;
-        @XmlElement(name = "PortableAvDevice")
-        protected PortableAvDevice portableAvDevice;
-        @XmlElement(name = "PowerSuppliesOrProtection")
-        protected PowerSuppliesOrProtection powerSuppliesOrProtection;
-        @XmlElement(name = "RadarDetector")
-        protected RadarDetector radarDetector;
-        @XmlElement(name = "RadioOrClockRadio")
-        protected RadioOrClockRadio radioOrClockRadio;
-        @XmlElement(name = "ReceiverOrAmplifier")
-        protected ReceiverOrAmplifier receiverOrAmplifier;
-        @XmlElement(name = "RemoteControl")
-        protected RemoteControl remoteControl;
-        @XmlElement(name = "Speakers")
-        protected Speakers speakers;
-        @XmlElement(name = "StereoShelfSystem")
-        protected StereoShelfSystem stereoShelfSystem;
-        @XmlElement(name = "CETelescope")
-        protected CETelescope ceTelescope;
-        @XmlElement(name = "Television")
-        protected Television television;
-        @XmlElement(name = "Tuner")
-        protected Tuner tuner;
-        @XmlElement(name = "TVCombos")
-        protected TVCombos tvCombos;
-        @XmlElement(name = "TwoWayRadio")
-        protected TwoWayRadio twoWayRadio;
-        @XmlElement(name = "VCR")
-        protected VCR vcr;
-        @XmlElement(name = "CEVideoProjector")
-        protected CEVideoProjector ceVideoProjector;
-        @XmlElement(name = "VideoProjectorsAndAccessories")
-        protected VideoProjectorsAndAccessories videoProjectorsAndAccessories;
-
-        /**
-         * 获取antenna属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link Antenna }
-         *     
-         */
-        public Antenna getAntenna() {
-            return antenna;
-        }
-
-        /**
-         * 设置antenna属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Antenna }
-         *     
-         */
-        public void setAntenna(Antenna value) {
-            this.antenna = value;
-        }
-
-        /**
-         * 获取audioVideoAccessory属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link AudioVideoAccessory }
-         *     
-         */
-        public AudioVideoAccessory getAudioVideoAccessory() {
-            return audioVideoAccessory;
-        }
-
-        /**
-         * 设置audioVideoAccessory属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link AudioVideoAccessory }
-         *     
-         */
-        public void setAudioVideoAccessory(AudioVideoAccessory value) {
-            this.audioVideoAccessory = value;
-        }
-
-        /**
-         * 获取avFurniture属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link AVFurniture }
-         *     
-         */
-        public AVFurniture getAVFurniture() {
-            return avFurniture;
-        }
-
-        /**
-         * 设置avFurniture属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link AVFurniture }
-         *     
-         */
-        public void setAVFurniture(AVFurniture value) {
-            this.avFurniture = value;
-        }
-
-        /**
-         * 获取barCodeReader属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link BarCodeReader }
-         *     
-         */
-        public BarCodeReader getBarCodeReader() {
-            return barCodeReader;
-        }
-
-        /**
-         * 设置barCodeReader属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link BarCodeReader }
-         *     
-         */
-        public void setBarCodeReader(BarCodeReader value) {
-            this.barCodeReader = value;
-        }
-
-        /**
-         * 获取ceBinocular属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CEBinocular }
-         *     
-         */
-        public CEBinocular getCEBinocular() {
-            return ceBinocular;
-        }
-
-        /**
-         * 设置ceBinocular属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CEBinocular }
-         *     
-         */
-        public void setCEBinocular(CEBinocular value) {
-            this.ceBinocular = value;
-        }
-
-        /**
-         * 获取ceCamcorder属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CECamcorder }
-         *     
-         */
-        public CECamcorder getCECamcorder() {
-            return ceCamcorder;
-        }
-
-        /**
-         * 设置ceCamcorder属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CECamcorder }
-         *     
-         */
-        public void setCECamcorder(CECamcorder value) {
-            this.ceCamcorder = value;
-        }
-
-        /**
-         * 获取cameraBagsAndCases属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CameraBagsAndCases }
-         *     
-         */
-        public CameraBagsAndCases getCameraBagsAndCases() {
-            return cameraBagsAndCases;
-        }
-
-        /**
-         * 设置cameraBagsAndCases属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CameraBagsAndCases }
-         *     
-         */
-        public void setCameraBagsAndCases(CameraBagsAndCases value) {
-            this.cameraBagsAndCases = value;
-        }
-
-        /**
-         * 获取ceBattery属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CEBattery }
-         *     
-         */
-        public CEBattery getCEBattery() {
-            return ceBattery;
-        }
-
-        /**
-         * 设置ceBattery属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CEBattery }
-         *     
-         */
-        public void setCEBattery(CEBattery value) {
-            this.ceBattery = value;
-        }
-
-        /**
-         * 获取ceBlankMedia属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CEBlankMedia }
-         *     
-         */
-        public CEBlankMedia getCEBlankMedia() {
-            return ceBlankMedia;
-        }
-
-        /**
-         * 设置ceBlankMedia属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CEBlankMedia }
-         *     
-         */
-        public void setCEBlankMedia(CEBlankMedia value) {
-            this.ceBlankMedia = value;
-        }
-
-        /**
-         * 获取cableOrAdapter属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CableOrAdapter }
-         *     
-         */
-        public CableOrAdapter getCableOrAdapter() {
-            return cableOrAdapter;
-        }
-
-        /**
-         * 设置cableOrAdapter属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CableOrAdapter }
-         *     
-         */
-        public void setCableOrAdapter(CableOrAdapter value) {
-            this.cableOrAdapter = value;
-        }
-
-        /**
-         * 获取ceCameraFlash属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CECameraFlash }
-         *     
-         */
-        public CECameraFlash getCECameraFlash() {
-            return ceCameraFlash;
-        }
-
-        /**
-         * 设置ceCameraFlash属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CECameraFlash }
-         *     
-         */
-        public void setCECameraFlash(CECameraFlash value) {
-            this.ceCameraFlash = value;
-        }
-
-        /**
-         * 获取cameraLenses属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CameraLenses }
-         *     
-         */
-        public CameraLenses getCameraLenses() {
-            return cameraLenses;
-        }
-
-        /**
-         * 设置cameraLenses属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CameraLenses }
-         *     
-         */
-        public void setCameraLenses(CameraLenses value) {
-            this.cameraLenses = value;
-        }
-
-        /**
-         * 获取cameraOtherAccessories属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CameraOtherAccessories }
-         *     
-         */
-        public CameraOtherAccessories getCameraOtherAccessories() {
-            return cameraOtherAccessories;
-        }
-
-        /**
-         * 设置cameraOtherAccessories属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CameraOtherAccessories }
-         *     
-         */
-        public void setCameraOtherAccessories(CameraOtherAccessories value) {
-            this.cameraOtherAccessories = value;
-        }
-
-        /**
-         * 获取cameraPowerSupply属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CameraPowerSupply }
-         *     
-         */
-        public CameraPowerSupply getCameraPowerSupply() {
-            return cameraPowerSupply;
-        }
-
-        /**
-         * 设置cameraPowerSupply属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CameraPowerSupply }
-         *     
-         */
-        public void setCameraPowerSupply(CameraPowerSupply value) {
-            this.cameraPowerSupply = value;
-        }
-
-        /**
-         * 获取carAlarm属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CarAlarm }
-         *     
-         */
-        public CarAlarm getCarAlarm() {
-            return carAlarm;
-        }
-
-        /**
-         * 设置carAlarm属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CarAlarm }
-         *     
-         */
-        public void setCarAlarm(CarAlarm value) {
-            this.carAlarm = value;
-        }
-
-        /**
-         * 获取carAudioOrTheater属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CarAudioOrTheater }
-         *     
-         */
-        public CarAudioOrTheater getCarAudioOrTheater() {
-            return carAudioOrTheater;
-        }
-
-        /**
-         * 设置carAudioOrTheater属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CarAudioOrTheater }
-         *     
-         */
-        public void setCarAudioOrTheater(CarAudioOrTheater value) {
-            this.carAudioOrTheater = value;
-        }
-
-        /**
-         * 获取carElectronics属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CarElectronics }
-         *     
-         */
-        public CarElectronics getCarElectronics() {
-            return carElectronics;
-        }
-
-        /**
-         * 设置carElectronics属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CarElectronics }
-         *     
-         */
-        public void setCarElectronics(CarElectronics value) {
-            this.carElectronics = value;
-        }
-
-        /**
-         * 获取consumerElectronics属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link ConsumerElectronics }
-         *     
-         */
-        public ConsumerElectronics getConsumerElectronics() {
-            return consumerElectronics;
-        }
-
-        /**
-         * 设置consumerElectronics属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link ConsumerElectronics }
-         *     
-         */
-        public void setConsumerElectronics(ConsumerElectronics value) {
-            this.consumerElectronics = value;
-        }
-
-        /**
-         * 获取ceDigitalCamera属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CEDigitalCamera }
-         *     
-         */
-        public CEDigitalCamera getCEDigitalCamera() {
-            return ceDigitalCamera;
-        }
-
-        /**
-         * 设置ceDigitalCamera属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CEDigitalCamera }
-         *     
-         */
-        public void setCEDigitalCamera(CEDigitalCamera value) {
-            this.ceDigitalCamera = value;
-        }
-
-        /**
-         * 获取digitalPictureFrame属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link DigitalPictureFrame }
-         *     
-         */
-        public DigitalPictureFrame getDigitalPictureFrame() {
-            return digitalPictureFrame;
-        }
-
-        /**
-         * 设置digitalPictureFrame属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link DigitalPictureFrame }
-         *     
-         */
-        public void setDigitalPictureFrame(DigitalPictureFrame value) {
-            this.digitalPictureFrame = value;
-        }
-
-        /**
-         * 获取digitalVideoRecorder属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link DigitalVideoRecorder }
-         *     
-         */
-        public DigitalVideoRecorder getDigitalVideoRecorder() {
-            return digitalVideoRecorder;
-        }
-
-        /**
-         * 设置digitalVideoRecorder属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link DigitalVideoRecorder }
-         *     
-         */
-        public void setDigitalVideoRecorder(DigitalVideoRecorder value) {
-            this.digitalVideoRecorder = value;
-        }
-
-        /**
-         * 获取dvdPlayerOrRecorder属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link DVDPlayerOrRecorder }
-         *     
-         */
-        public DVDPlayerOrRecorder getDVDPlayerOrRecorder() {
-            return dvdPlayerOrRecorder;
-        }
-
-        /**
-         * 设置dvdPlayerOrRecorder属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link DVDPlayerOrRecorder }
-         *     
-         */
-        public void setDVDPlayerOrRecorder(DVDPlayerOrRecorder value) {
-            this.dvdPlayerOrRecorder = value;
-        }
-
-        /**
-         * 获取ceFilmCamera属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CEFilmCamera }
-         *     
-         */
-        public CEFilmCamera getCEFilmCamera() {
-            return ceFilmCamera;
-        }
-
-        /**
-         * 设置ceFilmCamera属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CEFilmCamera }
-         *     
-         */
-        public void setCEFilmCamera(CEFilmCamera value) {
-            this.ceFilmCamera = value;
-        }
-
-        /**
-         * 获取gpsOrNavigationAccessory属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link GPSOrNavigationAccessory }
-         *     
-         */
-        public GPSOrNavigationAccessory getGPSOrNavigationAccessory() {
-            return gpsOrNavigationAccessory;
-        }
-
-        /**
-         * 设置gpsOrNavigationAccessory属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link GPSOrNavigationAccessory }
-         *     
-         */
-        public void setGPSOrNavigationAccessory(GPSOrNavigationAccessory value) {
-            this.gpsOrNavigationAccessory = value;
-        }
-
-        /**
-         * 获取gpsOrNavigationSystem属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link GPSOrNavigationSystem }
-         *     
-         */
-        public GPSOrNavigationSystem getGPSOrNavigationSystem() {
-            return gpsOrNavigationSystem;
-        }
-
-        /**
-         * 设置gpsOrNavigationSystem属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link GPSOrNavigationSystem }
-         *     
-         */
-        public void setGPSOrNavigationSystem(GPSOrNavigationSystem value) {
-            this.gpsOrNavigationSystem = value;
-        }
-
-        /**
-         * 获取handheldOrPDA属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link HandheldOrPDA }
-         *     
-         */
-        public HandheldOrPDA getHandheldOrPDA() {
-            return handheldOrPDA;
-        }
-
-        /**
-         * 设置handheldOrPDA属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link HandheldOrPDA }
-         *     
-         */
-        public void setHandheldOrPDA(HandheldOrPDA value) {
-            this.handheldOrPDA = value;
-        }
-
-        /**
-         * 获取headphones属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link Headphones }
-         *     
-         */
-        public Headphones getHeadphones() {
-            return headphones;
-        }
-
-        /**
-         * 设置headphones属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Headphones }
-         *     
-         */
-        public void setHeadphones(Headphones value) {
-            this.headphones = value;
-        }
-
-        /**
-         * 获取homeTheaterSystemOrHTIB属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link HomeTheaterSystemOrHTIB }
-         *     
-         */
-        public HomeTheaterSystemOrHTIB getHomeTheaterSystemOrHTIB() {
-            return homeTheaterSystemOrHTIB;
-        }
-
-        /**
-         * 设置homeTheaterSystemOrHTIB属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link HomeTheaterSystemOrHTIB }
-         *     
-         */
-        public void setHomeTheaterSystemOrHTIB(HomeTheaterSystemOrHTIB value) {
-            this.homeTheaterSystemOrHTIB = value;
-        }
-
-        /**
-         * 获取kindleAccessories属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link KindleAccessories }
-         *     
-         */
-        public KindleAccessories getKindleAccessories() {
-            return kindleAccessories;
-        }
-
-        /**
-         * 设置kindleAccessories属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link KindleAccessories }
-         *     
-         */
-        public void setKindleAccessories(KindleAccessories value) {
-            this.kindleAccessories = value;
-        }
-
-        /**
-         * 获取kindleEReaderAccessories属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link KindleEReaderAccessories }
-         *     
-         */
-        public KindleEReaderAccessories getKindleEReaderAccessories() {
-            return kindleEReaderAccessories;
-        }
-
-        /**
-         * 设置kindleEReaderAccessories属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link KindleEReaderAccessories }
-         *     
-         */
-        public void setKindleEReaderAccessories(KindleEReaderAccessories value) {
-            this.kindleEReaderAccessories = value;
-        }
-
-        /**
-         * 获取kindleFireAccessories属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link KindleFireAccessories }
-         *     
-         */
-        public KindleFireAccessories getKindleFireAccessories() {
-            return kindleFireAccessories;
-        }
-
-        /**
-         * 设置kindleFireAccessories属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link KindleFireAccessories }
-         *     
-         */
-        public void setKindleFireAccessories(KindleFireAccessories value) {
-            this.kindleFireAccessories = value;
-        }
-
-        /**
-         * 获取mediaPlayer属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link MediaPlayer }
-         *     
-         */
-        public MediaPlayer getMediaPlayer() {
-            return mediaPlayer;
-        }
-
-        /**
-         * 设置mediaPlayer属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link MediaPlayer }
-         *     
-         */
-        public void setMediaPlayer(MediaPlayer value) {
-            this.mediaPlayer = value;
-        }
-
-        /**
-         * 获取mediaPlayerOrEReaderAccessory属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link MediaPlayerOrEReaderAccessory }
-         *     
-         */
-        public MediaPlayerOrEReaderAccessory getMediaPlayerOrEReaderAccessory() {
-            return mediaPlayerOrEReaderAccessory;
-        }
-
-        /**
-         * 设置mediaPlayerOrEReaderAccessory属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link MediaPlayerOrEReaderAccessory }
-         *     
-         */
-        public void setMediaPlayerOrEReaderAccessory(MediaPlayerOrEReaderAccessory value) {
-            this.mediaPlayerOrEReaderAccessory = value;
-        }
-
-        /**
-         * 获取mediaStorage属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link MediaStorage }
-         *     
-         */
-        public MediaStorage getMediaStorage() {
-            return mediaStorage;
-        }
-
-        /**
-         * 设置mediaStorage属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link MediaStorage }
-         *     
-         */
-        public void setMediaStorage(MediaStorage value) {
-            this.mediaStorage = value;
-        }
-
-        /**
-         * 获取miscAudioComponents属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link MiscAudioComponents }
-         *     
-         */
-        public MiscAudioComponents getMiscAudioComponents() {
-            return miscAudioComponents;
-        }
-
-        /**
-         * 设置miscAudioComponents属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link MiscAudioComponents }
-         *     
-         */
-        public void setMiscAudioComponents(MiscAudioComponents value) {
-            this.miscAudioComponents = value;
-        }
-
-        /**
-         * 获取pc属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link PC }
-         *     
-         */
-        public PC getPC() {
-            return pc;
-        }
-
-        /**
-         * 设置pc属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link PC }
-         *     
-         */
-        public void setPC(PC value) {
-            this.pc = value;
-        }
-
-        /**
-         * 获取pda属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link PDA }
-         *     
-         */
-        public PDA getPDA() {
-            return pda;
-        }
-
-        /**
-         * 设置pda属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link PDA }
-         *     
-         */
-        public void setPDA(PDA value) {
-            this.pda = value;
-        }
-
-        /**
-         * 获取phone属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link Phone }
-         *     
-         */
-        public Phone getPhone() {
-            return phone;
-        }
-
-        /**
-         * 设置phone属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Phone }
-         *     
-         */
-        public void setPhone(Phone value) {
-            this.phone = value;
-        }
-
-        /**
-         * 获取phoneAccessory属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link PhoneAccessory }
-         *     
-         */
-        public PhoneAccessory getPhoneAccessory() {
-            return phoneAccessory;
-        }
-
-        /**
-         * 设置phoneAccessory属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link PhoneAccessory }
-         *     
-         */
-        public void setPhoneAccessory(PhoneAccessory value) {
-            this.phoneAccessory = value;
-        }
-
-        /**
-         * 获取photographicStudioItems属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link PhotographicStudioItems }
-         *     
-         */
-        public PhotographicStudioItems getPhotographicStudioItems() {
-            return photographicStudioItems;
-        }
-
-        /**
-         * 设置photographicStudioItems属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link PhotographicStudioItems }
-         *     
-         */
-        public void setPhotographicStudioItems(PhotographicStudioItems value) {
-            this.photographicStudioItems = value;
-        }
-
-        /**
-         * 获取portableAudio属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link PortableAudio }
-         *     
-         */
-        public PortableAudio getPortableAudio() {
-            return portableAudio;
-        }
-
-        /**
-         * 设置portableAudio属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link PortableAudio }
-         *     
-         */
-        public void setPortableAudio(PortableAudio value) {
-            this.portableAudio = value;
-        }
-
-        /**
-         * 获取portableAvDevice属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link PortableAvDevice }
-         *     
-         */
-        public PortableAvDevice getPortableAvDevice() {
-            return portableAvDevice;
-        }
-
-        /**
-         * 设置portableAvDevice属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link PortableAvDevice }
-         *     
-         */
-        public void setPortableAvDevice(PortableAvDevice value) {
-            this.portableAvDevice = value;
-        }
-
-        /**
-         * 获取powerSuppliesOrProtection属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link PowerSuppliesOrProtection }
-         *     
-         */
-        public PowerSuppliesOrProtection getPowerSuppliesOrProtection() {
-            return powerSuppliesOrProtection;
-        }
-
-        /**
-         * 设置powerSuppliesOrProtection属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link PowerSuppliesOrProtection }
-         *     
-         */
-        public void setPowerSuppliesOrProtection(PowerSuppliesOrProtection value) {
-            this.powerSuppliesOrProtection = value;
-        }
-
-        /**
-         * 获取radarDetector属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link RadarDetector }
-         *     
-         */
-        public RadarDetector getRadarDetector() {
-            return radarDetector;
-        }
-
-        /**
-         * 设置radarDetector属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link RadarDetector }
-         *     
-         */
-        public void setRadarDetector(RadarDetector value) {
-            this.radarDetector = value;
-        }
-
-        /**
-         * 获取radioOrClockRadio属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link RadioOrClockRadio }
-         *     
-         */
-        public RadioOrClockRadio getRadioOrClockRadio() {
-            return radioOrClockRadio;
-        }
-
-        /**
-         * 设置radioOrClockRadio属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link RadioOrClockRadio }
-         *     
-         */
-        public void setRadioOrClockRadio(RadioOrClockRadio value) {
-            this.radioOrClockRadio = value;
-        }
-
-        /**
-         * 获取receiverOrAmplifier属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link ReceiverOrAmplifier }
-         *     
-         */
-        public ReceiverOrAmplifier getReceiverOrAmplifier() {
-            return receiverOrAmplifier;
-        }
-
-        /**
-         * 设置receiverOrAmplifier属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link ReceiverOrAmplifier }
-         *     
-         */
-        public void setReceiverOrAmplifier(ReceiverOrAmplifier value) {
-            this.receiverOrAmplifier = value;
-        }
-
-        /**
-         * 获取remoteControl属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link RemoteControl }
-         *     
-         */
-        public RemoteControl getRemoteControl() {
-            return remoteControl;
-        }
-
-        /**
-         * 设置remoteControl属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link RemoteControl }
-         *     
-         */
-        public void setRemoteControl(RemoteControl value) {
-            this.remoteControl = value;
-        }
-
-        /**
-         * 获取speakers属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link Speakers }
-         *     
-         */
-        public Speakers getSpeakers() {
-            return speakers;
-        }
-
-        /**
-         * 设置speakers属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Speakers }
-         *     
-         */
-        public void setSpeakers(Speakers value) {
-            this.speakers = value;
-        }
-
-        /**
-         * 获取stereoShelfSystem属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link StereoShelfSystem }
-         *     
-         */
-        public StereoShelfSystem getStereoShelfSystem() {
-            return stereoShelfSystem;
-        }
-
-        /**
-         * 设置stereoShelfSystem属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link StereoShelfSystem }
-         *     
-         */
-        public void setStereoShelfSystem(StereoShelfSystem value) {
-            this.stereoShelfSystem = value;
-        }
-
-        /**
-         * 获取ceTelescope属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CETelescope }
-         *     
-         */
-        public CETelescope getCETelescope() {
-            return ceTelescope;
-        }
-
-        /**
-         * 设置ceTelescope属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CETelescope }
-         *     
-         */
-        public void setCETelescope(CETelescope value) {
-            this.ceTelescope = value;
-        }
-
-        /**
-         * 获取television属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link Television }
-         *     
-         */
-        public Television getTelevision() {
-            return television;
-        }
-
-        /**
-         * 设置television属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Television }
-         *     
-         */
-        public void setTelevision(Television value) {
-            this.television = value;
-        }
-
-        /**
-         * 获取tuner属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link Tuner }
-         *     
-         */
-        public Tuner getTuner() {
-            return tuner;
-        }
-
-        /**
-         * 设置tuner属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Tuner }
-         *     
-         */
-        public void setTuner(Tuner value) {
-            this.tuner = value;
-        }
-
-        /**
-         * 获取tvCombos属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link TVCombos }
-         *     
-         */
-        public TVCombos getTVCombos() {
-            return tvCombos;
-        }
-
-        /**
-         * 设置tvCombos属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link TVCombos }
-         *     
-         */
-        public void setTVCombos(TVCombos value) {
-            this.tvCombos = value;
-        }
-
-        /**
-         * 获取twoWayRadio属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link TwoWayRadio }
-         *     
-         */
-        public TwoWayRadio getTwoWayRadio() {
-            return twoWayRadio;
-        }
-
-        /**
-         * 设置twoWayRadio属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link TwoWayRadio }
-         *     
-         */
-        public void setTwoWayRadio(TwoWayRadio value) {
-            this.twoWayRadio = value;
-        }
-
-        /**
-         * 获取vcr属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link VCR }
-         *     
-         */
-        public VCR getVCR() {
-            return vcr;
-        }
-
-        /**
-         * 设置vcr属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link VCR }
-         *     
-         */
-        public void setVCR(VCR value) {
-            this.vcr = value;
-        }
-
-        /**
-         * 获取ceVideoProjector属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link CEVideoProjector }
-         *     
-         */
-        public CEVideoProjector getCEVideoProjector() {
-            return ceVideoProjector;
-        }
-
-        /**
-         * 设置ceVideoProjector属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link CEVideoProjector }
-         *     
-         */
-        public void setCEVideoProjector(CEVideoProjector value) {
-            this.ceVideoProjector = value;
-        }
-
-        /**
-         * 获取videoProjectorsAndAccessories属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link VideoProjectorsAndAccessories }
-         *     
-         */
-        public VideoProjectorsAndAccessories getVideoProjectorsAndAccessories() {
-            return videoProjectorsAndAccessories;
-        }
-
-        /**
-         * 设置videoProjectorsAndAccessories属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link VideoProjectorsAndAccessories }
-         *     
-         */
-        public void setVideoProjectorsAndAccessories(VideoProjectorsAndAccessories value) {
-            this.videoProjectorsAndAccessories = value;
-        }
-
-    }
-
-
-    /**
-     * <p>anonymous complex type的 Java 类。
-     * 
-     * <p>以下模式片段指定包含在此类中的预期内容。
-     * 
-     * <pre>
-     * &lt;complexType>
-     *   &lt;simpleContent>
-     *     &lt;extension base="&lt;>StringNotNull">
-     *       &lt;attribute name="unitOfMeasure" use="required" type="{}VolumeUnitOfMeasure" />
-     *     &lt;/extension>
-     *   &lt;/simpleContent>
-     * &lt;/complexType>
-     * </pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "value"
-    })
-    public static class SealedBoxVolume {
-
-        @XmlValue
-        @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-        protected String value;
-        @XmlAttribute(name = "unitOfMeasure", required = true)
-        protected VolumeUnitOfMeasure unitOfMeasure;
-
-        /**
-         * 获取value属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getValue() {
-            return value;
-        }
-
-        /**
-         * 设置value属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setValue(String value) {
-            this.value = value;
-        }
-
-        /**
-         * 获取unitOfMeasure属性的值。
-         * 
-         * @return
-         *     possible object is
-         *     {@link VolumeUnitOfMeasure }
-         *     
-         */
-        public VolumeUnitOfMeasure getUnitOfMeasure() {
-            return unitOfMeasure;
-        }
-
-        /**
-         * 设置unitOfMeasure属性的值。
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link VolumeUnitOfMeasure }
-         *     
-         */
-        public void setUnitOfMeasure(VolumeUnitOfMeasure value) {
-            this.unitOfMeasure = value;
-        }
-
-    }
-
-}

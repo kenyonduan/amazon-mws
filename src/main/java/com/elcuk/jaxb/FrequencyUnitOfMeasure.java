@@ -1,57 +1,42 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlEnumValue;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="FrequencyUnitOfMeasure")
+/*    */ @XmlEnum
+/*    */ public enum FrequencyUnitOfMeasure
+/*    */ {
+/* 30 */   HZ("Hz"), 
+/*    */ 
+/* 32 */   K_HZ("KHz"), 
+/*    */ 
+/* 34 */   M_HZ("MHz"), 
+/*    */ 
+/* 36 */   G_HZ("GHz");
+/*    */ 
+/*    */   private final String value;
+/*    */ 
+/*    */   private FrequencyUnitOfMeasure(String v) {
+/* 41 */     this.value = v;
+/*    */   }
+/*    */ 
+/*    */   public String value() {
+/* 45 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public static FrequencyUnitOfMeasure fromValue(String v) {
+/* 49 */     for (FrequencyUnitOfMeasure c : values()) {
+/* 50 */       if (c.value.equals(v)) {
+/* 51 */         return c;
+/*    */       }
+/*    */     }
+/* 54 */     throw new IllegalArgumentException(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>FrequencyUnitOfMeasure的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="FrequencyUnitOfMeasure">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Hz"/>
- *     &lt;enumeration value="KHz"/>
- *     &lt;enumeration value="MHz"/>
- *     &lt;enumeration value="GHz"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.FrequencyUnitOfMeasure
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "FrequencyUnitOfMeasure")
-@XmlEnum
-public enum FrequencyUnitOfMeasure {
-
-    @XmlEnumValue("Hz")
-    HZ("Hz"),
-    @XmlEnumValue("KHz")
-    K_HZ("KHz"),
-    @XmlEnumValue("MHz")
-    M_HZ("MHz"),
-    @XmlEnumValue("GHz")
-    G_HZ("GHz");
-    private final String value;
-
-    FrequencyUnitOfMeasure(String v) {
-        value = v;
-    }
-
-    public String value() {
-        return value;
-    }
-
-    public static FrequencyUnitOfMeasure fromValue(String v) {
-        for (FrequencyUnitOfMeasure c: FrequencyUnitOfMeasure.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
-
-}

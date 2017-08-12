@@ -1,50 +1,31 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="BaseCurrencyCode")
+/*    */ @XmlEnum
+/*    */ public enum BaseCurrencyCode
+/*    */ {
+/* 33 */   USD, 
+/* 34 */   GBP, 
+/* 35 */   EUR, 
+/* 36 */   JPY, 
+/* 37 */   CAD, 
+/* 38 */   CNY, 
+/* 39 */   INR, 
+/* 40 */   MXN;
+/*    */ 
+/*    */   public String value() {
+/* 43 */     return name();
+/*    */   }
+/*    */ 
+/*    */   public static BaseCurrencyCode fromValue(String v) {
+/* 47 */     return valueOf(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>BaseCurrencyCode的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="BaseCurrencyCode">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="USD"/>
- *     &lt;enumeration value="GBP"/>
- *     &lt;enumeration value="EUR"/>
- *     &lt;enumeration value="JPY"/>
- *     &lt;enumeration value="CAD"/>
- *     &lt;enumeration value="CNY"/>
- *     &lt;enumeration value="INR"/>
- *     &lt;enumeration value="MXN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.BaseCurrencyCode
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "BaseCurrencyCode")
-@XmlEnum
-public enum BaseCurrencyCode {
-
-    USD,
-    GBP,
-    EUR,
-    JPY,
-    CAD,
-    CNY,
-    INR,
-    MXN;
-
-    public String value() {
-        return name();
-    }
-
-    public static BaseCurrencyCode fromValue(String v) {
-        return valueOf(v);
-    }
-
-}

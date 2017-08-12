@@ -1,642 +1,432 @@
+/*     */ package com.elcuk.jaxb;
+/*     */ 
+/*     */ import javax.xml.bind.annotation.XmlEnum;
+/*     */ import javax.xml.bind.annotation.XmlEnumValue;
+/*     */ import javax.xml.bind.annotation.XmlType;
+/*     */ 
+/*     */ @XmlType(name="LanguageStringType")
+/*     */ @XmlEnum
+/*     */ public enum LanguageStringType
+/*     */ {
+/* 225 */   ABKHAZIAN("Abkhazian"), 
+/*     */ 
+/* 227 */   ADYGEI("Adygei"), 
+/*     */ 
+/* 229 */   AFAR("Afar"), 
+/*     */ 
+/* 231 */   AFRIKAANS("Afrikaans"), 
+/*     */ 
+/* 233 */   ALBANIAN("Albanian"), 
+/*     */ 
+/* 235 */   ALSATIAN("Alsatian"), 
+/*     */ 
+/* 237 */   AMHARIC("Amharic"), 
+/*     */ 
+/* 239 */   ARABIC("Arabic"), 
+/*     */ 
+/* 241 */   ARAMAIC("Aramaic"), 
+/*     */ 
+/* 243 */   ARMENIAN("Armenian"), 
+/*     */ 
+/* 245 */   ASSAMESE("Assamese"), 
+/*     */ 
+/* 247 */   AYMARA("Aymara"), 
+/*     */ 
+/* 249 */   AZERBAIJANI("Azerbaijani"), 
+/*     */ 
+/* 251 */   BAMBARA("Bambara"), 
+/*     */ 
+/* 253 */   BASHKIR("Bashkir"), 
+/*     */ 
+/* 255 */   BASQUE("Basque"), 
+/*     */ 
+/* 257 */   BENGALI("Bengali"), 
+/*     */ 
+/* 259 */   BERBER("Berber"), 
+/*     */ 
+/* 261 */   BHUTANI("Bhutani"), 
+/*     */ 
+/* 263 */   BIHARI("Bihari"), 
+/*     */ 
+/* 265 */   BISLAMA("Bislama"), 
+/*     */ 
+/* 267 */   BRETON("Breton"), 
+/*     */ 
+/* 269 */   BULGARIAN("Bulgarian"), 
+/*     */ 
+/* 271 */   BURMESE("Burmese"), 
+/*     */ 
+/* 273 */   BURYAT("Buryat"), 
+/*     */ 
+/* 275 */   BYELORUSSIAN("Byelorussian"), 
+/*     */ 
+/* 277 */   CANTONESE_CHINESE("CantoneseChinese"), 
+/*     */ 
+/* 279 */   CASTILLIAN("Castillian"), 
+/*     */ 
+/* 281 */   CATALAN("Catalan"), 
+/*     */ 
+/* 283 */   CAYUGA("Cayuga"), 
+/*     */ 
+/* 285 */   CHEYENNE("Cheyenne"), 
+/*     */ 
+/* 287 */   CHINESE("Chinese"), 
+/*     */ 
+/* 289 */   CLASSICAL_NEWARI("ClassicalNewari"), 
+/*     */ 
+/* 291 */   CORNISH("Cornish"), 
+/*     */ 
+/* 293 */   CORSICAN("Corsican"), 
+/*     */ 
+/* 295 */   CREOLE("Creole"), 
+/*     */ 
+/* 297 */   CRIMEAN_TATAR("CrimeanTatar"), 
+/*     */ 
+/* 299 */   CROATIAN("Croatian"), 
+/*     */ 
+/* 301 */   CZECH("Czech"), 
+/*     */ 
+/* 303 */   DANISH("Danish"), 
+/*     */ 
+/* 305 */   DARGWA("Dargwa"), 
+/*     */ 
+/* 307 */   DUTCH("Dutch"), 
+/*     */ 
+/* 309 */   ENGLISH("English"), 
+/*     */ 
+/* 311 */   ESPERANTO("Esperanto"), 
+/*     */ 
+/* 313 */   ESTONIAN("Estonian"), 
+/*     */ 
+/* 315 */   FAROESE("Faroese"), 
+/*     */ 
+/* 317 */   FARSI("Farsi"), 
+/*     */ 
+/* 319 */   FIJI("Fiji"), 
+/*     */ 
+/* 321 */   FILIPINO("Filipino"), 
+/*     */ 
+/* 323 */   FINNISH("Finnish"), 
+/*     */ 
+/* 325 */   FLEMISH("Flemish"), 
+/*     */ 
+/* 327 */   FRENCH("French"), 
+/*     */ 
+/* 329 */   FRENCH_CANADIAN("FrenchCanadian"), 
+/*     */ 
+/* 331 */   FRISIAN("Frisian"), 
+/*     */ 
+/* 333 */   GALICIAN("Galician"), 
+/*     */ 
+/* 335 */   GEORGIAN("Georgian"), 
+/*     */ 
+/* 337 */   GERMAN("German"), 
+/*     */ 
+/* 339 */   GIBBERISH("Gibberish"), 
+/*     */ 
+/* 341 */   GREEK("Greek"), 
+/*     */ 
+/* 343 */   GREENLANDIC("Greenlandic"), 
+/*     */ 
+/* 345 */   GUARANI("Guarani"), 
+/*     */ 
+/* 347 */   GUJARATI("Gujarati"), 
+/*     */ 
+/* 349 */   GULLAH("Gullah"), 
+/*     */ 
+/* 351 */   HAUSA("Hausa"), 
+/*     */ 
+/* 353 */   HAWAIIAN("Hawaiian"), 
+/*     */ 
+/* 355 */   HEBREW("Hebrew"), 
+/*     */ 
+/* 357 */   HINDI("Hindi"), 
+/*     */ 
+/* 359 */   HMONG("Hmong"), 
+/*     */ 
+/* 361 */   HUNGARIAN("Hungarian"), 
+/*     */ 
+/* 363 */   ICELANDIC("Icelandic"), 
+/*     */ 
+/* 365 */   INDO_EUROPEAN("IndoEuropean"), 
+/*     */ 
+/* 367 */   INDONESIAN("Indonesian"), 
+/*     */ 
+/* 369 */   INGUSH("Ingush"), 
+/*     */ 
+/* 371 */   INTERLINGUA("Interlingua"), 
+/*     */ 
+/* 373 */   INTERLINGUE("Interlingue"), 
+/*     */ 
+/* 375 */   INUKTITUN("Inuktitun"), 
+/*     */ 
+/* 377 */   INUKTITUT("Inuktitut"), 
+/*     */ 
+/* 379 */   INUPIAK("Inupiak"), 
+/*     */ 
+/* 381 */   INUPIAQ("Inupiaq"), 
+/*     */ 
+/* 383 */   IRISH("Irish"), 
+/*     */ 
+/* 385 */   ITALIAN("Italian"), 
+/*     */ 
+/* 387 */   JAPANESE("Japanese"), 
+/*     */ 
+/* 389 */   JAVANESE("Javanese"), 
+/*     */ 
+/* 391 */   KALAALLISUT("Kalaallisut"), 
+/*     */ 
+/* 393 */   KALMYK("Kalmyk"), 
+/*     */ 
+/* 395 */   KANNADA("Kannada"), 
+/*     */ 
+/* 397 */   KARACHAY_BALKAR("KarachayBalkar"), 
+/*     */ 
+/* 399 */   KASHMIRI("Kashmiri"), 
+/*     */ 
+/* 401 */   KASHUBIAN("Kashubian"), 
+/*     */ 
+/* 403 */   KAZAKH("Kazakh"), 
+/*     */ 
+/* 405 */   KHMER("Khmer"), 
+/*     */ 
+/* 407 */   KINYARWANDA("Kinyarwanda"), 
+/*     */ 
+/* 409 */   KIRGHIZ("Kirghiz"), 
+/*     */ 
+/* 411 */   KIRUNDI("Kirundi"), 
+/*     */ 
+/* 413 */   KLINGON("Klingon"), 
+/*     */ 
+/* 415 */   KOREAN("Korean"), 
+/*     */ 
+/* 417 */   KURDISH("Kurdish"), 
+/*     */ 
+/* 419 */   LADINO("Ladino"), 
+/*     */ 
+/* 421 */   LAO("Lao"), 
+/*     */ 
+/* 423 */   LAPP("Lapp"), 
+/*     */ 
+/* 425 */   LATIN("Latin"), 
+/*     */ 
+/* 427 */   LATVIAN("Latvian"), 
+/*     */ 
+/* 429 */   LINGALA("Lingala"), 
+/*     */ 
+/* 431 */   LITHUANIAN("Lithuanian"), 
+/*     */ 
+/* 433 */   LOJBAN("Lojban"), 
+/*     */ 
+/* 435 */   LOWER_SORBIAN("LowerSorbian"), 
+/*     */ 
+/* 437 */   MACEDONIAN("Macedonian"), 
+/*     */ 
+/* 439 */   MALAGASY("Malagasy"), 
+/*     */ 
+/* 441 */   MALAY("Malay"), 
+/*     */ 
+/* 443 */   MALAYALAM("Malayalam"), 
+/*     */ 
+/* 445 */   MALTESE("Maltese"), 
+/*     */ 
+/* 447 */   MANDARIN_CHINESE("MandarinChinese"), 
+/*     */ 
+/* 449 */   MAORI("Maori"), 
+/*     */ 
+/* 451 */   MARATHI("Marathi"), 
+/*     */ 
+/* 453 */   MENDE("Mende"), 
+/*     */ 
+/* 455 */   MIDDLE_ENGLISH("MiddleEnglish"), 
+/*     */ 
+/* 457 */   MIRANDESE("Mirandese"), 
+/*     */ 
+/* 459 */   MOKSHA("Moksha"), 
+/*     */ 
+/* 461 */   MOLDAVIAN("Moldavian"), 
+/*     */ 
+/* 463 */   MONGO("Mongo"), 
+/*     */ 
+/* 465 */   MONGOLIAN("Mongolian"), 
+/*     */ 
+/* 467 */   MULTILINGUAL("Multilingual"), 
+/*     */ 
+/* 469 */   NAURU("Nauru"), 
+/*     */ 
+/* 471 */   NAVAHO("Navaho"), 
+/*     */ 
+/* 473 */   NEPALI("Nepali"), 
+/*     */ 
+/* 475 */   NOGAI("Nogai"), 
+/*     */ 
+/* 477 */   NORWEGIAN("Norwegian"), 
+/*     */ 
+/* 479 */   OCCITAN("Occitan"), 
+/*     */ 
+/* 481 */   OLD_ENGLISH("OldEnglish"), 
+/*     */ 
+/* 483 */   ORIYA("Oriya"), 
+/*     */ 
+/* 485 */   OROMO("Oromo"), 
+/*     */ 
+/* 487 */   PASHTO("Pashto"), 
+/*     */ 
+/* 489 */   PERSIAN("Persian"), 
+/*     */ 
+/* 491 */   PIG_LATIN("PigLatin"), 
+/*     */ 
+/* 493 */   POLISH("Polish"), 
+/*     */ 
+/* 495 */   PORTUGUESE("Portuguese"), 
+/*     */ 
+/* 497 */   PUNJABI("Punjabi"), 
+/*     */ 
+/* 499 */   QUECHUA("Quechua"), 
+/*     */ 
+/* 501 */   ROMANCE("Romance"), 
+/*     */ 
+/* 503 */   ROMANIAN("Romanian"), 
+/*     */ 
+/* 505 */   ROMANY("Romany"), 
+/*     */ 
+/* 507 */   RUSSIAN("Russian"), 
+/*     */ 
+/* 509 */   SAMARITAN("Samaritan"), 
+/*     */ 
+/* 511 */   SAMOAN("Samoan"), 
+/*     */ 
+/* 513 */   SANGHO("Sangho"), 
+/*     */ 
+/* 515 */   SANSKRIT("Sanskrit"), 
+/*     */ 
+/* 517 */   SERBIAN("Serbian"), 
+/*     */ 
+/* 519 */   SERBO_CROATIAN("Serbo-Croatian"), 
+/*     */ 
+/* 521 */   SESOTHO("Sesotho"), 
+/*     */ 
+/* 523 */   SETSWANA("Setswana"), 
+/*     */ 
+/* 525 */   SHONA("Shona"), 
+/*     */ 
+/* 527 */   SICHUAN_YI("SichuanYi"), 
+/*     */ 
+/* 529 */   SICILIAN("Sicilian"), 
+/*     */ 
+/* 531 */   SIGN_LANGUAGE("SignLanguage"), 
+/*     */ 
+/* 533 */   SINDHI("Sindhi"), 
+/*     */ 
+/* 535 */   SINHALESE("Sinhalese"), 
+/*     */ 
+/* 537 */   SISWATI("Siswati"), 
+/*     */ 
+/* 539 */   SLAVIC("Slavic"), 
+/*     */ 
+/* 541 */   SLOVAK("Slovak"), 
+/*     */ 
+/* 543 */   SLOVAKIAN("Slovakian"), 
+/*     */ 
+/* 545 */   SLOVENE("Slovene"), 
+/*     */ 
+/* 547 */   SOMALI("Somali"), 
+/*     */ 
+/* 549 */   SPANISH("Spanish"), 
+/*     */ 
+/* 551 */   SUMERIAN("Sumerian"), 
+/*     */ 
+/* 553 */   SUNDANESE("Sundanese"), 
+/*     */ 
+/* 555 */   SWAHILI("Swahili"), 
+/*     */ 
+/* 557 */   SWEDISH("Swedish"), 
+/*     */ 
+/* 559 */   SWISS_GERMAN("SwissGerman"), 
+/*     */ 
+/* 561 */   SYRIAC("Syriac"), 
+/*     */ 
+/* 563 */   TAGALOG("Tagalog"), 
+/*     */ 
+/* 565 */   TAIWANESE_CHINESE("TaiwaneseChinese"), 
+/*     */ 
+/* 567 */   TAJIK("Tajik"), 
+/*     */ 
+/* 569 */   TAMIL("Tamil"), 
+/*     */ 
+/* 571 */   TATAR("Tatar"), 
+/*     */ 
+/* 573 */   TELUGU("Telugu"), 
+/*     */ 
+/* 575 */   THAI("Thai"), 
+/*     */ 
+/* 577 */   TIBETAN("Tibetan"), 
+/*     */ 
+/* 579 */   TIGRINYA("Tigrinya"), 
+/*     */ 
+/* 581 */   TONGA("Tonga"), 
+/*     */ 
+/* 583 */   TSONGA("Tsonga"), 
+/*     */ 
+/* 585 */   TURKISH("Turkish"), 
+/*     */ 
+/* 587 */   TURKMEN("Turkmen"), 
+/*     */ 
+/* 589 */   TWI("Twi"), 
+/*     */ 
+/* 591 */   UDMURT("Udmurt"), 
+/*     */ 
+/* 593 */   UIGHUR("Uighur"), 
+/*     */ 
+/* 595 */   UKRAINIAN("Ukrainian"), 
+/*     */ 
+/* 597 */   UKRANIAN("Ukranian"), 
+/*     */ 
+/* 599 */   UNKNOWN("Unknown"), 
+/*     */ 
+/* 601 */   URDU("Urdu"), 
+/*     */ 
+/* 603 */   UZBEK("Uzbek"), 
+/*     */ 
+/* 605 */   VIETNAMESE("Vietnamese"), 
+/*     */ 
+/* 607 */   VOLAPUK("Volapuk"), 
+/*     */ 
+/* 609 */   WELSH("Welsh"), 
+/*     */ 
+/* 611 */   WOLOF("Wolof"), 
+/*     */ 
+/* 613 */   XHOSA("Xhosa"), 
+/*     */ 
+/* 615 */   YIDDISH("Yiddish"), 
+/*     */ 
+/* 617 */   YORUBA("Yoruba"), 
+/*     */ 
+/* 619 */   ZHUANG("Zhuang"), 
+/*     */ 
+/* 621 */   ZULU("Zulu");
+/*     */ 
+/*     */   private final String value;
+/*     */ 
+/*     */   private LanguageStringType(String v) {
+/* 626 */     this.value = v;
+/*     */   }
+/*     */ 
+/*     */   public String value() {
+/* 630 */     return this.value;
+/*     */   }
+/*     */ 
+/*     */   public static LanguageStringType fromValue(String v) {
+/* 634 */     for (LanguageStringType c : values()) {
+/* 635 */       if (c.value.equals(v)) {
+/* 636 */         return c;
+/*     */       }
+/*     */     }
+/* 639 */     throw new IllegalArgumentException(v);
+/*     */   }
+/*     */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>LanguageStringType的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="LanguageStringType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Abkhazian"/>
- *     &lt;enumeration value="Adygei"/>
- *     &lt;enumeration value="Afar"/>
- *     &lt;enumeration value="Afrikaans"/>
- *     &lt;enumeration value="Albanian"/>
- *     &lt;enumeration value="Alsatian"/>
- *     &lt;enumeration value="Amharic"/>
- *     &lt;enumeration value="Arabic"/>
- *     &lt;enumeration value="Aramaic"/>
- *     &lt;enumeration value="Armenian"/>
- *     &lt;enumeration value="Assamese"/>
- *     &lt;enumeration value="Aymara"/>
- *     &lt;enumeration value="Azerbaijani"/>
- *     &lt;enumeration value="Bambara"/>
- *     &lt;enumeration value="Bashkir"/>
- *     &lt;enumeration value="Basque"/>
- *     &lt;enumeration value="Bengali"/>
- *     &lt;enumeration value="Berber"/>
- *     &lt;enumeration value="Bhutani"/>
- *     &lt;enumeration value="Bihari"/>
- *     &lt;enumeration value="Bislama"/>
- *     &lt;enumeration value="Breton"/>
- *     &lt;enumeration value="Bulgarian"/>
- *     &lt;enumeration value="Burmese"/>
- *     &lt;enumeration value="Buryat"/>
- *     &lt;enumeration value="Byelorussian"/>
- *     &lt;enumeration value="CantoneseChinese"/>
- *     &lt;enumeration value="Castillian"/>
- *     &lt;enumeration value="Catalan"/>
- *     &lt;enumeration value="Cayuga"/>
- *     &lt;enumeration value="Cheyenne"/>
- *     &lt;enumeration value="Chinese"/>
- *     &lt;enumeration value="ClassicalNewari"/>
- *     &lt;enumeration value="Cornish"/>
- *     &lt;enumeration value="Corsican"/>
- *     &lt;enumeration value="Creole"/>
- *     &lt;enumeration value="CrimeanTatar"/>
- *     &lt;enumeration value="Croatian"/>
- *     &lt;enumeration value="Czech"/>
- *     &lt;enumeration value="Danish"/>
- *     &lt;enumeration value="Dargwa"/>
- *     &lt;enumeration value="Dutch"/>
- *     &lt;enumeration value="English"/>
- *     &lt;enumeration value="Esperanto"/>
- *     &lt;enumeration value="Estonian"/>
- *     &lt;enumeration value="Faroese"/>
- *     &lt;enumeration value="Farsi"/>
- *     &lt;enumeration value="Fiji"/>
- *     &lt;enumeration value="Filipino"/>
- *     &lt;enumeration value="Finnish"/>
- *     &lt;enumeration value="Flemish"/>
- *     &lt;enumeration value="French"/>
- *     &lt;enumeration value="FrenchCanadian"/>
- *     &lt;enumeration value="Frisian"/>
- *     &lt;enumeration value="Galician"/>
- *     &lt;enumeration value="Georgian"/>
- *     &lt;enumeration value="German"/>
- *     &lt;enumeration value="Gibberish"/>
- *     &lt;enumeration value="Greek"/>
- *     &lt;enumeration value="Greenlandic"/>
- *     &lt;enumeration value="Guarani"/>
- *     &lt;enumeration value="Gujarati"/>
- *     &lt;enumeration value="Gullah"/>
- *     &lt;enumeration value="Hausa"/>
- *     &lt;enumeration value="Hawaiian"/>
- *     &lt;enumeration value="Hebrew"/>
- *     &lt;enumeration value="Hindi"/>
- *     &lt;enumeration value="Hmong"/>
- *     &lt;enumeration value="Hungarian"/>
- *     &lt;enumeration value="Icelandic"/>
- *     &lt;enumeration value="IndoEuropean"/>
- *     &lt;enumeration value="Indonesian"/>
- *     &lt;enumeration value="Ingush"/>
- *     &lt;enumeration value="Interlingua"/>
- *     &lt;enumeration value="Interlingue"/>
- *     &lt;enumeration value="Inuktitun"/>
- *     &lt;enumeration value="Inuktitut"/>
- *     &lt;enumeration value="Inupiak"/>
- *     &lt;enumeration value="Inupiaq"/>
- *     &lt;enumeration value="Irish"/>
- *     &lt;enumeration value="Italian"/>
- *     &lt;enumeration value="Japanese"/>
- *     &lt;enumeration value="Javanese"/>
- *     &lt;enumeration value="Kalaallisut"/>
- *     &lt;enumeration value="Kalmyk"/>
- *     &lt;enumeration value="Kannada"/>
- *     &lt;enumeration value="KarachayBalkar"/>
- *     &lt;enumeration value="Kashmiri"/>
- *     &lt;enumeration value="Kashubian"/>
- *     &lt;enumeration value="Kazakh"/>
- *     &lt;enumeration value="Khmer"/>
- *     &lt;enumeration value="Kinyarwanda"/>
- *     &lt;enumeration value="Kirghiz"/>
- *     &lt;enumeration value="Kirundi"/>
- *     &lt;enumeration value="Klingon"/>
- *     &lt;enumeration value="Korean"/>
- *     &lt;enumeration value="Kurdish"/>
- *     &lt;enumeration value="Ladino"/>
- *     &lt;enumeration value="Lao"/>
- *     &lt;enumeration value="Lapp"/>
- *     &lt;enumeration value="Latin"/>
- *     &lt;enumeration value="Latvian"/>
- *     &lt;enumeration value="Lingala"/>
- *     &lt;enumeration value="Lithuanian"/>
- *     &lt;enumeration value="Lojban"/>
- *     &lt;enumeration value="LowerSorbian"/>
- *     &lt;enumeration value="Macedonian"/>
- *     &lt;enumeration value="Malagasy"/>
- *     &lt;enumeration value="Malay"/>
- *     &lt;enumeration value="Malayalam"/>
- *     &lt;enumeration value="Maltese"/>
- *     &lt;enumeration value="MandarinChinese"/>
- *     &lt;enumeration value="Maori"/>
- *     &lt;enumeration value="Marathi"/>
- *     &lt;enumeration value="Mende"/>
- *     &lt;enumeration value="MiddleEnglish"/>
- *     &lt;enumeration value="Mirandese"/>
- *     &lt;enumeration value="Moksha"/>
- *     &lt;enumeration value="Moldavian"/>
- *     &lt;enumeration value="Mongo"/>
- *     &lt;enumeration value="Mongolian"/>
- *     &lt;enumeration value="Multilingual"/>
- *     &lt;enumeration value="Nauru"/>
- *     &lt;enumeration value="Navaho"/>
- *     &lt;enumeration value="Nepali"/>
- *     &lt;enumeration value="Nogai"/>
- *     &lt;enumeration value="Norwegian"/>
- *     &lt;enumeration value="Occitan"/>
- *     &lt;enumeration value="OldEnglish"/>
- *     &lt;enumeration value="Oriya"/>
- *     &lt;enumeration value="Oromo"/>
- *     &lt;enumeration value="Pashto"/>
- *     &lt;enumeration value="Persian"/>
- *     &lt;enumeration value="PigLatin"/>
- *     &lt;enumeration value="Polish"/>
- *     &lt;enumeration value="Portuguese"/>
- *     &lt;enumeration value="Punjabi"/>
- *     &lt;enumeration value="Quechua"/>
- *     &lt;enumeration value="Romance"/>
- *     &lt;enumeration value="Romanian"/>
- *     &lt;enumeration value="Romany"/>
- *     &lt;enumeration value="Russian"/>
- *     &lt;enumeration value="Samaritan"/>
- *     &lt;enumeration value="Samoan"/>
- *     &lt;enumeration value="Sangho"/>
- *     &lt;enumeration value="Sanskrit"/>
- *     &lt;enumeration value="Serbian"/>
- *     &lt;enumeration value="Serbo-Croatian"/>
- *     &lt;enumeration value="Sesotho"/>
- *     &lt;enumeration value="Setswana"/>
- *     &lt;enumeration value="Shona"/>
- *     &lt;enumeration value="SichuanYi"/>
- *     &lt;enumeration value="Sicilian"/>
- *     &lt;enumeration value="SignLanguage"/>
- *     &lt;enumeration value="Sindhi"/>
- *     &lt;enumeration value="Sinhalese"/>
- *     &lt;enumeration value="Siswati"/>
- *     &lt;enumeration value="Slavic"/>
- *     &lt;enumeration value="Slovak"/>
- *     &lt;enumeration value="Slovakian"/>
- *     &lt;enumeration value="Slovene"/>
- *     &lt;enumeration value="Somali"/>
- *     &lt;enumeration value="Spanish"/>
- *     &lt;enumeration value="Sumerian"/>
- *     &lt;enumeration value="Sundanese"/>
- *     &lt;enumeration value="Swahili"/>
- *     &lt;enumeration value="Swedish"/>
- *     &lt;enumeration value="SwissGerman"/>
- *     &lt;enumeration value="Syriac"/>
- *     &lt;enumeration value="Tagalog"/>
- *     &lt;enumeration value="TaiwaneseChinese"/>
- *     &lt;enumeration value="Tajik"/>
- *     &lt;enumeration value="Tamil"/>
- *     &lt;enumeration value="Tatar"/>
- *     &lt;enumeration value="Telugu"/>
- *     &lt;enumeration value="Thai"/>
- *     &lt;enumeration value="Tibetan"/>
- *     &lt;enumeration value="Tigrinya"/>
- *     &lt;enumeration value="Tonga"/>
- *     &lt;enumeration value="Tsonga"/>
- *     &lt;enumeration value="Turkish"/>
- *     &lt;enumeration value="Turkmen"/>
- *     &lt;enumeration value="Twi"/>
- *     &lt;enumeration value="Udmurt"/>
- *     &lt;enumeration value="Uighur"/>
- *     &lt;enumeration value="Ukrainian"/>
- *     &lt;enumeration value="Ukranian"/>
- *     &lt;enumeration value="Unknown"/>
- *     &lt;enumeration value="Urdu"/>
- *     &lt;enumeration value="Uzbek"/>
- *     &lt;enumeration value="Vietnamese"/>
- *     &lt;enumeration value="Volapuk"/>
- *     &lt;enumeration value="Welsh"/>
- *     &lt;enumeration value="Wolof"/>
- *     &lt;enumeration value="Xhosa"/>
- *     &lt;enumeration value="Yiddish"/>
- *     &lt;enumeration value="Yoruba"/>
- *     &lt;enumeration value="Zhuang"/>
- *     &lt;enumeration value="Zulu"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.LanguageStringType
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "LanguageStringType")
-@XmlEnum
-public enum LanguageStringType {
-
-    @XmlEnumValue("Abkhazian")
-    ABKHAZIAN("Abkhazian"),
-    @XmlEnumValue("Adygei")
-    ADYGEI("Adygei"),
-    @XmlEnumValue("Afar")
-    AFAR("Afar"),
-    @XmlEnumValue("Afrikaans")
-    AFRIKAANS("Afrikaans"),
-    @XmlEnumValue("Albanian")
-    ALBANIAN("Albanian"),
-    @XmlEnumValue("Alsatian")
-    ALSATIAN("Alsatian"),
-    @XmlEnumValue("Amharic")
-    AMHARIC("Amharic"),
-    @XmlEnumValue("Arabic")
-    ARABIC("Arabic"),
-    @XmlEnumValue("Aramaic")
-    ARAMAIC("Aramaic"),
-    @XmlEnumValue("Armenian")
-    ARMENIAN("Armenian"),
-    @XmlEnumValue("Assamese")
-    ASSAMESE("Assamese"),
-    @XmlEnumValue("Aymara")
-    AYMARA("Aymara"),
-    @XmlEnumValue("Azerbaijani")
-    AZERBAIJANI("Azerbaijani"),
-    @XmlEnumValue("Bambara")
-    BAMBARA("Bambara"),
-    @XmlEnumValue("Bashkir")
-    BASHKIR("Bashkir"),
-    @XmlEnumValue("Basque")
-    BASQUE("Basque"),
-    @XmlEnumValue("Bengali")
-    BENGALI("Bengali"),
-    @XmlEnumValue("Berber")
-    BERBER("Berber"),
-    @XmlEnumValue("Bhutani")
-    BHUTANI("Bhutani"),
-    @XmlEnumValue("Bihari")
-    BIHARI("Bihari"),
-    @XmlEnumValue("Bislama")
-    BISLAMA("Bislama"),
-    @XmlEnumValue("Breton")
-    BRETON("Breton"),
-    @XmlEnumValue("Bulgarian")
-    BULGARIAN("Bulgarian"),
-    @XmlEnumValue("Burmese")
-    BURMESE("Burmese"),
-    @XmlEnumValue("Buryat")
-    BURYAT("Buryat"),
-    @XmlEnumValue("Byelorussian")
-    BYELORUSSIAN("Byelorussian"),
-    @XmlEnumValue("CantoneseChinese")
-    CANTONESE_CHINESE("CantoneseChinese"),
-    @XmlEnumValue("Castillian")
-    CASTILLIAN("Castillian"),
-    @XmlEnumValue("Catalan")
-    CATALAN("Catalan"),
-    @XmlEnumValue("Cayuga")
-    CAYUGA("Cayuga"),
-    @XmlEnumValue("Cheyenne")
-    CHEYENNE("Cheyenne"),
-    @XmlEnumValue("Chinese")
-    CHINESE("Chinese"),
-    @XmlEnumValue("ClassicalNewari")
-    CLASSICAL_NEWARI("ClassicalNewari"),
-    @XmlEnumValue("Cornish")
-    CORNISH("Cornish"),
-    @XmlEnumValue("Corsican")
-    CORSICAN("Corsican"),
-    @XmlEnumValue("Creole")
-    CREOLE("Creole"),
-    @XmlEnumValue("CrimeanTatar")
-    CRIMEAN_TATAR("CrimeanTatar"),
-    @XmlEnumValue("Croatian")
-    CROATIAN("Croatian"),
-    @XmlEnumValue("Czech")
-    CZECH("Czech"),
-    @XmlEnumValue("Danish")
-    DANISH("Danish"),
-    @XmlEnumValue("Dargwa")
-    DARGWA("Dargwa"),
-    @XmlEnumValue("Dutch")
-    DUTCH("Dutch"),
-    @XmlEnumValue("English")
-    ENGLISH("English"),
-    @XmlEnumValue("Esperanto")
-    ESPERANTO("Esperanto"),
-    @XmlEnumValue("Estonian")
-    ESTONIAN("Estonian"),
-    @XmlEnumValue("Faroese")
-    FAROESE("Faroese"),
-    @XmlEnumValue("Farsi")
-    FARSI("Farsi"),
-    @XmlEnumValue("Fiji")
-    FIJI("Fiji"),
-    @XmlEnumValue("Filipino")
-    FILIPINO("Filipino"),
-    @XmlEnumValue("Finnish")
-    FINNISH("Finnish"),
-    @XmlEnumValue("Flemish")
-    FLEMISH("Flemish"),
-    @XmlEnumValue("French")
-    FRENCH("French"),
-    @XmlEnumValue("FrenchCanadian")
-    FRENCH_CANADIAN("FrenchCanadian"),
-    @XmlEnumValue("Frisian")
-    FRISIAN("Frisian"),
-    @XmlEnumValue("Galician")
-    GALICIAN("Galician"),
-    @XmlEnumValue("Georgian")
-    GEORGIAN("Georgian"),
-    @XmlEnumValue("German")
-    GERMAN("German"),
-    @XmlEnumValue("Gibberish")
-    GIBBERISH("Gibberish"),
-    @XmlEnumValue("Greek")
-    GREEK("Greek"),
-    @XmlEnumValue("Greenlandic")
-    GREENLANDIC("Greenlandic"),
-    @XmlEnumValue("Guarani")
-    GUARANI("Guarani"),
-    @XmlEnumValue("Gujarati")
-    GUJARATI("Gujarati"),
-    @XmlEnumValue("Gullah")
-    GULLAH("Gullah"),
-    @XmlEnumValue("Hausa")
-    HAUSA("Hausa"),
-    @XmlEnumValue("Hawaiian")
-    HAWAIIAN("Hawaiian"),
-    @XmlEnumValue("Hebrew")
-    HEBREW("Hebrew"),
-    @XmlEnumValue("Hindi")
-    HINDI("Hindi"),
-    @XmlEnumValue("Hmong")
-    HMONG("Hmong"),
-    @XmlEnumValue("Hungarian")
-    HUNGARIAN("Hungarian"),
-    @XmlEnumValue("Icelandic")
-    ICELANDIC("Icelandic"),
-    @XmlEnumValue("IndoEuropean")
-    INDO_EUROPEAN("IndoEuropean"),
-    @XmlEnumValue("Indonesian")
-    INDONESIAN("Indonesian"),
-    @XmlEnumValue("Ingush")
-    INGUSH("Ingush"),
-    @XmlEnumValue("Interlingua")
-    INTERLINGUA("Interlingua"),
-    @XmlEnumValue("Interlingue")
-    INTERLINGUE("Interlingue"),
-    @XmlEnumValue("Inuktitun")
-    INUKTITUN("Inuktitun"),
-    @XmlEnumValue("Inuktitut")
-    INUKTITUT("Inuktitut"),
-    @XmlEnumValue("Inupiak")
-    INUPIAK("Inupiak"),
-    @XmlEnumValue("Inupiaq")
-    INUPIAQ("Inupiaq"),
-    @XmlEnumValue("Irish")
-    IRISH("Irish"),
-    @XmlEnumValue("Italian")
-    ITALIAN("Italian"),
-    @XmlEnumValue("Japanese")
-    JAPANESE("Japanese"),
-    @XmlEnumValue("Javanese")
-    JAVANESE("Javanese"),
-    @XmlEnumValue("Kalaallisut")
-    KALAALLISUT("Kalaallisut"),
-    @XmlEnumValue("Kalmyk")
-    KALMYK("Kalmyk"),
-    @XmlEnumValue("Kannada")
-    KANNADA("Kannada"),
-    @XmlEnumValue("KarachayBalkar")
-    KARACHAY_BALKAR("KarachayBalkar"),
-    @XmlEnumValue("Kashmiri")
-    KASHMIRI("Kashmiri"),
-    @XmlEnumValue("Kashubian")
-    KASHUBIAN("Kashubian"),
-    @XmlEnumValue("Kazakh")
-    KAZAKH("Kazakh"),
-    @XmlEnumValue("Khmer")
-    KHMER("Khmer"),
-    @XmlEnumValue("Kinyarwanda")
-    KINYARWANDA("Kinyarwanda"),
-    @XmlEnumValue("Kirghiz")
-    KIRGHIZ("Kirghiz"),
-    @XmlEnumValue("Kirundi")
-    KIRUNDI("Kirundi"),
-    @XmlEnumValue("Klingon")
-    KLINGON("Klingon"),
-    @XmlEnumValue("Korean")
-    KOREAN("Korean"),
-    @XmlEnumValue("Kurdish")
-    KURDISH("Kurdish"),
-    @XmlEnumValue("Ladino")
-    LADINO("Ladino"),
-    @XmlEnumValue("Lao")
-    LAO("Lao"),
-    @XmlEnumValue("Lapp")
-    LAPP("Lapp"),
-    @XmlEnumValue("Latin")
-    LATIN("Latin"),
-    @XmlEnumValue("Latvian")
-    LATVIAN("Latvian"),
-    @XmlEnumValue("Lingala")
-    LINGALA("Lingala"),
-    @XmlEnumValue("Lithuanian")
-    LITHUANIAN("Lithuanian"),
-    @XmlEnumValue("Lojban")
-    LOJBAN("Lojban"),
-    @XmlEnumValue("LowerSorbian")
-    LOWER_SORBIAN("LowerSorbian"),
-    @XmlEnumValue("Macedonian")
-    MACEDONIAN("Macedonian"),
-    @XmlEnumValue("Malagasy")
-    MALAGASY("Malagasy"),
-    @XmlEnumValue("Malay")
-    MALAY("Malay"),
-    @XmlEnumValue("Malayalam")
-    MALAYALAM("Malayalam"),
-    @XmlEnumValue("Maltese")
-    MALTESE("Maltese"),
-    @XmlEnumValue("MandarinChinese")
-    MANDARIN_CHINESE("MandarinChinese"),
-    @XmlEnumValue("Maori")
-    MAORI("Maori"),
-    @XmlEnumValue("Marathi")
-    MARATHI("Marathi"),
-    @XmlEnumValue("Mende")
-    MENDE("Mende"),
-    @XmlEnumValue("MiddleEnglish")
-    MIDDLE_ENGLISH("MiddleEnglish"),
-    @XmlEnumValue("Mirandese")
-    MIRANDESE("Mirandese"),
-    @XmlEnumValue("Moksha")
-    MOKSHA("Moksha"),
-    @XmlEnumValue("Moldavian")
-    MOLDAVIAN("Moldavian"),
-    @XmlEnumValue("Mongo")
-    MONGO("Mongo"),
-    @XmlEnumValue("Mongolian")
-    MONGOLIAN("Mongolian"),
-    @XmlEnumValue("Multilingual")
-    MULTILINGUAL("Multilingual"),
-    @XmlEnumValue("Nauru")
-    NAURU("Nauru"),
-    @XmlEnumValue("Navaho")
-    NAVAHO("Navaho"),
-    @XmlEnumValue("Nepali")
-    NEPALI("Nepali"),
-    @XmlEnumValue("Nogai")
-    NOGAI("Nogai"),
-    @XmlEnumValue("Norwegian")
-    NORWEGIAN("Norwegian"),
-    @XmlEnumValue("Occitan")
-    OCCITAN("Occitan"),
-    @XmlEnumValue("OldEnglish")
-    OLD_ENGLISH("OldEnglish"),
-    @XmlEnumValue("Oriya")
-    ORIYA("Oriya"),
-    @XmlEnumValue("Oromo")
-    OROMO("Oromo"),
-    @XmlEnumValue("Pashto")
-    PASHTO("Pashto"),
-    @XmlEnumValue("Persian")
-    PERSIAN("Persian"),
-    @XmlEnumValue("PigLatin")
-    PIG_LATIN("PigLatin"),
-    @XmlEnumValue("Polish")
-    POLISH("Polish"),
-    @XmlEnumValue("Portuguese")
-    PORTUGUESE("Portuguese"),
-    @XmlEnumValue("Punjabi")
-    PUNJABI("Punjabi"),
-    @XmlEnumValue("Quechua")
-    QUECHUA("Quechua"),
-    @XmlEnumValue("Romance")
-    ROMANCE("Romance"),
-    @XmlEnumValue("Romanian")
-    ROMANIAN("Romanian"),
-    @XmlEnumValue("Romany")
-    ROMANY("Romany"),
-    @XmlEnumValue("Russian")
-    RUSSIAN("Russian"),
-    @XmlEnumValue("Samaritan")
-    SAMARITAN("Samaritan"),
-    @XmlEnumValue("Samoan")
-    SAMOAN("Samoan"),
-    @XmlEnumValue("Sangho")
-    SANGHO("Sangho"),
-    @XmlEnumValue("Sanskrit")
-    SANSKRIT("Sanskrit"),
-    @XmlEnumValue("Serbian")
-    SERBIAN("Serbian"),
-    @XmlEnumValue("Serbo-Croatian")
-    SERBO_CROATIAN("Serbo-Croatian"),
-    @XmlEnumValue("Sesotho")
-    SESOTHO("Sesotho"),
-    @XmlEnumValue("Setswana")
-    SETSWANA("Setswana"),
-    @XmlEnumValue("Shona")
-    SHONA("Shona"),
-    @XmlEnumValue("SichuanYi")
-    SICHUAN_YI("SichuanYi"),
-    @XmlEnumValue("Sicilian")
-    SICILIAN("Sicilian"),
-    @XmlEnumValue("SignLanguage")
-    SIGN_LANGUAGE("SignLanguage"),
-    @XmlEnumValue("Sindhi")
-    SINDHI("Sindhi"),
-    @XmlEnumValue("Sinhalese")
-    SINHALESE("Sinhalese"),
-    @XmlEnumValue("Siswati")
-    SISWATI("Siswati"),
-    @XmlEnumValue("Slavic")
-    SLAVIC("Slavic"),
-    @XmlEnumValue("Slovak")
-    SLOVAK("Slovak"),
-    @XmlEnumValue("Slovakian")
-    SLOVAKIAN("Slovakian"),
-    @XmlEnumValue("Slovene")
-    SLOVENE("Slovene"),
-    @XmlEnumValue("Somali")
-    SOMALI("Somali"),
-    @XmlEnumValue("Spanish")
-    SPANISH("Spanish"),
-    @XmlEnumValue("Sumerian")
-    SUMERIAN("Sumerian"),
-    @XmlEnumValue("Sundanese")
-    SUNDANESE("Sundanese"),
-    @XmlEnumValue("Swahili")
-    SWAHILI("Swahili"),
-    @XmlEnumValue("Swedish")
-    SWEDISH("Swedish"),
-    @XmlEnumValue("SwissGerman")
-    SWISS_GERMAN("SwissGerman"),
-    @XmlEnumValue("Syriac")
-    SYRIAC("Syriac"),
-    @XmlEnumValue("Tagalog")
-    TAGALOG("Tagalog"),
-    @XmlEnumValue("TaiwaneseChinese")
-    TAIWANESE_CHINESE("TaiwaneseChinese"),
-    @XmlEnumValue("Tajik")
-    TAJIK("Tajik"),
-    @XmlEnumValue("Tamil")
-    TAMIL("Tamil"),
-    @XmlEnumValue("Tatar")
-    TATAR("Tatar"),
-    @XmlEnumValue("Telugu")
-    TELUGU("Telugu"),
-    @XmlEnumValue("Thai")
-    THAI("Thai"),
-    @XmlEnumValue("Tibetan")
-    TIBETAN("Tibetan"),
-    @XmlEnumValue("Tigrinya")
-    TIGRINYA("Tigrinya"),
-    @XmlEnumValue("Tonga")
-    TONGA("Tonga"),
-    @XmlEnumValue("Tsonga")
-    TSONGA("Tsonga"),
-    @XmlEnumValue("Turkish")
-    TURKISH("Turkish"),
-    @XmlEnumValue("Turkmen")
-    TURKMEN("Turkmen"),
-    @XmlEnumValue("Twi")
-    TWI("Twi"),
-    @XmlEnumValue("Udmurt")
-    UDMURT("Udmurt"),
-    @XmlEnumValue("Uighur")
-    UIGHUR("Uighur"),
-    @XmlEnumValue("Ukrainian")
-    UKRAINIAN("Ukrainian"),
-    @XmlEnumValue("Ukranian")
-    UKRANIAN("Ukranian"),
-    @XmlEnumValue("Unknown")
-    UNKNOWN("Unknown"),
-    @XmlEnumValue("Urdu")
-    URDU("Urdu"),
-    @XmlEnumValue("Uzbek")
-    UZBEK("Uzbek"),
-    @XmlEnumValue("Vietnamese")
-    VIETNAMESE("Vietnamese"),
-    @XmlEnumValue("Volapuk")
-    VOLAPUK("Volapuk"),
-    @XmlEnumValue("Welsh")
-    WELSH("Welsh"),
-    @XmlEnumValue("Wolof")
-    WOLOF("Wolof"),
-    @XmlEnumValue("Xhosa")
-    XHOSA("Xhosa"),
-    @XmlEnumValue("Yiddish")
-    YIDDISH("Yiddish"),
-    @XmlEnumValue("Yoruba")
-    YORUBA("Yoruba"),
-    @XmlEnumValue("Zhuang")
-    ZHUANG("Zhuang"),
-    @XmlEnumValue("Zulu")
-    ZULU("Zulu");
-    private final String value;
-
-    LanguageStringType(String v) {
-        value = v;
-    }
-
-    public String value() {
-        return value;
-    }
-
-    public static LanguageStringType fromValue(String v) {
-        for (LanguageStringType c: LanguageStringType.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
-
-}

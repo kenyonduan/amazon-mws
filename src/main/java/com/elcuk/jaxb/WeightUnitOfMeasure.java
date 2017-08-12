@@ -1,44 +1,28 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="WeightUnitOfMeasure")
+/*    */ @XmlEnum
+/*    */ public enum WeightUnitOfMeasure
+/*    */ {
+/* 30 */   GR, 
+/* 31 */   KG, 
+/* 32 */   OZ, 
+/* 33 */   LB, 
+/* 34 */   MG;
+/*    */ 
+/*    */   public String value() {
+/* 37 */     return name();
+/*    */   }
+/*    */ 
+/*    */   public static WeightUnitOfMeasure fromValue(String v) {
+/* 41 */     return valueOf(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>WeightUnitOfMeasure的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="WeightUnitOfMeasure">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="GR"/>
- *     &lt;enumeration value="KG"/>
- *     &lt;enumeration value="OZ"/>
- *     &lt;enumeration value="LB"/>
- *     &lt;enumeration value="MG"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.WeightUnitOfMeasure
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "WeightUnitOfMeasure")
-@XmlEnum
-public enum WeightUnitOfMeasure {
-
-    GR,
-    KG,
-    OZ,
-    LB,
-    MG;
-
-    public String value() {
-        return name();
-    }
-
-    public static WeightUnitOfMeasure fromValue(String v) {
-        return valueOf(v);
-    }
-
-}

@@ -1,50 +1,37 @@
+/*    */ package com.elcuk.jaxb;
+/*    */ 
+/*    */ import javax.xml.bind.annotation.XmlEnum;
+/*    */ import javax.xml.bind.annotation.XmlEnumValue;
+/*    */ import javax.xml.bind.annotation.XmlType;
+/*    */ 
+/*    */ @XmlType(name="CurrentUnitOfMeasure")
+/*    */ @XmlEnum
+/*    */ public enum CurrentUnitOfMeasure
+/*    */ {
+/* 28 */   M_A("mA"), 
+/*    */ 
+/* 30 */   A("A");
+/*    */ 
+/*    */   private final String value;
+/*    */ 
+/* 34 */   private CurrentUnitOfMeasure(String v) { this.value = v; }
+/*    */ 
+/*    */   public String value()
+/*    */   {
+/* 38 */     return this.value;
+/*    */   }
+/*    */ 
+/*    */   public static CurrentUnitOfMeasure fromValue(String v) {
+/* 42 */     for (CurrentUnitOfMeasure c : values()) {
+/* 43 */       if (c.value.equals(v)) {
+/* 44 */         return c;
+/*    */       }
+/*    */     }
+/* 47 */     throw new IllegalArgumentException(v);
+/*    */   }
+/*    */ }
 
-package com.elcuk.jaxb;
-
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
-
-
-/**
- * <p>CurrentUnitOfMeasure的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="CurrentUnitOfMeasure">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="mA"/>
- *     &lt;enumeration value="A"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.CurrentUnitOfMeasure
+ * JD-Core Version:    0.6.2
  */
-@XmlType(name = "CurrentUnitOfMeasure")
-@XmlEnum
-public enum CurrentUnitOfMeasure {
-
-    @XmlEnumValue("mA")
-    M_A("mA"),
-    A("A");
-    private final String value;
-
-    CurrentUnitOfMeasure(String v) {
-        value = v;
-    }
-
-    public String value() {
-        return value;
-    }
-
-    public static CurrentUnitOfMeasure fromValue(String v) {
-        for (CurrentUnitOfMeasure c: CurrentUnitOfMeasure.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
-    }
-
-}

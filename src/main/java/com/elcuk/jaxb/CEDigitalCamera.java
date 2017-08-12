@@ -1,1454 +1,675 @@
+/*      */ package com.elcuk.jaxb;
+/*      */ 
+/*      */ import java.math.BigDecimal;
+/*      */ import java.math.BigInteger;
+/*      */ import java.util.ArrayList;
+/*      */ import java.util.List;
+/*      */ import javax.xml.bind.annotation.XmlAccessType;
+/*      */ import javax.xml.bind.annotation.XmlAccessorType;
+/*      */ import javax.xml.bind.annotation.XmlElement;
+/*      */ import javax.xml.bind.annotation.XmlRootElement;
+/*      */ import javax.xml.bind.annotation.XmlSchemaType;
+/*      */ import javax.xml.bind.annotation.XmlType;
+/*      */ import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
+/*      */ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+/*      */ 
+/*      */ @XmlAccessorType(XmlAccessType.FIELD)
+/*      */ @XmlType(name="", propOrder={"analogRGBInput", "batteryCellType", "batteryChargeCycles", "batteryPower", "boxContents", "cableLength", "cameraFlash", "cameraLens", "compatibleMountings", "continuousShootingSpeed", "digitalZoom", "effectiveStillResolution", "finishType", "fixedFocalLength", "flashModesDescription", "focusType", "guideNumber", "imageStabilization", "isHotShoeIncluded", "lens", "maxAperture", "maxFocalLength", "maxShutterSpeed", "memorySlotsAvailable", "minAperture", "minFocalLength", "minShutterSpeed", "opticalZoom", "photoFilterLensSize", "photoSensorSize", "photoSensorTechnology", "powerSource", "remoteControlDescription", "removableMemory", "screenSize", "softwareIncluded", "threeDTechnology", "totalFirewirePorts", "totalHdmiPorts", "totalSVideoOutPorts", "totalUSBPorts", "videoEncoding", "videoResolution", "viewFinderType", "waterResistantLevel", "wirelessTechnology", "powerPlugType", "efficiency"})
+/*      */ @XmlRootElement(name="CEDigitalCamera")
+/*      */ public class CEDigitalCamera
+/*      */ {
+/*      */ 
+/*      */   @XmlElement(name="AnalogRGBInput")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected List<String> analogRGBInput;
+/*      */ 
+/*      */   @XmlElement(name="BatteryCellType")
+/*      */   protected BatteryCellTypeValues batteryCellType;
+/*      */ 
+/*      */   @XmlElement(name="BatteryChargeCycles")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger batteryChargeCycles;
+/*      */ 
+/*      */   @XmlElement(name="BatteryPower")
+/*      */   protected BatteryPowerIntegerDimension batteryPower;
+/*      */ 
+/*      */   @XmlElement(name="BoxContents")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String boxContents;
+/*      */ 
+/*      */   @XmlElement(name="CableLength")
+/*      */   protected LengthDimension cableLength;
+/*      */ 
+/*      */   @XmlElement(name="CameraFlash")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String cameraFlash;
+/*      */ 
+/*      */   @XmlElement(name="CameraLens")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String cameraLens;
+/*      */ 
+/*      */   @XmlElement(name="CompatibleMountings")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String compatibleMountings;
+/*      */ 
+/*      */   @XmlElement(name="ContinuousShootingSpeed")
+/*      */   protected ContinuousShootingDimension continuousShootingSpeed;
+/*      */ 
+/*      */   @XmlElement(name="DigitalZoom")
+/*      */   protected ZoomDimension digitalZoom;
+/*      */ 
+/*      */   @XmlElement(name="EffectiveStillResolution")
+/*      */   protected ResolutionDimension effectiveStillResolution;
+/*      */ 
+/*      */   @XmlElement(name="FinishType")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String finishType;
+/*      */ 
+/*      */   @XmlElement(name="FixedFocalLength")
+/*      */   protected LengthDimension fixedFocalLength;
+/*      */ 
+/*      */   @XmlElement(name="FlashModesDescription")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String flashModesDescription;
+/*      */ 
+/*      */   @XmlElement(name="FocusType")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String focusType;
+/*      */ 
+/*      */   @XmlElement(name="GuideNumber")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String guideNumber;
+/*      */ 
+/*      */   @XmlElement(name="ImageStabilization")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String imageStabilization;
+/*      */ 
+/*      */   @XmlElement(name="IsHotShoeIncluded")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String isHotShoeIncluded;
+/*      */ 
+/*      */   @XmlElement(name="Lens")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String lens;
+/*      */ 
+/*      */   @XmlElement(name="MaxAperture")
+/*      */   protected ApertureDimension maxAperture;
+/*      */ 
+/*      */   @XmlElement(name="MaxFocalLength")
+/*      */   protected LengthDimension maxFocalLength;
+/*      */ 
+/*      */   @XmlElement(name="MaxShutterSpeed")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String maxShutterSpeed;
+/*      */ 
+/*      */   @XmlElement(name="MemorySlotsAvailable")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String memorySlotsAvailable;
+/*      */ 
+/*      */   @XmlElement(name="MinAperture")
+/*      */   protected ApertureDimension minAperture;
+/*      */ 
+/*      */   @XmlElement(name="MinFocalLength")
+/*      */   protected LengthDimension minFocalLength;
+/*      */ 
+/*      */   @XmlElement(name="MinShutterSpeed")
+/*      */   protected BigDecimal minShutterSpeed;
+/*      */ 
+/*      */   @XmlElement(name="OpticalZoom")
+/*      */   protected ZoomDimension opticalZoom;
+/*      */ 
+/*      */   @XmlElement(name="PhotoFilterLensSize")
+/*      */   protected LengthDimension photoFilterLensSize;
+/*      */ 
+/*      */   @XmlElement(name="PhotoSensorSize")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String photoSensorSize;
+/*      */ 
+/*      */   @XmlElement(name="PhotoSensorTechnology")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String photoSensorTechnology;
+/*      */ 
+/*      */   @XmlElement(name="PowerSource")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String powerSource;
+/*      */ 
+/*      */   @XmlElement(name="RemoteControlDescription")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String remoteControlDescription;
+/*      */ 
+/*      */   @XmlElement(name="RemovableMemory")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String removableMemory;
+/*      */ 
+/*      */   @XmlElement(name="ScreenSize")
+/*      */   protected LengthDimension screenSize;
+/*      */ 
+/*      */   @XmlElement(name="SoftwareIncluded")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String softwareIncluded;
+/*      */ 
+/*      */   @XmlElement(name="ThreeDTechnology")
+/*      */   protected ThreeDTechnologyValues threeDTechnology;
+/*      */ 
+/*      */   @XmlElement(name="TotalFirewirePorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalFirewirePorts;
+/*      */ 
+/*      */   @XmlElement(name="TotalHdmiPorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalHdmiPorts;
+/*      */ 
+/*      */   @XmlElement(name="TotalSVideoOutPorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalSVideoOutPorts;
+/*      */ 
+/*      */   @XmlElement(name="TotalUSBPorts")
+/*      */   @XmlSchemaType(name="positiveInteger")
+/*      */   protected BigInteger totalUSBPorts;
+/*      */ 
+/*      */   @XmlElement(name="VideoEncoding")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String videoEncoding;
+/*      */ 
+/*      */   @XmlElement(name="VideoResolution")
+/*      */   protected PixelDimension videoResolution;
+/*      */ 
+/*      */   @XmlElement(name="ViewFinderType")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String viewFinderType;
+/*      */ 
+/*      */   @XmlElement(name="WaterResistantLevel")
+/*      */   protected WaterResistantType waterResistantLevel;
+/*      */ 
+/*      */   @XmlElement(name="WirelessTechnology")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected List<String> wirelessTechnology;
+/*      */ 
+/*      */   @XmlElement(name="PowerPlugType")
+/*      */   protected PowerPlugType powerPlugType;
+/*      */ 
+/*      */   @XmlElement(name="Efficiency")
+/*      */   @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+/*      */   protected String efficiency;
+/*      */ 
+/*      */   public List<String> getAnalogRGBInput()
+/*      */   {
+/*  287 */     if (this.analogRGBInput == null) {
+/*  288 */       this.analogRGBInput = new ArrayList();
+/*      */     }
+/*  290 */     return this.analogRGBInput;
+/*      */   }
+/*      */ 
+/*      */   public BatteryCellTypeValues getBatteryCellType()
+/*      */   {
+/*  302 */     return this.batteryCellType;
+/*      */   }
+/*      */ 
+/*      */   public void setBatteryCellType(BatteryCellTypeValues value)
+/*      */   {
+/*  314 */     this.batteryCellType = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getBatteryChargeCycles()
+/*      */   {
+/*  326 */     return this.batteryChargeCycles;
+/*      */   }
+/*      */ 
+/*      */   public void setBatteryChargeCycles(BigInteger value)
+/*      */   {
+/*  338 */     this.batteryChargeCycles = value;
+/*      */   }
+/*      */ 
+/*      */   public BatteryPowerIntegerDimension getBatteryPower()
+/*      */   {
+/*  350 */     return this.batteryPower;
+/*      */   }
+/*      */ 
+/*      */   public void setBatteryPower(BatteryPowerIntegerDimension value)
+/*      */   {
+/*  362 */     this.batteryPower = value;
+/*      */   }
+/*      */ 
+/*      */   public String getBoxContents()
+/*      */   {
+/*  374 */     return this.boxContents;
+/*      */   }
+/*      */ 
+/*      */   public void setBoxContents(String value)
+/*      */   {
+/*  386 */     this.boxContents = value;
+/*      */   }
+/*      */ 
+/*      */   public LengthDimension getCableLength()
+/*      */   {
+/*  398 */     return this.cableLength;
+/*      */   }
+/*      */ 
+/*      */   public void setCableLength(LengthDimension value)
+/*      */   {
+/*  410 */     this.cableLength = value;
+/*      */   }
+/*      */ 
+/*      */   public String getCameraFlash()
+/*      */   {
+/*  422 */     return this.cameraFlash;
+/*      */   }
+/*      */ 
+/*      */   public void setCameraFlash(String value)
+/*      */   {
+/*  434 */     this.cameraFlash = value;
+/*      */   }
+/*      */ 
+/*      */   public String getCameraLens()
+/*      */   {
+/*  446 */     return this.cameraLens;
+/*      */   }
+/*      */ 
+/*      */   public void setCameraLens(String value)
+/*      */   {
+/*  458 */     this.cameraLens = value;
+/*      */   }
+/*      */ 
+/*      */   public String getCompatibleMountings()
+/*      */   {
+/*  470 */     return this.compatibleMountings;
+/*      */   }
+/*      */ 
+/*      */   public void setCompatibleMountings(String value)
+/*      */   {
+/*  482 */     this.compatibleMountings = value;
+/*      */   }
+/*      */ 
+/*      */   public ContinuousShootingDimension getContinuousShootingSpeed()
+/*      */   {
+/*  494 */     return this.continuousShootingSpeed;
+/*      */   }
+/*      */ 
+/*      */   public void setContinuousShootingSpeed(ContinuousShootingDimension value)
+/*      */   {
+/*  506 */     this.continuousShootingSpeed = value;
+/*      */   }
+/*      */ 
+/*      */   public ZoomDimension getDigitalZoom()
+/*      */   {
+/*  518 */     return this.digitalZoom;
+/*      */   }
+/*      */ 
+/*      */   public void setDigitalZoom(ZoomDimension value)
+/*      */   {
+/*  530 */     this.digitalZoom = value;
+/*      */   }
+/*      */ 
+/*      */   public ResolutionDimension getEffectiveStillResolution()
+/*      */   {
+/*  542 */     return this.effectiveStillResolution;
+/*      */   }
+/*      */ 
+/*      */   public void setEffectiveStillResolution(ResolutionDimension value)
+/*      */   {
+/*  554 */     this.effectiveStillResolution = value;
+/*      */   }
+/*      */ 
+/*      */   public String getFinishType()
+/*      */   {
+/*  566 */     return this.finishType;
+/*      */   }
+/*      */ 
+/*      */   public void setFinishType(String value)
+/*      */   {
+/*  578 */     this.finishType = value;
+/*      */   }
+/*      */ 
+/*      */   public LengthDimension getFixedFocalLength()
+/*      */   {
+/*  590 */     return this.fixedFocalLength;
+/*      */   }
+/*      */ 
+/*      */   public void setFixedFocalLength(LengthDimension value)
+/*      */   {
+/*  602 */     this.fixedFocalLength = value;
+/*      */   }
+/*      */ 
+/*      */   public String getFlashModesDescription()
+/*      */   {
+/*  614 */     return this.flashModesDescription;
+/*      */   }
+/*      */ 
+/*      */   public void setFlashModesDescription(String value)
+/*      */   {
+/*  626 */     this.flashModesDescription = value;
+/*      */   }
+/*      */ 
+/*      */   public String getFocusType()
+/*      */   {
+/*  638 */     return this.focusType;
+/*      */   }
+/*      */ 
+/*      */   public void setFocusType(String value)
+/*      */   {
+/*  650 */     this.focusType = value;
+/*      */   }
+/*      */ 
+/*      */   public String getGuideNumber()
+/*      */   {
+/*  662 */     return this.guideNumber;
+/*      */   }
+/*      */ 
+/*      */   public void setGuideNumber(String value)
+/*      */   {
+/*  674 */     this.guideNumber = value;
+/*      */   }
+/*      */ 
+/*      */   public String getImageStabilization()
+/*      */   {
+/*  686 */     return this.imageStabilization;
+/*      */   }
+/*      */ 
+/*      */   public void setImageStabilization(String value)
+/*      */   {
+/*  698 */     this.imageStabilization = value;
+/*      */   }
+/*      */ 
+/*      */   public String getIsHotShoeIncluded()
+/*      */   {
+/*  710 */     return this.isHotShoeIncluded;
+/*      */   }
+/*      */ 
+/*      */   public void setIsHotShoeIncluded(String value)
+/*      */   {
+/*  722 */     this.isHotShoeIncluded = value;
+/*      */   }
+/*      */ 
+/*      */   public String getLens()
+/*      */   {
+/*  734 */     return this.lens;
+/*      */   }
+/*      */ 
+/*      */   public void setLens(String value)
+/*      */   {
+/*  746 */     this.lens = value;
+/*      */   }
+/*      */ 
+/*      */   public ApertureDimension getMaxAperture()
+/*      */   {
+/*  758 */     return this.maxAperture;
+/*      */   }
+/*      */ 
+/*      */   public void setMaxAperture(ApertureDimension value)
+/*      */   {
+/*  770 */     this.maxAperture = value;
+/*      */   }
+/*      */ 
+/*      */   public LengthDimension getMaxFocalLength()
+/*      */   {
+/*  782 */     return this.maxFocalLength;
+/*      */   }
+/*      */ 
+/*      */   public void setMaxFocalLength(LengthDimension value)
+/*      */   {
+/*  794 */     this.maxFocalLength = value;
+/*      */   }
+/*      */ 
+/*      */   public String getMaxShutterSpeed()
+/*      */   {
+/*  806 */     return this.maxShutterSpeed;
+/*      */   }
+/*      */ 
+/*      */   public void setMaxShutterSpeed(String value)
+/*      */   {
+/*  818 */     this.maxShutterSpeed = value;
+/*      */   }
+/*      */ 
+/*      */   public String getMemorySlotsAvailable()
+/*      */   {
+/*  830 */     return this.memorySlotsAvailable;
+/*      */   }
+/*      */ 
+/*      */   public void setMemorySlotsAvailable(String value)
+/*      */   {
+/*  842 */     this.memorySlotsAvailable = value;
+/*      */   }
+/*      */ 
+/*      */   public ApertureDimension getMinAperture()
+/*      */   {
+/*  854 */     return this.minAperture;
+/*      */   }
+/*      */ 
+/*      */   public void setMinAperture(ApertureDimension value)
+/*      */   {
+/*  866 */     this.minAperture = value;
+/*      */   }
+/*      */ 
+/*      */   public LengthDimension getMinFocalLength()
+/*      */   {
+/*  878 */     return this.minFocalLength;
+/*      */   }
+/*      */ 
+/*      */   public void setMinFocalLength(LengthDimension value)
+/*      */   {
+/*  890 */     this.minFocalLength = value;
+/*      */   }
+/*      */ 
+/*      */   public BigDecimal getMinShutterSpeed()
+/*      */   {
+/*  902 */     return this.minShutterSpeed;
+/*      */   }
+/*      */ 
+/*      */   public void setMinShutterSpeed(BigDecimal value)
+/*      */   {
+/*  914 */     this.minShutterSpeed = value;
+/*      */   }
+/*      */ 
+/*      */   public ZoomDimension getOpticalZoom()
+/*      */   {
+/*  926 */     return this.opticalZoom;
+/*      */   }
+/*      */ 
+/*      */   public void setOpticalZoom(ZoomDimension value)
+/*      */   {
+/*  938 */     this.opticalZoom = value;
+/*      */   }
+/*      */ 
+/*      */   public LengthDimension getPhotoFilterLensSize()
+/*      */   {
+/*  950 */     return this.photoFilterLensSize;
+/*      */   }
+/*      */ 
+/*      */   public void setPhotoFilterLensSize(LengthDimension value)
+/*      */   {
+/*  962 */     this.photoFilterLensSize = value;
+/*      */   }
+/*      */ 
+/*      */   public String getPhotoSensorSize()
+/*      */   {
+/*  974 */     return this.photoSensorSize;
+/*      */   }
+/*      */ 
+/*      */   public void setPhotoSensorSize(String value)
+/*      */   {
+/*  986 */     this.photoSensorSize = value;
+/*      */   }
+/*      */ 
+/*      */   public String getPhotoSensorTechnology()
+/*      */   {
+/*  998 */     return this.photoSensorTechnology;
+/*      */   }
+/*      */ 
+/*      */   public void setPhotoSensorTechnology(String value)
+/*      */   {
+/* 1010 */     this.photoSensorTechnology = value;
+/*      */   }
+/*      */ 
+/*      */   public String getPowerSource()
+/*      */   {
+/* 1022 */     return this.powerSource;
+/*      */   }
+/*      */ 
+/*      */   public void setPowerSource(String value)
+/*      */   {
+/* 1034 */     this.powerSource = value;
+/*      */   }
+/*      */ 
+/*      */   public String getRemoteControlDescription()
+/*      */   {
+/* 1046 */     return this.remoteControlDescription;
+/*      */   }
+/*      */ 
+/*      */   public void setRemoteControlDescription(String value)
+/*      */   {
+/* 1058 */     this.remoteControlDescription = value;
+/*      */   }
+/*      */ 
+/*      */   public String getRemovableMemory()
+/*      */   {
+/* 1070 */     return this.removableMemory;
+/*      */   }
+/*      */ 
+/*      */   public void setRemovableMemory(String value)
+/*      */   {
+/* 1082 */     this.removableMemory = value;
+/*      */   }
+/*      */ 
+/*      */   public LengthDimension getScreenSize()
+/*      */   {
+/* 1094 */     return this.screenSize;
+/*      */   }
+/*      */ 
+/*      */   public void setScreenSize(LengthDimension value)
+/*      */   {
+/* 1106 */     this.screenSize = value;
+/*      */   }
+/*      */ 
+/*      */   public String getSoftwareIncluded()
+/*      */   {
+/* 1118 */     return this.softwareIncluded;
+/*      */   }
+/*      */ 
+/*      */   public void setSoftwareIncluded(String value)
+/*      */   {
+/* 1130 */     this.softwareIncluded = value;
+/*      */   }
+/*      */ 
+/*      */   public ThreeDTechnologyValues getThreeDTechnology()
+/*      */   {
+/* 1142 */     return this.threeDTechnology;
+/*      */   }
+/*      */ 
+/*      */   public void setThreeDTechnology(ThreeDTechnologyValues value)
+/*      */   {
+/* 1154 */     this.threeDTechnology = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalFirewirePorts()
+/*      */   {
+/* 1166 */     return this.totalFirewirePorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalFirewirePorts(BigInteger value)
+/*      */   {
+/* 1178 */     this.totalFirewirePorts = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalHdmiPorts()
+/*      */   {
+/* 1190 */     return this.totalHdmiPorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalHdmiPorts(BigInteger value)
+/*      */   {
+/* 1202 */     this.totalHdmiPorts = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalSVideoOutPorts()
+/*      */   {
+/* 1214 */     return this.totalSVideoOutPorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalSVideoOutPorts(BigInteger value)
+/*      */   {
+/* 1226 */     this.totalSVideoOutPorts = value;
+/*      */   }
+/*      */ 
+/*      */   public BigInteger getTotalUSBPorts()
+/*      */   {
+/* 1238 */     return this.totalUSBPorts;
+/*      */   }
+/*      */ 
+/*      */   public void setTotalUSBPorts(BigInteger value)
+/*      */   {
+/* 1250 */     this.totalUSBPorts = value;
+/*      */   }
+/*      */ 
+/*      */   public String getVideoEncoding()
+/*      */   {
+/* 1262 */     return this.videoEncoding;
+/*      */   }
+/*      */ 
+/*      */   public void setVideoEncoding(String value)
+/*      */   {
+/* 1274 */     this.videoEncoding = value;
+/*      */   }
+/*      */ 
+/*      */   public PixelDimension getVideoResolution()
+/*      */   {
+/* 1286 */     return this.videoResolution;
+/*      */   }
+/*      */ 
+/*      */   public void setVideoResolution(PixelDimension value)
+/*      */   {
+/* 1298 */     this.videoResolution = value;
+/*      */   }
+/*      */ 
+/*      */   public String getViewFinderType()
+/*      */   {
+/* 1310 */     return this.viewFinderType;
+/*      */   }
+/*      */ 
+/*      */   public void setViewFinderType(String value)
+/*      */   {
+/* 1322 */     this.viewFinderType = value;
+/*      */   }
+/*      */ 
+/*      */   public WaterResistantType getWaterResistantLevel()
+/*      */   {
+/* 1334 */     return this.waterResistantLevel;
+/*      */   }
+/*      */ 
+/*      */   public void setWaterResistantLevel(WaterResistantType value)
+/*      */   {
+/* 1346 */     this.waterResistantLevel = value;
+/*      */   }
+/*      */ 
+/*      */   public List<String> getWirelessTechnology()
+/*      */   {
+/* 1372 */     if (this.wirelessTechnology == null) {
+/* 1373 */       this.wirelessTechnology = new ArrayList();
+/*      */     }
+/* 1375 */     return this.wirelessTechnology;
+/*      */   }
+/*      */ 
+/*      */   public PowerPlugType getPowerPlugType()
+/*      */   {
+/* 1387 */     return this.powerPlugType;
+/*      */   }
+/*      */ 
+/*      */   public void setPowerPlugType(PowerPlugType value)
+/*      */   {
+/* 1399 */     this.powerPlugType = value;
+/*      */   }
+/*      */ 
+/*      */   public String getEfficiency()
+/*      */   {
+/* 1411 */     return this.efficiency;
+/*      */   }
+/*      */ 
+/*      */   public void setEfficiency(String value)
+/*      */   {
+/* 1423 */     this.efficiency = value;
+/*      */   }
+/*      */ }
 
-package com.elcuk.jaxb;
-
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-
-/**
- * <p>anonymous complex type的 Java 类。
- * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}AnalogRGBInput" maxOccurs="5" minOccurs="0"/>
- *         &lt;element ref="{}BatteryCellType" minOccurs="0"/>
- *         &lt;element name="BatteryChargeCycles" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element ref="{}BatteryPower" minOccurs="0"/>
- *         &lt;element ref="{}BoxContents" minOccurs="0"/>
- *         &lt;element name="CableLength" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element ref="{}CameraFlash" minOccurs="0"/>
- *         &lt;element name="CameraLens" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element ref="{}CompatibleMountings" minOccurs="0"/>
- *         &lt;element ref="{}ContinuousShootingSpeed" minOccurs="0"/>
- *         &lt;element ref="{}DigitalZoom" minOccurs="0"/>
- *         &lt;element ref="{}EffectiveStillResolution" minOccurs="0"/>
- *         &lt;element ref="{}FinishType" minOccurs="0"/>
- *         &lt;element ref="{}FixedFocalLength" minOccurs="0"/>
- *         &lt;element ref="{}FlashModesDescription" minOccurs="0"/>
- *         &lt;element ref="{}FocusType" minOccurs="0"/>
- *         &lt;element ref="{}GuideNumber" minOccurs="0"/>
- *         &lt;element ref="{}ImageStabilization" minOccurs="0"/>
- *         &lt;element ref="{}IsHotShoeIncluded" minOccurs="0"/>
- *         &lt;element name="Lens" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element ref="{}MaxAperture" minOccurs="0"/>
- *         &lt;element ref="{}MaxFocalLength" minOccurs="0"/>
- *         &lt;element ref="{}MaxShutterSpeed" minOccurs="0"/>
- *         &lt;element name="MemorySlotsAvailable" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element ref="{}MinAperture" minOccurs="0"/>
- *         &lt;element ref="{}MinFocalLength" minOccurs="0"/>
- *         &lt;element ref="{}MinShutterSpeed" minOccurs="0"/>
- *         &lt;element ref="{}OpticalZoom" minOccurs="0"/>
- *         &lt;element ref="{}PhotoFilterLensSize" minOccurs="0"/>
- *         &lt;element name="PhotoSensorSize" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="PhotoSensorTechnology" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="PowerSource" type="{}FortyStringNotNull" minOccurs="0"/>
- *         &lt;element name="RemoteControlDescription" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="RemovableMemory" type="{}StringNotNull" minOccurs="0"/>
- *         &lt;element name="ScreenSize" type="{}LengthDimension" minOccurs="0"/>
- *         &lt;element name="SoftwareIncluded" type="{}LongStringNotNull" minOccurs="0"/>
- *         &lt;element ref="{}ThreeDTechnology" minOccurs="0"/>
- *         &lt;element ref="{}TotalFirewirePorts" minOccurs="0"/>
- *         &lt;element ref="{}TotalHdmiPorts" minOccurs="0"/>
- *         &lt;element name="TotalSVideoOutPorts" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" minOccurs="0"/>
- *         &lt;element ref="{}TotalUSBPorts" minOccurs="0"/>
- *         &lt;element ref="{}VideoEncoding" minOccurs="0"/>
- *         &lt;element name="VideoResolution" type="{}PixelDimension" minOccurs="0"/>
- *         &lt;element ref="{}ViewFinderType" minOccurs="0"/>
- *         &lt;element ref="{}WaterResistantLevel" minOccurs="0"/>
- *         &lt;element name="WirelessTechnology" type="{}StringNotNull" maxOccurs="5" minOccurs="0"/>
- *         &lt;element ref="{}PowerPlugType" minOccurs="0"/>
- *         &lt;element ref="{}Efficiency" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
+/* Location:           /Users/mac/Desktop/jaxb/
+ * Qualified Name:     com.elcuk.jaxb.CEDigitalCamera
+ * JD-Core Version:    0.6.2
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "analogRGBInput",
-    "batteryCellType",
-    "batteryChargeCycles",
-    "batteryPower",
-    "boxContents",
-    "cableLength",
-    "cameraFlash",
-    "cameraLens",
-    "compatibleMountings",
-    "continuousShootingSpeed",
-    "digitalZoom",
-    "effectiveStillResolution",
-    "finishType",
-    "fixedFocalLength",
-    "flashModesDescription",
-    "focusType",
-    "guideNumber",
-    "imageStabilization",
-    "isHotShoeIncluded",
-    "lens",
-    "maxAperture",
-    "maxFocalLength",
-    "maxShutterSpeed",
-    "memorySlotsAvailable",
-    "minAperture",
-    "minFocalLength",
-    "minShutterSpeed",
-    "opticalZoom",
-    "photoFilterLensSize",
-    "photoSensorSize",
-    "photoSensorTechnology",
-    "powerSource",
-    "remoteControlDescription",
-    "removableMemory",
-    "screenSize",
-    "softwareIncluded",
-    "threeDTechnology",
-    "totalFirewirePorts",
-    "totalHdmiPorts",
-    "totalSVideoOutPorts",
-    "totalUSBPorts",
-    "videoEncoding",
-    "videoResolution",
-    "viewFinderType",
-    "waterResistantLevel",
-    "wirelessTechnology",
-    "powerPlugType",
-    "efficiency"
-})
-@XmlRootElement(name = "CEDigitalCamera")
-public class CEDigitalCamera {
-
-    @XmlElement(name = "AnalogRGBInput")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> analogRGBInput;
-    @XmlElement(name = "BatteryCellType")
-    @XmlSchemaType(name = "string")
-    protected BatteryCellTypeValues batteryCellType;
-    @XmlElement(name = "BatteryChargeCycles")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger batteryChargeCycles;
-    @XmlElement(name = "BatteryPower")
-    protected BatteryPowerIntegerDimension batteryPower;
-    @XmlElement(name = "BoxContents")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String boxContents;
-    @XmlElement(name = "CableLength")
-    protected LengthDimension cableLength;
-    @XmlElement(name = "CameraFlash")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String cameraFlash;
-    @XmlElement(name = "CameraLens")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String cameraLens;
-    @XmlElement(name = "CompatibleMountings")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String compatibleMountings;
-    @XmlElement(name = "ContinuousShootingSpeed")
-    protected ContinuousShootingDimension continuousShootingSpeed;
-    @XmlElement(name = "DigitalZoom")
-    protected ZoomDimension digitalZoom;
-    @XmlElement(name = "EffectiveStillResolution")
-    protected ResolutionDimension effectiveStillResolution;
-    @XmlElement(name = "FinishType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String finishType;
-    @XmlElement(name = "FixedFocalLength")
-    protected LengthDimension fixedFocalLength;
-    @XmlElement(name = "FlashModesDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String flashModesDescription;
-    @XmlElement(name = "FocusType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String focusType;
-    @XmlElement(name = "GuideNumber")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String guideNumber;
-    @XmlElement(name = "ImageStabilization")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String imageStabilization;
-    @XmlElement(name = "IsHotShoeIncluded")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String isHotShoeIncluded;
-    @XmlElement(name = "Lens")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String lens;
-    @XmlElement(name = "MaxAperture")
-    protected ApertureDimension maxAperture;
-    @XmlElement(name = "MaxFocalLength")
-    protected LengthDimension maxFocalLength;
-    @XmlElement(name = "MaxShutterSpeed")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String maxShutterSpeed;
-    @XmlElement(name = "MemorySlotsAvailable")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String memorySlotsAvailable;
-    @XmlElement(name = "MinAperture")
-    protected ApertureDimension minAperture;
-    @XmlElement(name = "MinFocalLength")
-    protected LengthDimension minFocalLength;
-    @XmlElement(name = "MinShutterSpeed")
-    protected BigDecimal minShutterSpeed;
-    @XmlElement(name = "OpticalZoom")
-    protected ZoomDimension opticalZoom;
-    @XmlElement(name = "PhotoFilterLensSize")
-    protected LengthDimension photoFilterLensSize;
-    @XmlElement(name = "PhotoSensorSize")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String photoSensorSize;
-    @XmlElement(name = "PhotoSensorTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String photoSensorTechnology;
-    @XmlElement(name = "PowerSource")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String powerSource;
-    @XmlElement(name = "RemoteControlDescription")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String remoteControlDescription;
-    @XmlElement(name = "RemovableMemory")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String removableMemory;
-    @XmlElement(name = "ScreenSize")
-    protected LengthDimension screenSize;
-    @XmlElement(name = "SoftwareIncluded")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String softwareIncluded;
-    @XmlElement(name = "ThreeDTechnology")
-    @XmlSchemaType(name = "string")
-    protected ThreeDTechnologyValues threeDTechnology;
-    @XmlElement(name = "TotalFirewirePorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalFirewirePorts;
-    @XmlElement(name = "TotalHdmiPorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalHdmiPorts;
-    @XmlElement(name = "TotalSVideoOutPorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalSVideoOutPorts;
-    @XmlElement(name = "TotalUSBPorts")
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger totalUSBPorts;
-    @XmlElement(name = "VideoEncoding")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String videoEncoding;
-    @XmlElement(name = "VideoResolution")
-    protected PixelDimension videoResolution;
-    @XmlElement(name = "ViewFinderType")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String viewFinderType;
-    @XmlElement(name = "WaterResistantLevel")
-    @XmlSchemaType(name = "string")
-    protected WaterResistantType waterResistantLevel;
-    @XmlElement(name = "WirelessTechnology")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected List<String> wirelessTechnology;
-    @XmlElement(name = "PowerPlugType")
-    @XmlSchemaType(name = "normalizedString")
-    protected PowerPlugType powerPlugType;
-    @XmlElement(name = "Efficiency")
-    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
-    @XmlSchemaType(name = "normalizedString")
-    protected String efficiency;
-
-    /**
-     * Gets the value of the analogRGBInput property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the analogRGBInput property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAnalogRGBInput().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getAnalogRGBInput() {
-        if (analogRGBInput == null) {
-            analogRGBInput = new ArrayList<String>();
-        }
-        return this.analogRGBInput;
-    }
-
-    /**
-     * 获取batteryCellType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BatteryCellTypeValues }
-     *     
-     */
-    public BatteryCellTypeValues getBatteryCellType() {
-        return batteryCellType;
-    }
-
-    /**
-     * 设置batteryCellType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BatteryCellTypeValues }
-     *     
-     */
-    public void setBatteryCellType(BatteryCellTypeValues value) {
-        this.batteryCellType = value;
-    }
-
-    /**
-     * 获取batteryChargeCycles属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getBatteryChargeCycles() {
-        return batteryChargeCycles;
-    }
-
-    /**
-     * 设置batteryChargeCycles属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setBatteryChargeCycles(BigInteger value) {
-        this.batteryChargeCycles = value;
-    }
-
-    /**
-     * 获取batteryPower属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BatteryPowerIntegerDimension }
-     *     
-     */
-    public BatteryPowerIntegerDimension getBatteryPower() {
-        return batteryPower;
-    }
-
-    /**
-     * 设置batteryPower属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BatteryPowerIntegerDimension }
-     *     
-     */
-    public void setBatteryPower(BatteryPowerIntegerDimension value) {
-        this.batteryPower = value;
-    }
-
-    /**
-     * 获取boxContents属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getBoxContents() {
-        return boxContents;
-    }
-
-    /**
-     * 设置boxContents属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setBoxContents(String value) {
-        this.boxContents = value;
-    }
-
-    /**
-     * 获取cableLength属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getCableLength() {
-        return cableLength;
-    }
-
-    /**
-     * 设置cableLength属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setCableLength(LengthDimension value) {
-        this.cableLength = value;
-    }
-
-    /**
-     * 获取cameraFlash属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCameraFlash() {
-        return cameraFlash;
-    }
-
-    /**
-     * 设置cameraFlash属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCameraFlash(String value) {
-        this.cameraFlash = value;
-    }
-
-    /**
-     * 获取cameraLens属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCameraLens() {
-        return cameraLens;
-    }
-
-    /**
-     * 设置cameraLens属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCameraLens(String value) {
-        this.cameraLens = value;
-    }
-
-    /**
-     * 获取compatibleMountings属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCompatibleMountings() {
-        return compatibleMountings;
-    }
-
-    /**
-     * 设置compatibleMountings属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCompatibleMountings(String value) {
-        this.compatibleMountings = value;
-    }
-
-    /**
-     * 获取continuousShootingSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ContinuousShootingDimension }
-     *     
-     */
-    public ContinuousShootingDimension getContinuousShootingSpeed() {
-        return continuousShootingSpeed;
-    }
-
-    /**
-     * 设置continuousShootingSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ContinuousShootingDimension }
-     *     
-     */
-    public void setContinuousShootingSpeed(ContinuousShootingDimension value) {
-        this.continuousShootingSpeed = value;
-    }
-
-    /**
-     * 获取digitalZoom属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ZoomDimension }
-     *     
-     */
-    public ZoomDimension getDigitalZoom() {
-        return digitalZoom;
-    }
-
-    /**
-     * 设置digitalZoom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ZoomDimension }
-     *     
-     */
-    public void setDigitalZoom(ZoomDimension value) {
-        this.digitalZoom = value;
-    }
-
-    /**
-     * 获取effectiveStillResolution属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ResolutionDimension }
-     *     
-     */
-    public ResolutionDimension getEffectiveStillResolution() {
-        return effectiveStillResolution;
-    }
-
-    /**
-     * 设置effectiveStillResolution属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ResolutionDimension }
-     *     
-     */
-    public void setEffectiveStillResolution(ResolutionDimension value) {
-        this.effectiveStillResolution = value;
-    }
-
-    /**
-     * 获取finishType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFinishType() {
-        return finishType;
-    }
-
-    /**
-     * 设置finishType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFinishType(String value) {
-        this.finishType = value;
-    }
-
-    /**
-     * 获取fixedFocalLength属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getFixedFocalLength() {
-        return fixedFocalLength;
-    }
-
-    /**
-     * 设置fixedFocalLength属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setFixedFocalLength(LengthDimension value) {
-        this.fixedFocalLength = value;
-    }
-
-    /**
-     * 获取flashModesDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFlashModesDescription() {
-        return flashModesDescription;
-    }
-
-    /**
-     * 设置flashModesDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFlashModesDescription(String value) {
-        this.flashModesDescription = value;
-    }
-
-    /**
-     * 获取focusType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFocusType() {
-        return focusType;
-    }
-
-    /**
-     * 设置focusType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFocusType(String value) {
-        this.focusType = value;
-    }
-
-    /**
-     * 获取guideNumber属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getGuideNumber() {
-        return guideNumber;
-    }
-
-    /**
-     * 设置guideNumber属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setGuideNumber(String value) {
-        this.guideNumber = value;
-    }
-
-    /**
-     * 获取imageStabilization属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getImageStabilization() {
-        return imageStabilization;
-    }
-
-    /**
-     * 设置imageStabilization属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setImageStabilization(String value) {
-        this.imageStabilization = value;
-    }
-
-    /**
-     * 获取isHotShoeIncluded属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getIsHotShoeIncluded() {
-        return isHotShoeIncluded;
-    }
-
-    /**
-     * 设置isHotShoeIncluded属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setIsHotShoeIncluded(String value) {
-        this.isHotShoeIncluded = value;
-    }
-
-    /**
-     * 获取lens属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLens() {
-        return lens;
-    }
-
-    /**
-     * 设置lens属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLens(String value) {
-        this.lens = value;
-    }
-
-    /**
-     * 获取maxAperture属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ApertureDimension }
-     *     
-     */
-    public ApertureDimension getMaxAperture() {
-        return maxAperture;
-    }
-
-    /**
-     * 设置maxAperture属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ApertureDimension }
-     *     
-     */
-    public void setMaxAperture(ApertureDimension value) {
-        this.maxAperture = value;
-    }
-
-    /**
-     * 获取maxFocalLength属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getMaxFocalLength() {
-        return maxFocalLength;
-    }
-
-    /**
-     * 设置maxFocalLength属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setMaxFocalLength(LengthDimension value) {
-        this.maxFocalLength = value;
-    }
-
-    /**
-     * 获取maxShutterSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMaxShutterSpeed() {
-        return maxShutterSpeed;
-    }
-
-    /**
-     * 设置maxShutterSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMaxShutterSpeed(String value) {
-        this.maxShutterSpeed = value;
-    }
-
-    /**
-     * 获取memorySlotsAvailable属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMemorySlotsAvailable() {
-        return memorySlotsAvailable;
-    }
-
-    /**
-     * 设置memorySlotsAvailable属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMemorySlotsAvailable(String value) {
-        this.memorySlotsAvailable = value;
-    }
-
-    /**
-     * 获取minAperture属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ApertureDimension }
-     *     
-     */
-    public ApertureDimension getMinAperture() {
-        return minAperture;
-    }
-
-    /**
-     * 设置minAperture属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ApertureDimension }
-     *     
-     */
-    public void setMinAperture(ApertureDimension value) {
-        this.minAperture = value;
-    }
-
-    /**
-     * 获取minFocalLength属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getMinFocalLength() {
-        return minFocalLength;
-    }
-
-    /**
-     * 设置minFocalLength属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setMinFocalLength(LengthDimension value) {
-        this.minFocalLength = value;
-    }
-
-    /**
-     * 获取minShutterSpeed属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public BigDecimal getMinShutterSpeed() {
-        return minShutterSpeed;
-    }
-
-    /**
-     * 设置minShutterSpeed属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigDecimal }
-     *     
-     */
-    public void setMinShutterSpeed(BigDecimal value) {
-        this.minShutterSpeed = value;
-    }
-
-    /**
-     * 获取opticalZoom属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ZoomDimension }
-     *     
-     */
-    public ZoomDimension getOpticalZoom() {
-        return opticalZoom;
-    }
-
-    /**
-     * 设置opticalZoom属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ZoomDimension }
-     *     
-     */
-    public void setOpticalZoom(ZoomDimension value) {
-        this.opticalZoom = value;
-    }
-
-    /**
-     * 获取photoFilterLensSize属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getPhotoFilterLensSize() {
-        return photoFilterLensSize;
-    }
-
-    /**
-     * 设置photoFilterLensSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setPhotoFilterLensSize(LengthDimension value) {
-        this.photoFilterLensSize = value;
-    }
-
-    /**
-     * 获取photoSensorSize属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPhotoSensorSize() {
-        return photoSensorSize;
-    }
-
-    /**
-     * 设置photoSensorSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPhotoSensorSize(String value) {
-        this.photoSensorSize = value;
-    }
-
-    /**
-     * 获取photoSensorTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPhotoSensorTechnology() {
-        return photoSensorTechnology;
-    }
-
-    /**
-     * 设置photoSensorTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPhotoSensorTechnology(String value) {
-        this.photoSensorTechnology = value;
-    }
-
-    /**
-     * 获取powerSource属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPowerSource() {
-        return powerSource;
-    }
-
-    /**
-     * 设置powerSource属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPowerSource(String value) {
-        this.powerSource = value;
-    }
-
-    /**
-     * 获取remoteControlDescription属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRemoteControlDescription() {
-        return remoteControlDescription;
-    }
-
-    /**
-     * 设置remoteControlDescription属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRemoteControlDescription(String value) {
-        this.remoteControlDescription = value;
-    }
-
-    /**
-     * 获取removableMemory属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRemovableMemory() {
-        return removableMemory;
-    }
-
-    /**
-     * 设置removableMemory属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRemovableMemory(String value) {
-        this.removableMemory = value;
-    }
-
-    /**
-     * 获取screenSize属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public LengthDimension getScreenSize() {
-        return screenSize;
-    }
-
-    /**
-     * 设置screenSize属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LengthDimension }
-     *     
-     */
-    public void setScreenSize(LengthDimension value) {
-        this.screenSize = value;
-    }
-
-    /**
-     * 获取softwareIncluded属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSoftwareIncluded() {
-        return softwareIncluded;
-    }
-
-    /**
-     * 设置softwareIncluded属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setSoftwareIncluded(String value) {
-        this.softwareIncluded = value;
-    }
-
-    /**
-     * 获取threeDTechnology属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ThreeDTechnologyValues }
-     *     
-     */
-    public ThreeDTechnologyValues getThreeDTechnology() {
-        return threeDTechnology;
-    }
-
-    /**
-     * 设置threeDTechnology属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ThreeDTechnologyValues }
-     *     
-     */
-    public void setThreeDTechnology(ThreeDTechnologyValues value) {
-        this.threeDTechnology = value;
-    }
-
-    /**
-     * 获取totalFirewirePorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalFirewirePorts() {
-        return totalFirewirePorts;
-    }
-
-    /**
-     * 设置totalFirewirePorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalFirewirePorts(BigInteger value) {
-        this.totalFirewirePorts = value;
-    }
-
-    /**
-     * 获取totalHdmiPorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalHdmiPorts() {
-        return totalHdmiPorts;
-    }
-
-    /**
-     * 设置totalHdmiPorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalHdmiPorts(BigInteger value) {
-        this.totalHdmiPorts = value;
-    }
-
-    /**
-     * 获取totalSVideoOutPorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalSVideoOutPorts() {
-        return totalSVideoOutPorts;
-    }
-
-    /**
-     * 设置totalSVideoOutPorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalSVideoOutPorts(BigInteger value) {
-        this.totalSVideoOutPorts = value;
-    }
-
-    /**
-     * 获取totalUSBPorts属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getTotalUSBPorts() {
-        return totalUSBPorts;
-    }
-
-    /**
-     * 设置totalUSBPorts属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setTotalUSBPorts(BigInteger value) {
-        this.totalUSBPorts = value;
-    }
-
-    /**
-     * 获取videoEncoding属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getVideoEncoding() {
-        return videoEncoding;
-    }
-
-    /**
-     * 设置videoEncoding属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVideoEncoding(String value) {
-        this.videoEncoding = value;
-    }
-
-    /**
-     * 获取videoResolution属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public PixelDimension getVideoResolution() {
-        return videoResolution;
-    }
-
-    /**
-     * 设置videoResolution属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PixelDimension }
-     *     
-     */
-    public void setVideoResolution(PixelDimension value) {
-        this.videoResolution = value;
-    }
-
-    /**
-     * 获取viewFinderType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getViewFinderType() {
-        return viewFinderType;
-    }
-
-    /**
-     * 设置viewFinderType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setViewFinderType(String value) {
-        this.viewFinderType = value;
-    }
-
-    /**
-     * 获取waterResistantLevel属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link WaterResistantType }
-     *     
-     */
-    public WaterResistantType getWaterResistantLevel() {
-        return waterResistantLevel;
-    }
-
-    /**
-     * 设置waterResistantLevel属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link WaterResistantType }
-     *     
-     */
-    public void setWaterResistantLevel(WaterResistantType value) {
-        this.waterResistantLevel = value;
-    }
-
-    /**
-     * Gets the value of the wirelessTechnology property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the wirelessTechnology property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getWirelessTechnology().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getWirelessTechnology() {
-        if (wirelessTechnology == null) {
-            wirelessTechnology = new ArrayList<String>();
-        }
-        return this.wirelessTechnology;
-    }
-
-    /**
-     * 获取powerPlugType属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link PowerPlugType }
-     *     
-     */
-    public PowerPlugType getPowerPlugType() {
-        return powerPlugType;
-    }
-
-    /**
-     * 设置powerPlugType属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link PowerPlugType }
-     *     
-     */
-    public void setPowerPlugType(PowerPlugType value) {
-        this.powerPlugType = value;
-    }
-
-    /**
-     * 获取efficiency属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEfficiency() {
-        return efficiency;
-    }
-
-    /**
-     * 设置efficiency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEfficiency(String value) {
-        this.efficiency = value;
-    }
-
-}
