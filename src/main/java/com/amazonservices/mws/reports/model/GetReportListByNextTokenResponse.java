@@ -166,7 +166,7 @@ public class GetReportListByNextTokenResponse {
      */
     public String toXML() {
         StringBuffer xml = new StringBuffer();
-        xml.append("<GetReportListByNextTokenResponse xmlns=\"http://mws.amazonservices.com/doc/2009-01-01/\">");
+        xml.append("<GetReportListByNextTokenResponse xmlns=\"http://mws.amazonaws.com/doc/2009-01-01/\">");
         if (isSetGetReportListByNextTokenResult()) {
             GetReportListByNextTokenResult  getReportListByNextTokenResult = getGetReportListByNextTokenResult();
             xml.append("<GetReportListByNextTokenResult>");
@@ -228,7 +228,7 @@ public class GetReportListByNextTokenResponse {
         json.append("{\"GetReportListByNextTokenResponse\" : {");
         json.append(quoteJSON("@xmlns"));
         json.append(" : ");
-        json.append(quoteJSON("http://mws.amazonservices.com/doc/2009-01-01/"));
+        json.append(quoteJSON("http://mws.amazonaws.com/doc/2009-01-01/"));
         boolean first = true;
         json.append(", ");
         if (isSetGetReportListByNextTokenResult()) {

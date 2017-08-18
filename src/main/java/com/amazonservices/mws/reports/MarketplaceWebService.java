@@ -176,7 +176,8 @@ public interface  MarketplaceWebService {
      *
      * @throws MarketplaceWebServiceException
      */
-    public GetReportRequestListByNextTokenResponse getReportRequestListByNextToken(GetReportRequestListByNextTokenRequest request) throws MarketplaceWebServiceException;
+    public GetReportRequestListByNextTokenResponse getReportRequestListByNextToken(
+            GetReportRequestListByNextTokenRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Report Request List By Next Token 
@@ -224,7 +225,8 @@ public interface  MarketplaceWebService {
      * @return Future&lt;GetReportRequestListByNextTokenResponse&gt; future pointer to GetReportRequestListByNextTokenResponse
      * 
      */
-    public Future<GetReportRequestListByNextTokenResponse> getReportRequestListByNextTokenAsync(GetReportRequestListByNextTokenRequest request);
+    public Future<GetReportRequestListByNextTokenResponse> getReportRequestListByNextTokenAsync(
+            GetReportRequestListByNextTokenRequest request);
 
 
             
@@ -240,7 +242,7 @@ public interface  MarketplaceWebService {
      *
      * @throws MarketplaceWebServiceException
      */
-    public TypeList.UpdateReportAcknowledgementsResponse updateReportAcknowledgements(TypeList.UpdateReportAcknowledgementsRequest request) throws MarketplaceWebServiceException;
+    public UpdateReportAcknowledgementsResponse updateReportAcknowledgements(UpdateReportAcknowledgementsRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Update Report Acknowledgements 
@@ -288,7 +290,8 @@ public interface  MarketplaceWebService {
      * @return Future&lt;UpdateReportAcknowledgementsResponse&gt; future pointer to UpdateReportAcknowledgementsResponse
      * 
      */
-    public Future<TypeList.UpdateReportAcknowledgementsResponse> updateReportAcknowledgementsAsync(TypeList.UpdateReportAcknowledgementsRequest request);
+    public Future<UpdateReportAcknowledgementsResponse> updateReportAcknowledgementsAsync(
+            UpdateReportAcknowledgementsRequest request);
 
 
             
@@ -438,7 +441,8 @@ public interface  MarketplaceWebService {
      *
      * @throws MarketplaceWebServiceException
      */
-    public GetFeedSubmissionListByNextTokenResponse getFeedSubmissionListByNextToken(GetFeedSubmissionListByNextTokenRequest request) throws MarketplaceWebServiceException;
+    public GetFeedSubmissionListByNextTokenResponse getFeedSubmissionListByNextToken(
+            GetFeedSubmissionListByNextTokenRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Feed Submission List By Next Token 
@@ -486,7 +490,8 @@ public interface  MarketplaceWebService {
      * @return Future&lt;GetFeedSubmissionListByNextTokenResponse&gt; future pointer to GetFeedSubmissionListByNextTokenResponse
      * 
      */
-    public Future<GetFeedSubmissionListByNextTokenResponse> getFeedSubmissionListByNextTokenAsync(GetFeedSubmissionListByNextTokenRequest request);
+    public Future<GetFeedSubmissionListByNextTokenResponse> getFeedSubmissionListByNextTokenAsync(
+            GetFeedSubmissionListByNextTokenRequest request);
 
 
             
@@ -1017,7 +1022,8 @@ public interface  MarketplaceWebService {
      *
      * @throws MarketplaceWebServiceException
      */
-    public GetReportScheduleListByNextTokenResponse getReportScheduleListByNextToken(GetReportScheduleListByNextTokenRequest request) throws MarketplaceWebServiceException;
+    public GetReportScheduleListByNextTokenResponse getReportScheduleListByNextToken(
+            GetReportScheduleListByNextTokenRequest request) throws MarketplaceWebServiceException;
 
     /**
      * Non-blocking Get Report Schedule List By Next Token 
@@ -1065,7 +1071,8 @@ public interface  MarketplaceWebService {
      * @return Future&lt;GetReportScheduleListByNextTokenResponse&gt; future pointer to GetReportScheduleListByNextTokenResponse
      * 
      */
-    public Future<GetReportScheduleListByNextTokenResponse> getReportScheduleListByNextTokenAsync(GetReportScheduleListByNextTokenRequest request);
+    public Future<GetReportScheduleListByNextTokenResponse> getReportScheduleListByNextTokenAsync(
+            GetReportScheduleListByNextTokenRequest request);
 
 
             
@@ -1129,7 +1136,8 @@ public interface  MarketplaceWebService {
      * @return Future&lt;GetReportListByNextTokenResponse&gt; future pointer to GetReportListByNextTokenResponse
      * 
      */
-    public Future<GetReportListByNextTokenResponse> getReportListByNextTokenAsync(GetReportListByNextTokenRequest request);
+    public Future<GetReportListByNextTokenResponse> getReportListByNextTokenAsync(
+            GetReportListByNextTokenRequest request);
 
 
             
@@ -1346,7 +1354,7 @@ public interface  MarketplaceWebService {
      *
      * @throws MarketplaceWebServiceException
      */
-    public SubmitFeedResponse submitFeedFromFile( SubmitFeedRequest request )
+    public SubmitFeedResponse submitFeedFromFile(SubmitFeedRequest request)
       throws MarketplaceWebServiceException;
     
     /**

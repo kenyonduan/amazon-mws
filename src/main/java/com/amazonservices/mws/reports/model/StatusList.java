@@ -129,7 +129,7 @@ public class StatusList {
      */
     protected String toXMLFragment() {
         StringBuffer xml = new StringBuffer();
-        java.util.List<String> statusList  =  getStatus();
+        List<String> statusList  =  getStatus();
         for (String status : statusList) { 
             xml.append("<Status>");
             xml.append(escapeXML(status));
@@ -187,7 +187,7 @@ public class StatusList {
         if (isSetStatus()) {
             if (!first) json.append(", ");
             json.append("\"Status\" : [");
-            java.util.List<String> statusList  =  getStatus();
+            List<String> statusList  =  getStatus();
             for (String status : statusList) {
                 if (statusList.indexOf(status) > 0) json.append(", ");
                     json.append(quoteJSON(status));

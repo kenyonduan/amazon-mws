@@ -1,19 +1,20 @@
-/******************************************************************************* 
+/*******************************************************************************
  *  Copyright 2009 Amazon Services.
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  
- *  You may not use this file except in compliance with the License. 
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *
+ *  You may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at: http://aws.amazon.com/apache2.0
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+ *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
  *  specific language governing permissions and limitations under the License.
- * ***************************************************************************** 
+ * *****************************************************************************
  *
  *  Marketplace Web Service Java Library
  *  API Version: 2009-01-01
- *  Generated: Tue Feb 17 13:31:26 PST 2009 
- * 
+ *  Generated: Tue Feb 17 13:31:26 PST 2009
+ *
  */
+
 
 
 
@@ -68,6 +69,7 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
 
 
+import com.amazonservices.mws.reports.model.Error;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.Header;
 import org.apache.http.message.BasicHeader;
@@ -98,11 +100,13 @@ import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.client.protocol.ClientContext;
 
 
+
 import com.amazonservices.mws.reports.model.*;
+
 
 /**
  * The Amazon Marketplace Web Service contain APIs for inventory and order management.
- * 
+ *
  *
  *
  * MarketplaceWebServiceClient is implementation of MarketplaceWebService based on the
@@ -116,14 +120,14 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     private String awsAccessKeyId = null;
     private String awsSecretAccessKey = null;
     private MarketplaceWebServiceConfig config = null;
-    
+
     private HttpClient httpClient = null;
     private CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
     private HttpContext httpContext= null;
     private ExecutorService asyncExecutor;
-    
+
     private List<Header> defaultHeaders = new ArrayList<Header>();
-    
+
     private static JAXBContext  jaxbContext;
     private static ThreadLocal<Unmarshaller> unmarshaller;
     private static Pattern ERROR_PATTERN_ONE = Pattern.compile(".*\\<RequestId>(.*)\\</RequestId>.*\\<Error>" +
@@ -136,7 +140,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     /** Initialize JAXBContext and  Unmarshaller **/
     static {
         try {
-            jaxbContext = JAXBContext.newInstance("com.amazonservices.mws.reports.model", MarketplaceWebService.class.getClassLoader());
+            jaxbContext = JAXBContext.newInstance("com.amazonaws.mws.model", MarketplaceWebService.class.getClassLoader());
         } catch (JAXBException ex) {
             throw new ExceptionInInitializerError(ex);
         }
@@ -166,7 +170,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     		String awsSecretAccessKey,
     		String applicationName,
     		String applicationVersion) {
-        this(	awsAccessKeyId, awsSecretAccessKey, 
+        this(	awsAccessKeyId, awsSecretAccessKey,
         		applicationName, applicationVersion,
         		new MarketplaceWebServiceConfig());
     }
@@ -183,12 +187,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *          Max number of threads to spawn for async operation.
      */
     public MarketplaceWebServiceClient(
-    		String awsAccessKeyId, 
+    		String awsAccessKeyId,
     		String awsSecretAccessKey,
     		String applicationName,
-    		String applicationVersion, 
+    		String applicationVersion,
     		int maxAsyncThreads) {
-        this(	awsAccessKeyId, awsSecretAccessKey, 
+        this(	awsAccessKeyId, awsSecretAccessKey,
         		applicationName, applicationVersion,
         		new MarketplaceWebServiceConfig().withMaxAsyncThreads(maxAsyncThreads));
     }
@@ -258,14 +262,14 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     // Public API ------------------------------------------------------------//
 
 
-        
+
     /**
-     * Get Report 
+     * Get Report
      *
      * The GetReport operation returns the contents of a report. Reports can potentially be
      * very large (>100MB) which is why we only return one report at a time, and in a
      * streaming fashion.
-     * 
+     *
      * @param request
      *          GetReportRequest request
      * @return
@@ -278,17 +282,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Report 
+     * Non-blocking Get Report
      * <p/>
      * Returns <code>future</code> pointer to GetReportResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetReportResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetReportResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -321,7 +325,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetReportRequest request
      * @return Future&lt;GetReportResponse&gt; future pointer to GetReportResponse
-     * 
+     *
      */
     public Future<GetReportResponse> getReportAsync(final GetReportRequest request) {
         Future<GetReportResponse> response = asyncExecutor.submit(new Callable<GetReportResponse>() {
@@ -332,12 +336,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Get Report Schedule Count 
+     * Get Report Schedule Count
      *
      * returns the number of report schedules
-     * 
+     *
      * @param request
      *          GetReportScheduleCountRequest request
      * @return
@@ -350,17 +354,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Report Schedule Count 
+     * Non-blocking Get Report Schedule Count
      * <p/>
      * Returns <code>future</code> pointer to GetReportScheduleCountResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetReportScheduleCountResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetReportScheduleCountResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -393,7 +397,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetReportScheduleCountRequest request
      * @return Future&lt;GetReportScheduleCountResponse&gt; future pointer to GetReportScheduleCountResponse
-     * 
+     *
      */
     public Future<GetReportScheduleCountResponse> getReportScheduleCountAsync(final GetReportScheduleCountRequest request) {
         Future<GetReportScheduleCountResponse> response = asyncExecutor.submit(new Callable<GetReportScheduleCountResponse>() {
@@ -404,12 +408,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Get Report Request List By Next Token 
+     * Get Report Request List By Next Token
      *
      * retrieve the next batch of list items and if there are more items to retrieve
-     * 
+     *
      * @param request
      *          GetReportRequestListByNextTokenRequest request
      * @return
@@ -422,17 +426,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Report Request List By Next Token 
+     * Non-blocking Get Report Request List By Next Token
      * <p/>
      * Returns <code>future</code> pointer to GetReportRequestListByNextTokenResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetReportRequestListByNextTokenResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetReportRequestListByNextTokenResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -465,7 +469,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetReportRequestListByNextTokenRequest request
      * @return Future&lt;GetReportRequestListByNextTokenResponse&gt; future pointer to GetReportRequestListByNextTokenResponse
-     * 
+     *
      */
     public Future<GetReportRequestListByNextTokenResponse> getReportRequestListByNextTokenAsync(final GetReportRequestListByNextTokenRequest request) {
         Future<GetReportRequestListByNextTokenResponse> response = asyncExecutor.submit(new Callable<GetReportRequestListByNextTokenResponse>() {
@@ -476,12 +480,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Update Report Acknowledgements 
+     * Update Report Acknowledgements
      *
      * The UpdateReportAcknowledgements operation updates the acknowledged status of one or more reports.
-     * 
+     *
      * @param request
      *          UpdateReportAcknowledgementsRequest request
      * @return
@@ -489,22 +493,22 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      *
      * @throws MarketplaceWebServiceException
      */
-    public TypeList.UpdateReportAcknowledgementsResponse updateReportAcknowledgements(TypeList.UpdateReportAcknowledgementsRequest request) throws MarketplaceWebServiceException {
-        return invoke(TypeList.UpdateReportAcknowledgementsResponse.class, convertUpdateReportAcknowledgements(request));
+    public UpdateReportAcknowledgementsResponse updateReportAcknowledgements(UpdateReportAcknowledgementsRequest request) throws MarketplaceWebServiceException {
+        return invoke(UpdateReportAcknowledgementsResponse.class, convertUpdateReportAcknowledgements(request));
     }
 
     /**
-     * Non-blocking Update Report Acknowledgements 
+     * Non-blocking Update Report Acknowledgements
      * <p/>
      * Returns <code>future</code> pointer to UpdateReportAcknowledgementsResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return UpdateReportAcknowledgementsResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return UpdateReportAcknowledgementsResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -537,27 +541,27 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          UpdateReportAcknowledgementsRequest request
      * @return Future&lt;UpdateReportAcknowledgementsResponse&gt; future pointer to UpdateReportAcknowledgementsResponse
-     * 
+     *
      */
-    public Future<TypeList.UpdateReportAcknowledgementsResponse> updateReportAcknowledgementsAsync(final TypeList.UpdateReportAcknowledgementsRequest request) {
-        Future<TypeList.UpdateReportAcknowledgementsResponse> response = asyncExecutor.submit(new Callable<TypeList.UpdateReportAcknowledgementsResponse>() {
+    public Future<UpdateReportAcknowledgementsResponse> updateReportAcknowledgementsAsync(final UpdateReportAcknowledgementsRequest request) {
+        Future<UpdateReportAcknowledgementsResponse> response = asyncExecutor.submit(new Callable<UpdateReportAcknowledgementsResponse>() {
 
-            public TypeList.UpdateReportAcknowledgementsResponse call() throws MarketplaceWebServiceException {
+            public UpdateReportAcknowledgementsResponse call() throws MarketplaceWebServiceException {
                 return updateReportAcknowledgements(request);
             }
             });
         return response;
     }
-        
+
     /**
-     * Submit Feed 
+     * Submit Feed
      *
      * Uploads a file for processing together with the necessary
      * metadata to process the file, such as which type of feed it is.
      * PurgeAndReplace if true means that your existing e.g. inventory is
      * wiped out and replace with the contents of this feed - use with
      * caution (the default is false).
-     * 
+     *
      * @param request
      *          SubmitFeedRequest request
      * @return
@@ -571,17 +575,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
 
     /**
-     * Non-blocking Submit Feed 
+     * Non-blocking Submit Feed
      * <p/>
      * Returns <code>future</code> pointer to SubmitFeedResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return SubmitFeedResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return SubmitFeedResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -614,7 +618,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          SubmitFeedRequest request
      * @return Future&lt;SubmitFeedResponse&gt; future pointer to SubmitFeedResponse
-     * 
+     *
      */
     public Future<SubmitFeedResponse> submitFeedAsync(final SubmitFeedRequest request) {
         Future<SubmitFeedResponse> response = asyncExecutor.submit(new Callable<SubmitFeedResponse>() {
@@ -625,7 +629,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-    
+
     /**
      * Submit Feed From File
      *
@@ -634,12 +638,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * PurgeAndReplace if true means that your existing e.g. inventory is
      * wiped out and replace with the contents of this feed - use with
      * caution (the default is false).
-     * 
+     *
      * This function assumes the Content MD5 value is unset in the request, and will
      * set it before making the Submit Feed request. The Feed Content must be stored
      * on disk, as the assumption is that the content is accessed through
      * a FileInputStream.
-     * 
+     *
      * @param request
      *          SubmitFeedRequest request without the contentMd5 field set.
      * @return
@@ -649,7 +653,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      */
     public SubmitFeedResponse submitFeedFromFile( SubmitFeedRequest request )
       throws MarketplaceWebServiceException {
-        
+
         try {
             String contentMd5 = computeContentMD5HeaderValue( (FileInputStream)request.getFeedContent() );
             request.setContentMD5( contentMd5 );
@@ -657,22 +661,22 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         catch( Throwable t ) {
             throw new MarketplaceWebServiceException( t );
         }
-        
+
         return submitFeed( request );
     }
-    
+
     /**
-     * Non-blocking Submit Feed From File 
+     * Non-blocking Submit Feed From File
      * <p/>
      * Returns <code>future</code> pointer to SubmitFeedResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return SubmitFeedResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return SubmitFeedResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -705,25 +709,25 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          SubmitFeedRequest request
      * @return Future&lt;SubmitFeedResponse&gt; future pointer to SubmitFeedResponse
-     * 
+     *
      */
     public Future<SubmitFeedResponse> submitFeedFromFileAsync(final SubmitFeedRequest request) {
         Future<SubmitFeedResponse> response = asyncExecutor.submit(new Callable<SubmitFeedResponse>() {
 
-            public SubmitFeedResponse call() throws MarketplaceWebServiceException { 
+            public SubmitFeedResponse call() throws MarketplaceWebServiceException {
                 return submitFeedFromFile( request );
             }
             });
         return response;
     }
-        
+
     /**
-     * Get Report Count 
+     * Get Report Count
      *
      * returns a count of reports matching your criteria;
      * by default, the number of reports generated in the last 90 days,
      * regardless of acknowledgment status
-     * 
+     *
      * @param request
      *          GetReportCountRequest request
      * @return
@@ -736,17 +740,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Report Count 
+     * Non-blocking Get Report Count
      * <p/>
      * Returns <code>future</code> pointer to GetReportCountResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetReportCountResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetReportCountResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -779,7 +783,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetReportCountRequest request
      * @return Future&lt;GetReportCountResponse&gt; future pointer to GetReportCountResponse
-     * 
+     *
      */
     public Future<GetReportCountResponse> getReportCountAsync(final GetReportCountRequest request) {
         Future<GetReportCountResponse> response = asyncExecutor.submit(new Callable<GetReportCountResponse>() {
@@ -790,12 +794,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Get Feed Submission List By Next Token 
+     * Get Feed Submission List By Next Token
      *
      * retrieve the next batch of list items and if there are more items to retrieve
-     * 
+     *
      * @param request
      *          GetFeedSubmissionListByNextTokenRequest request
      * @return
@@ -808,17 +812,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Feed Submission List By Next Token 
+     * Non-blocking Get Feed Submission List By Next Token
      * <p/>
      * Returns <code>future</code> pointer to GetFeedSubmissionListByNextTokenResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetFeedSubmissionListByNextTokenResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetFeedSubmissionListByNextTokenResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -851,7 +855,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetFeedSubmissionListByNextTokenRequest request
      * @return Future&lt;GetFeedSubmissionListByNextTokenResponse&gt; future pointer to GetFeedSubmissionListByNextTokenResponse
-     * 
+     *
      */
     public Future<GetFeedSubmissionListByNextTokenResponse> getFeedSubmissionListByNextTokenAsync(final GetFeedSubmissionListByNextTokenRequest request) {
         Future<GetFeedSubmissionListByNextTokenResponse> response = asyncExecutor.submit(new Callable<GetFeedSubmissionListByNextTokenResponse>() {
@@ -862,13 +866,13 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Cancel Feed Submissions 
+     * Cancel Feed Submissions
      *
      * cancels feed submissions - by default all of the submissions of the
      * last 30 days that have not started processing
-     * 
+     *
      * @param request
      *          CancelFeedSubmissionsRequest request
      * @return
@@ -881,17 +885,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Cancel Feed Submissions 
+     * Non-blocking Cancel Feed Submissions
      * <p/>
      * Returns <code>future</code> pointer to CancelFeedSubmissionsResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return CancelFeedSubmissionsResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return CancelFeedSubmissionsResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -924,7 +928,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          CancelFeedSubmissionsRequest request
      * @return Future&lt;CancelFeedSubmissionsResponse&gt; future pointer to CancelFeedSubmissionsResponse
-     * 
+     *
      */
     public Future<CancelFeedSubmissionsResponse> cancelFeedSubmissionsAsync(final CancelFeedSubmissionsRequest request) {
         Future<CancelFeedSubmissionsResponse> response = asyncExecutor.submit(new Callable<CancelFeedSubmissionsResponse>() {
@@ -935,12 +939,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Request Report 
+     * Request Report
      *
      * requests the generation of a report
-     * 
+     *
      * @param request
      *          RequestReportRequest request
      * @return
@@ -953,17 +957,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Request Report 
+     * Non-blocking Request Report
      * <p/>
      * Returns <code>future</code> pointer to RequestReportResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return RequestReportResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return RequestReportResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -996,7 +1000,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          RequestReportRequest request
      * @return Future&lt;RequestReportResponse&gt; future pointer to RequestReportResponse
-     * 
+     *
      */
     public Future<RequestReportResponse> requestReportAsync(final RequestReportRequest request) {
         Future<RequestReportResponse> response = asyncExecutor.submit(new Callable<RequestReportResponse>() {
@@ -1007,12 +1011,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Get Feed Submission Count 
+     * Get Feed Submission Count
      *
      * returns the number of feeds matching all of the specified criteria
-     * 
+     *
      * @param request
      *          GetFeedSubmissionCountRequest request
      * @return
@@ -1025,17 +1029,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Feed Submission Count 
+     * Non-blocking Get Feed Submission Count
      * <p/>
      * Returns <code>future</code> pointer to GetFeedSubmissionCountResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetFeedSubmissionCountResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetFeedSubmissionCountResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -1068,7 +1072,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetFeedSubmissionCountRequest request
      * @return Future&lt;GetFeedSubmissionCountResponse&gt; future pointer to GetFeedSubmissionCountResponse
-     * 
+     *
      */
     public Future<GetFeedSubmissionCountResponse> getFeedSubmissionCountAsync(final GetFeedSubmissionCountRequest request) {
         Future<GetFeedSubmissionCountResponse> response = asyncExecutor.submit(new Callable<GetFeedSubmissionCountResponse>() {
@@ -1079,13 +1083,13 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Cancel Report Requests 
+     * Cancel Report Requests
      *
      * cancels report request that have not yet started processing,
      * by default all those within the last 90 days
-     * 
+     *
      * @param request
      *          CancelReportRequestsRequest request
      * @return
@@ -1098,17 +1102,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Cancel Report Requests 
+     * Non-blocking Cancel Report Requests
      * <p/>
      * Returns <code>future</code> pointer to CancelReportRequestsResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return CancelReportRequestsResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return CancelReportRequestsResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -1141,7 +1145,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          CancelReportRequestsRequest request
      * @return Future&lt;CancelReportRequestsResponse&gt; future pointer to CancelReportRequestsResponse
-     * 
+     *
      */
     public Future<CancelReportRequestsResponse> cancelReportRequestsAsync(final CancelReportRequestsRequest request) {
         Future<CancelReportRequestsResponse> response = asyncExecutor.submit(new Callable<CancelReportRequestsResponse>() {
@@ -1152,13 +1156,13 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Get Report List 
+     * Get Report List
      *
      * returns a list of reports; by default the most recent ten reports,
      * regardless of their acknowledgment status
-     * 
+     *
      * @param request
      *          GetReportListRequest request
      * @return
@@ -1171,17 +1175,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Report List 
+     * Non-blocking Get Report List
      * <p/>
      * Returns <code>future</code> pointer to GetReportListResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetReportListResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetReportListResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -1214,7 +1218,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetReportListRequest request
      * @return Future&lt;GetReportListResponse&gt; future pointer to GetReportListResponse
-     * 
+     *
      */
     public Future<GetReportListResponse> getReportListAsync(final GetReportListRequest request) {
         Future<GetReportListResponse> response = asyncExecutor.submit(new Callable<GetReportListResponse>() {
@@ -1225,12 +1229,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Get Feed Submission Result 
+     * Get Feed Submission Result
      *
      * retrieves the feed processing report
-     * 
+     *
      * @param request
      *          GetFeedSubmissionResultRequest request
      * @return
@@ -1243,17 +1247,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Feed Submission Result 
+     * Non-blocking Get Feed Submission Result
      * <p/>
      * Returns <code>future</code> pointer to GetFeedSubmissionResultResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetFeedSubmissionResultResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetFeedSubmissionResultResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -1286,7 +1290,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetFeedSubmissionResultRequest request
      * @return Future&lt;GetFeedSubmissionResultResponse&gt; future pointer to GetFeedSubmissionResultResponse
-     * 
+     *
      */
     public Future<GetFeedSubmissionResultResponse> getFeedSubmissionResultAsync(final GetFeedSubmissionResultRequest request) {
         Future<GetFeedSubmissionResultResponse> response = asyncExecutor.submit(new Callable<GetFeedSubmissionResultResponse>() {
@@ -1297,12 +1301,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Get Feed Submission List 
+     * Get Feed Submission List
      *
      * returns a list of feed submission identifiers and their associated metadata
-     * 
+     *
      * @param request
      *          GetFeedSubmissionListRequest request
      * @return
@@ -1315,17 +1319,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Feed Submission List 
+     * Non-blocking Get Feed Submission List
      * <p/>
      * Returns <code>future</code> pointer to GetFeedSubmissionListResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetFeedSubmissionListResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetFeedSubmissionListResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -1358,7 +1362,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetFeedSubmissionListRequest request
      * @return Future&lt;GetFeedSubmissionListResponse&gt; future pointer to GetFeedSubmissionListResponse
-     * 
+     *
      */
     public Future<GetFeedSubmissionListResponse> getFeedSubmissionListAsync(final GetFeedSubmissionListRequest request) {
         Future<GetFeedSubmissionListResponse> response = asyncExecutor.submit(new Callable<GetFeedSubmissionListResponse>() {
@@ -1369,12 +1373,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Get Report Request List 
+     * Get Report Request List
      *
      * returns a list of report requests ids and their associated metadata
-     * 
+     *
      * @param request
      *          GetReportRequestListRequest request
      * @return
@@ -1387,17 +1391,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Report Request List 
+     * Non-blocking Get Report Request List
      * <p/>
      * Returns <code>future</code> pointer to GetReportRequestListResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetReportRequestListResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetReportRequestListResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -1430,7 +1434,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetReportRequestListRequest request
      * @return Future&lt;GetReportRequestListResponse&gt; future pointer to GetReportRequestListResponse
-     * 
+     *
      */
     public Future<GetReportRequestListResponse> getReportRequestListAsync(final GetReportRequestListRequest request) {
         Future<GetReportRequestListResponse> response = asyncExecutor.submit(new Callable<GetReportRequestListResponse>() {
@@ -1441,12 +1445,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Get Report Schedule List By Next Token 
+     * Get Report Schedule List By Next Token
      *
      * retrieve the next batch of list items and if there are more items to retrieve
-     * 
+     *
      * @param request
      *          GetReportScheduleListByNextTokenRequest request
      * @return
@@ -1459,17 +1463,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Report Schedule List By Next Token 
+     * Non-blocking Get Report Schedule List By Next Token
      * <p/>
      * Returns <code>future</code> pointer to GetReportScheduleListByNextTokenResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetReportScheduleListByNextTokenResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetReportScheduleListByNextTokenResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -1502,7 +1506,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetReportScheduleListByNextTokenRequest request
      * @return Future&lt;GetReportScheduleListByNextTokenResponse&gt; future pointer to GetReportScheduleListByNextTokenResponse
-     * 
+     *
      */
     public Future<GetReportScheduleListByNextTokenResponse> getReportScheduleListByNextTokenAsync(final GetReportScheduleListByNextTokenRequest request) {
         Future<GetReportScheduleListByNextTokenResponse> response = asyncExecutor.submit(new Callable<GetReportScheduleListByNextTokenResponse>() {
@@ -1513,12 +1517,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Get Report List By Next Token 
+     * Get Report List By Next Token
      *
      * retrieve the next batch of list items and if there are more items to retrieve
-     * 
+     *
      * @param request
      *          GetReportListByNextTokenRequest request
      * @return
@@ -1531,17 +1535,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Report List By Next Token 
+     * Non-blocking Get Report List By Next Token
      * <p/>
      * Returns <code>future</code> pointer to GetReportListByNextTokenResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetReportListByNextTokenResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetReportListByNextTokenResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -1574,7 +1578,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetReportListByNextTokenRequest request
      * @return Future&lt;GetReportListByNextTokenResponse&gt; future pointer to GetReportListByNextTokenResponse
-     * 
+     *
      */
     public Future<GetReportListByNextTokenResponse> getReportListByNextTokenAsync(final GetReportListByNextTokenRequest request) {
         Future<GetReportListByNextTokenResponse> response = asyncExecutor.submit(new Callable<GetReportListByNextTokenResponse>() {
@@ -1585,13 +1589,13 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Manage Report Schedule 
+     * Manage Report Schedule
      *
      * Creates, updates, or deletes a report schedule
      * for a given report type, such as order reports in particular.
-     * 
+     *
      * @param request
      *          ManageReportScheduleRequest request
      * @return
@@ -1604,17 +1608,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Manage Report Schedule 
+     * Non-blocking Manage Report Schedule
      * <p/>
      * Returns <code>future</code> pointer to ManageReportScheduleResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return ManageReportScheduleResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return ManageReportScheduleResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -1647,7 +1651,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          ManageReportScheduleRequest request
      * @return Future&lt;ManageReportScheduleResponse&gt; future pointer to ManageReportScheduleResponse
-     * 
+     *
      */
     public Future<ManageReportScheduleResponse> manageReportScheduleAsync(final ManageReportScheduleRequest request) {
         Future<ManageReportScheduleResponse> response = asyncExecutor.submit(new Callable<ManageReportScheduleResponse>() {
@@ -1658,13 +1662,13 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Get Report Request Count 
+     * Get Report Request Count
      *
      * returns a count of report requests; by default all the report
      * requests in the last 90 days
-     * 
+     *
      * @param request
      *          GetReportRequestCountRequest request
      * @return
@@ -1677,17 +1681,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Report Request Count 
+     * Non-blocking Get Report Request Count
      * <p/>
      * Returns <code>future</code> pointer to GetReportRequestCountResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetReportRequestCountResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetReportRequestCountResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -1720,7 +1724,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetReportRequestCountRequest request
      * @return Future&lt;GetReportRequestCountResponse&gt; future pointer to GetReportRequestCountResponse
-     * 
+     *
      */
     public Future<GetReportRequestCountResponse> getReportRequestCountAsync(final GetReportRequestCountRequest request) {
         Future<GetReportRequestCountResponse> response = asyncExecutor.submit(new Callable<GetReportRequestCountResponse>() {
@@ -1731,12 +1735,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             });
         return response;
     }
-        
+
     /**
-     * Get Report Schedule List 
+     * Get Report Schedule List
      *
      * returns the list of report schedules
-     * 
+     *
      * @param request
      *          GetReportScheduleListRequest request
      * @return
@@ -1749,17 +1753,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     }
 
     /**
-     * Non-blocking Get Report Schedule List 
+     * Non-blocking Get Report Schedule List
      * <p/>
      * Returns <code>future</code> pointer to GetReportScheduleListResponse
      * <p/>
-     * If response is ready, call to <code>future.get()</code> 
-     * will return GetReportScheduleListResponse. 
+     * If response is ready, call to <code>future.get()</code>
+     * will return GetReportScheduleListResponse.
      * <p/>
-     * If response is not ready, call to <code>future.get()</code> will block the 
-     * calling thread until response is returned. 
+     * If response is not ready, call to <code>future.get()</code> will block the
+     * calling thread until response is returned.
      * <p/>
-     * Note, <code>future.get()</code> will throw wrapped runtime exception. 
+     * Note, <code>future.get()</code> will throw wrapped runtime exception.
      * <p/>
      * If service error has occured, MarketplaceWebServiceException can be extracted with
      * <code>exception.getCause()</code>
@@ -1792,7 +1796,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * @param request
      *          GetReportScheduleListRequest request
      * @return Future&lt;GetReportScheduleListResponse&gt; future pointer to GetReportScheduleListResponse
-     * 
+     *
      */
     public Future<GetReportScheduleListResponse> getReportScheduleListAsync(final GetReportScheduleListRequest request) {
         Future<GetReportScheduleListResponse> response = asyncExecutor.submit(new Callable<GetReportScheduleListResponse>() {
@@ -1842,7 +1846,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
     private static final String mwsClientLibraryVersion = "2016-09-21";
 
-    
+
     // Private API ------------------------------------------------------------//
 
     /**
@@ -1853,41 +1857,41 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     private HttpClient configureHttpClient(
     		String applicationName,
     		String applicationVersion) {
-        
+
         // respect a user-provided User-Agent header as-is, but if none is provided
         // then generate one satisfying the MWS User-Agent requirements
         if(config.getUserAgent()==null) {
         	config.setUserAgent(
-        			quoteAppName(applicationName), 
-        			quoteAppVersion(applicationVersion), 
+        			quoteAppName(applicationName),
+        			quoteAppVersion(applicationVersion),
         			quoteAttributeValue("Java/"+System.getProperty("java.version")+
         			"/"+System.getProperty("java.class.version")+
-        			"/"+System.getProperty("java.vendor")), 
-        			
-        			quoteAttributeName("Platform"), 
+        			"/"+System.getProperty("java.vendor")),
+
+        			quoteAttributeName("Platform"),
         			quoteAttributeValue(""+System.getProperty("os.name")+
         			"/"+System.getProperty("os.arch")+
         			"/"+System.getProperty("os.version")),
-        			
-        			quoteAttributeName("MWSClientVersion"), 
+
+        			quoteAttributeName("MWSClientVersion"),
         			quoteAttributeValue(mwsClientLibraryVersion));
         }
- 
+
         defaultHeaders.add(new BasicHeader("X-Amazon-User-Agent", config.getUserAgent()));
-        
-        
+
+
         /* Set http client parameters */
     	BasicHttpParams httpParams = new BasicHttpParams();
-    	
+
         httpParams.setParameter(CoreProtocolPNames.USER_AGENT, config.getUserAgent());
-        
+
 
         /* Set connection parameters */
         HttpConnectionParams.setConnectionTimeout(httpParams, config.getConnectionTimeout());
         HttpConnectionParams.setSoTimeout(httpParams, config.getSoTimeout());
         HttpConnectionParams.setStaleCheckingEnabled(httpParams, true);
-        HttpConnectionParams.setTcpNoDelay(httpParams, true);    
-        
+        HttpConnectionParams.setTcpNoDelay(httpParams, true);
+
 
         /* Set connection manager */
         PoolingClientConnectionManager connectionManager = new PoolingClientConnectionManager();
@@ -1898,7 +1902,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         httpClient = new DefaultHttpClient(connectionManager, httpParams);
         httpContext = new BasicHttpContext();
 
-        
+
         /* Set proxy if configured */
         if (config.isSetProxyHost() && config.isSetProxyPort()) {
             String proxyProtocol = null;
@@ -1915,7 +1919,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
                     " Proxy Port: " + config.getProxyPort() + " Proxy protocol: "+ proxyProtocol);
             final HttpHost hostConfiguration = new HttpHost(config.getProxyHost(), config.getProxyPort(), proxyProtocol );
             httpContext = new BasicHttpContext();
-            httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, hostConfiguration); 
+            httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, hostConfiguration);
 
             if (config.isSetProxyUsername() && config.isSetProxyPassword()) {
                 credentialsProvider.setCredentials (new AuthScope(
@@ -1932,7 +1936,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return httpClient;
     }
-    
+
     /**
      * Stream the response into an output stream.
      */
@@ -1951,21 +1955,21 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
       parameters.put("AWSAccessKeyId",  this.awsAccessKeyId);
       parameters.put("Signature", signParameters(parameters, this.awsSecretAccessKey));
     }
-    
+
     private String getSubmitFeedUrlParameters( Map< String, String > parameters ) throws SignatureException, MarketplaceWebServiceException {
 
         addRequiredParameters(parameters);
-        
+
         StringBuilder sb = new StringBuilder();
         for( Entry< String, String > entry : parameters.entrySet() ) {
             if( sb.length() != 0 ) {
                 sb.append( "&" );
             }
-            
+
             try {
                 String key = URLEncoder.encode( entry.getKey(), "UTF-8" );
                 String value = URLEncoder.encode( entry.getValue(), "UTF-8" );
-            
+
                 sb.append( key + "=" + value );
             }
             catch( Throwable t ) {
@@ -1973,26 +1977,26 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
                 throw new MarketplaceWebServiceException(t);
             }
         }
-        
+
         return sb.toString();
     }
-    
+
     private <T> T invoke(Class<T> clazz, Map<String, String> parameters)
     throws MarketplaceWebServiceException {
         return invoke( clazz, parameters, null );
     }
-    
+
     @SuppressWarnings("serial")
     private <T, U> T invoke(Class<T> clazz, Map<String, String> parameters, U request ) throws MarketplaceWebServiceException {
-        
+
         String actionName = parameters.get("Action");
         T response = null;
         String responseBodyString = null;
         ResponseHeaderMetadata responseHeaderMetadata = null;
         Method responseHeaderMetadataSetter = null;
-        
+
         HttpPost method = null;
-        
+
         try {
 
             responseHeaderMetadataSetter = clazz.getMethod("setResponseHeaderMetadata", ResponseHeaderMetadata.class);
@@ -2003,24 +2007,24 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             }
             // SubmitFeed will be the only MWS API function that will stream requests to the server.
             if( request instanceof SubmitFeedRequest ) {
-                
-                // For SubmitFeed, HTTP body is reserved for the Feed Content and the function parameters 
+
+                // For SubmitFeed, HTTP body is reserved for the Feed Content and the function parameters
                 // are contained within the HTTP header
                 SubmitFeedRequest sfr = (SubmitFeedRequest)request;
-                
+
                 method = new HttpPost( config.getServiceURL() + "?" + getSubmitFeedUrlParameters( parameters ) );
-               
+
                 method.setEntity( new InputStreamEntity(sfr.getFeedContent() , -1) );
 
                 /* Set content type and encoding - encoding and charset are ignored right now because
                  * octet-stream is the only supported transport of MWS feeds. */
                 method.addHeader(new BasicHeader("Content-Type", sfr.getContentType().toString()));
-                
+
             }
             else {
                 method = new HttpPost(config.getServiceURL());
                 log.debug("Adding required parameters...");
-                addRequiredParametersToRequest(method, parameters);               
+                addRequiredParametersToRequest(method, parameters);
 
                 /* Set content type and encoding */
                 log.debug("Setting content-type to application/x-www-form-urlencoded; charset=" + DEFAULT_ENCODING.toLowerCase());
@@ -2028,18 +2032,18 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
                 log.debug("Done adding additional required parameters. Parameters now: " + parameters);
             }
-            
+
             for(Header head: defaultHeaders) {
             	method.addHeader(head);
             }
-           
-        } 
+
+        }
         catch( Throwable t ) {
             throw new MarketplaceWebServiceException( t );
         }
-        
+
         int status = -1;
-        
+
         log.debug("Invoking" + actionName + " request. Current parameters: " + parameters);
         try {
             boolean shouldRetry = true;
@@ -2055,17 +2059,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
                     status = postResponse.getStatusLine().getStatusCode();
 
                     responseHeaderMetadata = getResponseHeaderMetadata(postResponse);
-                    
+
                     // GetFeedSubmissionResult and GetReport will be the only MWS API functions that will stream
                     // server responses.
-                    boolean isStreamingResponse = (request instanceof GetFeedSubmissionResultRequest || request instanceof GetReportRequest); 
-                    
+                    boolean isStreamingResponse = (request instanceof GetFeedSubmissionResultRequest || request instanceof GetReportRequest);
+
                     if( !isStreamingResponse ) {
                         // SubmitFeed
                         responseBodyString = getResponsBodyAsString(postResponse.getEntity().getContent());
                         assert( responseBodyString != null );
                     }
-                    
+
                     /* Successful response. Attempting to unmarshal into the <Action>Response type */
                     if (status == HttpStatus.SC_OK && responseBodyString != null) {
                         shouldRetry = false;
@@ -2078,9 +2082,9 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
                         log.debug("Unmarshalled response into " + actionName + "Response type.");
 
-                    } 
+                    }
                     else if (status == HttpStatus.SC_OK && isStreamingResponse ) {
-                        
+
                         Method outputStreamGetter = null;
                         for( Method m : request.getClass().getMethods() ) {
                             if( m.getName().matches( "get.+OutputStream$" ) ) {
@@ -2089,10 +2093,10 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
                         }
 
                         OutputStream originalOs = (OutputStream)outputStreamGetter.invoke( request, new Object[0] );
-                        
+
                         MessageDigest messageDigest = MessageDigest.getInstance("MD5");
                         DigestOutputStream os = new DigestOutputStream(originalOs, messageDigest);
-                        
+
                         // Streaming-response-as-unnamed-body responses from MWS
                         // must carry the generated unique request id as a HTTP
                         // header (x-amz-request-id) as it cannot be passed in a
@@ -2100,7 +2104,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
                         String requestIdFromHeader = null;
                         {
                             requestIdFromHeader = getFirstHeader(postResponse, "x-amz-request-id").getValue();
-                            
+
                             // Avoid use of the JDK-1.6-only isEmpty() call.
                             if(requestIdFromHeader==null || requestIdFromHeader.length()==0) {
                                 throw new MarketplaceWebServiceException(
@@ -2108,13 +2112,13 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
                                     "for a streaming response call - please contact Amazon");
                             }
                         }
-                        
+
                         String returnedContentMD5 = null;
-                        
+
                        	returnedContentMD5 = getFirstHeader(postResponse, "Content-MD5").getValue();
-                        
+
                         copyResponseToOutputStream(postResponse.getEntity().getContent(), os);
-                        
+
                         // Streaming-response-as-unnamed-body responses from MWS
                         // must also carry a Content-MD5 header and it must
                         // match the calculated MD5 for the body.
@@ -2125,7 +2129,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
                                     "does not match the calculated MD5 ("+calculatedContentMD5+") " +
                                     "in request id "+requestIdFromHeader+" - please contact Amazon");
                         }
-                        
+
                         response = clazz.newInstance();
                         responseHeaderMetadataSetter.invoke(response, responseHeaderMetadata);
                         if( clazz == GetFeedSubmissionResultResponse.class ) {
@@ -2142,7 +2146,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
                                     "unexpected streaming-response class "+clazz.getName()
                                     +" - please contact Amazon");
                         }
-                        
+
                         shouldRetry = false;
                         log.debug( "Received streaming response." );
 
@@ -2152,7 +2156,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
                             // Response body contains error message.
                             responseBodyString = getResponsBodyAsString(postResponse.getEntity().getContent());
                         }
-                        
+
 
                         log.debug("Received Response. Status: " + status + "." );
 
@@ -2166,18 +2170,18 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
                             log.debug("Unmarshalled response into the ErrorResponse type.");
 
-                            com.amazonservices.mws.reports.model.Error error = errorResponse.getError().get(0);
-                            
-                            if(status == HttpStatus.SC_SERVICE_UNAVAILABLE  
+                            Error error = errorResponse.getError().get(0);
+
+                            if(status == HttpStatus.SC_SERVICE_UNAVAILABLE
                             		&& !(error.getCode().equals("RequestThrottled"))
                             		&& !(request instanceof SubmitFeedRequest)
                             		&& pauseIfRetryNeeded(++retries)) {
                         		shouldRetry = true;
                             } else {
-                            	shouldRetry=false;	
+                            	shouldRetry=false;
                             	throw new MarketplaceWebServiceException(
-                            		(((request instanceof SubmitFeedRequest) && (error.getType().equals("Receiver")))? 
-                            			error.getMessage() + " [Cannot retry SubmitFeed request: must reset InputStream to retry.]" : 
+                            		(((request instanceof SubmitFeedRequest) && (error.getType().equals("Receiver")))?
+                            			error.getMessage() + " [Cannot retry SubmitFeed request: must reset InputStream to retry.]" :
                             			error.getMessage()),
                                     status,
                                     error.getCode(),
@@ -2249,23 +2253,23 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         responseContext != null ? responseContext.getValue() : null,
         timestamp != null ? timestamp.getValue() : null);
     }
-    
+
     /**
      * Calculate content MD5 header values for feeds stored on disk.
      */
-    private String computeContentMD5HeaderValue( FileInputStream fis ) 
+    private String computeContentMD5HeaderValue( FileInputStream fis )
         throws IOException, NoSuchAlgorithmException {
-        
+
         DigestInputStream dis = new DigestInputStream( fis, MessageDigest.getInstance( "MD5" ));
-            
+
         byte[] buffer = new byte[8192];
         while( dis.read( buffer ) > 0 );
-            
-        String md5Content = new String( org.apache.commons.codec.binary.Base64.encodeBase64(dis.getMessageDigest().digest()) );           
-        
+
+        String md5Content = new String( org.apache.commons.codec.binary.Base64.encodeBase64(dis.getMessageDigest().digest()) );
+
         // Effectively resets the stream to be beginning of the file via a FileChannel.
         fis.getChannel().position( 0 );
-        
+
         return md5Content;
     }
 
@@ -2310,7 +2314,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
     /**
      * Add authentication related and version parameter and set request body
      * with all of the parameters
-     * @throws UnsupportedEncodingException 
+     * @throws UnsupportedEncodingException
      */
     private void addRequiredParametersToRequest(HttpPost method, Map<String, String> parameters)
             throws SignatureException, UnsupportedEncodingException {
@@ -2448,10 +2452,10 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
             if (pairs.hasNext()) {
                 data.append("&");
             }
-        }        
+        }
         return data.toString();
     }
-    
+
     private static boolean usesHttps(String url){
         URL urlToCheck;
         try {
@@ -2474,7 +2478,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         } catch (MalformedURLException e) {
             throw new RuntimeException("not a URL", e);
         }
-        
+
         int portNumber = urlToCheck.getPort();
         if (portNumber == -1){
             // no port was specified
@@ -2541,7 +2545,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
      * Convert GetReportRequest to name value pairs
      */
     private Map<String, String> convertGetReport(GetReportRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetReport");
         if (request.isSetMarketplace()) {
@@ -2559,12 +2563,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert GetReportScheduleCountRequest to name value pairs
      */
     private Map<String, String> convertGetReportScheduleCount(GetReportScheduleCountRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetReportScheduleCount");
         if (request.isSetMarketplace()) {
@@ -2579,19 +2583,19 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         if (request.isSetReportTypeList()) {
             TypeList  reportTypeList = request.getReportTypeList();
             java.util.List<String> typeList  =  reportTypeList.getType();
-            for  (String type : typeList) { 
+            for  (String type : typeList) {
                 params.put("ReportTypeList" + "." + "Type" + "."  + (typeList.indexOf(type) + 1), type);
-            }   
-        } 
+            }
+        }
 
         return params;
     }
-        
+
                                     /**
      * Convert GetReportRequestListByNextTokenRequest to name value pairs
      */
     private Map<String, String> convertGetReportRequestListByNextToken(GetReportRequestListByNextTokenRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetReportRequestListByNextToken");
         if (request.isSetMarketplace()) {
@@ -2609,12 +2613,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert UpdateReportAcknowledgementsRequest to name value pairs
      */
-    private Map<String, String> convertUpdateReportAcknowledgements(TypeList.UpdateReportAcknowledgementsRequest request) {
-        
+    private Map<String, String> convertUpdateReportAcknowledgements(UpdateReportAcknowledgementsRequest request) {
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "UpdateReportAcknowledgements");
         if (request.isSetMarketplace()) {
@@ -2629,22 +2633,22 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         if (request.isSetReportIdList()) {
             IdList  reportIdList = request.getReportIdList();
             java.util.List<String> idList  =  reportIdList.getId();
-            for  (String id : idList) { 
+            for  (String id : idList) {
                 params.put("ReportIdList" + "." + "Id" + "."  + (idList.indexOf(id) + 1), id);
-            }   
-        } 
+            }
+        }
         if (request.isSetAcknowledged()) {
             params.put("Acknowledged", request.isAcknowledged() + "");
         }
 
         return params;
     }
-        
+
                                     /**
      * Convert SubmitFeedRequest to name value pairs
      */
     private Map<String, String> convertSubmitFeed(SubmitFeedRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "SubmitFeed");
         if (request.isSetMarketplace()) {
@@ -2653,7 +2657,7 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         if (request.isSetMarketplaceIdList()) {
             IdList marketplaceIdList = request.getMarketplaceIdList();
             List<String> idList = marketplaceIdList.getId();
-            
+
             for (int i = 0; i < idList.size(); i++) {
                 params.put("MarketplaceIdList.Id." + (i + 1), idList.get(i));
             }
@@ -2676,12 +2680,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert GetReportCountRequest to name value pairs
      */
     private Map<String, String> convertGetReportCount(GetReportCountRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetReportCount");
         if (request.isSetMarketplace()) {
@@ -2696,10 +2700,10 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         if (request.isSetReportTypeList()) {
             TypeList  reportTypeList = request.getReportTypeList();
             java.util.List<String> typeList  =  reportTypeList.getType();
-            for  (String type : typeList) { 
+            for  (String type : typeList) {
                 params.put("ReportTypeList" + "." + "Type" + "."  + (typeList.indexOf(type) + 1), type);
-            }   
-        } 
+            }
+        }
         if (request.isSetAcknowledged()) {
             params.put("Acknowledged", request.isAcknowledged() + "");
         }
@@ -2712,12 +2716,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert GetFeedSubmissionListByNextTokenRequest to name value pairs
      */
     private Map<String, String> convertGetFeedSubmissionListByNextToken(GetFeedSubmissionListByNextTokenRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetFeedSubmissionListByNextToken");
         if (request.isSetMarketplace()) {
@@ -2735,12 +2739,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert CancelFeedSubmissionsRequest to name value pairs
      */
     private Map<String, String> convertCancelFeedSubmissions(CancelFeedSubmissionsRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "CancelFeedSubmissions");
         if (request.isSetMarketplace()) {
@@ -2756,38 +2760,38 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         if (request.isSetFeedSubmissionIdList()) {
             IdList  feedSubmissionIdList = request.getFeedSubmissionIdList();
             java.util.List<String> idList  =  feedSubmissionIdList.getId();
-            for  (String id : idList) { 
+            for  (String id : idList) {
                 params.put("FeedSubmissionIdList" + "." + "Id" + "."  + (idList.indexOf(id) + 1), id);
-            }   
-        } 
+            }
+        }
         if (request.isSetFeedTypeList()) {
             TypeList  feedTypeList = request.getFeedTypeList();
             java.util.List<String> typeList  =  feedTypeList.getType();
-            for  (String type : typeList) { 
+            for  (String type : typeList) {
                 params.put("FeedTypeList" + "." + "Type" + "."  + (typeList.indexOf(type) + 1), type);
-            }   
-        } 
+            }
+        }
         if (request.isSetSubmittedFromDate()) {
             params.put("SubmittedFromDate", request.getSubmittedFromDate() + "");
         }
         if (request.isSetSubmittedToDate()) {
             params.put("SubmittedToDate", request.getSubmittedToDate() + "");
         }
-        
+
         return params;
     }
-        
+
                                     /**
      * Convert RequestReportRequest to name value pairs
      */
     private Map<String, String> convertRequestReport(RequestReportRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "RequestReport");
         if (request.isSetMarketplaceIdList()) {
             IdList marketplaceIdList = request.getMarketplaceIdList();
             List<String> idList = marketplaceIdList.getId();
-            
+
             for (int i = 0; i < idList.size(); i++) {
                 params.put("MarketplaceIdList.Id." + (i + 1), idList.get(i));
             }
@@ -2816,12 +2820,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert GetFeedSubmissionCountRequest to name value pairs
      */
     private Map<String, String> convertGetFeedSubmissionCount(GetFeedSubmissionCountRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetFeedSubmissionCount");
         if (request.isSetMarketplace()) {
@@ -2836,17 +2840,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         if (request.isSetFeedTypeList()) {
             TypeList  feedTypeList = request.getFeedTypeList();
             java.util.List<String> typeList  =  feedTypeList.getType();
-            for  (String type : typeList) { 
+            for  (String type : typeList) {
                 params.put("FeedTypeList" + "." + "Type" + "."  + (typeList.indexOf(type) + 1), type);
-            }   
-        } 
+            }
+        }
         if (request.isSetFeedProcessingStatusList()) {
             StatusList  feedProcessingStatusList = request.getFeedProcessingStatusList();
             java.util.List<String> statusList  =  feedProcessingStatusList.getStatus();
-            for  (String status : statusList) { 
+            for  (String status : statusList) {
                 params.put("FeedProcessingStatusList" + "." + "Status" + "."  + (statusList.indexOf(status) + 1), status);
-            }   
-        } 
+            }
+        }
         if (request.isSetSubmittedFromDate()) {
             params.put("SubmittedFromDate", request.getSubmittedFromDate() + "");
         }
@@ -2856,12 +2860,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert CancelReportRequestsRequest to name value pairs
      */
     private Map<String, String> convertCancelReportRequests(CancelReportRequestsRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "CancelReportRequests");
         if (request.isSetMarketplace()) {
@@ -2876,24 +2880,24 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         if (request.isSetReportRequestIdList()) {
             IdList  reportRequestIdList = request.getReportRequestIdList();
             java.util.List<String> idList  =  reportRequestIdList.getId();
-            for  (String id : idList) { 
+            for  (String id : idList) {
                 params.put("ReportRequestIdList" + "." + "Id" + "."  + (idList.indexOf(id) + 1), id);
-            }   
-        } 
+            }
+        }
         if (request.isSetReportTypeList()) {
             TypeList  reportTypeList = request.getReportTypeList();
             java.util.List<String> typeList  =  reportTypeList.getType();
-            for  (String type : typeList) { 
+            for  (String type : typeList) {
                 params.put("ReportTypeList" + "." + "Type" + "."  + (typeList.indexOf(type) + 1), type);
-            }   
-        } 
+            }
+        }
         if (request.isSetReportProcessingStatusList()) {
             StatusList  reportProcessingStatusList = request.getReportProcessingStatusList();
             java.util.List<String> statusList  =  reportProcessingStatusList.getStatus();
-            for  (String status : statusList) { 
+            for  (String status : statusList) {
                 params.put("ReportProcessingStatusList" + "." + "Status" + "."  + (statusList.indexOf(status) + 1), status);
-            }   
-        } 
+            }
+        }
         if (request.isSetRequestedFromDate()) {
             params.put("RequestedFromDate", request.getRequestedFromDate() + "");
         }
@@ -2903,15 +2907,15 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert GetReportListRequest to name value pairs
      */
     private Map<String, String> convertGetReportList(GetReportListRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetReportList");
-        
+
         if (request.isSetMarketplace()) {
             params.put("Marketplace", request.getMarketplace());
         }
@@ -2927,10 +2931,10 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         if (request.isSetReportTypeList()) {
             TypeList  reportTypeList = request.getReportTypeList();
             java.util.List<String> typeList  =  reportTypeList.getType();
-            for  (String type : typeList) { 
+            for  (String type : typeList) {
                 params.put("ReportTypeList" + "." + "Type" + "."  + (typeList.indexOf(type) + 1), type);
-            }   
-        } 
+            }
+        }
         if (request.isSetAcknowledged()) {
             params.put("Acknowledged", request.isAcknowledged() + "");
         }
@@ -2943,19 +2947,19 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         if (request.isSetReportRequestIdList()) {
             IdList  reportRequestIdList = request.getReportRequestIdList();
             java.util.List<String> idList  =  reportRequestIdList.getId();
-            for  (String id : idList) { 
+            for  (String id : idList) {
                 params.put("ReportRequestIdList" + "." + "Id" + "."  + (idList.indexOf(id) + 1), id);
-            }   
-        } 
+            }
+        }
 
         return params;
     }
-        
+
                                     /**
      * Convert GetFeedSubmissionResultRequest to name value pairs
      */
     private Map<String, String> convertGetFeedSubmissionResult(GetFeedSubmissionResultRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetFeedSubmissionResult");
         if (request.isSetMarketplace()) {
@@ -2973,12 +2977,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert GetFeedSubmissionListRequest to name value pairs
      */
     private Map<String, String> convertGetFeedSubmissionList(GetFeedSubmissionListRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetFeedSubmissionList");
         if (request.isSetMarketplace()) {
@@ -2993,27 +2997,27 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         if (request.isSetFeedSubmissionIdList()) {
             IdList  feedSubmissionIdList = request.getFeedSubmissionIdList();
             java.util.List<String> idList  =  feedSubmissionIdList.getId();
-            for  (String id : idList) { 
+            for  (String id : idList) {
                 params.put("FeedSubmissionIdList" + "." + "Id" + "."  + (idList.indexOf(id) + 1), id);
-            }   
-        } 
+            }
+        }
         if (request.isSetMaxCount()) {
             params.put("MaxCount", request.getMaxCount() + "");
         }
         if (request.isSetFeedTypeList()) {
             TypeList  feedTypeList = request.getFeedTypeList();
             java.util.List<String> typeList  =  feedTypeList.getType();
-            for  (String type : typeList) { 
+            for  (String type : typeList) {
                 params.put("FeedTypeList" + "." + "Type" + "."  + (typeList.indexOf(type) + 1), type);
-            }   
-        } 
+            }
+        }
         if (request.isSetFeedProcessingStatusList()) {
             StatusList  feedProcessingStatusList = request.getFeedProcessingStatusList();
             java.util.List<String> statusList  =  feedProcessingStatusList.getStatus();
-            for  (String status : statusList) { 
+            for  (String status : statusList) {
                 params.put("FeedProcessingStatusList" + "." + "Status" + "."  + (statusList.indexOf(status) + 1), status);
-            }   
-        } 
+            }
+        }
         if (request.isSetSubmittedFromDate()) {
             params.put("SubmittedFromDate", request.getSubmittedFromDate() + "");
         }
@@ -3023,12 +3027,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert GetReportRequestListRequest to name value pairs
      */
     private Map<String, String> convertGetReportRequestList(GetReportRequestListRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetReportRequestList");
         if (request.isSetMarketplace()) {
@@ -3043,24 +3047,24 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         if (request.isSetReportRequestIdList()) {
             IdList  reportRequestIdList = request.getReportRequestIdList();
             java.util.List<String> idList  =  reportRequestIdList.getId();
-            for  (String id : idList) { 
+            for  (String id : idList) {
                 params.put("ReportRequestIdList" + "." + "Id" + "."  + (idList.indexOf(id) + 1), id);
-            }   
-        } 
+            }
+        }
         if (request.isSetReportTypeList()) {
             TypeList  reportTypeList = request.getReportTypeList();
             java.util.List<String> typeList  =  reportTypeList.getType();
-            for  (String type : typeList) { 
+            for  (String type : typeList) {
                 params.put("ReportTypeList" + "." + "Type" + "."  + (typeList.indexOf(type) + 1), type);
-            }   
-        } 
+            }
+        }
         if (request.isSetReportProcessingStatusList()) {
             StatusList  reportProcessingStatusList = request.getReportProcessingStatusList();
             java.util.List<String> statusList  =  reportProcessingStatusList.getStatus();
-            for  (String status : statusList) { 
+            for  (String status : statusList) {
                 params.put("ReportProcessingStatusList" + "." + "Status" + "."  + (statusList.indexOf(status) + 1), status);
-            }   
-        } 
+            }
+        }
         if (request.isSetMaxCount()) {
             params.put("MaxCount", request.getMaxCount() + "");
         }
@@ -3073,12 +3077,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert GetReportScheduleListByNextTokenRequest to name value pairs
      */
     private Map<String, String> convertGetReportScheduleListByNextToken(GetReportScheduleListByNextTokenRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetReportScheduleListByNextToken");
         if (request.isSetMarketplace()) {
@@ -3096,12 +3100,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert GetReportListByNextTokenRequest to name value pairs
      */
     private Map<String, String> convertGetReportListByNextToken(GetReportListByNextTokenRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetReportListByNextToken");
         if (request.isSetMarketplace()) {
@@ -3119,12 +3123,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert ManageReportScheduleRequest to name value pairs
      */
     private Map<String, String> convertManageReportSchedule(ManageReportScheduleRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "ManageReportSchedule");
         if (request.isSetMarketplace()) {
@@ -3148,12 +3152,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert GetReportRequestCountRequest to name value pairs
      */
     private Map<String, String> convertGetReportRequestCount(GetReportRequestCountRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetReportRequestCount");
         if (request.isSetMarketplace()) {
@@ -3168,17 +3172,17 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         if (request.isSetReportTypeList()) {
             TypeList  reportTypeList = request.getReportTypeList();
             java.util.List<String> typeList  =  reportTypeList.getType();
-            for  (String type : typeList) { 
+            for  (String type : typeList) {
                 params.put("ReportTypeList" + "." + "Type" + "."  + (typeList.indexOf(type) + 1), type);
-            }   
-        } 
+            }
+        }
         if (request.isSetReportProcessingStatusList()) {
             StatusList  reportProcessingStatusList = request.getReportProcessingStatusList();
             java.util.List<String> statusList  =  reportProcessingStatusList.getStatus();
-            for  (String status : statusList) { 
+            for  (String status : statusList) {
                 params.put("ReportProcessingStatusList" + "." + "Status" + "."  + (statusList.indexOf(status) + 1), status);
-            }   
-        } 
+            }
+        }
         if (request.isSetRequestedFromDate()) {
             params.put("RequestedFromDate", request.getRequestedFromDate() + "");
         }
@@ -3188,12 +3192,12 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
 
         return params;
     }
-        
+
                                     /**
      * Convert GetReportScheduleListRequest to name value pairs
      */
     private Map<String, String> convertGetReportScheduleList(GetReportScheduleListRequest request) {
-        
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("Action", "GetReportScheduleList");
         if (request.isSetMarketplace()) {
@@ -3208,13 +3212,13 @@ public  class MarketplaceWebServiceClient implements MarketplaceWebService {
         if (request.isSetReportTypeList()) {
             TypeList  reportTypeList = request.getReportTypeList();
             java.util.List<String> typeList  =  reportTypeList.getType();
-            for  (String type : typeList) { 
+            for  (String type : typeList) {
                 params.put("ReportTypeList" + "." + "Type" + "."  + (typeList.indexOf(type) + 1), type);
-            }   
-        } 
+            }
+        }
 
         return params;
     }
-        
-                                                                                                                                                
+
+
 }

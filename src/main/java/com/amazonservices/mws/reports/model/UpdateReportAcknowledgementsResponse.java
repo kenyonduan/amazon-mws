@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://mws.amazonaws.com/doc/2009-01-01/}GetReportScheduleListByNextTokenResult"/>
+ *         &lt;element ref="{http://mws.amazonaws.com/doc/2009-01-01/}UpdateReportAcknowledgementsResult"/>
  *         &lt;element ref="{http://mws.amazonaws.com/doc/2009-01-01/}ResponseMetadata"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -32,14 +32,14 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getReportScheduleListByNextTokenResult",
+    "updateReportAcknowledgementsResult",
     "responseMetadata"
 })
-@XmlRootElement(name = "GetReportScheduleListByNextTokenResponse")
-public class GetReportScheduleListByNextTokenResponse {
+@XmlRootElement(name = "UpdateReportAcknowledgementsResponse")
+public class UpdateReportAcknowledgementsResponse {
 
-    @XmlElement(name = "GetReportScheduleListByNextTokenResult", required = true)
-    protected GetReportScheduleListByNextTokenResult getReportScheduleListByNextTokenResult;
+    @XmlElement(name = "UpdateReportAcknowledgementsResult", required = true)
+    protected UpdateReportAcknowledgementsResult updateReportAcknowledgementsResult;
     @XmlElement(name = "ResponseMetadata", required = true)
     protected ResponseMetadata responseMetadata;
 
@@ -47,7 +47,7 @@ public class GetReportScheduleListByNextTokenResponse {
      * Default constructor
      * 
      */
-    public GetReportScheduleListByNextTokenResponse() {
+    public UpdateReportAcknowledgementsResponse() {
         super();
     }
 
@@ -55,37 +55,37 @@ public class GetReportScheduleListByNextTokenResponse {
      * Value constructor
      * 
      */
-    public GetReportScheduleListByNextTokenResponse(final GetReportScheduleListByNextTokenResult getReportScheduleListByNextTokenResult, final ResponseMetadata responseMetadata) {
-        this.getReportScheduleListByNextTokenResult = getReportScheduleListByNextTokenResult;
+    public UpdateReportAcknowledgementsResponse(final UpdateReportAcknowledgementsResult updateReportAcknowledgementsResult, final ResponseMetadata responseMetadata) {
+        this.updateReportAcknowledgementsResult = updateReportAcknowledgementsResult;
         this.responseMetadata = responseMetadata;
     }
 
     /**
-     * Gets the value of the getReportScheduleListByNextTokenResult property.
+     * Gets the value of the updateReportAcknowledgementsResult property.
      * 
      * @return
      *     possible object is
-     *     {@link GetReportScheduleListByNextTokenResult }
+     *     {@link UpdateReportAcknowledgementsResult }
      *     
      */
-    public GetReportScheduleListByNextTokenResult getGetReportScheduleListByNextTokenResult() {
-        return getReportScheduleListByNextTokenResult;
+    public UpdateReportAcknowledgementsResult getUpdateReportAcknowledgementsResult() {
+        return updateReportAcknowledgementsResult;
     }
 
     /**
-     * Sets the value of the getReportScheduleListByNextTokenResult property.
+     * Sets the value of the updateReportAcknowledgementsResult property.
      * 
      * @param value
      *     allowed object is
-     *     {@link GetReportScheduleListByNextTokenResult }
+     *     {@link UpdateReportAcknowledgementsResult }
      *     
      */
-    public void setGetReportScheduleListByNextTokenResult(GetReportScheduleListByNextTokenResult value) {
-        this.getReportScheduleListByNextTokenResult = value;
+    public void setUpdateReportAcknowledgementsResult(UpdateReportAcknowledgementsResult value) {
+        this.updateReportAcknowledgementsResult = value;
     }
 
-    public boolean isSetGetReportScheduleListByNextTokenResult() {
-        return (this.getReportScheduleListByNextTokenResult!= null);
+    public boolean isSetUpdateReportAcknowledgementsResult() {
+        return (this.updateReportAcknowledgementsResult!= null);
     }
 
     /**
@@ -117,14 +117,14 @@ public class GetReportScheduleListByNextTokenResponse {
     }
 
     /**
-     * Sets the value of the GetReportScheduleListByNextTokenResult property.
+     * Sets the value of the UpdateReportAcknowledgementsResult property.
      * 
      * @param value
      * @return
      *     this instance
      */
-    public GetReportScheduleListByNextTokenResponse withGetReportScheduleListByNextTokenResult(GetReportScheduleListByNextTokenResult value) {
-        setGetReportScheduleListByNextTokenResult(value);
+    public UpdateReportAcknowledgementsResponse withUpdateReportAcknowledgementsResult(UpdateReportAcknowledgementsResult value) {
+        setUpdateReportAcknowledgementsResult(value);
         return this;
     }
 
@@ -135,7 +135,7 @@ public class GetReportScheduleListByNextTokenResponse {
      * @return
      *     this instance
      */
-    public GetReportScheduleListByNextTokenResponse withResponseMetadata(ResponseMetadata value) {
+    public UpdateReportAcknowledgementsResponse withResponseMetadata(ResponseMetadata value) {
         setResponseMetadata(value);
         return this;
     }
@@ -166,12 +166,12 @@ public class GetReportScheduleListByNextTokenResponse {
      */
     public String toXML() {
         StringBuffer xml = new StringBuffer();
-        xml.append("<GetReportScheduleListByNextTokenResponse xmlns=\"http://mws.amazonaws.com/doc/2009-01-01/\">");
-        if (isSetGetReportScheduleListByNextTokenResult()) {
-            GetReportScheduleListByNextTokenResult  getReportScheduleListByNextTokenResult = getGetReportScheduleListByNextTokenResult();
-            xml.append("<GetReportScheduleListByNextTokenResult>");
-            xml.append(getReportScheduleListByNextTokenResult.toXMLFragment());
-            xml.append("</GetReportScheduleListByNextTokenResult>");
+        xml.append("<UpdateReportAcknowledgementsResponse xmlns=\"http://mws.amazonaws.com/doc/2009-01-01/\">");
+        if (isSetUpdateReportAcknowledgementsResult()) {
+            UpdateReportAcknowledgementsResult  updateReportAcknowledgementsResult = getUpdateReportAcknowledgementsResult();
+            xml.append("<UpdateReportAcknowledgementsResult>");
+            xml.append(updateReportAcknowledgementsResult.toXMLFragment());
+            xml.append("</UpdateReportAcknowledgementsResult>");
         } 
         if (isSetResponseMetadata()) {
             ResponseMetadata  responseMetadata = getResponseMetadata();
@@ -179,7 +179,7 @@ public class GetReportScheduleListByNextTokenResponse {
             xml.append(responseMetadata.toXMLFragment());
             xml.append("</ResponseMetadata>");
         } 
-        xml.append("</GetReportScheduleListByNextTokenResponse>");
+        xml.append("</UpdateReportAcknowledgementsResponse>");
         return xml.toString();
     }
 
@@ -225,18 +225,18 @@ public class GetReportScheduleListByNextTokenResponse {
      */
     public String toJSON() {
         StringBuffer json = new StringBuffer();
-        json.append("{\"GetReportScheduleListByNextTokenResponse\" : {");
+        json.append("{\"UpdateReportAcknowledgementsResponse\" : {");
         json.append(quoteJSON("@xmlns"));
         json.append(" : ");
         json.append(quoteJSON("http://mws.amazonaws.com/doc/2009-01-01/"));
         boolean first = true;
         json.append(", ");
-        if (isSetGetReportScheduleListByNextTokenResult()) {
+        if (isSetUpdateReportAcknowledgementsResult()) {
             if (!first) json.append(", ");
-            json.append("\"GetReportScheduleListByNextTokenResult\" : {");
-            GetReportScheduleListByNextTokenResult  getReportScheduleListByNextTokenResult = getGetReportScheduleListByNextTokenResult();
+            json.append("\"UpdateReportAcknowledgementsResult\" : {");
+            UpdateReportAcknowledgementsResult  updateReportAcknowledgementsResult = getUpdateReportAcknowledgementsResult();
 
-            json.append(getReportScheduleListByNextTokenResult.toJSONFragment());
+            json.append(updateReportAcknowledgementsResult.toJSONFragment());
             json.append("}");
             first = false;
         } 

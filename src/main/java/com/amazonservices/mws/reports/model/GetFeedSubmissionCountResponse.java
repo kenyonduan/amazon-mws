@@ -166,7 +166,7 @@ public class GetFeedSubmissionCountResponse {
      */
     public String toXML() {
         StringBuffer xml = new StringBuffer();
-        xml.append("<GetFeedSubmissionCountResponse xmlns=\"http://mws.amazonservices.com/doc/2009-01-01/\">");
+        xml.append("<GetFeedSubmissionCountResponse xmlns=\"http://mws.amazonaws.com/doc/2009-01-01/\">");
         if (isSetGetFeedSubmissionCountResult()) {
             GetFeedSubmissionCountResult  getFeedSubmissionCountResult = getGetFeedSubmissionCountResult();
             xml.append("<GetFeedSubmissionCountResult>");
@@ -228,7 +228,7 @@ public class GetFeedSubmissionCountResponse {
         json.append("{\"GetFeedSubmissionCountResponse\" : {");
         json.append(quoteJSON("@xmlns"));
         json.append(" : ");
-        json.append(quoteJSON("http://mws.amazonservices.com/doc/2009-01-01/"));
+        json.append(quoteJSON("http://mws.amazonaws.com/doc/2009-01-01/"));
         boolean first = true;
         json.append(", ");
         if (isSetGetFeedSubmissionCountResult()) {

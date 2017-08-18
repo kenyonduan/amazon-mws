@@ -1,18 +1,18 @@
-/******************************************************************************* 
+/*******************************************************************************
  *  Copyright 2009 Amazon Services.
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  
- *  You may not use this file except in compliance with the License. 
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *
+ *  You may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at: http://aws.amazon.com/apache2.0
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+ *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
  *  specific language governing permissions and limitations under the License.
- * ***************************************************************************** 
+ * *****************************************************************************
  *
  *  Marketplace Web Service Java Library
  *  API Version: 2009-01-01
- *  Generated: Wed Feb 18 13:28:48 PST 2009 
- * 
+ *  Generated: Wed Feb 18 13:28:48 PST 2009
+ *
  */
 
 
@@ -20,6 +20,7 @@
 package com.amazonservices.mws.reports.mock;
 
 import com.amazonservices.mws.reports.model.*;
+import com.amazonservices.mws.reports.*;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -27,9 +28,6 @@ import java.util.concurrent.Executors;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
-
-import com.amazonservices.mws.reports.MarketplaceWebService;
-import com.amazonservices.mws.reports.MarketplaceWebServiceException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.xml.sax.InputSource;
@@ -40,16 +38,16 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  *
  * MarketplaceWebServiceMock is the implementation of MarketplaceWebService based
- * on the pre-populated set of XML files that serve local data. It simulates 
+ * on the pre-populated set of XML files that serve local data. It simulates
  * responses from Marketplace Web Service service.
  *
- * Use this to test your application without making a call to Marketplace Web Service 
+ * Use this to test your application without making a call to Marketplace Web Service
  *
  * Note, current Mock Service implementation does not valiadate requests
  *
  */
 public  class MarketplaceWebServiceMock implements MarketplaceWebService {
-    
+
     private final Log log = LogFactory.getLog(MarketplaceWebServiceMock.class);
     private static JAXBContext  jaxbContext;
     private static ThreadLocal<Unmarshaller> unmarshaller;
@@ -66,11 +64,11 @@ public  class MarketplaceWebServiceMock implements MarketplaceWebService {
                 }
                 });
 
-    
+
     /** Initialize JAXBContext and  Unmarshaller **/
     static {
         try {
-            jaxbContext = JAXBContext.newInstance("com.amazonservices.mws.reports.model", MarketplaceWebService.class.getClassLoader());
+            jaxbContext = JAXBContext.newInstance("com.amazonaws.mws.model", MarketplaceWebService.class.getClassLoader());
         } catch (JAXBException ex) {
             throw new ExceptionInInitializerError(ex);
         }
@@ -86,15 +84,15 @@ public  class MarketplaceWebServiceMock implements MarketplaceWebService {
     }
 
     // Public API ------------------------------------------------------------//
-    
-        
+
+
     /**
-     * Get Report 
+     * Get Report
      *
      * The GetReport operation returns the contents of a report. Reports can potentially be
      * very large (>100MB) which is why we only return one report at a time, and in a
      * streaming fashion.
-     *   
+     *
      * @param request
      *          GetReport Action
      * @return
@@ -110,7 +108,7 @@ public  class MarketplaceWebServiceMock implements MarketplaceWebService {
                     (new InputSource(this.getClass().getResourceAsStream("GetReportResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -127,12 +125,12 @@ GetReportRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Get Report Schedule Count 
+     * Get Report Schedule Count
      *
      * returns the number of report schedules
-     *   
+     *
      * @param request
      *          GetReportScheduleCount Action
      * @return
@@ -148,7 +146,7 @@ GetReportRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("GetReportScheduleCountResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -165,12 +163,12 @@ GetReportScheduleCountRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Get Report Request List By Next Token 
+     * Get Report Request List By Next Token
      *
      * retrieve the next batch of list items and if there are more items to retrieve
-     *   
+     *
      * @param request
      *          GetReportRequestListByNextToken Action
      * @return
@@ -186,7 +184,7 @@ GetReportScheduleCountRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("GetReportRequestListByNextTokenResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -203,12 +201,12 @@ GetReportRequestListByNextTokenRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Update Report Acknowledgements 
+     * Update Report Acknowledgements
      *
      * The UpdateReportAcknowledgements operation updates the acknowledged status of one or more reports.
-     *   
+     *
      * @param request
      *          UpdateReportAcknowledgements Action
      * @return
@@ -216,41 +214,41 @@ GetReportRequestListByNextTokenRequest request) {
      *
      * @throws MarketplaceWebServiceException
      */
-    public TypeList.UpdateReportAcknowledgementsResponse updateReportAcknowledgements(TypeList.UpdateReportAcknowledgementsRequest request)
+    public UpdateReportAcknowledgementsResponse updateReportAcknowledgements(UpdateReportAcknowledgementsRequest request)
         throws MarketplaceWebServiceException {
-        TypeList.UpdateReportAcknowledgementsResponse response;
+        UpdateReportAcknowledgementsResponse response;
         try {
-            response = (TypeList.UpdateReportAcknowledgementsResponse)getUnmarshaller().unmarshal
+            response = (UpdateReportAcknowledgementsResponse)getUnmarshaller().unmarshal
                     (new InputSource(this.getClass().getResourceAsStream("UpdateReportAcknowledgementsResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
         return response;
     }
 
-    public Future<TypeList.UpdateReportAcknowledgementsResponse> updateReportAcknowledgementsAsync(final
-                                                                                                   TypeList.UpdateReportAcknowledgementsRequest request) {
-        Future<TypeList.UpdateReportAcknowledgementsResponse> response = asyncExecutor.submit(new Callable<TypeList.UpdateReportAcknowledgementsResponse>() {
+    public Future<UpdateReportAcknowledgementsResponse> updateReportAcknowledgementsAsync(final
+UpdateReportAcknowledgementsRequest request) {
+        Future<UpdateReportAcknowledgementsResponse> response = asyncExecutor.submit(new Callable<UpdateReportAcknowledgementsResponse>() {
 
-            public TypeList.UpdateReportAcknowledgementsResponse call() throws MarketplaceWebServiceException {
+            public UpdateReportAcknowledgementsResponse call() throws MarketplaceWebServiceException {
                 return updateReportAcknowledgements(request);
             }
             });
         return response;
     }
-        
+
     /**
-     * Submit Feed 
+     * Submit Feed
      *
      * Uploads a file for processing together with the necessary
      * metadata to process the file, such as which type of feed it is.
      * PurgeAndReplace if true means that your existing e.g. inventory is
      * wiped out and replace with the contents of this feed - use with
      * caution (the default is false).
-     *   
+     *
      * @param request
      *          SubmitFeed Action
      * @return
@@ -266,7 +264,7 @@ GetReportRequestListByNextTokenRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("SubmitFeedResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -283,7 +281,7 @@ SubmitFeedRequest request) {
             });
         return response;
     }
-    
+
     /**
      * Submit Feed From File
      *
@@ -292,12 +290,12 @@ SubmitFeedRequest request) {
      * PurgeAndReplace if true means that your existing e.g. inventory is
      * wiped out and replace with the contents of this feed - use with
      * caution (the default is false).
-     * 
+     *
      * This function assumes the Content MD5 value is unset in the request, and will
      * set it before making the Submit Feed request. The Feed Content must be stored
      * on disk, as the assumption is that the content is accessed through
      * a FileInputStream.
-     * 
+     *
      * @param request
      *          SubmitFeedRequest request without the contentMd5 field set.
      * @return
@@ -313,7 +311,7 @@ SubmitFeedRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("SubmitFeedResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -330,14 +328,14 @@ SubmitFeedRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Get Report Count 
+     * Get Report Count
      *
      * returns a count of reports matching your criteria;
      * by default, the number of reports generated in the last 90 days,
      * regardless of acknowledgement status
-     *   
+     *
      * @param request
      *          GetReportCount Action
      * @return
@@ -353,7 +351,7 @@ SubmitFeedRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("GetReportCountResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -370,12 +368,12 @@ GetReportCountRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Get Feed Submission List By Next Token 
+     * Get Feed Submission List By Next Token
      *
      * retrieve the next batch of list items and if there are more items to retrieve
-     *   
+     *
      * @param request
      *          GetFeedSubmissionListByNextToken Action
      * @return
@@ -391,7 +389,7 @@ GetReportCountRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("GetFeedSubmissionListByNextTokenResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -408,13 +406,13 @@ GetFeedSubmissionListByNextTokenRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Cancel Feed Submissions 
+     * Cancel Feed Submissions
      *
      * cancels feed submissions - by default all of the submissions of the
      * last 30 days that have not started processing
-     *   
+     *
      * @param request
      *          CancelFeedSubmissions Action
      * @return
@@ -430,7 +428,7 @@ GetFeedSubmissionListByNextTokenRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("CancelFeedSubmissionsResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -447,12 +445,12 @@ CancelFeedSubmissionsRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Request Report 
+     * Request Report
      *
      * requests the generation of a report
-     *   
+     *
      * @param request
      *          RequestReport Action
      * @return
@@ -468,7 +466,7 @@ CancelFeedSubmissionsRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("RequestReportResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -485,12 +483,12 @@ RequestReportRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Get Feed Submission Count 
+     * Get Feed Submission Count
      *
      * returns the number of feeds matching all of the specified criteria
-     *   
+     *
      * @param request
      *          GetFeedSubmissionCount Action
      * @return
@@ -506,7 +504,7 @@ RequestReportRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("GetFeedSubmissionCountResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -523,13 +521,13 @@ GetFeedSubmissionCountRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Cancel Report Requests 
+     * Cancel Report Requests
      *
      * cancels report requests that have not yet started processing,
      * by default all those within the last 90 days
-     *   
+     *
      * @param request
      *          CancelReportRequests Action
      * @return
@@ -545,7 +543,7 @@ GetFeedSubmissionCountRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("CancelReportRequestsResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -562,13 +560,13 @@ CancelReportRequestsRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Get Report List 
+     * Get Report List
      *
      * returns a list of reports; by default the most recent ten reports,
      * regardless of their acknowledgement status
-     *   
+     *
      * @param request
      *          GetReportList Action
      * @return
@@ -584,7 +582,7 @@ CancelReportRequestsRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("GetReportListResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -601,12 +599,12 @@ GetReportListRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Get Feed Submission Result 
+     * Get Feed Submission Result
      *
      * retrieves the feed processing report
-     *   
+     *
      * @param request
      *          GetFeedSubmissionResult Action
      * @return
@@ -622,7 +620,7 @@ GetReportListRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("GetFeedSubmissionResultResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -639,12 +637,12 @@ GetFeedSubmissionResultRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Get Feed Submission List 
+     * Get Feed Submission List
      *
      * returns a list of feed submission identifiers and their associated metadata
-     *   
+     *
      * @param request
      *          GetFeedSubmissionList Action
      * @return
@@ -660,7 +658,7 @@ GetFeedSubmissionResultRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("GetFeedSubmissionListResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -677,12 +675,12 @@ GetFeedSubmissionListRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Get Report Request List 
+     * Get Report Request List
      *
      * returns a list of report requests ids and their associated metadata
-     *   
+     *
      * @param request
      *          GetReportRequestList Action
      * @return
@@ -698,7 +696,7 @@ GetFeedSubmissionListRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("GetReportRequestListResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -715,12 +713,12 @@ GetReportRequestListRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Get Report Schedule List By Next Token 
+     * Get Report Schedule List By Next Token
      *
      * retrieve the next batch of list items and if there are more items to retrieve
-     *   
+     *
      * @param request
      *          GetReportScheduleListByNextToken Action
      * @return
@@ -736,7 +734,7 @@ GetReportRequestListRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("GetReportScheduleListByNextTokenResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -753,12 +751,12 @@ GetReportScheduleListByNextTokenRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Get Report List By Next Token 
+     * Get Report List By Next Token
      *
      * retrieve the next batch of list items and if there are more items to retrieve
-     *   
+     *
      * @param request
      *          GetReportListByNextToken Action
      * @return
@@ -774,7 +772,7 @@ GetReportScheduleListByNextTokenRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("GetReportListByNextTokenResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -791,13 +789,13 @@ GetReportListByNextTokenRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Manage Report Schedule 
+     * Manage Report Schedule
      *
      * Creates, updates, or deletes a report schedule
      * for a given report type, such as order reports in particular.
-     *   
+     *
      * @param request
      *          ManageReportSchedule Action
      * @return
@@ -813,7 +811,7 @@ GetReportListByNextTokenRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("ManageReportScheduleResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -830,13 +828,13 @@ ManageReportScheduleRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Get Report Request Count 
+     * Get Report Request Count
      *
      * returns a count of report requests; by default all the report
      * requests in the last 90 days
-     *   
+     *
      * @param request
      *          GetReportRequestCount Action
      * @return
@@ -852,7 +850,7 @@ ManageReportScheduleRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("GetReportRequestCountResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }
@@ -869,12 +867,12 @@ GetReportRequestCountRequest request) {
             });
         return response;
     }
-        
+
     /**
-     * Get Report Schedule List 
+     * Get Report Schedule List
      *
      * returns the list of report schedules
-     *   
+     *
      * @param request
      *          GetReportScheduleList Action
      * @return
@@ -890,7 +888,7 @@ GetReportRequestCountRequest request) {
                     (new InputSource(this.getClass().getResourceAsStream("GetReportScheduleListResponse.xml")));
 
             log.debug("Response from Mock Service: " + response.toXML());
-            
+
         } catch (JAXBException jbe) {
             throw new MarketplaceWebServiceException("Unable to process mock response", jbe);
         }

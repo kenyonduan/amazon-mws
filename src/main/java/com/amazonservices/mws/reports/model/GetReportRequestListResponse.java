@@ -166,7 +166,7 @@ public class GetReportRequestListResponse {
      */
     public String toXML() {
         StringBuffer xml = new StringBuffer();
-        xml.append("<GetReportRequestListResponse xmlns=\"http://mws.amazonservices.com/doc/2009-01-01/\">");
+        xml.append("<GetReportRequestListResponse xmlns=\"http://mws.amazonaws.com/doc/2009-01-01/\">");
         if (isSetGetReportRequestListResult()) {
             GetReportRequestListResult  getReportRequestListResult = getGetReportRequestListResult();
             xml.append("<GetReportRequestListResult>");
@@ -228,7 +228,7 @@ public class GetReportRequestListResponse {
         json.append("{\"GetReportRequestListResponse\" : {");
         json.append(quoteJSON("@xmlns"));
         json.append(" : ");
-        json.append(quoteJSON("http://mws.amazonservices.com/doc/2009-01-01/"));
+        json.append(quoteJSON("http://mws.amazonaws.com/doc/2009-01-01/"));
         boolean first = true;
         json.append(", ");
         if (isSetGetReportRequestListResult()) {

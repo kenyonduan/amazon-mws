@@ -19,11 +19,15 @@
 
 package com.amazonservices.mws.reports.samples;
 
-import com.amazonservices.mws.reports.model.*;
+import java.util.List;
+import java.util.ArrayList;
+import com.amazonservices.mws.*;
 import com.amazonservices.mws.reports.MarketplaceWebService;
 import com.amazonservices.mws.reports.MarketplaceWebServiceClient;
 import com.amazonservices.mws.reports.MarketplaceWebServiceConfig;
 import com.amazonservices.mws.reports.MarketplaceWebServiceException;
+import com.amazonservices.mws.reports.model.*;
+import com.amazonservices.mws.reports.mock.MarketplaceWebServiceMock;
 
 /**
  *
@@ -85,37 +89,37 @@ public class UpdateReportAcknowledgementsSample {
          ***********************************************************************/
 
         /************************************************************************
-         * Instantiate Http Client Implementation of Marketplace Web Service        
+         * Instantiate Http Client Implementation of Marketplace Web Service
          ***********************************************************************/
 
         MarketplaceWebService service = new MarketplaceWebServiceClient(
                 accessKeyId, secretAccessKey, appName, appVersion, config);
 
         /************************************************************************
-         * Uncomment to try out Mock Service that simulates Marketplace Web Service 
+         * Uncomment to try out Mock Service that simulates Marketplace Web Service
          * responses without calling Marketplace Web Service  service.
          *
          * Responses are loaded from local XML files. You can tweak XML files to
          * experiment with various outputs during development
          *
-         * XML files available under com/amazonservices/mws/mock tree
+         * XML files available under com/amazonaws/mws/mock tree
          *
          ***********************************************************************/
         // MarketplaceWebService service = new MarketplaceWebServiceMock();
 
         /************************************************************************
-         * Setup request parameters and uncomment invoke to try out 
-         * sample for Update Report Acknowledgements 
+         * Setup request parameters and uncomment invoke to try out
+         * sample for Update Report Acknowledgements
          ***********************************************************************/
 
         /************************************************************************
-         * Marketplace and Merchant IDs are required parameters for all 
+         * Marketplace and Merchant IDs are required parameters for all
          * Marketplace Web Service calls.
          ***********************************************************************/
         final String merchantId = "<Your Merchant ID>";
         final String sellerDevAuthToken = "<Merchant Developer MWS Auth Token>";
 
-        TypeList.UpdateReportAcknowledgementsRequest request = new TypeList.UpdateReportAcknowledgementsRequest();
+        UpdateReportAcknowledgementsRequest request = new UpdateReportAcknowledgementsRequest();
         request.setMerchant( merchantId );
         //request.setMWSAuthToken(sellerDevAuthToken);
 
@@ -130,14 +134,14 @@ public class UpdateReportAcknowledgementsSample {
     /**
      * Update Report Acknowledgements  request sample
      * The UpdateReportAcknowledgements operation updates the acknowledged status of one or more reports.
-     *   
+     *
      * @param service instance of MarketplaceWebService service
      * @param request Action to invoke
      */
-    public static void invokeUpdateReportAcknowledgements(MarketplaceWebService service, TypeList.UpdateReportAcknowledgementsRequest request) {
+    public static void invokeUpdateReportAcknowledgements(MarketplaceWebService service, UpdateReportAcknowledgementsRequest request) {
         try {
 
-            TypeList.UpdateReportAcknowledgementsResponse response = service.updateReportAcknowledgements(request);
+            UpdateReportAcknowledgementsResponse response = service.updateReportAcknowledgements(request);
 
 
             System.out.println ("UpdateReportAcknowledgements Action Response");
@@ -149,7 +153,7 @@ public class UpdateReportAcknowledgementsSample {
             if (response.isSetUpdateReportAcknowledgementsResult()) {
                 System.out.print("        UpdateReportAcknowledgementsResult");
                 System.out.println();
-                TypeList.UpdateReportAcknowledgementsResult updateReportAcknowledgementsResult = response.getUpdateReportAcknowledgementsResult();
+                UpdateReportAcknowledgementsResult  updateReportAcknowledgementsResult = response.getUpdateReportAcknowledgementsResult();
                 if (updateReportAcknowledgementsResult.isSetCount()) {
                     System.out.print("            Count");
                     System.out.println();

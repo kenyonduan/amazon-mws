@@ -223,7 +223,7 @@ public class GetReportRequestListByNextTokenResult {
             xml.append(isHasNext() + "");
             xml.append("</HasNext>");
         }
-        java.util.List<ReportRequestInfo> reportRequestInfoList = getReportRequestInfoList();
+        List<ReportRequestInfo> reportRequestInfoList = getReportRequestInfoList();
         for (ReportRequestInfo reportRequestInfo : reportRequestInfoList) {
             xml.append("<ReportRequestInfo>");
             xml.append(reportRequestInfo.toXMLFragment());
@@ -295,7 +295,7 @@ public class GetReportRequestListByNextTokenResult {
         if (isSetReportRequestInfoList()) {
             if (!first) json.append(", ");
             json.append("\"ReportRequestInfo\" : [");
-            java.util.List<ReportRequestInfo> reportRequestInfoList = getReportRequestInfoList();
+            List<ReportRequestInfo> reportRequestInfoList = getReportRequestInfoList();
             for (ReportRequestInfo reportRequestInfo : reportRequestInfoList) {
                 if (reportRequestInfoList.indexOf(reportRequestInfo) > 0) json.append(", ");
                 json.append("{");
