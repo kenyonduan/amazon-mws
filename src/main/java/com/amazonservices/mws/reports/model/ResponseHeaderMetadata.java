@@ -18,6 +18,8 @@
 
 package com.amazonservices.mws.reports.model;
 
+import java.util.List;
+
 public class ResponseHeaderMetadata {
   private String requestId;
   private String responseContext;

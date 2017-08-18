@@ -173,7 +173,7 @@ public class CancelReportRequestsResult {
             xml.append(getCount() + "");
             xml.append("</Count>");
         }
-        java.util.List<ReportRequestInfo> reportRequestInfoList = getReportRequestInfoList();
+        List<ReportRequestInfo> reportRequestInfoList = getReportRequestInfoList();
         for (ReportRequestInfo reportRequestInfo : reportRequestInfoList) {
             xml.append("<ReportRequestInfo>");
             xml.append(reportRequestInfo.toXMLFragment());
@@ -238,7 +238,7 @@ public class CancelReportRequestsResult {
         if (isSetReportRequestInfoList()) {
             if (!first) json.append(", ");
             json.append("\"ReportRequestInfo\" : [");
-            java.util.List<ReportRequestInfo> reportRequestInfoList = getReportRequestInfoList();
+            List<ReportRequestInfo> reportRequestInfoList = getReportRequestInfoList();
             for (ReportRequestInfo reportRequestInfo : reportRequestInfoList) {
                 if (reportRequestInfoList.indexOf(reportRequestInfo) > 0) json.append(", ");
                 json.append("{");

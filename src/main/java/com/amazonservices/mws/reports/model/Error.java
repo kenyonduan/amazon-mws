@@ -70,7 +70,7 @@ public class Error {
     @XmlElement(name = "Message", required = true)
     protected String message;
     @XmlElement(name = "Detail", required = true)
-    protected Error.Detail detail;
+    protected Detail detail;
 
     /**
      * Default constructor
@@ -84,7 +84,7 @@ public class Error {
      * Value constructor
      * 
      */
-    public Error(final String type, final String code, final String message, final Error.Detail detail) {
+    public Error(final String type, final String code, final String message, final Detail detail) {
         this.type = type;
         this.code = code;
         this.message = message;
@@ -180,10 +180,10 @@ public class Error {
      * 
      * @return
      *     possible object is
-     *     {@link Error.Detail }
+     *     {@link Detail }
      *     
      */
-    public Error.Detail getDetail() {
+    public Detail getDetail() {
         return detail;
     }
 
@@ -192,10 +192,10 @@ public class Error {
      * 
      * @param value
      *     allowed object is
-     *     {@link Error.Detail }
+     *     {@link Detail }
      *     
      */
-    public void setDetail(Error.Detail value) {
+    public void setDetail(Detail value) {
         this.detail = value;
     }
 
@@ -246,7 +246,7 @@ public class Error {
      * @return
      *     this instance
      */
-    public Error withDetail(Error.Detail value) {
+    public Error withDetail(Detail value) {
         setDetail(value);
         return this;
     }
@@ -343,7 +343,7 @@ public class Error {
          * @return
          *     this instance
          */
-        public Error.Detail withAny(Object... values) {
+        public Detail withAny(Object... values) {
             for (Object value: values) {
                 getAny().add(value);
             }
@@ -392,7 +392,7 @@ public class Error {
             xml.append("</Message>");
         }
         if (isSetDetail()) {
-            Error.Detail  detail = getDetail();
+            Detail  detail = getDetail();
             xml.append("<Detail>");
             xml.append(detail.toString());
 
@@ -471,7 +471,7 @@ public class Error {
         if (isSetDetail()) {
             if (!first) json.append(", ");
             json.append("\"Detail\" : {");
-            Error.Detail  detail = getDetail();
+            Detail  detail = getDetail();
 
 
             json.append(detail.toString());

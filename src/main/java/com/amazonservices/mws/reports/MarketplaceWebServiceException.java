@@ -19,6 +19,7 @@
 
 package com.amazonservices.mws.reports;
 
+
 import com.amazonservices.mws.reports.model.ResponseHeaderMetadata;
 
 /**

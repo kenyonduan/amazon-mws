@@ -1,34 +1,34 @@
-/******************************************************************************* 
+/*******************************************************************************
  *  Copyright 2009 Amazon Services.
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  
- *  You may not use this file except in compliance with the License. 
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *
+ *  You may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at: http://aws.amazon.com/apache2.0
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+ *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
  *  specific language governing permissions and limitations under the License.
- * ***************************************************************************** 
+ * *****************************************************************************
  *
  *  Marketplace Web Service Java Library
  *  API Version: 2009-01-01
- *  Generated: Wed Feb 18 13:28:48 PST 2009 
- * 
+ *  Generated: Wed Feb 18 13:28:48 PST 2009
+ *
  */
 
 
 
 package com.amazonservices.mws.reports.samples;
 
-import java.util.List;
-import java.util.ArrayList;
-
 import com.amazonservices.mws.reports.MarketplaceWebService;
 import com.amazonservices.mws.reports.MarketplaceWebServiceClient;
 import com.amazonservices.mws.reports.MarketplaceWebServiceConfig;
 import com.amazonservices.mws.reports.MarketplaceWebServiceException;
-import com.amazonservices.mws.reports.model.TypeList;
+import com.amazonservices.mws.reports.model.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Future;
+
 
 /**
  *
@@ -97,7 +97,7 @@ public class UpdateReportAcknowledgementsAsyncSample {
          ***********************************************************************/
 
         /************************************************************************
-         * Instantiate Http Client Implementation of Marketplace Web Service        
+         * Instantiate Http Client Implementation of Marketplace Web Service
          ***********************************************************************/
 
         MarketplaceWebService service = new MarketplaceWebServiceClient(
@@ -110,25 +110,25 @@ public class UpdateReportAcknowledgementsAsyncSample {
          ***********************************************************************/
 
         /************************************************************************
-         * Marketplace and Merchant IDs are required parameters for all 
+         * Marketplace and Merchant IDs are required parameters for all
          * Marketplace Web Service calls.
          ***********************************************************************/
         final String merchantId = "<Your Merchant ID>";
         final String sellerDevAuthToken = "<Merchant Developer MWS Auth Token>";
 
-        TypeList.UpdateReportAcknowledgementsRequest requestOne = new TypeList.UpdateReportAcknowledgementsRequest();
+        UpdateReportAcknowledgementsRequest requestOne = new UpdateReportAcknowledgementsRequest();
         requestOne.setMerchant( merchantId );
         //requestOne.setMWSAuthToken(sellerDevAuthToken);
 
         // @TODO: set request parameters here
 
-        TypeList.UpdateReportAcknowledgementsRequest requestTwo = new TypeList.UpdateReportAcknowledgementsRequest();
+        UpdateReportAcknowledgementsRequest requestTwo = new UpdateReportAcknowledgementsRequest();
         requestTwo.setMerchant( merchantId );
         //requestTwo.setMWSAuthToken(sellerDevAuthToken);
 
         // @TODO: set second request parameters here
 
-        List<TypeList.UpdateReportAcknowledgementsRequest> requests = new ArrayList<TypeList.UpdateReportAcknowledgementsRequest>();
+        List<UpdateReportAcknowledgementsRequest> requests = new ArrayList<UpdateReportAcknowledgementsRequest>();
         requests.add(requestOne);
         requests.add(requestTwo);
 
@@ -141,23 +141,23 @@ public class UpdateReportAcknowledgementsAsyncSample {
     /**
      * Update Report Acknowledgements request sample
      * The UpdateReportAcknowledgements operation updates the acknowledged status of one or more reports.
-     *   
+     *
      * @param service instance of MarketplaceWebService service
      * @param requests list of requests to process
      */
-    public static void invokeUpdateReportAcknowledgements(MarketplaceWebService service, List<TypeList.UpdateReportAcknowledgementsRequest> requests) {
-        List<Future<TypeList.UpdateReportAcknowledgementsResponse>> responses = new ArrayList<Future<TypeList.UpdateReportAcknowledgementsResponse>>();
-        for (TypeList.UpdateReportAcknowledgementsRequest request : requests) {
+    public static void invokeUpdateReportAcknowledgements(MarketplaceWebService service, List<UpdateReportAcknowledgementsRequest> requests) {
+        List<Future<UpdateReportAcknowledgementsResponse>> responses = new ArrayList<Future<UpdateReportAcknowledgementsResponse>>();
+        for (UpdateReportAcknowledgementsRequest request : requests) {
             responses.add(service.updateReportAcknowledgementsAsync(request));
         }
-        for (Future<TypeList.UpdateReportAcknowledgementsResponse> future : responses) {
+        for (Future<UpdateReportAcknowledgementsResponse> future : responses) {
             while (!future.isDone()) {
                 Thread.yield();
             }
             try {
-                TypeList.UpdateReportAcknowledgementsResponse response = future.get();
+                UpdateReportAcknowledgementsResponse response = future.get();
                 // Original request corresponding to this response, if needed:
-                TypeList.UpdateReportAcknowledgementsRequest originalRequest = requests.get(responses.indexOf(future));
+                UpdateReportAcknowledgementsRequest originalRequest = requests.get(responses.indexOf(future));
                 System.out.println("Response request id: " + response.getResponseMetadata().getRequestId());
                 System.out.println(response.getResponseHeaderMetadata());
                 System.out.println();

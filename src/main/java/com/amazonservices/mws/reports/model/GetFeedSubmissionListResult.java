@@ -223,7 +223,7 @@ public class GetFeedSubmissionListResult {
             xml.append(isHasNext() + "");
             xml.append("</HasNext>");
         }
-        java.util.List<FeedSubmissionInfo> feedSubmissionInfoList = getFeedSubmissionInfoList();
+        List<FeedSubmissionInfo> feedSubmissionInfoList = getFeedSubmissionInfoList();
         for (FeedSubmissionInfo feedSubmissionInfo : feedSubmissionInfoList) {
             xml.append("<FeedSubmissionInfo>");
             xml.append(feedSubmissionInfo.toXMLFragment());
@@ -295,7 +295,7 @@ public class GetFeedSubmissionListResult {
         if (isSetFeedSubmissionInfoList()) {
             if (!first) json.append(", ");
             json.append("\"FeedSubmissionInfo\" : [");
-            java.util.List<FeedSubmissionInfo> feedSubmissionInfoList = getFeedSubmissionInfoList();
+            List<FeedSubmissionInfo> feedSubmissionInfoList = getFeedSubmissionInfoList();
             for (FeedSubmissionInfo feedSubmissionInfo : feedSubmissionInfoList) {
                 if (feedSubmissionInfoList.indexOf(feedSubmissionInfo) > 0) json.append(", ");
                 json.append("{");

@@ -2,12 +2,13 @@
 package com.amazonservices.mws.reports.model;
 
 import javax.xml.bind.annotation.XmlRegistry;
+import java.lang.*;
 
 
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.amazonservices.mws.reports.model package.
+ * generated in the com.amazonaws.mws.model package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -23,8 +24,7 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package:
-     * com.amazonservices.mws.reports.model
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.amazonaws.mws.model
      * 
      */
     public ObjectFactory() {
@@ -39,11 +39,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TypeList.UpdateReportAcknowledgementsResponse }
+     * Create an instance of {@link UpdateReportAcknowledgementsResponse }
      * 
      */
-    public TypeList.UpdateReportAcknowledgementsResponse createUpdateReportAcknowledgementsResponse() {
-        return new TypeList.UpdateReportAcknowledgementsResponse();
+    public UpdateReportAcknowledgementsResponse createUpdateReportAcknowledgementsResponse() {
+        return new UpdateReportAcknowledgementsResponse();
     }
 
     /**
@@ -79,11 +79,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TypeList.UpdateReportAcknowledgementsResult }
+     * Create an instance of {@link UpdateReportAcknowledgementsResult }
      * 
      */
-    public TypeList.UpdateReportAcknowledgementsResult createUpdateReportAcknowledgementsResult() {
-        return new TypeList.UpdateReportAcknowledgementsResult();
+    public UpdateReportAcknowledgementsResult createUpdateReportAcknowledgementsResult() {
+        return new UpdateReportAcknowledgementsResult();
     }
 
     /**
@@ -359,19 +359,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TypeList.UpdateReportAcknowledgementsRequest }
+     * Create an instance of {@link UpdateReportAcknowledgementsRequest }
      * 
      */
-    public TypeList.UpdateReportAcknowledgementsRequest createUpdateReportAcknowledgementsRequest() {
-        return new TypeList.UpdateReportAcknowledgementsRequest();
+    public UpdateReportAcknowledgementsRequest createUpdateReportAcknowledgementsRequest() {
+        return new UpdateReportAcknowledgementsRequest();
     }
 
     /**
      * Create an instance of {@link java.lang.Error }
      * 
      */
-    public java.lang.Error createError() {
-        return new java.lang.Error();
+    public Error createError() {
+        return new Error();
     }
 
     /**

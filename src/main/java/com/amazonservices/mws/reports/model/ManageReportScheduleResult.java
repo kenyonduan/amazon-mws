@@ -173,7 +173,7 @@ public class ManageReportScheduleResult {
             xml.append(getCount() + "");
             xml.append("</Count>");
         }
-        java.util.List<ReportSchedule> reportScheduleList = getReportScheduleList();
+        List<ReportSchedule> reportScheduleList = getReportScheduleList();
         for (ReportSchedule reportSchedule : reportScheduleList) {
             xml.append("<ReportSchedule>");
             xml.append(reportSchedule.toXMLFragment());
@@ -238,7 +238,7 @@ public class ManageReportScheduleResult {
         if (isSetReportScheduleList()) {
             if (!first) json.append(", ");
             json.append("\"ReportSchedule\" : [");
-            java.util.List<ReportSchedule> reportScheduleList = getReportScheduleList();
+            List<ReportSchedule> reportScheduleList = getReportScheduleList();
             for (ReportSchedule reportSchedule : reportScheduleList) {
                 if (reportScheduleList.indexOf(reportSchedule) > 0) json.append(", ");
                 json.append("{");

@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="Count" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="FeedSubmissionInfo" type="{http://mws.amazonaws.com/doc/2009-01-01/}FeedSubmissionInfo" maxOccurs="unbounded"/>
+ *         &lt;element name="ReportInfo" type="{http://mws.amazonaws.com/doc/2009-01-01/}ReportInfo" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,21 +35,21 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "count",
-    "feedSubmissionInfo"
+    "reportInfo"
 })
-@XmlRootElement(name = "CancelFeedSubmissionsResult")
-public class CancelFeedSubmissionsResult {
+@XmlRootElement(name = "UpdateReportAcknowledgementsResult")
+public class UpdateReportAcknowledgementsResult {
 
     @XmlElement(name = "Count")
     protected int count;
-    @XmlElement(name = "FeedSubmissionInfo", required = true)
-    protected List<FeedSubmissionInfo> feedSubmissionInfo;
+    @XmlElement(name = "ReportInfo", required = true)
+    protected List<ReportInfo> reportInfo;
 
     /**
      * Default constructor
      * 
      */
-    public CancelFeedSubmissionsResult() {
+    public UpdateReportAcknowledgementsResult() {
         super();
     }
 
@@ -57,9 +57,9 @@ public class CancelFeedSubmissionsResult {
      * Value constructor
      * 
      */
-    public CancelFeedSubmissionsResult(final int count, final List<FeedSubmissionInfo> feedSubmissionInfo) {
+    public UpdateReportAcknowledgementsResult(final int count, final List<ReportInfo> reportInfo) {
         this.count = count;
-        this.feedSubmissionInfo = feedSubmissionInfo;
+        this.reportInfo = reportInfo;
     }
 
     /**
@@ -83,40 +83,40 @@ public class CancelFeedSubmissionsResult {
     }
 
     /**
-     * Gets the value of the feedSubmissionInfo property.
+     * Gets the value of the reportInfo property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the feedSubmissionInfo property.
+     * This is why there is not a <CODE>set</CODE> method for the reportInfo property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getFeedSubmissionInfo().add(newItem);
+     *    getReportInfo().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link FeedSubmissionInfo }
+     * {@link ReportInfo }
      * 
      * 
      */
-    public List<FeedSubmissionInfo> getFeedSubmissionInfoList() {
-        if (feedSubmissionInfo == null) {
-            feedSubmissionInfo = new ArrayList<FeedSubmissionInfo>();
+    public List<ReportInfo> getReportInfoList() {
+        if (reportInfo == null) {
+            reportInfo = new ArrayList<ReportInfo>();
         }
-        return this.feedSubmissionInfo;
+        return this.reportInfo;
     }
 
-    public boolean isSetFeedSubmissionInfoList() {
-        return ((this.feedSubmissionInfo!= null)&&(!this.feedSubmissionInfo.isEmpty()));
+    public boolean isSetReportInfoList() {
+        return ((this.reportInfo!= null)&&(!this.reportInfo.isEmpty()));
     }
 
-    public void unsetFeedSubmissionInfoList() {
-        this.feedSubmissionInfo = null;
+    public void unsetReportInfoList() {
+        this.reportInfo = null;
     }
 
     /**
@@ -126,35 +126,35 @@ public class CancelFeedSubmissionsResult {
      * @return
      *     this instance
      */
-    public CancelFeedSubmissionsResult withCount(int value) {
+    public UpdateReportAcknowledgementsResult withCount(int value) {
         setCount(value);
         return this;
     }
 
     /**
-     * Sets the value of the FeedSubmissionInfo property.
+     * Sets the value of the ReportInfo property.
      * 
      * @param values
      * @return
      *     this instance
      */
-    public CancelFeedSubmissionsResult withFeedSubmissionInfo(FeedSubmissionInfo... values) {
-        for (FeedSubmissionInfo value: values) {
-            getFeedSubmissionInfoList().add(value);
+    public UpdateReportAcknowledgementsResult withReportInfoList(ReportInfo... values) {
+        for (ReportInfo value: values) {
+            getReportInfoList().add(value);
         }
         return this;
     }
 
     /**
-     * Sets the value of the feedSubmissionInfo property.
+     * Sets the value of the reportInfo property.
      * 
-     * @param feedSubmissionInfoList
+     * @param reportInfo
      *     allowed object is
-     *     {@link FeedSubmissionInfo }
+     *     {@link ReportInfo }
      *     
      */
-    public void setFeedSubmissionInfoList(List<FeedSubmissionInfo> feedSubmissionInfoList) {
-        this.feedSubmissionInfo = feedSubmissionInfoList;
+    public void setReportInfoList(List<ReportInfo> reportInfo) {
+        this.reportInfo = reportInfo;
     }
     
 
@@ -173,11 +173,11 @@ public class CancelFeedSubmissionsResult {
             xml.append(getCount() + "");
             xml.append("</Count>");
         }
-        List<FeedSubmissionInfo> feedSubmissionInfoList = getFeedSubmissionInfoList();
-        for (FeedSubmissionInfo feedSubmissionInfo : feedSubmissionInfoList) {
-            xml.append("<FeedSubmissionInfo>");
-            xml.append(feedSubmissionInfo.toXMLFragment());
-            xml.append("</FeedSubmissionInfo>");
+        List<ReportInfo> reportInfoList = getReportInfoList();
+        for (ReportInfo reportInfo : reportInfoList) {
+            xml.append("<ReportInfo>");
+            xml.append(reportInfo.toXMLFragment());
+            xml.append("</ReportInfo>");
         }
         return xml.toString();
     }
@@ -235,15 +235,15 @@ public class CancelFeedSubmissionsResult {
             json.append(quoteJSON(getCount() + ""));
             first = false;
         }
-        if (isSetFeedSubmissionInfoList()) {
+        if (isSetReportInfoList()) {
             if (!first) json.append(", ");
-            json.append("\"FeedSubmissionInfo\" : [");
-            List<FeedSubmissionInfo> feedSubmissionInfoList = getFeedSubmissionInfoList();
-            for (FeedSubmissionInfo feedSubmissionInfo : feedSubmissionInfoList) {
-                if (feedSubmissionInfoList.indexOf(feedSubmissionInfo) > 0) json.append(", ");
+            json.append("\"ReportInfo\" : [");
+            List<ReportInfo> reportInfoList = getReportInfoList();
+            for (ReportInfo reportInfo : reportInfoList) {
+                if (reportInfoList.indexOf(reportInfo) > 0) json.append(", ");
                 json.append("{");
                 json.append("");
-                json.append(feedSubmissionInfo.toJSONFragment());
+                json.append(reportInfo.toJSONFragment());
                 json.append("}");
                 first = false;
             }

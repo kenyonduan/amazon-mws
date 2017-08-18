@@ -166,7 +166,7 @@ public class CancelReportRequestsResponse {
      */
     public String toXML() {
         StringBuffer xml = new StringBuffer();
-        xml.append("<CancelReportRequestsResponse xmlns=\"http://mws.amazonservices.com/doc/2009-01-01/\">");
+        xml.append("<CancelReportRequestsResponse xmlns=\"http://mws.amazonaws.com/doc/2009-01-01/\">");
         if (isSetCancelReportRequestsResult()) {
             CancelReportRequestsResult  cancelReportRequestsResult = getCancelReportRequestsResult();
             xml.append("<CancelReportRequestsResult>");
@@ -228,7 +228,7 @@ public class CancelReportRequestsResponse {
         json.append("{\"CancelReportRequestsResponse\" : {");
         json.append(quoteJSON("@xmlns"));
         json.append(" : ");
-        json.append(quoteJSON("http://mws.amazonservices.com/doc/2009-01-01/"));
+        json.append(quoteJSON("http://mws.amazonaws.com/doc/2009-01-01/"));
         boolean first = true;
         json.append(", ");
         if (isSetCancelReportRequestsResult()) {
